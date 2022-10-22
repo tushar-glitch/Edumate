@@ -9,32 +9,32 @@
 .circle1 {
   display: block;
   border-radius: 50%;
-  width: 530px;
-  height: 530px;
+  width: 40vw;
+  height: 80.66vh;
   position: absolute;
-  top: -200px;
-  left: -300px;
+  top: -30vh;
+  left: -45.6vh;
   background-color: #6c63ff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .circle2 {
   display: block;
   border-radius: 50%;
-  width: 600px;
-  height: 610px;
+  width: 44.65vw;
+  height: 91vh;
   position: absolute;
-  top: 260px;
-  left: 930px;
+  top: 39.5vh;
+  left: 68vw;
   background-color: #6c63ff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .panel1 {
   position: absolute;
-  left: 175px;
-  top: 60px;
-  width: 500px;
-  height: 540px;
+  left: 11vw;
+  top: 9.2vh;
+  width: 39vw;
+  height: 83.46vh;
   background: #aac4ff;
   border-radius: 12px 0px 0px 12px;
   z-index: 2;
@@ -42,19 +42,19 @@
 
 .panel2 {
   position: absolute;
-  left: 676px;
-  top: 60px;
-  width: 500px;
-  height: 540px;
+  left: 50vw;
+  top:9.2vh;
+  width: 39vw;
+  height: 83.46vh;
   background: #ffffff;
   border-radius: 0px 12px 12px 0px;
 }
 .edumate {
   position: absolute;
-  width: 170px;
-  height: 44px;
-  left: 174px;
-  top: 15px;
+  width: 25vw;
+  height: 6.8vh;
+  left: 11vw;
+  top: 2.5vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -65,9 +65,9 @@
 }
 .BgHead {
   position: absolute;
-  height: 44px;
-  left: 705px;
-  top: 130px;
+  height: 6.8vh;
+  left: 103vw;
+  top: 20vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -78,25 +78,25 @@
 }
 #pumpkin {
   position: absolute;
-  left: 990px;
-  top: 430px;
-  width: 200px;
-  height: 168.77px;
+  left: 145vw;
+  top: 66vh;
+  width: 30vw;
+  height: 26vh;
   background: none;
 }
 #logInImg {
   position: absolute;
-  width: 400px;
-  height: 462.79px;
-  left: 92px;
-  top: 100px;
+  width: 59vw;
+  height: 71vh;
+  left:13.5vw ;
+  top:15vh;
 }
 .authImage {
   z-index: 5;
   position:absolute;
-  width: 400px;
-height: 300px;
-left: 220px;
-top: 170px;
+  width:58vw;
+height: 46.36vh;
+left: 32vw;
+top: 26vh;
   background: none;
 }
