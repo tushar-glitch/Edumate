@@ -1,6 +1,6 @@
 import React from "react";
 import "./Background.css";
-import Image from "./image";
+import Image from "./bgImage";
 
 function Background() {
   return (
@@ -8,11 +8,9 @@ function Background() {
       <div className="circle1"></div>
       <div className="circle2"></div>
       <p className="edumate">Edumate</p>
-      <div className="panel1">
-      <p><Image /></p>
-        {/* <img className="pumpkin" src= alt="pumpkin" /> */}
-      </div>
+      <div className="panel1"></div>
       <div className="panel2"></div>
+      <p><Image /></p>
     </>
   );
 }

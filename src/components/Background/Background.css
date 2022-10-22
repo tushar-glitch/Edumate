@@ -64,7 +64,6 @@
 }
 .BgHead {
   position: absolute;
-  /* width: 404px; */
   height: 44px;
   left: 690px;
   top: 130px;
@@ -76,10 +75,11 @@
   color: #000000;
   background: none;
 }
-.pumpkin {
-position: absolute;
-width: 150px;
-height: 168.77px;
-left: 434px;
-top: 631px;
+#pumpkin {
+  position: absolute;
+  left: 990px;
+  top: 430px;
+  width: 200px;
+  height: 168.77px;
+  background: none;
 }

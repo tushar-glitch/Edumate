@@ -4,8 +4,8 @@ import LogIn from "./components/LogIN/LogIn";
 import OTP from "./components/OTP/otp";
 function App() {
   return (
-    // <Background />
-   <OTP />
+    <Background />
+  //  <OTP />
   )
 }
 
