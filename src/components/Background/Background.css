@@ -31,17 +31,18 @@
 
 .panel1 {
   position: absolute;
-  left: 174px;
+  left: 175px;
   top: 60px;
   width: 500px;
   height: 540px;
   background: #aac4ff;
   border-radius: 12px 0px 0px 12px;
+  z-index: 2;
 }
 
 .panel2 {
   position: absolute;
-  left: 677px;
+  left: 676px;
   top: 60px;
   width: 500px;
   height: 540px;
@@ -65,7 +66,7 @@
 .BgHead {
   position: absolute;
   height: 44px;
-  left: 690px;
+  left: 705px;
   top: 130px;
   font-family: "Montserrat";
   font-style: normal;
@@ -81,5 +82,21 @@
   top: 430px;
   width: 200px;
   height: 168.77px;
+  background: none;
+}
+#logInImg {
+  position: absolute;
+  width: 400px;
+  height: 462.79px;
+  left: 92px;
+  top: 100px;
+}
+.authImage {
+  z-index: 5;
+  position:absolute;
+  width: 400px;
+height: 300px;
+left: 220px;
+top: 170px;
   background: none;
 }
