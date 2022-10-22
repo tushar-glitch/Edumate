@@ -8,14 +8,16 @@ import Email from "./components/Email/email";
     import Formlogin from './Components/Form-login'
 function App() {
   return (
-    // <Background />
-  //  <OTP />
-  // <LogIn />
-  // <Email />
-  // <ResetPwd />
-    <Formlogin/>
+    <>
+    <Background />
+  {/* //  <OTP /> */}
+  {/* // <LogIn /> */}
+  {/* // <Email /> */}
+  {/* // <ResetPwd /> */}
+    {/* <Formlogin/> */}
     
-  // <Password />
+  {/* // <Password /> */}
+      </>
   )
 }
 
