@@ -11,8 +11,8 @@ function App() {
   //  <OTP />
   // <LogIn />
   // <Email />
-  // <ResetPwd />
-  <Password />
+  <ResetPwd />
+  // <Password />
   )
 }
 
