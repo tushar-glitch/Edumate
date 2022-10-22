@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #eef1ff;
+  overflow: hidden;
+}
+.circle1 {
+  display: block;
+  border-radius: 50%;
+  width: 530px;
+  height: 530px;
+  position: absolute;
+  top: -200px;
+  left: -300px;
+  background-color: #6c63ff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.circle2 {
+  display: block;
+  border-radius: 50%;
+  width: 600px;
+  height: 610px;
+  position: absolute;
+  top: 260px;
+  left: 930px;
+  background-color: #6c63ff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.panel1 {
+  position: absolute;
+  left: 175px;
+  top: 60px;
+  width: 500px;
+  height: 540px;
+  background: #aac4ff;
+  border-radius: 12px 0px 0px 12px;
+  z-index: 2;
+}
+
+.panel2 {
+  position: absolute;
+  left: 676px;
+  top: 60px;
+  width: 500px;
+  height: 540px;
+  background: #ffffff;
+  border-radius: 0px 12px 12px 0px;
+}
+.edumate {
+  position: absolute;
+  width: 170px;
+  height: 44px;
+  left: 174px;
+  top: 15px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 33px;
+  line-height: 38px;
+  color: #000000;
+  background: none;
+}
+.BgHead {
+  position: absolute;
+  height: 44px;
+  left: 705px;
+  top: 130px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+  background: none;
+}
+#pumpkin {
+  position: absolute;
+  left: 990px;
+  top: 430px;
+  width: 200px;
+  height: 168.77px;
+  background: none;
+}
+#logInImg {
+  position: absolute;
+  width: 400px;
+  height: 462.79px;
+  left: 92px;
+  top: 100px;
+}
+.authImage {
+  z-index: 5;
+  position:absolute;
+  width: 400px;
+height: 300px;
+left: 220px;
+top: 170px;
+  background: none;
+}
