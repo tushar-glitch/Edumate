@@ -66,7 +66,7 @@
 .BgHead {
   position: absolute;
   height: 6.8vh;
-  left: 103vw;
+  left: 53vw;
   top: 20vh;
   font-family: "Montserrat";
   font-style: normal;
@@ -96,7 +96,7 @@
   position:absolute;
   width:58vw;
 height: 46.36vh;
-left: 32vw;
+left: 2.5vw;
 top: 26vh;
   background: none;
 }

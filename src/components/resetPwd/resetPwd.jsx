@@ -5,7 +5,7 @@ import ResetImg from "./resPwdImg";
 function ResetPwd (){
     return <>
     <Background />
-        <h1 className="BgHead">&emsp;&ensp;Reset Password</h1>
+        <h1 className="BgHead">&emsp;&emsp;Reset Password</h1>
         <ResetImg />
     </>
 }
