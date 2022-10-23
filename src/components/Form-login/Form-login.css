@@ -3,28 +3,30 @@
     width: 77px;
     height: 20px;
     left: 800px;
-    top: 230px;
+    top: 268px;
 
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 20px;
+    background-color: white;
     /* identical to box height */
 }
 
 #password {
     position: absolute;
-    width: 77px;
+    width: 107px;
     height: 20px;
     left: 800px;
-    top: 355px;
+    top: 398px;
 
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 20px;
+background-color: white;
 }
 
 #input-box1 {
@@ -39,6 +41,7 @@
     font-size: 1.1rem;
     border: 1px solid #D9D9D9;
     border-radius: 5px;
+background-color: white;
 }
 
 #input-box2 {
@@ -53,6 +56,7 @@
     font-size: 1.1rem;
     border: 1px solid #D9D9D9;
     border-radius: 5px;
+background-color: white;
 }
 
 ::placeholder {
@@ -80,6 +84,7 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 17px;
+background-color: white;
 
     color: #ff0000;
     display: none;
@@ -97,7 +102,7 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 17px;
-
+background-color: white;
     color: #ff0000;
     display: none;
 }
@@ -135,7 +140,7 @@
     height: 44px;
     left: 800px;
     top: 124px;
-
+background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 900;
