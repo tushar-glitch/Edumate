@@ -1,13 +1,11 @@
 import React from "react";
-import Background from "../Background/Background";
-import loginImg from "./loginImg";
+import LoginImg from "./Loginimg";
 
 function LogIn() {
   return (
     <>
-      <loginImg />
-      <Background />
-      <h1 className="BgHead">Welcome to Edumate</h1>
+     <h1 className="BgHead">&emsp;Welcome to Edumate</h1>
+      <LoginImg />
     </>
   );
 }
