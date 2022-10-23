@@ -1,0 +1,73 @@
+p {
+    position: absolute;
+    width: 384px;
+    height: 40px;
+    left: 820px;
+    top: 261px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+
+    color: #000000;
+
+}
+
+#input-box {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 384px;
+    height: 54px;
+    left: 820px;
+    top: 317px;
+    background-color: white;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+}
+
+#btn-continue{
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    position: absolute;
+    width: 384px;
+    height: 54px;
+    left: 820px;
+    top: 404px;
+    letter-spacing: 1px;
+    background: #6C63FF;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+}
+#btn-continue:hover {
+    background: #7971ff;
+}
+
+#btn-continue:active {
+    transform: scale(0.99);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#wrongemail{
+    position: absolute;
+    width: 351px;
+    height: 34px;
+    left: 820px;
+    top: 377px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+background-color: white;
+
+    color: #ff0000;
+    display: none;
+}
