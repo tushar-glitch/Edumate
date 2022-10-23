@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './Form-login.css'
+<<<<<<< HEAD
 import EmailIMG from './email-icon'
 import LockIMG from './LockImg'
+=======
+>>>>>>> c12a939c18299f0e96e53795721e7cc0e3c80f5d
 const Formlogin = () => {
     const [userid, setUserId] = useState("")
     const [pass, setPass] = useState("")
@@ -37,6 +40,7 @@ const Formlogin = () => {
     console.log(data);
     return (
         <>
+<<<<<<< HEAD
             {/* <h1 id='heading'>Welcome to Edumate</h1> */}
             <h5 id='user-id'>User id</h5>
             <EmailIMG />
@@ -44,6 +48,13 @@ const Formlogin = () => {
             <span id='wrongid'>Incorrect userId. Please try again.</span>
             <h5 id='password'>Password</h5>
             <LockIMG />
+=======
+            <h1 id='heading'>Welcome to Edumate</h1>
+            <h5 id='user-id'>User id</h5>
+            <input type="text" id='input-box1' placeholder='Enter your username' onChange={handleuserid} value={userid} /><br />
+            <span id='wrongid'>Incorrect userId. Please try again.</span>
+            <h5 id='password'>Password</h5>
+>>>>>>> c12a939c18299f0e96e53795721e7cc0e3c80f5d
             <input type="text" id='input-box2' placeholder='Enter your password' onChange={handlepass} value={pass} /><br />
             <span id="wrongpass">Invalid Password format</span>
             <button id="btn-submit">LOGIN</button>
