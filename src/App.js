@@ -13,11 +13,11 @@ function App() {
       {/* <Login /> */}
       <Background />
       {/* <Loginimg /> */}
-      <OTP />
+      {/* <OTP /> */}
       {/* <Formlogin /> */}
 
       {/* <Email /> */}
-   {/* <ResetPwd /> */}
+   <ResetPwd />
    {/* <Password />  */}
     </>
   )
