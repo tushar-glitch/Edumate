@@ -6,7 +6,7 @@ function Password() {
   return (
     <>
       <Background />
-      <h1 className="BgHead">Welcome to Login page </h1>
+      <h1 className="BgHead">Welcome to Edumate</h1>
       <InPwdImg />
     </>
   );
