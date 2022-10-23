@@ -1,13 +1,13 @@
 import React from "react";
 import Background from "../Background/Background";
-import InPwdImg from "./inputPwdImg";
+import Loginimg from "./Loginimg";
 
-function Password() {
+function LogIn() {
   return (
     <>
+      <Loginimg />
       
-      <InPwdImg />
     </>
   );
 }
-export default Password;
+export default LogIn;
