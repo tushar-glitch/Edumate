@@ -14,10 +14,10 @@ function App() {
       <Background />
       {/* <Loginimg /> */}
       {/* <OTP /> */}
-      {/* <Formlogin /> */}
+      <Formlogin />
 
       {/* <Email /> */}
-   <ResetPwd />
+   {/* <ResetPwd /> */}
    {/* <Password />  */}
     </>
   )
