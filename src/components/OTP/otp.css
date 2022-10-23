@@ -1,48 +1,74 @@
 #input-box {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 384px;
-    height: 54px;
-    left: 820px;
-    top: 297px;
-
-    border: 1px solid #D9D9D9;
-    border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 56vw;
+  top: 43vh;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
 }
 
-#no-otp-recieved{
-    position: absolute;
-width: 173px;
-height: 17px;
-left: 820px;
-top: 377px;
+#no-otp-recieved {
+  position: absolute;
+  width: 55vw;
+  height: 5vh;
+  left: 56vw;
+  top: 52vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17px;
+  /* identical to box height */
+  background-color: white;
+  color: #000000;
+}
+#resend-otp {
+  position: absolute;
+  width: 189px;
+  height: 37px;
+  left: 65.5vw;
+  top: 50.5vh;
+  background: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 17px;
+  border: none;
+  text-decoration: underline;
+}
+#btn-continue {
+  box-sizing: border-box;
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 56vw;
+  top: 60vh;
+  background: #6c63ff;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
 
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 22px;
+color: #FFFFFF;
+}
+#OTPid {
+    position: absolute;
+/* width: 20vw; */
+height: 7vh;
+left: 56vw;
+top: 38vh;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 500;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-background-color: white;
-
+font-size: 17px;
+line-height: 20px;
 color: #000000;
-}
-#resend-otp{
-    position: absolute;
-width: 189px;
-height: 37px;
-left: 980px;
-top: 377px;
-background-color: white;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-
-/* text-decoration-line: underline; */
-
-/* color: #000000; */
+background: none;
 }

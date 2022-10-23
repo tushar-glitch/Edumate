@@ -94,3 +94,14 @@ left: 2.5vw;
 top: 26vh;
   background: none;
 }
+/* @media (max-width:992px){
+  body {
+  background-color:#EEF1FF;
+  }
+  .panel1 {
+    visibility: hidden;
+  }
+  .panel2 .circle1 .circle2 {
+    display:none;
+  }
+} */

@@ -1,0 +1,77 @@
+#inputBox {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 55vw;
+  top: 48vh;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+}
+
+#btn-continue {
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  position: absolute;
+  width: 26vw;
+  height: 7vh;
+  left: 55vw;
+  top: 60vh;
+  letter-spacing: 1px;
+  background: #6c63ff;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+}
+#btn-continue:hover {
+  background: #7971ff;
+}
+
+#btn-continue:active {
+  transform: scale(0.99);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#wrongemail {
+  position: absolute;
+  width: 351px;
+  height: 34px;
+  left: 820px;
+  top: 377px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: white;
+
+  color: #ff0000;
+  display: none;
+}
+#pwdHead {
+  position: absolute;
+  width: 26vw;
+  top: 39vh;
+  left: 55vw;
+  color: black;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  background: none;
+}
+#emailIcon {
+  background: none;
+  width: 25px;
+  height: 19px;
+  position: absolute;
+  z-index: 5;
+  top: 49.7vh;
+  left: 56vw;
+}

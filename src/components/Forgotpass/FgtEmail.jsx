@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Background from "../Background/Background";
 import EmailImg from "./emailImg";
-import './email.css'
+import './FgtEmail.css'
+import EmailIcon from "./emailIcon";
 function Email() {
   const [email, setEmail] = useState('')
   function handleemail(e) {
@@ -22,8 +23,10 @@ function Email() {
   return (
     <>
       <h1 className="BgHead">Forgot your Password ?</h1>
-      <p>We’ll send you a One Time Password on this email.</p>
-      <input type="text" id='input-box' placeholder='Enter your email' value={email} onChange={handleemail} /><br />
+      <p id="pwdHead">We’ll send you a One Time Password on this email.</p>
+      <input type="text" id='inputBox' placeholder='Enter your email' value={email} onChange={handleemail} />
+      <EmailIcon />
+      <br />
       <span id='wrongemail'>Please enter a valid email id</span>
       <button id="resend-otp"></button>
       <button id="btn-continue" onClick={checkemail}>CONTINUE</button>

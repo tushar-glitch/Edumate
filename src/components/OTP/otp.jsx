@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-import React from "react";
-=======
+
 import React, { useState } from "react";
->>>>>>> c12a939c18299f0e96e53795721e7cc0e3c80f5d
 import OTPImg from "./otpImg";
 import './otp.css'
 
@@ -25,8 +22,8 @@ function OTP() {
     // }
     return <>
         <h1 className="BgHead">&emsp;&emsp;OTP Verification </h1>
-        <p>Enter OTP sent to example@gmail.com </p>
-        <input type="text" id='input-box' placeholder='  0 0 0 0' value={email} onChange={handleemail} /><br />
+        <p id="OTPid">Enter OTP sent to example@gmail.com </p>
+        <input type="text" id='input-box' placeholder='0 0 0 0' value={email} onChange={handleemail} /><br />
         <span id="no-otp-recieved">Don’t recieve an OTP?</span>
         <button id="resend-otp">Resend OTP</button>
         <button id="btn-continue">CONTINUE</button>
