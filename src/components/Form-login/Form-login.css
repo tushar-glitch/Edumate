@@ -1,6 +1,5 @@
-
 * {
-    z-index:2;
+  z-index: 2;
 }
 #user-id {
   position: absolute;
@@ -14,6 +13,7 @@
   font-size: 18px;
   line-height: 20px;
   background-color: white;
+  background: none;
 }
 
 #password {
@@ -21,13 +21,14 @@
   width: 15.5vw;
   height: 3.3vh;
   left: 56vw;
-  top: 51vh;
+  top: 53vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
   line-height: 20px;
   background-color: white;
+  background: none;
 }
 
 #input-box1 {
@@ -43,6 +44,7 @@
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   background-color: white;
+  padding-left: 7vh;
 }
 
 #input-box2 {
@@ -52,12 +54,13 @@
   width: 26vw;
   height: 6.5vh;
   left: 56vw;
-  top: 55vh;
+  top: 57vh;
   font-weight: 1000;
   font-size: 1.1rem;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   background-color: white;
+  padding-left: 7vh;
 }
 
 ::placeholder {
@@ -66,17 +69,14 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 17px;
-  padding-left:7vh;
-
   color: #afafaf;
 }
 
 #wrongid {
   position: absolute;
-  width: 50vw;
   height: 5vh;
-  left: 115vw;
-  top: 52vh;
+  left: 56vw;
+  top: 47.5vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
@@ -85,14 +85,15 @@
   background-color: white;
   color: #ff0000;
   display: none;
+  background: none;
 }
 
 #wrongpass {
   position: absolute;
   width: 50vw;
   height: 5vh;
-  left: 116vw;
-  top: 75vh;
+  left: 56vw;
+  top: 64vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
@@ -101,6 +102,7 @@
   background-color: white;
   color: #ff0000;
   display: none;
+  background: none;
 }
 
 #btn-submit {
@@ -131,36 +133,117 @@
 
 #heading {
   position: absolute;
-  /* width: vw; */
   height: 7vh;
-  left: 55vw;
+  left: 53vw;
   top: 19vh;
-  background-color: white;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 900;
-  font-size: 36px;
+  font-size: 34px;
   line-height: 44px;
   /* identical to box height */
-
+  background: none;
   color: #000000;
 }
 #emailImage {
-    background: none;
-    width:25px;
-    height:19px;
-    position:absolute;
-    top:41.8vh;
-    left:56.7vw;
-    z-index:5;
+  background: none;
+  width: 25px;
+  height: 19px;
+  position: absolute;
+  top: 41.8vh;
+  left: 56.7vw;
+  z-index: 5;
 }
 #lockImg {
-    background: none;
-    width:30px;
-    height:21px;
-    position:absolute;
-    top:56.4vh;
-    left:56.5vw;
-    z-index:5;
+  background: none;
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  top: 58.5vh;
+  left: 56.5vw;
+  z-index: 5;
 }
+@media (max-width: 380px) {
+  * {
+    overflow: hidden;
+    height:50vh;
+  }
+  #input-box1 {
+    position: absolute;
+    width: 73vw;
+    height: 54px;
+    left: 15vw;
+    top: 35vh;
+  }
+  #input-box2 {
+    position: absolute;
+    width: 73vw;
+    height: 7.5vh;
+    left: 15vw;
+    top: 53vh;
+  }
+  #user-id {
+    position: absolute;
+    top: 31.5vh;
+    left: 15vw;
+    width: 24vw;
+    height: 20px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
 
+    letter-spacing: 0.05em;
+
+    color: #000000;
+  }
+  #password {
+    position: absolute;
+    top: 49vh;
+    left: 15vw;
+    width: 24vw;
+    height: 20px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    letter-spacing: 0.05em;
+
+    color: #000000;
+  }
+  #heading {
+    visibility: hidden;
+  }
+  #btn-submit {
+    position: absolute;
+    width: 73vw;
+    height: 7.5vh;
+    left: 15vw;
+    top: 67.5vh;
+
+    background: #6c63ff;
+    border-radius: 5px;
+  }
+  #lockImg {
+    position: absolute;
+    top: 55vh;
+    left: 16vw;
+  }
+  #emailImage {
+    top: 37.7vh;
+    left: 17.5vw;
+  }
+  #wrongid {
+    top: 43vh;
+    left: 15vw;
+  }
+  #wrongpass {
+    top: 62vh;
+    left: 15vw;
+  }
+}

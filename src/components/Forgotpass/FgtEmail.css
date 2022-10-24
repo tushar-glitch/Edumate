@@ -8,9 +8,10 @@
   top: 48vh;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
+  padding-left: 7.5vh;
 }
 
-#btn-continue {
+#btnContinue {
   box-sizing: border-box;
   font-size: 1.1rem;
   position: absolute;
@@ -26,11 +27,11 @@
   cursor: pointer;
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
 }
-#btn-continue:hover {
+#btnContinue:hover {
   background: #7971ff;
 }
 
-#btn-continue:active {
+#btnContinue:active {
   transform: scale(0.99);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
@@ -39,9 +40,10 @@
   position: absolute;
   width: 351px;
   height: 34px;
-  left: 820px;
-  top: 377px;
-
+  left:55.5vw;
+  top: 55.5vh;
+  /* padding-left:6vh; */
+background: none;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
@@ -74,4 +76,56 @@
   z-index: 5;
   top: 49.7vh;
   left: 56vw;
+}
+@media (max-width:380px) {
+  /* #edu{
+    visibility: hidden;
+  } */
+  #pwdHead {
+    position: absolute;
+width: 312px;
+height: 40px;
+left: 15vw;
+top: 31vh;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 20px;
+letter-spacing: 0.05em;
+
+color: #000000;
+  }
+  #inputBox {
+    box-sizing: border-box;
+    position: absolute;
+    width: 312px;
+    height: 54px;
+    left:13.5vw;
+    top: 37vh;
+    
+  }
+  #btnContinue {
+    position:absolute;
+    width: 312px;
+    height: 54px;
+    top:48vh;
+    left:13.5vw;
+  }
+  #emailIcon {
+    top:39vh;
+    left:18vw;
+  }
+  .authImage {
+    visibility: visible;
+    top:49vh;
+    left:20vw;
+  }
+  .BgHead {
+    top:23vh;
+    font-size:33px;
+    left:3.5vw;
+    width:100vw;
+  }
 }

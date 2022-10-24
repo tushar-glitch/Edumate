@@ -44,7 +44,7 @@
   /* z-index: 1; */
   position: absolute;
   left: 50vw;
-  top:9.2vh;
+  top: 9.2vh;
   width: 39vw;
   height: 83.46vh;
   background: #ffffff;
@@ -87,21 +87,51 @@
 }
 .authImage {
   z-index: 5;
-  position:absolute;
-  width:58vw;
-height: 46.36vh;
-left: 2.5vw;
-top: 26vh;
+  position: absolute;
+  width: 58vw;
+  height: 46.36vh;
+  left: 2.5vw;
+  top: 26vh;
   background: none;
 }
-/* @media (max-width:992px){
+@media (max-width: 380px) {
+  * {
+    overflow: hidden;
+    height:50vh;
+  }
   body {
-  background-color:#EEF1FF;
+    background-color: #eef1ff;
   }
   .panel1 {
     visibility: hidden;
   }
-  .panel2 .circle1 .circle2 {
-    display:none;
+  .panel2 {
+    visibility: hidden;
   }
-} */
+  .circle1 {
+    visibility: hidden;
+  }
+  .circle2 {
+    visibility: hidden;
+  }
+  .authImage {
+    visibility: hidden;
+  }
+  #pumpkin {
+    visibility: hidden;
+  }
+  .edumate {
+    position: absolute;
+    width: 272px;
+    height: 66px;
+    left: 17vw;
+    top: 13vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    letter-spacing: 0.05em;
+    color: #6c63ff;
+  }
+}

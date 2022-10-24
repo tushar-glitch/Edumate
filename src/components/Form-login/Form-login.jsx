@@ -38,7 +38,6 @@ const Formlogin = () => {
     console.log(data);
     return (
         <>
-            {/* <h1 id='heading'>Welcome to Edumate</h1> */}
             <h5 id='user-id'>User id</h5>
             <EmailIMG />
             <input type="text" id='input-box1' placeholder='Enter your username' onChange={handleuserid} value={userid} /><br />
@@ -46,10 +45,6 @@ const Formlogin = () => {
             <h5 id='password'>Password</h5>
             <LockIMG />
             <h1 id='heading'>Welcome to Edumate</h1>
-            <h5 id='user-id'>User id</h5>
-            <input type="text" id='input-box1' placeholder='Enter your username' onChange={handleuserid} value={userid} /><br />
-            <span id='wrongid'>Incorrect userId. Please try again.</span>
-            <h5 id='password'>Password</h5>
             <input type="text" id='input-box2' placeholder='Enter your password' onChange={handlepass} value={pass} /><br />
             <span id="wrongpass">Invalid Password format</span>
             <button id="btn-submit">LOGIN</button>

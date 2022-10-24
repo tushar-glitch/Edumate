@@ -3,7 +3,7 @@ import Background from "../Background/Background";
 import EmailImg from "./emailImg";
 import './FgtEmail.css'
 import EmailIcon from "./emailIcon";
-function Email() {
+function FgtEmail() {
   const [email, setEmail] = useState('')
   function handleemail(e) {
     setEmail(e.target.value)
@@ -29,10 +29,10 @@ function Email() {
       <br />
       <span id='wrongemail'>Please enter a valid email id</span>
       <button id="resend-otp"></button>
-      <button id="btn-continue" onClick={checkemail}>CONTINUE</button>
+      <button id="btnContinue" onClick={checkemail}>CONTINUE</button>
       <EmailImg />
       
     </>
   );
 }
-export default Email;
+export default FgtEmail;

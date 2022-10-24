@@ -1,6 +1,6 @@
 import React from "react";
 import LoginImg from "./Loginimg";
-
+import  "./login.css";
 function LogIn() {
   return (
     <>

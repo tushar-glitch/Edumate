@@ -7,7 +7,7 @@ function Background() {
     <>
       <div className="circle1"></div>
       <div className="circle2"></div>
-      <p className="edumate">Edumate</p>
+      <p className="edumate" id="edu">Edumate</p>
       <div className="panel1"></div>
       <div className="panel2"></div>
       <p><Image /></p>

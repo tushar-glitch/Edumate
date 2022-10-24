@@ -21,9 +21,8 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 17px;
-  /* identical to box height */
-  background-color: white;
   color: #000000;
+  background: none;
 }
 #resend-otp {
   position: absolute;
@@ -51,24 +50,79 @@
   border: 1px solid #d9d9d9;
   border-radius: 5px;
 
-  font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 22px;
-color: #FFFFFF;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
 }
 #OTPid {
+  position: absolute;
+  /* width: 20vw; */
+  height: 7vh;
+  left: 56vw;
+  top: 38vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  color: #000000;
+  background: none;
+}
+@media (max-width: 380px) {
+  /* #edu{
+    visibility: hidden;
+  } */
+  #OTPid {
     position: absolute;
-/* width: 20vw; */
-height: 7vh;
-left: 56vw;
-top: 38vh;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 17px;
-line-height: 20px;
-color: #000000;
-background: none;
+    width: 312px;
+    height: 40px;
+    left: 15vw;
+    top: 31vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+  #input-box {
+    box-sizing: border-box;
+    position: absolute;
+    width: 312px;
+    height: 54px;
+    left: 13.5vw;
+    top: 37vh;
+  }
+  #btn-continue {
+    top: 53vh;
+    width: 312px;
+    height: 54px;
+    left: 13.5vw;
+  }
+  .authImage {
+    visibility: visible;
+    top: 49vh;
+    left: 20vw;
+  }
+  .BgHead {
+    top: 23vh;
+    font-size: 33px;
+    left: 3.5vw;
+    width: 100vw;
+  }
+  #no-otp-recieved {
+    top: 44.5vh;
+    left: 14vw;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  #resend-otp {
+    top: 43.3vh;
+    left: 54vw;
+    font-size: 19px;
+  }
 }

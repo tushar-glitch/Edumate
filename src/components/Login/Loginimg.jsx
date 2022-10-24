@@ -1,7 +1,7 @@
 import React from "react";
 function loginImg() {
   return (
-    <svg className="authImage" width="400" height="463" viewBox="0 0 400 463" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="authImage" id="LoginImage" width="400" height="463" viewBox="0 0 400 463" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_55_746)">
 <path d="M11.351 350.554C14.5497 343.562 19.5081 333.657 25.3638 329.55C40.4371 319.004 76.3053 300.749 139.04 330.645C209.355 364.148 211.341 302.678 280.363 298.436C330.086 295.389 384.029 308.475 395.728 333.529C406.729 357.045 397.418 414.349 354.086 410.306C275.999 403.017 281.12 419.972 206.156 449.256C129.443 479.21 113.036 401.636 41.0314 424.645C-6.55403 439.84 -3.21542 382.577 11.351 350.554Z" fill="#E9EDFB"/>
 <path d="M333.693 51.8854L257.965 248.77H262.737L333.693 51.8854Z" fill="#E9EDFB"/>
