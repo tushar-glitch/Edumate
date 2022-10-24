@@ -7,6 +7,7 @@ import ResetPwd from "./components/resetPwd/resetPwd";
 import Email from "./components/Forgotpass/email";
 import Login from "./components/Login/Login";
 import Formlogin from './components/Form-login/Form-login'
+// import {BrowserRouter} from 'react-router-dom'
 function App() {
   return (
     <>
