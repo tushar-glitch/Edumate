@@ -88,3 +88,18 @@
     transform: scale(0.99);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
+#wrongpass {
+    position: relative;
+    width: 5vw;
+    height: 5vh;
+    left: 11vw;
+    top: -20vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: white;
+    color: #ff0000;
+    display: none;
+}
