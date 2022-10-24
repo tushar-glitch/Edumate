@@ -7,18 +7,22 @@ import ResetPwd from "./components/resetPwd/resetPwd";
 import LogIn from "./components/LogIN/LogIn";
 import Formlogin from "./components/Form-login/Form-login";
 import FgtEmail from "./components/Forgotpass/FgtEmail";
+// import Email from "./components/Forgotpass/email";
+// import Login from "./components/Login/Login";
+// import {BrowserRouter} from 'react-router-dom'
 function App() {
-  return (
-    <>
-      <Background />
-      <LogIn />
-      {/* <OTP /> */}
-      <Formlogin />
+  return <div>
+     <Background />
+  </div>
+     
+      {/* <LogIn /> */}
+      // <Formlogin />
+      
       {/* <FgtEmail /> */}
+      {/* <OTP /> */}
    {/* <ResetPwd /> */}
    {/* <Password />  */}
-    </>
-  );
+    
 }
 
 export default App;

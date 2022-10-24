@@ -1,6 +1,172 @@
 * {
-  z-index: 2;
+    z-index: 2;
 }
+
+#user-id {
+    position: absolute;
+    width: 5.5vw;
+    height: 3.3vh;
+    left: 56vw;
+    top: 36vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 20px;
+    background-color: white;
+}
+
+#password {
+    position: absolute;
+    width: 15.5vw;
+    height: 3.3vh;
+    left: 56vw;
+    top: 51vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 20px;
+    background-color: white;
+}
+
+#input-box1 {
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    position: absolute;
+    width: 26vw;
+    height: 6.5vh;
+    left: 56vw;
+    top: 40vh;
+    font-weight: 1000;
+    font-size: 1.1rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#input-box2 {
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    position: absolute;
+    width: 26vw;
+    height: 6.5vh;
+    left: 56vw;
+    top: 55vh;
+    font-weight: 1000;
+    font-size: 1.1rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    background-color: white;
+}
+
+::placeholder {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    padding-left: 7vh;
+
+    color: #afafaf;
+}
+
+#wrongid {
+    position: absolute;
+    width: 50vw;
+    height: 5vh;
+    left: 115vw;
+    top: 52vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: white;
+    color: #ff0000;
+    display: none;
+}
+
+#wrongpass {
+    position: absolute;
+    width: 50vw;
+    height: 5vh;
+    left: 116vw;
+    top: 75vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: white;
+    color: #ff0000;
+    display: none;
+}
+
+#btn-submit {
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    position: absolute;
+    width: 55vw;
+    height: 8vh;
+    left: 115vw;
+    top: 80vh;
+    letter-spacing: 1px;
+    background: #6c63ff;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+}
+
+#btn-submit:hover {
+    background: #7971ff;
+}
+
+#btn-submit:active {
+    transform: scale(0.99);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#heading {
+    position: absolute;
+    /* width: vw; */
+    height: 7vh;
+    left: 55vw;
+    top: 19vh;
+    background-color: white;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+#emailImage {
+    background: none;
+    width: 25px;
+    height: 19px;
+    position: absolute;
+    top: 43.8vh;
+    left: 52.7vw;
+    z-index: 5;
+}
+
+#lockImg {
+    background: none;
+    width: 30px;
+    height: 21px;
+    position: absolute;
+    top: 61.4vh;
+    left: 52.7vw;
+    z-index: 5;
+}
+
+>>>>>>> e26f8a8b9580cf8db36cddc5c9d576f7f2d71fb0
 #user-id {
   position: absolute;
   width: 5.5vw;
@@ -61,6 +227,48 @@
   border-radius: 5px;
   background-color: white;
   padding-left: 7vh;
+    position: absolute;
+    width: 107px;
+    height: 20px;
+    left: 800px;
+    top: 398px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 20px;
+    background-color: white;
+}
+
+#input-box1 {
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    position: absolute;
+    width: 384px;
+    height: 54px;
+    left: 800px;
+    top: 297px;
+    font-weight: 1000;
+    font-size: 1.1rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#input-box2 {
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    position: absolute;
+    width: 384px;
+    height: 54px;
+    left: 800px;
+    top: 428px;
+    font-weight: 1000;
+    font-size: 1.1rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    background-color: white;
 }
 
 ::placeholder {
@@ -189,6 +397,12 @@
     width: 24vw;
     height: 20px;
     font-family: "Montserrat";
+    width: 404px;
+    height: 44px;
+    left: 800px;
+    top: 124px;
+    background-color: white;
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -246,4 +460,35 @@
     top: 62vh;
     left: 15vw;
   }
+}
+
+
+input {
+    text-align: center;
+}
+
+#forgot-pass {
+    position: absolute;
+    width: 176px;
+    height: 17px;
+    left: 1030px;
+    top: 494px;
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    border: 0px;
+    color: #000000;
+}
+.authImage{
+    position: relative;
+    left: 250px;
+    height: 500px;
+    width: 400px;
+    top: 100px;
 }
