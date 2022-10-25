@@ -86,12 +86,12 @@ background: none;
 width: 312px;
 height: 40px;
 left: 15vw;
-top: 31vh;
+top: 34.5vh;
 
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
-font-size: 17px;
+font-size: 15px;
 line-height: 20px;
 letter-spacing: 0.05em;
 
@@ -103,29 +103,29 @@ color: #000000;
     width: 312px;
     height: 54px;
     left:13.5vw;
-    top: 37vh;
+    top: 42vh;
     
   }
   #btnContinue {
     position:absolute;
     width: 312px;
     height: 54px;
-    top:48vh;
+    top:53vh;
     left:13.5vw;
   }
   #emailIcon {
-    top:39vh;
-    left:18vw;
+    top:44.5vh;
+    left:17.5vw;
   }
   .authImage {
     visibility: visible;
-    top:49vh;
-    left:20vw;
+    top:53vh;
+    left:22vw;
   }
   .BgHead {
-    top:23vh;
-    font-size:33px;
-    left:3.5vw;
+    top:25vh;
+    font-size:30px;
+    left:4vw;
     width:100vw;
   }
 }

@@ -6,4 +6,7 @@
     #LoginImage {
         visibility: hidden;
     }
+    .authImage {
+        visibility: hidden;
+    }
 }

@@ -2,8 +2,8 @@
   position: absolute;
   width: 220px;
   height: 20px;
-  left: 54vw;
-  top: 38vh;
+  left: 56vw;
+  top: 36vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -18,19 +18,20 @@
   position: absolute;
   width: 26vw;
   height: 6.5vh;
-  left: 54vw;
-  top: 42vh;
+  left: 56vw;
+  top: 40vh;
   background-color: white;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
+  padding-left:20px;
 }
 
 #confirm-pass {
   position: absolute;
   width: 190px;
   height: 20px;
-  left: 54vw;
-  top: 53vh;
+  left: 56vw;
+  top: 51vh;
   background: none;
   font-family: "Montserrat";
   font-style: normal;
@@ -45,11 +46,12 @@
   position: absolute;
   width: 26vw;
   height: 6.5vh;
-  left: 54vw;
-  top: 57.3vh;
+  left: 56vw;
+  top: 55.3vh;
   background-color: white;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
+  padding-left:20px;
 }
 
 #btn-reset {
@@ -58,9 +60,8 @@
   position: absolute;
   width: 26vw;
   height: 6.5vh;
-  left: 54vw;
-  top: 70vh;
-
+  left: 56vw;
+  top: 68vh;
   background: #6c63ff;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
