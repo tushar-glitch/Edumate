@@ -1,5 +1,6 @@
-/* #img{
-    height: 100px;
-    width: 100px;
-    background-color: red;
-} */
+@media (max-width: 380px) {
+  * {
+    height: 50vh;
+    overflow: hidden;
+  }
+}
