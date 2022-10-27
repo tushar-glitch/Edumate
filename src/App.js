@@ -11,9 +11,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<LogIn />} />
-        <Route path="/rstPwd" exact element={<ResetPwd />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
-        <Route path="/otp" exact element={<OTP />} />
+        <Route path="/rstPwd" exact element={<ResetPwd />} />
+        <Route path="/otp" element={<OTP />} />
         <Route path="/formLogin" exact element={<Formlogin />} />
       </Routes>
     </BrowserRouter>
