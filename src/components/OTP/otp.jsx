@@ -1,26 +1,29 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Background from "../Background/Background";
 import OTPImg from "./otpImg";
 import "./otp.css";
+import axios from "axios";
 
-function OTP() {
-  const [email, setEmail] = useState("");
-  function handleemail(e) {
-    setEmail(e.target.value);
+function OTP(props) {
+  const [otp, setOtp] = useState("");
+  function handleotp(e) {
+    setOtp(e.target.value);
   }
   const isnum = /^\d+$/;
-
-  // function checkemail(e) {
-  //     e.preventDefault()
-  //     if (rightemail.test(email)) {
-  //         document.getElementById('wrongemail').style.display = "none";
-  //         console.log('true');
-  //     }
-  //     else if (email) {
-  //         document.getElementById('wrongemail').style.display = "block";
-  //     }
-  // }
+  function postotp(){
+    var email = localStorage.getItem("email")
+    console.log(email);
+    var data = { email, otp }
+    axios.post("https://erp-edumate.herokuapp.com/api/user/verifyotp/", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    localStorage.setItem("otp",otp)
+  }
   return (
     <>
       <Background />
@@ -30,14 +33,14 @@ function OTP() {
         type="text"
         id="input-box"
         placeholder="0 0 0 0"
-        value={email}
-        onChange={handleemail}
+        value={otp}
+        onChange={handleotp}
       />
       <br />
       <span id="no-otp-recieved">Don’t recieve an OTP?</span>
       <button id="resend-otp">Resend OTP</button>
       <Link to="/rstPwd">
-        <button id="btn-continue">CONTINUE</button>
+        <button id="btn-continue" onClick={postotp}>CONTINUE</button>
       </Link>
       <OTPImg />
     </>

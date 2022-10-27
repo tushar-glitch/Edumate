@@ -2,16 +2,17 @@ import React, {useState, useEffect} from "react";
 import Background from "../Background/Background";
 import ResetImg from "./resPwdImg";
 import './resetPwd.css'
+import axios from "axios";
 
 function ResetPwd (){
-    const [pass, setPass] = useState("")
+    const [password, setPassword] = useState("")
     function handlepass(e) {
-        setPass(e.target.value)
+        setPassword(e.target.value)
     }
-    const [conpass, setConPass] = useState("")
+    const [confirmpassword, setConfirmPassword] = useState("")
     function handleconpass(e) {
-        setConPass(e.target.value)
-        if (pass == (e.target.value)) {
+        setConfirmPassword(e.target.value)
+        if (password == (e.target.value)) {
             console.log("same!!");
             document.getElementById('not-matched').style.display = "none";
         }
@@ -21,24 +22,37 @@ function ResetPwd (){
     }
     const rightpass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/
     useEffect(() => {
-        if (rightpass.test(pass)) {
+        if (rightpass.test(password)) {
             document.getElementById('wrongpass1').style.display = "none";
             console.log('true');
         }
-        else if(pass){
+        else if(password){
             document.getElementById('wrongpass1').style.display = "block";
         }
-    }, [pass])
+    }, [password])
+    function postpass() {
+        var email = localStorage.getItem("email")
+        var otp = localStorage.getItem('otp')
+        var data = { email, otp, password, confirmpassword }
+        console.log(data);
+        axios.post("https://erp-edumate.herokuapp.com/api/user/changepassword/", data)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
     return <>
     <Background />
         <h1 className="BgHead">&emsp;&ensp;Reset Password</h1>
         <p id="new-pass">New Password</p>
-        <input type="password" id="new-pass-input" placeholder="New Password" onChange={handlepass} value={pass} />
+        <input type="" id="new-pass-input" placeholder="New Password" onChange={handlepass} value={password} />
         <span id="wrongpass1">Invalid Password format</span>
         <p id="confirm-pass">Confirm Password</p>
-        <input type="password" id="confirm-pass-input" placeholder="Confirm Password" onChange={handleconpass} value={conpass} /> 
-        {/* <span id="not-matched">Password not matched!</span> */}
-        <button id="btn-reset">RESET PASSWORD</button>
+        <input type="" id="confirm-pass-input" placeholder="Confirm Password" onChange={handleconpass} value={confirmpassword} /> 
+        <span id="not-matched">Password not matched!</span>
+        <button id="btn-reset" onClick={postpass}>RESET PASSWORD</button>
         <ResetImg />
     </>
 }

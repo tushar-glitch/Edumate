@@ -5,6 +5,7 @@ import EmailImg from "./emailImg";
 import "./FgtEmail.css";
 import EmailIcon from "./emailIcon";
 import axios from 'axios'
+import perdata from '../test'
 function FgtEmail() {
   const [email, setEmail] = useState("");
   function handleemail(e) {
@@ -23,14 +24,17 @@ function FgtEmail() {
   }
   var data = {email}
   function postemail() {
-    axios.post("https://erp-edumate.herokuapp.com/api/user/resetpassword/", data)
+    axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", data)
       .then((res) => {
         console.log(res);
       })
       .catch((err) => {
         console.log(err);
       })
+    localStorage.setItem("email", email);
+    // console.log(perdata);
   }
+  // perdata = JSON.stringify(data);
   return (
     <div>
       <Background />

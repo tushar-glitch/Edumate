@@ -25,7 +25,3 @@ export default EmailIMG;
 
 
 
-var email = userReg.email;
-var password = userReg.password;
-var data = { email, password };
-axios.post('link',data)
