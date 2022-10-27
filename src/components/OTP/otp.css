@@ -1,0 +1,164 @@
+#input-box {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 56vw;
+  top: 43vh;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+
+#no-otp-recieved {
+  position: absolute;
+  width: 55vw;
+  height: 5vh;
+  left: 56vw;
+  top: 52vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17px;
+  color: #000000;
+  background: none;
+}
+#resend-otp {
+  position: absolute;
+  width: 189px;
+  height: 37px;
+  left: 65.8vw;
+  top: 50.5vh;
+  background: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  border: none;
+  text-decoration: underline;
+}
+#btn-continue {
+  box-sizing: border-box;
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 56vw;
+  top: 60vh;
+  background: #6c63ff;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+}
+#OTPid {
+  position: absolute;
+  /* width: 20vw; */
+  height: 7vh;
+  left: 56vw;
+  top: 38vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  background: none;
+}
+@media (max-width: 380px) {
+  body {
+    overflow:hidden;
+  }
+  #OTPid {
+width:80vw;
+left: 13.5vw;
+top: 37vh;
+font-weight: 600;
+font-size: 16px;
+  }
+  #input-box {
+    width: 73vw;
+    height: 54px;
+    left: 13.5vw;
+    top: 41.5vh;
+
+  }
+  #btn-continue {
+    width: 73vw;
+    height: 54px;
+    top:58vh;
+    left:13.5vw;
+  }
+  /* .authImage {
+    visibility: visible;
+    top:57vh;
+    left:26vw;
+  } */
+  .BgHead {
+    top: 23vh;
+    font-size: 33px;
+    width:35vw;
+  font-weight:600;
+  }
+  #no-otp-recieved {
+    top: 51vh;
+    left: 13.5vw;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  #resend-otp {
+    top: 49.5vh;
+    left: 46vw;
+    font-size: 15px;
+  }
+}
+@media (min-width:380px) and (max-width:950px)
+{
+  body {
+    overflow:hidden;
+  }
+  #OTPid {
+width:80vw;
+left: 15vw;
+top: 40.2vh;
+font-weight: 600;
+font-size: 16.5px;
+  }
+  #input-box {
+    position: absolute;
+    width: 73vw;
+    height: 54px;
+    left: 15vw;
+    top: 43vh;
+  }
+  #btn-continue {
+    width: 73vw;
+    height: 54px;
+    top:58vh;
+    left:13.5vw;
+  }
+  .BgHead {
+    width:50vw;
+    height:10vh;
+    left:26vw;
+    top:23vh;
+  }
+  #no-otp-recieved {
+    top: 51vh;
+    left: 15vw;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  #resend-otp {
+    top: 49.5vh;
+    left: 47.9vw;
+    font-size: 15px;
+  }
+}

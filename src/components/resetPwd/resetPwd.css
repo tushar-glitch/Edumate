@@ -1,0 +1,199 @@
+#new-pass {
+  position: absolute;
+  width: 220px;
+  height: 20px;
+  left: 56vw;
+  top: 36vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  background: none;
+}
+
+#new-pass-input {
+  box-sizing: border-box;
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 56vw;
+  top: 40vh;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+#confirm-pass {
+  position: absolute;
+  width: 190px;
+  height: 20px;
+  left: 56vw;
+  top: 51vh;
+  background: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+#confirm-pass-input {
+  box-sizing: border-box;
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 56vw;
+  top: 55.3vh;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding-left: 20px;
+  font-size:16px;
+}
+
+#btn-reset {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 56vw;
+  top: 68vh;
+  font-size: 16px;
+  background: #6c63ff;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+}
+
+#btn-reset:hover {
+  background: #7971ff;
+}
+
+#btn-reset:active {
+  transform: scale(0.99);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+#wrongpass {
+  position: absolute;
+  width: 5vw;
+  height: 5vh;
+  left: 50vw;
+  top: 5vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: white;
+  color: #ff0000;
+  display: none;
+}
+@media (max-width:380px) {
+  * {
+    overflow: hidden;
+  }
+  #new-pass-input {
+    position: absolute;
+    width: 73vw;
+    height: 7.5vh;
+    left: 15vw;
+    top: 37vh;
+  }
+  #confirm-pass-input{
+    position: absolute;
+    width: 73vw;
+    height: 7.5vh;
+    left: 15vw;
+    top: 52vh;
+  }
+  #new-pass {
+    position: absolute;
+    top: 34vh;
+    left: 15vw;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+  }
+  #confirm-pass {
+    position: absolute;
+    top: 49vh;
+    left: 15vw;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+  }
+  #btn-reset {
+    position: absolute;
+    width: 73vw;
+    height: 7.5vh;
+    left: 15vw;
+    top: 65vh;
+    background: #6c63ff;
+    border-radius: 5px;
+  }
+  #wrongpass {
+    top:50vh;
+  }
+  .BgHead {
+    top:25vh;
+    font-size:27px;
+    margin-left:-30px;
+    font-weight:600;
+  }
+}
+@media (min-width:380px) and (max-width:950px) {
+  * {
+    overflow: hidden;
+  }
+  #new-pass-input {
+    width: 73vw;
+    height: 54px;
+    left: 15vw;
+    top: 39vh;
+  }
+  #confirm-pass-input{
+    width: 73vw;
+    height: 54px;
+    left: 15vw;
+    top: 51vh;
+  }
+  #new-pass {
+    top: 36vh;
+    left: 15.4vw;
+   width: 30vw;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  #confirm-pass {
+    top: 48.2vh;
+    left: 15.4vw;
+     width: 40vw;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  #btn-reset {
+    width: 73vw;
+    height: 54px;
+    left: 15vw;
+    top: 63vh;
+    background: #6c63ff;
+    border-radius: 5px;
+  }
+  #wrongpass {
+    top:50vh;
+  }
+  .BgHead {
+    width:100vw;
+    height:10vh;
+    left:6vw;
+    top:23vh;
+  }
+}

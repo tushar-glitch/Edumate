@@ -1,0 +1,6 @@
+@media (max-width: 380px) {
+  * {
+    height: 50vh;
+    overflow: hidden;
+  }
+}
