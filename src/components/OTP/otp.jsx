@@ -44,7 +44,19 @@ function OTP() {
     // }
 
   }
-
+  function resendotp() {
+    axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
+    .then((res) => {
+      console.log(res.data);
+      localStorage.removeItem("email")
+      localStorage.setItem("email", email);
+    })
+    .catch((err) => {
+      console.log(err);
+      // document.getElementById("wrongemail").style.display = "block";
+      // localStorage.setItem("email","");
+    })
+  }
   return (
     <>
       <Background />
@@ -59,7 +71,7 @@ function OTP() {
       />
       <br />
       <span id="no-otp-recieved">Don’t recieve an OTP?</span>
-      <button id="resend-otp">Resend OTP</button>
+      <button id="resend-otp" onClick={resendotp}>Resend OTP</button>
       <span id="timer"><OtpTimer
         minutes={0}
         seconds={59}

@@ -27,6 +27,7 @@ function ResetPwd() {
             document.getElementById('not-matched1').style.display = "block";
         }
     }
+    const [rdtLogin, setRdtLogin] = useState(true);
     const [show1, setShow1] = useState(false);
     function showHide1() {
         setShow1(!show1);
@@ -54,8 +55,9 @@ function ResetPwd() {
             axios.post("https://erp-edumate.herokuapp.com/api/user/changepassword/", data)
                 .then((res) => {
                     console.log(res);
-                    alert(res.data.msg)
+                    alert('Your password has been changed successfully!')
                     setIsPassChanged(true)
+                    setRdtLogin(true);
                 })
                 .catch((err) => {
                     console.log(err);
@@ -77,12 +79,16 @@ function ResetPwd() {
         ) : (
             <FontAwesomeIcon icon={faEyeSlash} id="eye2" onClick={showHide2} />
         )}
-        {ispasschanged?(<Link to="/"></Link>):(<Link to="/rstPwd"></Link>)}
+        {/* {ispasschanged?(<Link to="/"></Link>):(<Link to="/rstPwd"></Link>)} */}
         <span id="wrongpass1">Invalid Password format</span>
         <p id="confirm-pass">Confirm Password</p>
         <input type={show2 ? "text" : "password"} id="confirm-pass-input" placeholder="Confirm Password" onChange={handleconpass} value={confirmpassword} />
         <span id="not-matched1">Password not matched!</span>
-        <button id="btn-reset" onClick={postpass}>RESET PASSWORD</button>
+        {(truepass&&passmatch)?(<Link to="/">
+      <button id="btn-reset" onClick={postpass}>RESET PASSWORD</button>
+      </Link>):(<Link to="/rstPwd">
+      <button id="btn-reset" onClick={postpass}>RESET PASSWORD</button>
+       </Link>)}
         <ResetImg />
     </>
 }
