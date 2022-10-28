@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Edumate/static/css/main.a1921dd4.css",
+    "main.js": "/Edumate/static/js/main.e6daa02d.js",
+    "index.html": "/Edumate/index.html",
+    "main.a1921dd4.css.map": "/Edumate/static/css/main.a1921dd4.css.map",
+    "main.e6daa02d.js.map": "/Edumate/static/js/main.e6daa02d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1921dd4.css",
+    "static/js/main.e6daa02d.js"
+  ]
+}
