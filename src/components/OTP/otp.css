@@ -83,6 +83,20 @@
   color: #000000;
   background: none;
 }
+#timer{
+  position: absolute;
+  width: 2.4vw;
+  height: 7vh;
+  left: 74vw;
+  top: 51.6vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 20px;
+  color: #000000;
+  background-color: white;
+}
 @media (max-width: 380px) {
   body {
     overflow:hidden;
