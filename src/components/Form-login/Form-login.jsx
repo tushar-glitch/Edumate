@@ -6,6 +6,8 @@ import EmailIMG from "./email-icon";
 import LockIMG from "./LockImg";
 import { Link } from "react-router-dom";
 import Loginimg from "./loginImg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
 const Formlogin = () => {
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
@@ -14,6 +16,10 @@ const Formlogin = () => {
   }
   function handlepass(e) {
     setPassword(e.target.value);
+  }
+  const [show, setShow] = useState(false);
+  function showHide() {
+    setShow(!show);
   }
   var isnum = /^\d+$/;
   const [iscorrectpass, setIsCorrectPass] = useState(false);
@@ -52,19 +58,19 @@ const Formlogin = () => {
         })
         .catch((err) => {
           console.log(err);
-          alert("Login failed");
+          alert("Login failed. Check your userId and password and try again");
         });
     }
   }
   return (
     <div>
     <Background />
-      <h5 id="user-id">User ID</h5>
+      <h5 id="user-id">User id</h5>
       <EmailIMG />
       <input
         type="text"
         id="input-box1"
-        placeholder="Enter your userId"
+        placeholder="Enter your username"
         onChange={handleuserID}
         value={userID}
       />
@@ -74,13 +80,18 @@ const Formlogin = () => {
       <LockIMG />
       <h1 id="heading">&emsp;Welcome to Edumate</h1>
       <input
-        type="text"
+        type={show ? "text" : "password"}
         id="input-box2"
         placeholder="Enter your password"
         onChange={handlepass}
         value={password}
       />
-      <p id="openEye"><i class="fa-solid fa-eye"></i></p>
+      {show ? (
+            <FontAwesomeIcon icon={faEye} id="eye" onClick={showHide} />
+          ) : (
+            <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
+          )}
+      {/* <p id="openEye"><i class="fa-solid fa-eye"></i></p> */}
       <span id="wrongpass">Invalid Password format</span>
       <button id="btn-submit" type="submit" onClick={postdata}>
         LOGIN

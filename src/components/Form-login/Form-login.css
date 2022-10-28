@@ -107,6 +107,14 @@
   background: none;
 }
 
+#eye {
+  position: absolute;
+  z-index: 5;
+  top: 57vh;
+  left: 80vw;
+  background-color: white;
+cursor: pointer;
+}
 #btn-submit {
   box-sizing: border-box;
   font-size: 1.1rem;

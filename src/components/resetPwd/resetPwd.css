@@ -81,12 +81,12 @@
   transform: scale(0.99);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
-#wrongpass {
+#wrongpass1 {
   position: absolute;
-  width: 5vw;
-  height: 5vh;
-  left: 50vw;
-  top: 5vh;
+  width: 12vw;
+  height: 3vh;
+  left: 56vw;
+  top: 47vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
@@ -95,6 +95,37 @@
   background-color: white;
   color: #ff0000;
   display: none;
+}
+  #not-matched1 {
+    position: absolute;
+    width: 12vw;
+    height: 3vh;
+    left: 56vw;
+    top: 63vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: white;
+    color: #ff0000;
+    display: none;
+  }
+#eye1 {
+  position: absolute;
+  z-index: 5;
+  top: 42vh;
+  left: 80vw;
+  background-color: white;
+cursor: pointer;
+}
+#eye2 {
+  position: absolute;
+  z-index: 5;
+  top: 57.3vh;
+  left: 80vw;
+  background-color: white;
+cursor: pointer;
 }
 @media (max-width:380px) {
   * {
@@ -139,7 +170,7 @@
     background: #6c63ff;
     border-radius: 5px;
   }
-  #wrongpass {
+  #wrongpass1 {
     top:50vh;
   }
   .BgHead {
@@ -187,7 +218,7 @@
     background: #6c63ff;
     border-radius: 5px;
   }
-  #wrongpass {
+  #wrongpass1 {
     top:50vh;
   }
   .BgHead {
