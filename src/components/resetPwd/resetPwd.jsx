@@ -42,7 +42,7 @@ const [rdtLogin, setRdtLogin] = useState(false);
     console.log(email);
     var otp = localStorage.getItem("otp");
     var data={email,otp,password:pass,confirmpassword:Cpass};
-      if (isPass && isCPass ) {
+      if (isPass && isCPass && pass===Cpass) {
         axios
           .post("https://erp-edumate.herokuapp.com/api/user/changepassword/",data)
           .then((res) => {
@@ -52,8 +52,11 @@ const [rdtLogin, setRdtLogin] = useState(false);
           })
           .catch((err) => {
             console.log(err);
-            alert("Password is not chamged, try it again");
+            alert("Password is not changed, try it again");
           });
+      }
+      else{
+          document.getElementById("wrongpass").style.display = "block";
       }
   }
   return (
@@ -76,8 +79,11 @@ const [rdtLogin, setRdtLogin] = useState(false);
         placeholder="Confirm Password"
         onChange={handleCfmPass}
       />
-      {rdtLogin?(<Link to="/"> <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button></Link>):(<Link to="/"> <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button></Link>)}
-      {/* <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button> */}
+      {rdtLogin?(<Link to="/">
+      <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
+      </Link>):(<Link to="/rstPwd">
+      <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
+       </Link>)}
       <ResetImg />
     </>
   );
