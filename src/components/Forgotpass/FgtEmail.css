@@ -9,8 +9,6 @@
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   padding-left: 7.5vh;
-  background-color: white;
-  outline-color: #6c63ff;
 }
 
 #btnContinue {
@@ -82,6 +80,20 @@ background: none;
 #bghead {
   display:none;
 }
+#msg {
+  position: absolute;
+  width: 22vw;
+  /* height: 20vh; */
+  left: 59vw;
+  top: 84vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
 @media (max-width:380px) {
   *{
     overflow: hidden;
@@ -128,7 +140,7 @@ color: #000000;
     top:26vh;
     font-size:26px;
     left:17vw;
-    width:74vw;
+    width:82vw;
     color:black;
     font-family: "Montserrat";
   }

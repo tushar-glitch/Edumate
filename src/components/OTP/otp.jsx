@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Background from "../Background/Background";
 import OTPImg from "./otpImg";
-import OtpTimer from "otp-timer";
 import axios from "axios";
 import "./otp.css";
 function OTP() {
   const [otp, setOtp] = useState("");
-  const [isCorrectOtp, setIsCorrectOtp] = useState(false);
-  const [timer, setTimer] = useState(59)
+  const [isCorrectOtp,setIsCorrectOtp] = useState(false);
   function handleotp(e) {
     setOtp(e.target.value);
   }
@@ -23,40 +21,29 @@ function OTP() {
   //     setIsCorrectOtp(false);
   //   }
   // }, [otp]);
-  var email = localStorage.getItem("email")
-  const [ckOtp, setCkOtp] = useState(false);
-  function postotp() {
+  let email = localStorage.getItem("email")
+  const [ckOtp,setCkOtp] = useState(false);
+  const [incOTP,setIncOtp] = useState("");
+  const navigate = useNavigate();
+  function postotp(){
     // if(isCorrectOtp){
-
+    console.log(email);
     var data = { email, otp }
     axios.post("https://erp-edumate.herokuapp.com/api/user/verifyotp/", data)
       .then((res) => {
         console.log(res);
-        localStorage.setItem("otp", otp)
+        localStorage.setItem("otp",otp)
         setCkOtp(true);
-        if (res.status == 200)
-          setIsCorrectOtp(true)
-        console.log(isCorrectOtp);
+        navigate("/rstPwd");
       })
       .catch((err) => {
         console.log(err);
+        setIncOtp("Incorrect OTP");
       })
-    // }
-
-  }
-  function resendotp() {
-    axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
-    .then((res) => {
-      console.log(res.data);
-      localStorage.removeItem("email")
-      localStorage.setItem("email", email);
-    })
-    .catch((err) => {
-      console.log(err);
-      // document.getElementById("wrongemail").style.display = "block";
-      // localStorage.setItem("email","");
-    })
-  }
+      console.log(otp);
+  // }
+}
+  console.log(ckOtp);
   return (
     <>
       <Background />
@@ -71,21 +58,14 @@ function OTP() {
       />
       <br />
       <span id="no-otp-recieved">Don’t recieve an OTP?</span>
-      <button id="resend-otp" onClick={resendotp}>Resend OTP</button>
-      <span id="timer"><OtpTimer
-        minutes={0}
-        seconds={59}
-        text=" "
-        // ButtonText="Resend"
-      /></span>
-      {isCorrectOtp ? (<Link to="/rstPwd">
+      <button id="resend-otp">Resend OTP</button>
+      {/* {ckOtp?(<Link to="/rstPwd">
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
-      </Link>) : (<Link to="/otp">
+      </Link>):(<Link to="/otp">
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
-      </Link>)}
-      {/* <Link to="/rstPwd">
+      </Link>)} */}
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
-      </Link> */}
+        <span id="inOtp">{incOTP}</span>
       <OTPImg />
     </>
   );
