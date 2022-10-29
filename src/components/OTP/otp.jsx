@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Background from "../Background/Background";
 import OTPImg from "./otpImg";
 import OtpTimer from "otp-timer";
@@ -13,16 +13,16 @@ function OTP() {
     setOtp(e.target.value);
   }
   const isnum = /^\d+$/;
-  // useEffect(()=>{
-  //   if (isnum.test(otp)) {
-  //     document.getElementById("wrongid").style.display = "none";
-  //     console.log("true");
-  //     setIsCorrectOtp(true);
-  //   } else if (otp) {
-  //     document.getElementById("wrongid").style.display = "block";
-  //     setIsCorrectOtp(false);
-  //   }
-  // }, [otp]);
+  useEffect(()=>{
+    if (isnum.test(otp)) {
+      document.getElementById("wrongid1").style.display = "none";
+      console.log("true");
+      setIsCorrectOtp(true);
+    } else if (otp) {
+      document.getElementById("wrongid1").style.display = "block";
+      setIsCorrectOtp(false);
+    }
+  }, [otp]);
   var email = localStorage.getItem("email")
   const [ckOtp, setCkOtp] = useState(false);
   function postotp() {
@@ -34,9 +34,11 @@ function OTP() {
         console.log(res);
         localStorage.setItem("otp", otp)
         setCkOtp(true);
-        if (res.status == 200)
-          setIsCorrectOtp(true)
-        console.log(isCorrectOtp);
+        if (res.status == 200) {
+          navigate("/rstPwd")
+        }
+          // setIsCorrectOtp(true)
+        // console.log(isCorrectOtp);
       })
       .catch((err) => {
         console.log(err);
@@ -44,18 +46,20 @@ function OTP() {
     // }
 
   }
+  const navigate = useNavigate()
+  
   function resendotp() {
-    axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
-    .then((res) => {
-      console.log(res.data);
-      localStorage.removeItem("email")
-      localStorage.setItem("email", email);
-    })
-    .catch((err) => {
-      console.log(err);
-      // document.getElementById("wrongemail").style.display = "block";
-      // localStorage.setItem("email","");
-    })
+    axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", { email })
+      .then((res) => {
+        console.log(res.data);
+        localStorage.removeItem("email")
+        localStorage.setItem("email", email);
+      })
+      .catch((err) => {
+        console.log(err);
+        // document.getElementById("wrongemail").style.display = "block";
+        // localStorage.setItem("email","");
+      })
   }
   return (
     <>
@@ -68,24 +72,24 @@ function OTP() {
         placeholder="0 0 0 0"
         value={otp}
         onChange={handleotp}
+        maxLength="4"
       />
       <br />
+      <span id="wrongid1">Invalid OTP format</span>
       <span id="no-otp-recieved">Don’t recieve an OTP?</span>
       <button id="resend-otp" onClick={resendotp}>Resend OTP</button>
       <span id="timer"><OtpTimer
         minutes={0}
         seconds={59}
         text=" "
-        // ButtonText="Resend"
+        ButtonText=" "
       /></span>
-      {isCorrectOtp ? (<Link to="/rstPwd">
+      {/* {isCorrectOtp ? (<Link to="/rstPwd">
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
       </Link>) : (<Link to="/otp">
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
-      </Link>)}
-      {/* <Link to="/rstPwd">
-        <button id="btn-continue" onClick={postotp}>CONTINUE</button>
-      </Link> */}
+      </Link>)} */}
+      <button id="btn-continue" onClick={postotp}>CONTINUE</button>
       <OTPImg />
     </>
   );

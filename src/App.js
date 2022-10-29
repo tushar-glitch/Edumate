@@ -8,7 +8,7 @@ import FgtEmail from "./components/Forgotpass/FgtEmail";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return <>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" exact element={<LogIn />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />

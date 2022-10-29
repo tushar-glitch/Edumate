@@ -11,6 +11,7 @@
   padding-left: 15px;
   outline-color: #6c63ff;
   background-color: white;
+  letter-spacing: 15px;
 }
 
 #no-otp-recieved {
@@ -18,7 +19,7 @@
   width: 55vw;
   height: 5vh;
   left: 56vw;
-  top: 52vh;
+  top: 53vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
@@ -32,7 +33,7 @@
   width: 55vw;
   height: 5vh;
   left: 42.8vw;
-  top: 50.5vh;
+  top: 51.5vh;
   background: none;
   font-family: "Montserrat";
   font-style: normal;
@@ -44,6 +45,22 @@
 #resend-otp:hover{
   text-decoration: underline;
   cursor: pointer;
+}
+#wrongid1{
+  position: absolute;
+    width: 12vw;
+    height: 3vh;
+    left: 56vw;
+    top: 50vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: white;
+    color: #ff0000;
+    display: none;
+    z-index: 56;
 }
 #btn-continue {
   box-sizing: border-box;
@@ -88,13 +105,13 @@
   width: 2.4vw;
   height: 7vh;
   left: 74vw;
-  top: 51.6vh;
+  top: 52.6vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 27px;
   line-height: 20px;
-  color: #000000;
+  color: white;
   background-color: white;
 }
 @media (max-width: 380px) {
