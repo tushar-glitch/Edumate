@@ -39,13 +39,12 @@
   height: 6.5vh;
   left: 56vw;
   top: 40vh;
-  font-weight: 500;
+  font-weight: 1000;
   font-size: 1.1rem;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   background-color: white;
   padding-left: 7vh;
-  outline-color: #6c63ff;
 }
 
 #input-box2 {
@@ -56,13 +55,12 @@
   height: 6.5vh;
   left: 56vw;
   top: 55vh;
-  font-weight: 500;
+  font-weight: 1000;
   font-size: 1.1rem;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   background-color: white;
   padding-left: 7vh;
-  outline-color: #6c63ff;
 }
 
 ::placeholder {
@@ -92,10 +90,10 @@
 
 #wrongpass {
   position: absolute;
-  width: 50vw;
-  height: 5vh;
+  width: 26vw;
+  height: 20vh;
   left: 56vw;
-  top: 64vh;
+  top: 62.5vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
@@ -107,14 +105,6 @@
   background: none;
 }
 
-#eye {
-  position: absolute;
-  z-index: 5;
-  top: 57vh;
-  left: 80vw;
-  background-color: white;
-cursor: pointer;
-}
 #btn-submit {
   box-sizing: border-box;
   font-size: 1.1rem;
@@ -122,7 +112,7 @@ cursor: pointer;
   width: 26vw;
   height: 7vh;
   left: 56vw;
-  top: 70vh;
+  top: 76vh;
   letter-spacing: 1px;
   background: #6c63ff;
   border: 1px solid #d9d9d9;
@@ -175,7 +165,7 @@ cursor: pointer;
 }
 #fgtPwd {
   position: absolute;
-  top: 62vh;
+  top: 73vh;
   left: 71.4vw;
   font-family: "Montserrat";
   font-style: normal;
@@ -185,14 +175,31 @@ cursor: pointer;
   color: #000000;
   background: none;
 }
-#fgtPwd:hover{
-  text-decoration: underline;
-}
 #openEye {
   position:absolute;
   top:12vh;
   left:70vw;
   z-index: 5;
+}
+#credential {
+  position: absolute;
+  width: 22vw;
+  /* height: 20vh; */
+  left: 59vw;
+  top: 84vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
+#eye {
+  position:absolute;
+  top:57.4vh;
+  left:79.5vw;
+  background: none;
 }
 @media (max-width: 380px) {
   * {
@@ -236,7 +243,7 @@ cursor: pointer;
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 68.7vh;
+    top: 70vh;
   }
   #lockImg {
     position: absolute;
@@ -256,7 +263,7 @@ cursor: pointer;
     left: 15vw;
   }
   #fgtPwd {
-    top:63.5vh;
+    top:65vh;
     left:48vw;
     font-weight:600;
   }
@@ -303,7 +310,7 @@ cursor: pointer;
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 68.7vh;
+    top: 70vh;
   }
   #lockImg {
     position: absolute;
@@ -323,7 +330,7 @@ cursor: pointer;
     left: 15vw;
   }
   #fgtPwd {
-    top:63.5vh;
+    top:65vh;
     left:45.6vw;
     font-weight:600;
     font-size: 18px;

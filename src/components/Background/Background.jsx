@@ -4,7 +4,7 @@ import Image from "./bgImage";
 
 function Background() {
   return (
-    <div>
+    <>
       <div className="circle1"></div>
       <div className="circle2"></div>
       <p className="edumate" id="edu">
@@ -15,7 +15,7 @@ function Background() {
       <p>
         <Image />
       </p>
-    </div>
+    </>
   );
 }
 export default Background;

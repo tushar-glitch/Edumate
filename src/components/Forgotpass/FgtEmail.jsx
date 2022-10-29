@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Background from "../Background/Background";
 import EmailImg from "./emailImg";
 import "./FgtEmail.css";
@@ -20,26 +20,24 @@ const[ckEmail,setCkEmail] = useState(false);
     } else if (email) {
       document.getElementById("wrongemail").style.display = "block";
     }
-  }, [email]);
-  localStorage.removeItem("email")
-      localStorage.setItem("email", email);
-const [verEmail,setVerEmail] = useState(false);
+  },[email]);
+const [emValid,setEmValid] = useState("");
+const navigate = useNavigate();
 function postemail() {
+  console.log("ahgfj");
   if(ckEmail){
   axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
     .then((res) => {
+      console.log("ahgfj");
       console.log(res.data);
-      localStorage.removeItem("email")
       localStorage.setItem("email", email);
-      setVerEmail(true);
+      navigate("/otp");
     })
     .catch((err) => {
       console.log(err);
-      // document.getElementById("wrongemail").style.display = "block";
-      // localStorage.setItem("email","");
+      console.log("ahgfj");
+      setEmValid("Please enter a valid email id");
     })
-    // if(res.status==404)
-    // document.getElementById("wrongemail").style.display = "block";
 }
 else
 {
@@ -63,17 +61,13 @@ else
       <br />
       <span id="wrongemail">Please enter a valid email id</span>
       <button id="resend-otp"></button>
-      {ckEmail?(<Link to="/otp" >
-        <button id="btnContinue" onClick={postemail}>
+      <button id="btnContinue" onClick={postemail}>
           CONTINUE
         </button>
-      </Link>):(<Link to="/fgtEmail" >
-        <button id="btnContinue" onClick={postemail}>
-          CONTINUE
-        </button>
-      </Link>)}
+        <span id="emailValid">{emValid}</span>
       <EmailImg />
     </div>
   );
 }
 export default FgtEmail;
+

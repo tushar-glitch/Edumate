@@ -7,7 +7,7 @@ import LockIMG from "./LockImg";
 import { Link } from "react-router-dom";
 import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 const Formlogin = () => {
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
@@ -29,6 +29,8 @@ const Formlogin = () => {
   useEffect(() => {
     if (rightpass.test(password)) {
       document.getElementById("wrongpass").style.display = "none";
+      // document.getElementById("fgtPwd").style.bottom = "1000";
+      document.getElementById("btn-submit").style.top = "500";
       console.log("true");
       setIsCorrectPass(true);
     } else if (password) {
@@ -46,6 +48,7 @@ const Formlogin = () => {
       setIsCorrectId(false);
     }
   }, [userID]);
+  const [credentials,setCredentials] = useState("");
   var data = { userID, password };
   function postdata() {
     if (iscorrectid && iscorrectpass) {
@@ -54,12 +57,17 @@ const Formlogin = () => {
         .then((res) => {
           console.log(res.data);
           localStorage.setItem("token", res.data.token);
-          if (localStorage.getItem("token")) alert("Login successfull");
+          if (localStorage.getItem("token")) alert(res.data.msg);
         })
         .catch((err) => {
           console.log(err);
-          alert("Login failed. Check your userId and password and try again");
+         setCredentials("Invalid credentials.Please check your User Id or Password");
         });
+    }
+    else{
+      document.getElementById("wrongid").style.display = "block";
+      document.getElementById("wrongpass").style.display = "block";
+setCredentials("")
     }
   }
   return (
@@ -73,6 +81,7 @@ const Formlogin = () => {
         placeholder="Enter your username"
         onChange={handleuserID}
         value={userID}
+        required 
       />
       <span id="wrongid">Incorrect userId. Please try again.</span>
       <Link to="/fgtEmail"><span id="fgtPwd">Forgot Password ?</span></Link>
@@ -80,22 +89,22 @@ const Formlogin = () => {
       <LockIMG />
       <h1 id="heading">&emsp;Welcome to Edumate</h1>
       <input
-        type={show ? "text" : "password"}
+        type={show?"text":"password"}
         id="input-box2"
         placeholder="Enter your password"
         onChange={handlepass}
         value={password}
       />
-      {show ? (
+       {show ? (
             <FontAwesomeIcon icon={faEye} id="eye" onClick={showHide} />
           ) : (
             <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
           )}
-      {/* <p id="openEye"><i class="fa-solid fa-eye"></i></p> */}
-      <span id="wrongpass">Invalid Password format</span>
+      <span id="wrongpass">Invalid Password format. The password should atleast contain 1 uppercase 1 lowercase 1 number 1 special digit character and must have length greater than equal to 8.</span>
       <button id="btn-submit" type="submit" onClick={postdata}>
         LOGIN
       </button>
+      <span id="credential">{credentials}</span>
       <Loginimg />
     </div>
   );

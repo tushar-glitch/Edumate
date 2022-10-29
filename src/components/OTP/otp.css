@@ -9,8 +9,6 @@
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   padding-left: 15px;
-  outline-color: #6c63ff;
-  background-color: white;
 }
 
 #no-otp-recieved {
@@ -29,9 +27,9 @@
 }
 #resend-otp {
   position: absolute;
-  width: 55vw;
-  height: 5vh;
-  left: 42.8vw;
+  width: 189px;
+  height: 37px;
+  left: 65.8vw;
   top: 50.5vh;
   background: none;
   font-family: "Montserrat";
@@ -40,10 +38,7 @@
   font-size: 15px;
   line-height: 17px;
   border: none;
-}
-#resend-otp:hover{
   text-decoration: underline;
-  cursor: pointer;
 }
 #btn-continue {
   box-sizing: border-box;
@@ -55,20 +50,14 @@
   background: #6c63ff;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
-  letter-spacing: 1px;
+
   font-family: "Montserrat";
   font-style: normal;
+  font-weight: 600;
   font-size: 16px;
   line-height: 22px;
-  color: white;
-  cursor: pointer;
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  color: #ffffff;
 }
-#btn-continue:active {
-  transform: scale(0.99);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
-
 #OTPid {
   position: absolute;
   /* width: 20vw; */
@@ -83,19 +72,47 @@
   color: #000000;
   background: none;
 }
-#timer{
+#inOtp {
   position: absolute;
-  width: 2.4vw;
-  height: 7vh;
-  left: 74vw;
-  top: 51.6vh;
+  width: 22vw;
+  /* height: 20vh; */
+  left: 65vw;
+  top: 67vh;
   font-family: "Montserrat";
   font-style: normal;
-  font-weight: 500;
-  font-size: 27px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
+#timer {
+  position: absolute;
+  width: 4vw;
+  height: 3vh;
+  left: 76.7vw;
+  top: 51.9vh;
+  background: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
   line-height: 20px;
+  letter-spacing: 0.05em;
   color: #000000;
-  background-color: white;
+}
+#newOtp {
+  position: absolute;
+  width: 22vw;
+  left: 61.4vw;
+  top: 67vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
 }
 @media (max-width: 380px) {
   body {
@@ -140,7 +157,7 @@ font-size: 16px;
   }
   #resend-otp {
     top: 49.5vh;
-    left: 42vw;
+    left: 46vw;
     font-size: 15px;
   }
 }
