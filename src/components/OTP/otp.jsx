@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Background from "../Background/Background";
 import OTPImg from "./otpImg";
 import axios from "axios";
@@ -23,6 +23,8 @@ function OTP() {
   // }, [otp]);
   let email = localStorage.getItem("email")
   const [ckOtp,setCkOtp] = useState(false);
+  const [incOTP,setIncOtp] = useState("");
+  const navigate = useNavigate();
   function postotp(){
     // if(isCorrectOtp){
     console.log(email);
@@ -32,9 +34,11 @@ function OTP() {
         console.log(res);
         localStorage.setItem("otp",otp)
         setCkOtp(true);
+        navigate("/rstPwd");
       })
       .catch((err) => {
         console.log(err);
+        setIncOtp("Incorrect OTP");
       })
       console.log(otp);
   // }
@@ -55,14 +59,13 @@ function OTP() {
       <br />
       <span id="no-otp-recieved">Don’t recieve an OTP?</span>
       <button id="resend-otp">Resend OTP</button>
-      {ckOtp?(<Link to="/rstPwd">
+      {/* {ckOtp?(<Link to="/rstPwd">
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
       </Link>):(<Link to="/otp">
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
-      </Link>)}
-      {/* <Link to="/rstPwd">
+      </Link>)} */}
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
-      </Link> */}
+        <span id="inOtp">{incOTP}</span>
       <OTPImg />
     </>
   );
