@@ -80,6 +80,20 @@ background: none;
 #bghead {
   display:none;
 }
+#msg {
+  position: absolute;
+  width: 22vw;
+  /* height: 20vh; */
+  left: 59vw;
+  top: 84vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
 @media (max-width:380px) {
   *{
     overflow: hidden;

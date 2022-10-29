@@ -3,7 +3,7 @@
   width: 220px;
   height: 20px;
   left: 56vw;
-  top: 36vh;
+  top: 37vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -32,7 +32,8 @@
   width: 190px;
   height: 20px;
   left: 56vw;
-  top: 51vh;
+  top:53.5vh;
+  /* top: 56.7vh; */
   background: none;
   font-family: "Montserrat";
   font-style: normal;
@@ -48,7 +49,8 @@
   width: 26vw;
   height: 6.5vh;
   left: 56vw;
-  top: 55.3vh;
+  top:57vh;
+  /* top: 60vh; */
   background-color: white;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
@@ -63,7 +65,8 @@
   width: 26vw;
   height: 6.5vh;
   left: 56vw;
-  top: 68vh;
+  top:70vh;
+  /* top: 73vh; */
   font-size: 16px;
   background: #6c63ff;
   border: 1px solid #d9d9d9;
@@ -81,20 +84,63 @@
   transform: scale(0.99);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
-#wrongpass {
+#wrongpass1 {
   position: absolute;
-  width: 5vw;
-  height: 5vh;
-  left: 50vw;
-  top: 5vh;
+  width: 26vw;
+  height: 20vh;
+  left: 56vw;
+  top: 46.5vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 13px;
+  line-height: 14px;
   background-color: white;
   color: #ff0000;
   display: none;
+}
+#passMatch {
+  position: absolute;
+  width: 25vw;
+  height: 5vh;
+  left: 56vw;
+  top:63vh;
+  /* top: 66.5vh; */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 17px;
+  background: none;
+  color: #ff0000;
+  display: none;
+}
+#pEye1 {
+  position:absolute;
+  top:42vh;
+  left:79.5vw;
+  background: none;
+}
+#pEye2 {
+  position:absolute;
+  /* top:62vh; */
+  top:59vh;
+  left:79.5vw;
+  background: none;
+}
+#pwdMsg {
+  position: absolute;
+  width: 22vw;
+  /* height: 20vh; */
+  left: 59vw;
+  top: 75vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
 }
 @media (max-width:380px) {
   * {
@@ -140,7 +186,13 @@
     border-radius: 5px;
   }
   #wrongpass {
-    top:50vh;
+    top:45vh;
+  }
+  #passMatch {
+    top:60vh;
+    width:70vw;
+    /* height:10vh; */
+    left:15vw;
   }
   .BgHead {
     top:25vh;
@@ -188,7 +240,7 @@
     border-radius: 5px;
   }
   #wrongpass {
-    top:50vh;
+    top:35vh;
   }
   .BgHead {
     width:100vw;

@@ -90,10 +90,10 @@
 
 #wrongpass {
   position: absolute;
-  width: 50vw;
-  height: 5vh;
+  width: 26vw;
+  height: 20vh;
   left: 56vw;
-  top: 64vh;
+  top: 62.5vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
@@ -112,7 +112,7 @@
   width: 26vw;
   height: 7vh;
   left: 56vw;
-  top: 70vh;
+  top: 76vh;
   letter-spacing: 1px;
   background: #6c63ff;
   border: 1px solid #d9d9d9;
@@ -165,7 +165,7 @@
 }
 #fgtPwd {
   position: absolute;
-  top: 62vh;
+  top: 73vh;
   left: 71.4vw;
   font-family: "Montserrat";
   font-style: normal;
@@ -180,6 +180,26 @@
   top:12vh;
   left:70vw;
   z-index: 5;
+}
+#credential {
+  position: absolute;
+  width: 22vw;
+  /* height: 20vh; */
+  left: 59vw;
+  top: 84vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
+#eye {
+  position:absolute;
+  top:57.4vh;
+  left:79.5vw;
+  background: none;
 }
 @media (max-width: 380px) {
   * {
@@ -223,7 +243,7 @@
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 68.7vh;
+    top: 70vh;
   }
   #lockImg {
     position: absolute;
@@ -243,7 +263,7 @@
     left: 15vw;
   }
   #fgtPwd {
-    top:63.5vh;
+    top:65vh;
     left:48vw;
     font-weight:600;
   }
@@ -290,7 +310,7 @@
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 68.7vh;
+    top: 70vh;
   }
   #lockImg {
     position: absolute;
@@ -310,7 +330,7 @@
     left: 15vw;
   }
   #fgtPwd {
-    top:63.5vh;
+    top:65vh;
     left:45.6vw;
     font-weight:600;
     font-size: 18px;

@@ -21,11 +21,10 @@ function OTP() {
   //     setIsCorrectOtp(false);
   //   }
   // }, [otp]);
-
+  let email = localStorage.getItem("email")
   const [ckOtp,setCkOtp] = useState(false);
   function postotp(){
     // if(isCorrectOtp){
-    var email = localStorage.getItem("email")
     console.log(email);
     var data = { email, otp }
     axios.post("https://erp-edumate.herokuapp.com/api/user/verifyotp/", data)
@@ -45,7 +44,7 @@ function OTP() {
     <>
       <Background />
       <h1 className="BgHead">&emsp;&ensp;OTP Verification </h1>
-      <p id="OTPid">Enter OTP sent on your Email</p>
+      <p id="OTPid">Enter OTP sent on {email}</p>
       <input
         type="text"
         id="input-box"
