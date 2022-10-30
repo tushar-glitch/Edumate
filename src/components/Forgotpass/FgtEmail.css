@@ -1,3 +1,4 @@
+
 #inputBox {
   box-sizing: border-box;
   font-family: "Montserrat";
@@ -209,5 +210,219 @@ color: #000000;
     height:10vh;
     left:16vw;
     top:29vh;
+  }
+
+#inputBox {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 55vw;
+  top: 48vh;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding-left: 7.5vh;
+}
+
+#btnContinue {
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  position: absolute;
+  width: 26vw;
+  height: 7vh;
+  left: 55vw;
+  top: 60vh;
+  letter-spacing: 1px;
+  background: #6c63ff;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+}
+#btnContinue:hover {
+  background: #7971ff;
+}
+
+#btnContinue:active {
+  transform: scale(0.99);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#wrongemail {
+  position: absolute;
+  width: 351px;
+  height: 34px;
+  left:55.5vw;
+  top: 55.5vh;
+  /* padding-left:6vh; */
+background: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: white;
+
+  color: #ff0000;
+  display: none;
+}
+#pwdHead {
+  position: absolute;
+  width: 26vw;
+  top: 39vh;
+  left: 55vw;
+  color: black;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  background: none;
+}
+#emailIcon {
+  background: none;
+  width: 25px;
+  height: 19px;
+  position: absolute;
+  z-index: 5;
+  top: 49.7vh;
+  left: 56vw;
+}
+#bghead {
+  display:none;
+}
+#msg {
+  position: absolute;
+  width: 22vw;
+  /* height: 20vh; */
+  left: 59vw;
+  top: 84vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
+#emailValid {
+  position: absolute;
+  width: 22vw;
+  left: 59vw;
+  top: 68vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
+@media (max-width:380px) {
+  *{
+    overflow: hidden;
+  }
+  /* .BgHead{
+    display:none;
+  } */
+  #pwdHead {
+width: 70vw;
+left: 14vw;
+top: 36.2vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 20px;
+letter-spacing: 0.05em;
+color: #000000;
+  }
+  #inputBox {
+    box-sizing: border-box;
+    width: 73vw;
+    height: 54px;
+  left:13.5vw;
+    top: 43vh;
+    
+  }
+  #btnContinue {
+    width: 73vw;
+    height: 54px;
+    top:58vh;
+    left:13.5vw;
+  }
+  #emailIcon {
+    top:45.5vh;
+    left:17.5vw;
+  }
+  /* .authImage {
+    visibility: visible;
+    top:53vh;
+    left:26vw;
+  } */
+  .BgHead {
+    top:26vh;
+    font-size:26px;
+    left:17vw;
+    width:82vw;
+    color:black;
+    font-family: "Montserrat";
+  }
+  #wrongemail {
+    top:52vh;
+    left:13.5vw;
+    width:54vw;
+    background:none;
+  }
+}
+@media (min-width:380px) and (max-width:950px){
+  * {
+    overflow: hidden;
+  }
+  #inputBox {
+    position: absolute;
+    width: 73vw;
+    height: 55px;
+    left: 15vw;
+    top: 43vh;
+  }
+  #pwdHead {
+    position: absolute;
+    top: 37.5vh;
+    left: 15.6vw;
+   width: 70vw;
+    font-weight: 600;
+    font-size: 17px;
+  }
+  #btnContinue {
+    position: absolute;
+    width: 73vw;
+    height: 55px;
+    left: 15vw;
+    top: 56vh;
+  }
+  #emailIcon {
+    top: 45vh;
+    left: 20vw;
+  }
+  #wrongemail {
+    top: 50vh;
+    left: 15vw;
+    width:60vw;
+    font-size:16px;
+    background: none;
+  }
+  /* .BgHead{
+    display:none;
+  } */
+  .BgHead {
+    display:block;
+    width:65vw;
+    height:10vh;
+    left:25vw;
+    top:23vh;
   }
 }

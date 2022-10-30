@@ -256,7 +256,7 @@
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 70vh;
+    top: 76.4vh;
   }
 
   #lockImg {
@@ -278,6 +278,7 @@
   #wrongpass {
     top: 61.2vh;
     left: 15vw;
+    width:75vw;
   }
 
   #fgtPwd {
@@ -288,6 +289,17 @@
 
   #eye {
     top: 55vh;
+    top:73.6vh;
+    left:48vw;
+    font-weight:600;
+  }
+  #eye {
+    top:56vh;
+  }
+  #credential {
+    top:84vh;
+    left:25vw;
+    width:60vw;
   }
 }
 @media (max-width:820px){
@@ -351,7 +363,7 @@
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 70vh;
+    top: 72.5vh;
   }
 
   #lockImg {
@@ -366,19 +378,30 @@
   }
 
   #wrongid {
-    top: 42vh;
+    top: 43vh;
     left: 15vw;
   }
 
   #wrongpass {
     top: 59.8vh;
     left: 15vw;
+    width:73vw;
   }
 
   #fgtPwd {
     top: 65vh;
     left: 45.6vw;
     font-weight: 600;
+    left:45.6vw;
+    font-weight:600;
     font-size: 18px;
+  }
+  #eye {
+    top:54.5vh;
+  }
+  #credential {
+    top:80vh;
+    left:21.5vw;
+    width:60vw;
   }
 }

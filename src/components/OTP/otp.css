@@ -140,7 +140,34 @@
   color: #ff0000;
   background: none;
 }
-
+#timer {
+  position: absolute;
+  width: 4vw;
+  height: 3vh;
+  left: 76.7vw;
+  top: 51.9vh;
+  background: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+#newOtp {
+  position: absolute;
+  width: 22vw;
+  left: 61.4vw;
+  top: 67vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
 @media (max-width: 380px) {
   body {
     overflow: hidden;
