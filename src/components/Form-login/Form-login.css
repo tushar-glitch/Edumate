@@ -263,7 +263,7 @@
     width:20px;
   }
   #wrongid {
-    top: 44vh;
+    top: 43vh;
     left: 15vw;
   }
   #wrongpass {
@@ -273,7 +273,7 @@
   }
   #fgtPwd {
     top:73.6vh;
-    left:38vw;
+    left:49vw;
     font-weight:600;
     font-size:15px;
   }
@@ -297,6 +297,7 @@
     height: 7.5vh;
     left: 15vw;
     top: 35vh;
+    padding-left: 48px;
   }
   #input-box2 {
     position: absolute;
@@ -304,6 +305,7 @@
     height: 7.5vh;
     left: 15vw;
     top: 51.5vh;
+    padding-left: 48px;
   }
   #user-id {
     position: absolute;
@@ -345,7 +347,7 @@
     left: 15vw;
   }
   #wrongpass {
-    top: 59.8vh;
+    top: 59.4vh;
     left: 15vw;
     width:73vw;
   }
@@ -357,11 +359,107 @@
   }
   #eye {
     top:54.7vh;
-    left:83vw;
+    left:81vw;
   }
   #credential {
     top:80vh;
-    left:21.5vw;
+    left:25vw;
     width:60vw;
+  }
+}
+@media (min-width:768px ) and (max-width:920px){
+  #fgtPwd {
+left:67.5vw;
+  }
+  #input-box1{
+left:18.5vw;
+padding-left: 60px;
+font-size:19px;
+  }
+  #input-box2{
+    left:18.5vw;
+    padding-left: 52px;
+    font-size:19px;
+  }
+  #btn-submit{
+    left:18.5vw;
+  }
+  #eye{
+left:86.5vw;
+top:55vh;
+  }
+  #lockImg{
+left:20.5vw;
+  }
+  #emailImage{
+    left:21.5vw;
+  }
+  #user-id{
+left:19vw;
+font-size: 17px;
+  }
+  #password{
+    left:19vw;
+    font-size: 17px;
+  }
+  #wrongid{
+    left:19vw;
+    font-size: 17px;
+  }
+  #wrongpass{
+    left:19vw;
+    font-size: 17px;
+  }
+  #credential {
+    font-size: 18px;
+    left:28.5vw;
+    top:80.8vh;
+  }
+  #fgtPwd {
+    left:69vw;
+  }
+}
+@media (min-width:912px) and (max-width:912px){
+  #fgtPwd {
+    left:72vw;
+  }
+}
+@media (min-width:280px) and (max-width:280px){
+  #fgtPwd {
+    left:57vw;
+    top:72vh;
+  }
+  #lockImg {
+    top: 55.5vh;
+    left: 17vw;
+  }
+  #wrongid {
+    font-size: 12px;
+  }
+  #wrongpass {
+    font-size:12px;
+    line-height: 12px;
+  }
+  #btn-submit {
+    top: 77vh;
+  }
+}
+@media (min-width:540px) and (max-width:540px) {
+  #user-id{
+top:32.2vh;
+  }
+  #password{
+top:48.5vh;
+  }
+  #emailImage{
+top:37.5vh;
+left:18.2vw;
+  }
+  #lockImg{
+top:53.8vh;
+left:17.2vw;
+  }
+  #fgtPwd{
+    left:57vw;
   }
 }

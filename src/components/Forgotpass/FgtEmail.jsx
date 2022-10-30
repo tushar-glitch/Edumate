@@ -46,7 +46,7 @@ else
   return (
     <div>
       <Background />
-      <h1 className="BgHead">Forgot your Password ?</h1>
+      <h1 className="BgHead" id="Forgot">Forgot your Password ?</h1>
       <h1 id="bghead" >Forgot Password ?</h1>
       <p id="pwdHead">We’ll send you a One Time Password on this email.</p>
       <input

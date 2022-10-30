@@ -120,12 +120,12 @@
     display: none;
   }
   .edumate {
-    width:72vw;
+    width:75vw;
     height:15vh;
-    left: 15.5vw;
+    left: 20vw;
     top: 13vh;
     font-weight: 600;
-    font-size: 52px;
+    font-size: 43px;
     line-height: 66px;
     letter-spacing: 0.05em;
     color: #6c63ff;
@@ -168,11 +168,11 @@
     color: #6c63ff;
   } */
 }
-@media (min-width:380px) and (max-width:823px) {
+@media (min-width:380px) and (max-width:819px) {
   .edumate {
     width: 75vw;
     height: 15vh;
-    left: 32vw;
+    left: 17vw;
     top: 13vh;
     font-weight: 600;
     font-size: 55px;
@@ -181,16 +181,34 @@
     color: #6c63ff;
   }
 }
-@media (min-width:820px) and(max-width:1000px) {
+@media (min-width:768px){
   .edumate {
     width: 75vw;
     height: 15vh;
-    left: 35vw;
+    left: 32vw;
     top: 13vh;
     font-weight: 600;
-    font-size: 60px;
+    font-size: 68px;
     line-height: 66px;
     letter-spacing: 0.05em;
     color: #6c63ff;
+  }
+}
+@media(max-width:280px){
+  .edumate {
+    width:75vw;
+    height:15vh;
+    left: 14vw;
+    top: 13vh;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 66px;
+    letter-spacing: 0.05em;
+    color: #6c63ff;
+  }
+}
+@media (min-width:540px) and (max-width:540px) {
+  .edumate {
+    left:26vw;
   }
 }
