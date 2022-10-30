@@ -1,95 +1,126 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Background from "../Background/Background";
 import ResetImg from "./resPwdImg";
-import './resetPwd.css'
+import {Link, useNavigate} from "react-router-dom";
+import "./resetPwd.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/fontawesome-free-solid";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 function ResetPwd() {
-    const [password, setPassword] = useState("")
-    const [truepass, setTruePass] = useState(false)
-    const [passmatch, setPassMatch] = useState(false)
-    function handlepass(e) {
-        setPassword(e.target.value)
+  const [pass, setPass] = useState("");
+  function handlepass(e) {
+    setPass(e.target.value);
+  }
+  const [Cpass, setCPass] = useState("");
+  function handleCfmPass(e) {
+    setCPass(e.target.value);
+  }
+  const [show1, setShow1] = useState(false);
+  function showHide1() {
+    setShow1(!show1);
+  }
+  const [show2, setShow2] = useState(false);
+  function showHide2() {
+    setShow2(!show2);
+  }
+  const [isPass, setIsPass] = useState(false);
+  const [isCPass, setIsCPass] = useState(false);
+  const rightpass =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+  useEffect(() => {
+    if (rightpass.test(pass)) {
+      document.getElementById("wrongpass1").style.display = "none";
+      document.getElementById("confirm-pass").style.top = 348 +'px';
+      document.getElementById("confirm-pass-input").style.top = 370 +'px';
+      document.getElementById("pEye2").style.top = 383 +'px';
+      document.getElementById("btn-reset").style.top = 470 +'px';
+      document.getElementById("passMatch").style.top=412+'px';
+setIsPass(true)
+      console.log("true");
+    } else if (pass) {
+      document.getElementById("wrongpass1").style.display = "block";
+      document.getElementById("confirm-pass").style.top = 371 +'px';
+      document.getElementById("confirm-pass-input").style.top = 393 +'px';
+      document.getElementById("pEye2").style.top = 406 +'px';
+      document.getElementById("btn-reset").style.top = 490 +'px';
+      document.getElementById("passMatch").style.top=438+'px';
     }
-    const [ispasschanged, setIsPassChanged] = useState(true)
-    const [confirmpassword, setConfirmPassword] = useState("")
-    function handleconpass(e) {
-        setConfirmPassword(e.target.value)
-        if (password == (e.target.value)) {
-            console.log("same!!");
-            document.getElementById('not-matched1').style.display = "none";
-            setPassMatch(true)
-        }
-        else if ((e.target.value)) {
-            document.getElementById('not-matched1').style.display = "block";
-        }
+  }, [pass]);
+  useEffect(() => {
+    if (rightpass.test(pass)) {
+      document.getElementById("passMatch").style.display = "none";
+      setIsCPass(true);
+      console.log("true");
+    } else if (pass) {
+      document.getElementById("passMatch").style.display = "block";
     }
-    const [rdtLogin, setRdtLogin] = useState(true);
-    const [show1, setShow1] = useState(false);
-    function showHide1() {
-        setShow1(!show1);
-    }
-    const [show2, setShow2] = useState(false);
-    function showHide2() {
-        setShow2(!show2);
-    }
-    const rightpass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/
-    useEffect(() => {
-        if (rightpass.test(password)) {
-            document.getElementById('wrongpass1').style.display = "none";
-            setTruePass(true)
-        }
-        else if (password) {
-            document.getElementById('wrongpass1').style.display = "block";
-        }
-    }, [password])
-    function postpass() {
-        if (truepass && passmatch) {
-            var email = localStorage.getItem("email")
-            var otp = localStorage.getItem('otp')
-            var data = { email, otp, password, confirmpassword }
-            console.log(data);
-            axios.post("https://erp-edumate.herokuapp.com/api/user/changepassword/", data)
-                .then((res) => {
-                    console.log(res);
-                    alert('Your password has been changed successfully!')
-                    setIsPassChanged(true)
-                    setRdtLogin(true);
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
-        }
-    }
-    return <>
-        <Background />
-        <h1 className="BgHead">&emsp;&ensp;Reset Password</h1>
-        <p id="new-pass">New Password</p>
-        <input type={show1 ? "text" : "password"}  id="new-pass-input" placeholder="New Password" onChange={handlepass} value={password} /><br />
-        {show1 ? (
-            <FontAwesomeIcon icon={faEye} id="eye1" onClick={showHide1} />
-        ) : (
-            <FontAwesomeIcon icon={faEyeSlash} id="eye1" onClick={showHide1} />
-        )}
-        {show2 ? (
-            <FontAwesomeIcon icon={faEye} id="eye2" onClick={showHide2} />
-        ) : (
-            <FontAwesomeIcon icon={faEyeSlash} id="eye2" onClick={showHide2} />
-        )}
-        {/* {ispasschanged?(<Link to="/"></Link>):(<Link to="/rstPwd"></Link>)} */}
-        <span id="wrongpass1">Invalid Password format</span>
-        <p id="confirm-pass">Confirm Password</p>
-        <input type={show2 ? "text" : "password"} id="confirm-pass-input" placeholder="Confirm Password" onChange={handleconpass} value={confirmpassword} />
-        <span id="not-matched1">Password not matched!</span>
-        {(truepass&&passmatch)?(<Link to="/">
-      <button id="btn-reset" onClick={postpass}>RESET PASSWORD</button>
+  }, [Cpass]);
+  const navigate = useNavigate();
+const [passMsg,setPassMsg] = useState("");
+  function rstPassword(){
+    var email = localStorage.getItem("email")
+    console.log(email);
+    var otp = localStorage.getItem("otp");
+    var data={email,otp,password:pass,confirmpassword:Cpass};
+      if (isPass && isCPass && pass===Cpass) {
+        axios
+          .post("https://erp-edumate.herokuapp.com/api/user/changepassword/",data)
+          .then((res) => {
+            console.log(res.data);
+            // confirm("Password changed");
+            setPassMsg("Password changed")
+            navigate("/");
+          })
+          .catch((err) => {
+            console.log(err);
+            setPassMsg("Password reset failed")
+          });
+      }
+      else{
+          document.getElementById("passMatch").style.display = "block";
+      }
+  }
+  return (
+    <>
+      <Background />
+      <h1 className="BgHead">&emsp;&emsp;Reset Password</h1>
+      <p id="new-pass">New Password</p>
+      <input
+        type={show1?"text":"password"}
+        id="new-pass-input"
+        placeholder="New Password"
+        onChange={handlepass}
+        value={pass}
+      />
+        <span id="wrongpass1">Invalid Password format. The password should atleast contain 1 uppercase 1 lowercase 1 number 1 special digit character and must have length greater than equal to 8.</span>
+      <p id="confirm-pass">Confirm Password</p>
+      <input
+        type={show2?"text":"password"}
+        id="confirm-pass-input"
+        placeholder="Confirm Password"
+        onChange={handleCfmPass}
+      />
+       {show1 ? (
+            <FontAwesomeIcon icon={faEye} id="pEye1" onClick={showHide1} />
+          ) : (
+            <FontAwesomeIcon icon={faEyeSlash} id="pEye1" onClick={showHide1} />
+          )}
+          {show2 ? (
+            <FontAwesomeIcon icon={faEye} id="pEye2" onClick={showHide2} />
+          ) : (
+            <FontAwesomeIcon icon={faEyeSlash} id="pEye2" onClick={showHide2} />
+          )}
+       <span id="passMatch">Passwords do not match</span>
+      {/* {rdtLogin?(<Link to="/">
+      <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
       </Link>):(<Link to="/rstPwd">
-      <button id="btn-reset" onClick={postpass}>RESET PASSWORD</button>
-       </Link>)}
-        <ResetImg />
+      <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
+       </Link>)} */}
+       <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
+       <span id="pwdMsg">{passMsg}</span>
+      <ResetImg />
     </>
+  );
 }
 export default ResetPwd;

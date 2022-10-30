@@ -20,16 +20,13 @@ const[ckEmail,setCkEmail] = useState(false);
     } else if (email) {
       document.getElementById("wrongemail").style.display = "block";
     }
-  }, [email]);
-  localStorage.removeItem("email")
-      localStorage.setItem("email", email);
+  },[email]);
 const [verEmail,setVerEmail] = useState(false);
 function postemail() {
   if(ckEmail){
   axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
     .then((res) => {
       console.log(res.data);
-      localStorage.removeItem("email")
       localStorage.setItem("email", email);
       setVerEmail(true);
     })
@@ -63,7 +60,7 @@ else
       <br />
       <span id="wrongemail">Please enter a valid email id</span>
       <button id="resend-otp"></button>
-      {ckEmail?(<Link to="/otp" >
+      {verEmail?(<Link to="/otp" >
         <button id="btnContinue" onClick={postemail}>
           CONTINUE
         </button>
@@ -77,3 +74,4 @@ else
   );
 }
 export default FgtEmail;
+
