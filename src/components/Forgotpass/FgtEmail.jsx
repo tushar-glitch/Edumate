@@ -28,14 +28,13 @@ function postemail() {
   if(ckEmail){
   axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
     .then((res) => {
-      console.log("ahgfj");
       console.log(res.data);
       localStorage.setItem("email", email);
       navigate("/otp");
     })
+    
     .catch((err) => {
       console.log(err);
-      console.log("ahgfj");
       setEmValid("Please enter a valid email id");
     })
 }

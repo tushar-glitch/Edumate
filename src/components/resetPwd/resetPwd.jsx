@@ -112,11 +112,6 @@ const [passMsg,setPassMsg] = useState("");
             <FontAwesomeIcon icon={faEyeSlash} id="pEye2" onClick={showHide2} />
           )}
        <span id="passMatch">Passwords do not match</span>
-      {/* {rdtLogin?(<Link to="/">
-      <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
-      </Link>):(<Link to="/rstPwd">
-      <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
-       </Link>)} */}
        <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
        <span id="pwdMsg">{passMsg}</span>
       <ResetImg />
