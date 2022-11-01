@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Background from "../Background/Background";
 import OTPImg from "./otpImg";
 import axios from "axios";
@@ -47,7 +47,6 @@ function OTP() {
   },[seconds]);
 
   let email = localStorage.getItem("email")
-  const [ckOtp,setCkOtp] = useState(false);
   const [incOTP,setIncOtp] = useState("");
   const navigate = useNavigate();
   function postotp(){
@@ -86,7 +85,7 @@ setNewOtp("OTP sent, check your email");
     })
     .catch((err) => {
       console.log(err);
-      // setIncOtp("Incorrect OTP");
+      setIncOtp("");
       setNewOtp("OTP sent, check your email");
     })
 }

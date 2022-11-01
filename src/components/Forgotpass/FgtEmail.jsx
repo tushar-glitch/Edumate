@@ -28,14 +28,13 @@ function postemail() {
   if(ckEmail){
   axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
     .then((res) => {
-      console.log("ahgfj");
       console.log(res.data);
       localStorage.setItem("email", email);
       navigate("/otp");
     })
+    
     .catch((err) => {
       console.log(err);
-      console.log("ahgfj");
       setEmValid("Please enter a valid email id");
     })
 }
@@ -47,7 +46,7 @@ else
   return (
     <div>
       <Background />
-      <h1 className="BgHead">Forgot your Password ?</h1>
+      <h1 className="BgHead" id="Forgot">Forgot your Password ?</h1>
       <h1 id="bghead" >Forgot Password ?</h1>
       <p id="pwdHead">We’ll send you a One Time Password on this email.</p>
       <input
