@@ -2,8 +2,8 @@
     position: absolute;
     width: 25vw;
     height: 5vh;
-    left: 24vw;
-    top: 15vh;
+    left: 26vw;
+    top: 17vh;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
@@ -17,14 +17,28 @@
     width: 65vw;
     height: 130vh;
     background-color: white;
-    margin-top: 30vh;
-    margin-left: 24vw;
+    margin-top: 31vh;
+    margin-left: 26vw;
     border-radius: 15px;
 }
 
-#avatar{
+#avatar {
     position: absolute;
     background-color: white;
+    top: 9vh;
+    left: 3vw;
+    height: 50vh;
+    width: 13vw;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+text-align: center;
+
+color: #000000;
+
 }
 
 #heading1 {
@@ -48,14 +62,14 @@
 #personalinfo {
     position: absolute;
     width: 8vw;
-font-weight: 600;
+    font-weight: 600;
     height: 5vh;
     left: 20.5vw;
     top: 20.5vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
-    
+
     font-size: 1rem;
     line-height: 17px;
     /* identical to box height */
@@ -71,7 +85,7 @@ font-weight: 600;
     width: 25vw;
     height: 4vh;
     left: 20.5vw;
-    top: 26vh;
+    top: 28vh;
 
     font-family: 'Montserrat';
     font-style: normal;
@@ -91,7 +105,7 @@ font-weight: 600;
     width: 20vw;
     height: 17px;
     left: 313px;
-    top: 248px;
+    top: 35vh;
 
     font-family: 'Montserrat';
     font-style: normal;
@@ -109,7 +123,7 @@ font-weight: 600;
     width: 20vw;
     height: 17px;
     left: 313px;
-    top: 293px;
+    top: 42vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -128,7 +142,7 @@ font-weight: 600;
     width: 10vw;
     height: 17px;
     left: 313px;
-    top: 338px;
+    top: 49vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -147,7 +161,7 @@ font-weight: 600;
     width: 10vw;
     height: 17px;
     left: 313px;
-    top: 383px;
+    top: 56vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -165,7 +179,7 @@ font-weight: 600;
     width: 114px;
     height: 17px;
     left: 313px;
-    top: 438px;
+    top: 63vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -184,7 +198,7 @@ font-weight: 600;
     width: 10vw;
     height: 17px;
     left: 313px;
-    top: 483px;
+    top: 70vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -202,7 +216,7 @@ font-weight: 600;
     width: 10vw;
     height: 17px;
     left: 313px;
-    top: 528px;
+    top: 77vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -220,7 +234,7 @@ font-weight: 600;
     width: 10vw;
     height: 17px;
     left: 313px;
-    top: 573px;
+    top: 84vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -239,7 +253,7 @@ font-weight: 600;
     width: 149px;
     height: 17px;
     left: 313px;
-    top: 618px;
+    top: 91vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -257,7 +271,7 @@ font-weight: 600;
     width: 149px;
     height: 17px;
     left: 313px;
-    top: 663px;
+    top: 98vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -275,7 +289,7 @@ font-weight: 600;
     width: 56px;
     height: 17px;
     left: 313px;
-    top: 708px;
+    top: 105vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -293,7 +307,7 @@ font-weight: 600;
     width: 149px;
     height: 17px;
     left: 313px;
-    top: 753px;
+    top: 112vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -313,7 +327,7 @@ font-weight: 600;
     width: 149px;
     height: 17px;
     left: 313px;
-    top: 798px;
+    top: 119vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -324,5 +338,39 @@ font-weight: 600;
 
 
     color: #000000;
+
+}
+
+.space1 {
+    position: absolute;
+    color: #000000;
+    margin-left: 6rem;
+    background-color: white;
+}
+
+.space2 {
+    position: absolute;
+    color: #000000;
+    margin-left: 10rem;
+    background-color: white;
+}
+
+.space3 {
+    position: absolute;
+    color: #000000;
+    margin-left: 7rem;
+    background-color: white;
+}
+
+#dis-name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    background-color: white;
+
+    color: #6C63FF;
 
 }

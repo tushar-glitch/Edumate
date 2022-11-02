@@ -1,4 +1,6 @@
-
+body{
+    overflow-x: hidden;
+}
 #section {
     position: absolute;
     height: 9vh;
