@@ -12,16 +12,14 @@
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   padding-left: 15px;
-  background-color: white;
-  outline-color: #6c63ff;
 }
 
 #no-otp-recieved {
   position: absolute;
-  width: 11vw;
+  width: 55vw;
   height: 5vh;
   left: 56vw;
-  top: 53vh;
+  top: 52vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
@@ -30,13 +28,12 @@
   color: #000000;
   background: none;
 }
-
 #resend-otp {
   position: absolute;
-  width: 7vw;
-  height: 5vh;
-  left: 67vw;
-  top: 51.5vh;
+  width: 189px;
+  height: 37px;
+  left: 65.8vw;
+  top: 50.5vh;
   background: none;
   font-family: "Montserrat";
   font-style: normal;
@@ -45,26 +42,7 @@
   line-height: 17px;
   border: none;
   text-decoration: underline;
-  cursor: pointer;
 }
-
-#wrongid1 {
-  position: absolute;
-  width: 12vw;
-  height: 3vh;
-  left: 56vw;
-  top: 50vh;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  background-color: white;
-  color: #ff0000;
-  display: none;
-  z-index: 56;
-}
-
 #btn-continue {
   box-sizing: border-box;
   position: absolute;
@@ -75,60 +53,28 @@
   background: #6c63ff;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
-  cursor: pointer;
+
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
-  letter-spacing: 3px;
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
 }
-
-#btn-continue:hover {
-  background: #7971ff;
-}
-
-#btn-continue:active {
-  transform: scale(0.99);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
-
-#timer {
-  position: absolute;
-  width: 8vw;
-  height: 3vh;
-  left: 74.5vw;
-  top: 52.5vh;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 20px;
-  /* identical to box height */
-
-  letter-spacing: 0.05em;
-
-  color: #000000;
-
-}
-
 #OTPid {
   position: absolute;
-  width: 28vw;
+  /* width: 20vw; */
   height: 7vh;
   left: 56vw;
   top: 38vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 16px;
   line-height: 20px;
   color: #000000;
   background: none;
 }
-
 #inOtp {
   position: absolute;
   width: 22vw;
@@ -173,17 +119,15 @@
 }
 @media (max-width: 380px) {
   body {
-    overflow: hidden;
+    overflow:hidden;
   }
-
   #OTPid {
-    width: 80vw;
-    left: 13.5vw;
-    top: 37vh;
-    font-weight: 600;
-    font-size: 16px;
+width:80vw;
+left: 13.5vw;
+top: 37vh;
+font-weight: 600;
+font-size: 16px;
   }
-
   #input-box {
     width: 73vw;
     height: 54px;
@@ -191,14 +135,12 @@
     top: 41.5vh;
 
   }
-
   #btn-continue {
     width: 73vw;
     height: 54px;
-    top: 58vh;
-    left: 13.5vw;
+    top:58vh;
+    left:13.5vw;
   }
-
   /* .authImage {
     visibility: visible;
     top:57vh;
@@ -207,37 +149,33 @@
   .BgHead {
     top: 23vh;
     font-size: 33px;
-    width: 35vw;
-    font-weight: 600;
+    width:35vw;
+  font-weight:600;
   }
-
   #no-otp-recieved {
     top: 51vh;
     left: 13.5vw;
     font-size: 15px;
     font-weight: 400;
   }
-
   #resend-otp {
     top: 49.5vh;
     left: 46vw;
     font-size: 15px;
   }
 }
-
-@media (min-width:380px) and (max-width:950px) {
+@media (min-width:380px) and (max-width:950px)
+{
   body {
-    overflow: hidden;
+    overflow:hidden;
   }
-
   #OTPid {
-    width: 80vw;
-    left: 15vw;
-    top: 40.2vh;
-    font-weight: 600;
-    font-size: 16.5px;
+width:80vw;
+left: 15vw;
+top: 40.2vh;
+font-weight: 600;
+font-size: 16.5px;
   }
-
   #input-box {
     position: absolute;
     width: 73vw;
@@ -245,28 +183,24 @@
     left: 15vw;
     top: 43vh;
   }
-
   #btn-continue {
     width: 73vw;
     height: 54px;
-    top: 58vh;
-    left: 13.5vw;
+    top:58vh;
+    left:13.5vw;
   }
-
   .BgHead {
-    width: 50vw;
-    height: 10vh;
-    left: 26vw;
-    top: 23vh;
+    width:50vw;
+    height:10vh;
+    left:26vw;
+    top:23vh;
   }
-
   #no-otp-recieved {
     top: 51vh;
     left: 15vw;
     font-size: 16px;
     font-weight: 500;
   }
-
   #resend-otp {
     top: 49.5vh;
     left: 47.9vw;

@@ -1,6 +1,126 @@
-.AUTHENTICATION {
+/* .AUTHENTICATION {
   overflow: hidden;
 }
+@media (max-width:380px) {
+  * {
+    overflow: hidden;
+  }
+  #new-pass-input {
+    position: absolute;
+    width: 73vw;
+    height: 7.5vh;
+    left: 15vw;
+    top: 37vh;
+  }
+#pEye1{
+    top: 40vh;
+  }
+#pEye2{
+    top: 55vh;
+  }
+  #confirm-pass-input{
+    position: absolute;
+    width: 73vw;
+    height: 7.5vh;
+    left: 15vw;
+    top: 52vh;
+  }
+  #new-pass {
+    position: absolute;
+    top: 34vh;
+    left: 15vw;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+  }
+  #confirm-pass {
+    position: absolute;
+    top: 49vh;
+    left: 15vw;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+  }
+  #btn-reset {
+    position: absolute;
+    width: 73vw;
+    height: 7.5vh;
+    left: 15vw;
+    top: 65vh;
+    background: #6c63ff;
+    border-radius: 5px;
+  }
+  #wrongpass {
+    top:45vh;
+  }
+  #passMatch {
+    top:60vh;
+    width:70vw;
+    left:15vw;
+  }
+  .BgHead {
+    top:25vh;
+    font-size:27px;
+    margin-left:-30px;
+    font-weight:600;
+  }
+}
+@media (min-width:380px) and (max-width:950px) {
+  * {
+    overflow: hidden;
+  }
+  #new-pass-input {
+    width: 73vw;
+    height: 54px;
+    left: 15vw;
+    top: 39vh;
+  }
+  #confirm-pass-input{
+    width: 73vw;
+    height: 54px;
+    left: 15vw;
+    top: 51vh;
+  }
+  #pEye1{
+    top: 41vh;
+  }
+#pEye2{
+    top: 53vh;
+  }
+  #new-pass {
+    top: 36vh;
+    left: 15.4vw;
+   width: 30vw;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  #confirm-pass {
+    top: 48.2vh;
+    left: 15.4vw;
+     width: 40vw;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  #btn-reset {
+    width: 73vw;
+    height: 54px;
+    left: 15vw;
+    top: 63vh;
+    background: #6c63ff;
+    border-radius: 5px;
+  }
+  #wrongpass {
+    top:35vh;
+  }
+  .BgHead {
+    width:100vw;
+    height:10vh;
+    left:3vw;
+    top:23vh;
+  }
+} */
+
+
 #new-pass {
   position: absolute;
   width: 220px;
@@ -205,7 +325,7 @@
   }
   .BgHead {
     top:25vh;
-    font-size:27px;
+    font-size:7px;
     margin-left:-30px;
     font-weight:600;
   }

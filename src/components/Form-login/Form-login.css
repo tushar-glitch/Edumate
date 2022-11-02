@@ -298,16 +298,15 @@
   }
 
   #eye {
-    top: 55vh;
-    top:73.6vh;
-    left:49vw;
+    top: 56vh;
+    left:80vw;
     font-weight:600;
     font-size:15px;
   }
-  #eye {
+  /* #eye {
     top:56vh;
     width:16px;
-  }
+  } */
   #credential {
     top:84vh;
     left:25vw;

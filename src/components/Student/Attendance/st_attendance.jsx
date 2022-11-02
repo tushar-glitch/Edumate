@@ -3,8 +3,8 @@ import React from "react";
 import "./attend.css";
  function Attendance(){
     function handleEdit(){
-document.getElementById("name").style.input.type="text";
-document.getElementById("name").style.innerHTML = "dhSJDB";
+        console.log("dhjkhk");
+document.getElementById("name").innerHTML = "dhSJDB";
 document.getElementById("name").style.color="green";
     }
     return <>

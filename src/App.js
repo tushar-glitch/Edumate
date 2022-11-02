@@ -7,6 +7,7 @@ import Formlogin from "./components/Form-login/Form-login";
 import FgtEmail from "./components/Forgotpass/FgtEmail";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import StProfile from "./components/Student/TimeTable/St_profile";
+import Dashboard from "./components/Dashboard/Dashboard";
 function App() {
   return <>
   {/* <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
   </Routes>
    </BrowserRouter> */}
    <StProfile />
+   {/* <Dashboard /> */}
       </>  
 }
 
