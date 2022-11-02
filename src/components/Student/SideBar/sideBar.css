@@ -1,7 +1,7 @@
 .sideB {
     box-sizing: border-box;
 position: absolute;
-width: 17.794em;
+width: 16.5em;
 height: 160vh;
 background-color: #FFFFFF;
 border: 1px solid #D9D9D9;
@@ -10,12 +10,12 @@ border: 1px solid #D9D9D9;
     position: absolute;
     width: 15vw;
     height: 10vh;
-    left: 3.5vw;
+    left: 2.5vw;
     top: 6vh;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 34px;
     line-height: 44px;
     letter-spacing: 0.05em;
     color: #6C63FF;
@@ -25,7 +25,7 @@ border: 1px solid #D9D9D9;
     background:none;
     position:absolute;
     top:20vh;
-    left:7vw;
+    left:6vw;
     list-style: none;
 }
 .sideList li {
@@ -34,10 +34,10 @@ height: 29px;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
-font-size: 24px;
+font-size: 21px;
 line-height: 29px;
 background:none;
-margin-bottom: 5vh;
+margin-bottom: 7vh;
 }
 .sideList li:hover {
     color:#6C63FF;

@@ -5,8 +5,8 @@
   box-sizing: border-box;
   background-color: #eef1ff;
 }
-.AUTHENTICATION {
-  overflow: hidden;
+.AUTHENTICATION div {
+  overflow: hidden !important;
 }
 .circle1 {
   display: block;

@@ -13,9 +13,31 @@ border-radius: 15px;
      margin-left:1vw;
     /* margin-right: 1vw; */
 }
+.attendTable td {
+    text-align: center;
+    border: 1px solid #FFFFFF;
+height: 9vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+color: #000000;
+}
+.attendRow2 td{
+    background: #D9D9D9;
+border: 1px solid #FFFFFF;
+height: 9vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+color: #000000;
+}
 .attendHead{
     box-sizing: border-box;
-height:8vh;
+height:9vh;
 border-radius: 8px 8px 0px 0px;
 background: none;
 background-color: #6C63FF;
@@ -27,24 +49,6 @@ line-height: 37px;
 color: #FFFFFF;
 text-align: center;
 }
-.attendRow2 {
-    position:absolute;
-    width:65vw;
-    text-align: center;
-}
-.attendRow2 td{
-    background: #D9D9D9;
-border: 1px solid #FFFFFF;
-height: 8vh;
-border:1px solid white;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 20px;
-color: #000000;
-
-}
 .attendData{
     width:10vw;
 }
@@ -53,23 +57,4 @@ color: #000000;
 }
 .attendPer{
     width:17.5vw;
-}
-.propTable {
-    display:flex;
-    flex-direction: column;
-    position: absolute;
-    top:-0.3vh;
-   background-color:#FFFFFF;
-}
-.propsRow {
-    width:65vw;
-    height:7.5vh;
-    position:absolute;
-    top:19vh;
-    left:1vw;
-    background: none;
-}
-.propsRow td{
-width:12.8vw;
-height:7vh;
 }
