@@ -6,9 +6,11 @@ import  "./login.css";
 function LogIn() {
   return (
     <>
+    <div className="AUTHENTICATION">
     <Background />
     <Formlogin />
       <LoginImg />
+      </div>
     </>
   );
 }

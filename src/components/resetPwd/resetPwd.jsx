@@ -83,6 +83,7 @@ const [passMsg,setPassMsg] = useState("");
   }
   return (
     <>
+    <div className="AUTHENTICATION">
       <Background />
       <h1 className="BgHead">&emsp;&emsp;Reset Password</h1>
       <p id="new-pass">New Password</p>
@@ -115,6 +116,7 @@ const [passMsg,setPassMsg] = useState("");
        <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
        <span id="pwdMsg">{passMsg}</span>
       <ResetImg />
+      </div>
     </>
   );
 }

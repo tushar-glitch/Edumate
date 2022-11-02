@@ -12,10 +12,12 @@ import "./TT.css" ;
    <li>COA</li>
    <li>DSTL</li>
    <li>OE</li>
+   <li>Data Structures</li>
    <li>Technical Communication</li>
    <li>Computer System Security</li>
 </ul>
 <ul className="facList">
+   <li>Dr. Vivek</li>
    <li>Dr. Vivek</li>
    <li>Dr. Vivek</li>
    <li>Dr. Vivek</li>

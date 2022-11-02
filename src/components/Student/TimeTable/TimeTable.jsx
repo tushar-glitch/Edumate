@@ -2,7 +2,7 @@ import React from "react";
 import "./TT.css";
 function TimeT (){
     return <>
-        <table className="table">
+        <table cellSpacing={0} className="table">
             <tr><td className="timetableRow" colspan={7}>Time Table</td></tr>
             <tr className="tableRow">
                 <td className="days"></td>

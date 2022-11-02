@@ -1,3 +1,6 @@
+.AUTHENTICATION {
+  overflow: hidden;
+}
 #inputBox {
   box-sizing: border-box;
   font-family: "Montserrat";

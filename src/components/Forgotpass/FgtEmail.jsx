@@ -44,7 +44,7 @@ else
 }
 }
   return (
-    <div>
+    <div className="AUTHENTICATION">
       <Background />
       <h1 className="BgHead" id="Forgot">Forgot your Password ?</h1>
       <h1 id="bghead" >Forgot Password ?</h1>

@@ -58,6 +58,7 @@ setNewOtp("OTP sent, check your email");
 }
   return (
     <>
+    <div className="AUTHENTICATION">
       <Background />
       <h1 className="BgHead">&emsp;&ensp;OTP Verification </h1>
       <p id="OTPid">Enter OTP sent on {email}</p>
@@ -76,6 +77,7 @@ setNewOtp("OTP sent, check your email");
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
         <span id="inOtp">{incOTP}</span>
       <OTPImg />
+      </div>
     </>
   );
 }

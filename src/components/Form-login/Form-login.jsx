@@ -71,7 +71,7 @@ setCredentials("")
     }
   }
   return (
-    <div>
+    <div className="AUTHENTICATION">
     <Background />
       <h5 id="user-id">User id</h5>
       <EmailIMG />

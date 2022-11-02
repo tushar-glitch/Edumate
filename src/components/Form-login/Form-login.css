@@ -1,6 +1,9 @@
 * {
   z-index: 2;
 }
+.AUTHENTICATION {
+  overflow: hidden;
+}
 #user-id {
   position: absolute;
   width: 5.5vw;

@@ -1,10 +1,12 @@
-
+.StudentTimeTable{
+    height:900px;
+}
 .timeTable {
     background-color: #ffffff;
     position:absolute;
-    width: 52vw;
-height: 76vh;
-left: 35vw;
+    width: 67vw;
+height: 125vh;
+left: 27vw;
 top: 18vh;
 border-radius: 15px;
 }
@@ -12,22 +14,22 @@ border-radius: 15px;
     position: absolute;
 width: 40vw;
 height: 5vh;
-left: 35vw;
+left: 28vw;
 top: 11vh;
 font-family: 'Montserrat';
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 font-size: 30px;
 line-height: 37px;
 background: none;
 }
 .table {
-    width:50vw;
+    width:65vw;
     margin-left: 1vw;
-    margin-top: 1vh;;
+    margin-top: 1.5vh;;
 }
 .table td {
-    height:4.5vh;
+    height:8vh;
     width:8vw;
     text-align: center;
     border:1px solid white;
@@ -38,8 +40,8 @@ border: 1px solid #FFFFFF;
 color:white;
 font-family: 'Montserrat';
 font-style: normal;
-font-weight: 550;
-font-size: 21px;
+font-weight: 600;
+font-size: 25px;
 line-height: 30px;
 }
 .days{
@@ -48,7 +50,7 @@ line-height: 30px;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 550;
-font-size: 20px;
+font-size: 22px;
 line-height: 30px;
 }
 .lunch ,
@@ -56,7 +58,7 @@ line-height: 30px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 550;
-    font-size: 20px;
+    font-size: 22px;
     height:4.5vh;
 }
 .time {
@@ -64,7 +66,7 @@ line-height: 30px;
 background: #D9D9D9;
 font-family: 'Montserrat';
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 font-size: 16px;
 line-height: 22px;
 color: #000000;
@@ -79,7 +81,7 @@ line-height: 22px;
 color: #6C63FF;
 position:absolute;
 left:2vw;
-top:48vh;
+top:78vh;
 
 }
 .faculty {
@@ -92,33 +94,39 @@ line-height: 22px;
 color: #6C63FF;
 position:absolute;
 left:26vw;
-top:48vh;
+top:78vh;
 }
 .subList {
     position:absolute;
-    top:54vh;
+    top:85vh;
     left:2.5vw;
+    list-style: none;
+    background-color:  #ffffff;
 }
 .subList li {
     background-color:  #ffffff;
     font-family: 'Montserrat';
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 font-size: 17px;
 line-height: 25px;
 color: #000000;
+margin-bottom: 2vh;
 }
 .facList {
+    background-color:  #ffffff;
     position:absolute;
-    top:54vh;
+    top:85vh;
     left:26vw;
+    list-style: none;
 }
 .facList li {
     background-color:  #ffffff;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 17px;
     line-height: 25px;
     color: #000000;
+    margin-bottom: 2vh;
 }
