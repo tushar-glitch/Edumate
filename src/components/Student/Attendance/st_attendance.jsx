@@ -2,6 +2,11 @@ import React from "react";
 
 import "./attend.css";
  function Attendance(){
+    function handleEdit(){
+document.getElementById("name").style.input.type="text";
+document.getElementById("name").style.innerHTML = "dhSJDB";
+document.getElementById("name").style.color="green";
+    }
     return <>
      <h1 className="dbTT">Dashboard : Attendance </h1>
 <div className="attend">
@@ -50,6 +55,9 @@ import "./attend.css";
             <td>Attendance in %</td>
         </tr>
         </table>
+        <p>name</p>
+        <p id="name">Sanika Goyal</p>
+        <button type="submit" onClick={handleEdit}>Edit profile</button>
 </div>
     </>
  }

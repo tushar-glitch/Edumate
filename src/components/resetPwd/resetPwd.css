@@ -156,6 +156,12 @@
     left: 15vw;
     top: 37vh;
   }
+#pEye1{
+    top: 40vh;
+  }
+#pEye2{
+    top: 55vh;
+  }
   #confirm-pass-input{
     position: absolute;
     width: 73vw;
@@ -220,6 +226,12 @@
     left: 15vw;
     top: 51vh;
   }
+  #pEye1{
+    top: 41vh;
+  }
+#pEye2{
+    top: 53vh;
+  }
   #new-pass {
     top: 36vh;
     left: 15.4vw;
@@ -248,7 +260,7 @@
   .BgHead {
     width:100vw;
     height:10vh;
-    left:6vw;
+    left:3vw;
     top:23vh;
   }
 }

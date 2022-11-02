@@ -7,7 +7,7 @@ function Background() {
     <>
     <div className="AUTHENTICATION">
       <div className="circle1"></div>
-      <div className="circle2" style={{overflow:"hidden"}}></div>
+      <div className="circle2"></div>
       <p className="edumate" id="edu">
         Edumate
       </p>

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-const Formlogin = () => {
+  const Formlogin = () => {
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
   function handleuserID(e) {
@@ -48,7 +48,7 @@ const Formlogin = () => {
       setIsCorrectId(false);
     }
   }, [userID]);
-  const [credentials,setCredentials] = useState("");
+  const [credentials, setCredentials] = useState("");
   var data = { userID, password };
   function postdata() {
     if (iscorrectid && iscorrectpass) {
@@ -61,13 +61,13 @@ const Formlogin = () => {
         })
         .catch((err) => {
           console.log(err);
-         setCredentials("Invalid credentials.Please check your User Id or Password");
+          setCredentials("Invalid credentials.Please check your User Id or Password");
         });
     }
-    else{
+    else {
       document.getElementById("wrongid").style.display = "block";
       document.getElementById("wrongpass").style.display = "block";
-setCredentials("")
+      setCredentials("")
     }
   }
   return (
@@ -81,7 +81,7 @@ setCredentials("")
         placeholder="Enter your username"
         onChange={handleuserID}
         value={userID}
-        required 
+        required
       />
       <span id="wrongid">Incorrect userId. Please try again.</span>
       <Link to="/fgtEmail"><span id="fgtPwd">Forgot Password ?</span></Link>
@@ -89,17 +89,17 @@ setCredentials("")
       <LockIMG />
       <h1 id="heading">&emsp;Welcome to Edumate</h1>
       <input
-        type={show?"text":"password"}
+        type={show ? "text" : "password"}
         id="input-box2"
         placeholder="Enter your password"
         onChange={handlepass}
         value={password}
       />
-       {show ? (
-            <FontAwesomeIcon icon={faEye} id="eye" onClick={showHide} />
-          ) : (
-            <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
-          )}
+      {show ? (
+        <FontAwesomeIcon icon={faEye} id="eye" onClick={showHide} />
+      ) : (
+        <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
+      )}
       <span id="wrongpass">Invalid Password format. The password should atleast contain 1 uppercase 1 lowercase 1 number 1 special digit character and must have length greater than equal to 8.</span>
       <button id="btn-submit" type="submit" onClick={postdata}>
         LOGIN

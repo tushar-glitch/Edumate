@@ -1,0 +1,124 @@
+#container {
+    height: 220vh;
+    width: 100vw;
+    z-index: 14143124;
+}
+
+#container1 {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10vh;
+}
+
+#container2 {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#container3 {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#card1 {
+    background-color: white;
+    height: 300px;
+    width: 550px;
+    margin-top: 20vh;
+    border-radius: 15px;
+}
+
+#card2 {
+    background-color: white;
+    height: 300px;
+    width: 550px;
+    margin-top: 20vh;
+    border-radius: 15px;
+}
+
+#card3 {
+    background-color: white;
+    height: 300px;
+    width: 550px;
+    margin-top: 10vh;
+    border-radius: 15px;
+}
+
+#card4 {
+    background-color: white;
+    height: 300px;
+    width: 550px;
+    margin-top: 10vh;
+    border-radius: 15px;
+}
+
+#card5 {
+    background-color: white;
+    height: 300px;
+    width: 550px;
+    margin-top: 0vh;
+    border-radius: 15px;
+}
+
+#dash {
+    position: absolute;
+    width: 15vw;
+    height: 5vh;
+    left: 11vw;
+    top: 15vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #000000;
+}
+
+.img {
+    height: 100%;
+    width: 30%;
+    margin-left: 0px;
+    background-color: white;
+    float: left;
+    border-radius: 15px;
+}
+
+.heading {
+    margin-top: 8%;
+    width: 35%;
+    font-family: 'Montserrat';
+    background-color: white;
+    margin-left: 30%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+}
+
+.content {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 20px;
+    /* background-color: red; */
+    color: #000000;
+    margin-top: 6%;
+    margin-right: 10%;
+}
+.logo{
+    margin-top: 50%;
+    margin-left: 25%;
+}
