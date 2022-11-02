@@ -83,6 +83,7 @@ const [passMsg,setPassMsg] = useState("");
   }
   return (
     <>
+    <div className="AUTHENTICATION">
       <Background />
       <h1 className="BgHead">&emsp;&emsp;Reset Password</h1>
       <p id="new-pass">New Password</p>
@@ -112,14 +113,10 @@ const [passMsg,setPassMsg] = useState("");
             <FontAwesomeIcon icon={faEyeSlash} id="pEye2" onClick={showHide2} />
           )}
        <span id="passMatch">Passwords do not match</span>
-      {/* {rdtLogin?(<Link to="/">
-      <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
-      </Link>):(<Link to="/rstPwd">
-      <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
-       </Link>)} */}
        <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
        <span id="pwdMsg">{passMsg}</span>
       <ResetImg />
+      </div>
     </>
   );
 }

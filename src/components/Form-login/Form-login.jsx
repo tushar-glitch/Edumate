@@ -57,7 +57,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
         .then((res) => {
           console.log(res.data);
           localStorage.setItem("token", res.data.token);
-          if (localStorage.getItem("token")) alert("Login successfull");
+          if (localStorage.getItem("token")) alert(res.data.msg);
         })
         .catch((err) => {
           console.log(err);
@@ -71,8 +71,8 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
     }
   }
   return (
-    <div>
-      <Background />
+    <div className="AUTHENTICATION">
+    <Background />
       <h5 id="user-id">User id</h5>
       <EmailIMG />
       <input

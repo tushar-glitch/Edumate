@@ -1,3 +1,6 @@
+.AUTHENTICATION {
+  overflow: hidden;
+}
 #new-pass {
   position: absolute;
   width: 220px;
