@@ -140,7 +140,14 @@
   color: #ff0000;
   background: none;
 }
-
+@media (max-width:1090px){
+  #no-otp-recieved{
+  top:54vh;
+}
+#wrongid1{
+  height: 4vh;
+}
+}
 @media (max-width: 380px) {
   body {
     overflow: hidden;
@@ -186,12 +193,15 @@
     left: 13.5vw;
     font-size: 15px;
     font-weight: 400;
+  width: 25vw;
+  height: 10vh;
   }
 
   #resend-otp {
     top: 49.5vh;
     left: 46vw;
     font-size: 15px;
+    width: 25vw;
   }
 }
 
@@ -205,7 +215,7 @@
     left: 15vw;
     top: 40.2vh;
     font-weight: 600;
-    font-size: 16.5px;
+    font-size: 13px;
   }
 
   #input-box {
@@ -235,11 +245,17 @@
     left: 15vw;
     font-size: 16px;
     font-weight: 500;
+    height: 7vh;
+    width: 25vw;
   }
 
   #resend-otp {
     top: 49.5vh;
     left: 47.9vw;
     font-size: 15px;
+    width: 15vw;
   }
+  #wrongid1{
+  background-color: rgb(238,241,255);
+}
 }

@@ -1,0 +1,328 @@
+#dash {
+    position: absolute;
+    width: 25vw;
+    height: 5vh;
+    left: 24vw;
+    top: 15vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #000000;
+}
+
+#background {
+    position: absolute;
+    width: 65vw;
+    height: 130vh;
+    background-color: white;
+    margin-top: 30vh;
+    margin-left: 24vw;
+    border-radius: 15px;
+}
+
+#avatar{
+    position: absolute;
+    background-color: white;
+}
+
+#heading1 {
+    position: absolute;
+    width: 229px;
+    height: 37px;
+    left: 20.5vw;
+    top: 9.5vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    /* identical to box height */
+
+    background-color: white;
+    color: #000000;
+}
+
+#personalinfo {
+    position: absolute;
+    width: 8vw;
+font-weight: 600;
+    height: 5vh;
+    left: 20.5vw;
+    top: 20.5vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    
+    font-size: 1rem;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #6C63FF;
+
+}
+
+#stu-name {
+
+    position: absolute;
+    width: 25vw;
+    height: 4vh;
+    left: 20.5vw;
+    top: 26vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    background-color: white;
+    color: #000000;
+
+}
+
+#roll {
+    background-color: white;
+    position: absolute;
+    width: 20vw;
+    height: 17px;
+    left: 313px;
+    top: 248px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+
+}
+
+#adm-no {
+    position: absolute;
+    width: 20vw;
+    height: 17px;
+    left: 313px;
+    top: 293px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+
+#bl-gr {
+    position: absolute;
+    width: 10vw;
+    height: 17px;
+    left: 313px;
+    top: 338px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+#email {
+
+    position: absolute;
+    width: 10vw;
+    height: 17px;
+    left: 313px;
+    top: 383px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+#heading2 {
+    position: absolute;
+    width: 114px;
+    height: 17px;
+    left: 313px;
+    top: 438px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #6C63FF;
+
+}
+
+#address {
+    position: absolute;
+    width: 10vw;
+    height: 17px;
+    left: 313px;
+    top: 483px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+#city {
+    position: absolute;
+    width: 10vw;
+    height: 17px;
+    left: 313px;
+    top: 528px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+#state {
+    position: absolute;
+    width: 10vw;
+    height: 17px;
+    left: 313px;
+    top: 573px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+
+#stu-phone {
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 313px;
+    top: 618px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+#pin {
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 313px;
+    top: 663px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+#heading3 {
+    position: absolute;
+    width: 56px;
+    height: 17px;
+    left: 313px;
+    top: 708px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #6C63FF;
+}
+
+#fat-phone {
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 313px;
+    top: 753px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+
+#mot-phone {
+
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 313px;
+    top: 798px;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}

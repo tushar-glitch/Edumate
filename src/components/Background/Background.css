@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   background-color: #eef1ff;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .circle1 {
   display: block;

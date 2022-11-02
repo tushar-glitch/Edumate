@@ -9,6 +9,8 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Protected from "./components/Forgotpass/protected";
 import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Chart from "./components/Pie/Pie";
+import StuProfile from './components/Student-profile/student'
 function App() {
   return <>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -19,7 +21,8 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/formLogin" exact element={<Formlogin />} />
         <Route path="/navbar" exact element={<Navbar />} />
-        <Route path="dashboard" exact element={<Dashboard/>}/>
+        <Route path="/dashboard" exact element={<Dashboard/>}/>
+        <Route path="/profile" exact element={<StuProfile/>}/>
       </Routes>
     </BrowserRouter>
   </>
