@@ -122,46 +122,48 @@
     overflow:hidden;
   }
   #OTPid {
-width:80vw;
+width:70vw;
+height:20vh;
 left: 13.5vw;
 top: 37vh;
 font-weight: 600;
 font-size: 16px;
   }
   #input-box {
-    width: 73vw;
+    width: 77vw;
     height: 54px;
-    left: 13.5vw;
-    top: 41.5vh;
+    left: 12.5vw;
+    top: 44vh;
 
   }
   #btn-continue {
-    width: 73vw;
+    width: 77vw;
     height: 54px;
-    top:58vh;
-    left:13.5vw;
+    top:60vh;
+    left:12.5vw;
   }
-  /* .authImage {
-    visibility: visible;
-    top:57vh;
-    left:26vw;
-  } */
-  .BgHead {
-    top: 23vh;
-    font-size: 33px;
-    width:35vw;
-  font-weight:600;
+  #otpVerify {
+    font-size: 25px;
+    position:absolute;
+    left:13vw;
+    top:24vh;
   }
   #no-otp-recieved {
-    top: 51vh;
-    left: 13.5vw;
-    font-size: 15px;
+    top: 53vh;
+    left: 12.5vw;
+    font-size: 13px;
     font-weight: 400;
   }
   #resend-otp {
-    top: 49.5vh;
-    left: 46vw;
-    font-size: 15px;
+    top: 51.5vh;
+    left: 38.6vw;
+    font-size: 13px;
+  }
+  #timer {
+    top:52.9vh;
+    width:12vw;
+    left:78vw;
+    font-size: 14px;
   }
 }
 @media (min-width:380px) and (max-width:950px)
@@ -178,32 +180,113 @@ font-size: 16.5px;
   }
   #input-box {
     position: absolute;
-    width: 73vw;
+    width: 77vw;
     height: 54px;
-    left: 15vw;
-    top: 43vh;
+    left: 12.5vw;
+    top: 46vh;
   }
   #btn-continue {
-    width: 73vw;
+    width: 77vw;
     height: 54px;
-    top:58vh;
-    left:13.5vw;
+    top:62vh;
+    left:12.5vw;
   }
-  .BgHead {
+  #otpVerify{
     width:50vw;
     height:10vh;
     left:26vw;
     top:23vh;
   }
   #no-otp-recieved {
-    top: 51vh;
-    left: 15vw;
-    font-size: 16px;
+    top: 52.5vh;
+    left: 12.5vw;
+    font-size: 15px;
     font-weight: 500;
   }
   #resend-otp {
-    top: 49.5vh;
-    left: 47.9vw;
-    font-size: 15px;
+    top: 51.5vh;
+    left: 41.6vw;
+    font-size: 13px;
+  }
+  #timer {
+    top:52.5vh;
+    width:12vw;
+    font-size: 14px;
+    left:78vw;
+  }
+}
+@media (min-width:768px) and (max-width:920px) {
+  #no-otp-recieved {
+    font-size: 17px;
+    left:14.5vw;
+  }
+  #input-box {
+    left:14.5vw;
+  }
+  #btn-continue {
+    left:14.5vw;
+  }
+  #otpVerify {
+    left:23.5vw;
+    font-size:40px;
+  }
+  
+  #resend-otp {
+    font-size: 17px;
+    left:64vw;
+    top:51.8vh;
+  }
+  #timer {
+    font-size: 18px;
+    left:85vw;
+    top:52.56vh;
+  }
+  #OTPid {
+    left:14.5vw;
+  }
+}
+@media (min-width:540px) and (max-width:540px) {
+  #input-box{
+left:15vw;
+  }
+  #otpVerify {
+    left:35vw;
+    font-size:33px;
+    height:15vh;
+  }
+  
+  #btn-continue{
+    left:15vw;
+  }
+  #no-otp-recieved{
+    left:15vw;
+    top:53.7vh;
+  }
+  #resend-otp{
+left:57vw;
+top:52.7vh;
+  }
+  #timer{
+    left:84vw;
+    top:53.5vh;
+  }
+  #OTPid {
+    left:15vw;
+  }
+}
+@media (min-width:280px) and (max-width:280px){
+  #no-otp-recieved{
+display:none;
+  }
+  #resend-otp{
+left:-6vw;
+  }
+  #otpVerify {
+    left:28vw;
+    top:25vh;
+    /* width:2vw; */
+    font-size:25px;
+    height:15vh;
+    line-height: 29px;
   }
 }

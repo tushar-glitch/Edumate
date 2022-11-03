@@ -4,7 +4,16 @@
   padding: 0;
   box-sizing: border-box;
   background-color: #eef1ff;
+  overflow: hidden;
 }
+/* #backgroundMainImg{
+  position:absolute;
+  width:100vw;
+  height:10vh;
+   background: no-repeat center fixed; 
+   background-size: cover; 
+   overflow: hidden;
+} */
 .AUTHENTICATION div {
   overflow: hidden !important;
 }

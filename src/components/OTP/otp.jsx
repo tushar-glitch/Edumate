@@ -60,7 +60,7 @@ setNewOtp("OTP sent, check your email");
     <>
     <div className="AUTHENTICATION">
       <Background />
-      <h1 className="BgHead">&emsp;&ensp;OTP Verification </h1>
+      <h1 className="BgHead" id="otpVerify">&emsp;&ensp;OTP Verification </h1>
       <p id="OTPid">Enter OTP sent on {email}</p>
       <input
         type="text"

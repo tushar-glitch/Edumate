@@ -1,9 +1,13 @@
+body{
+    overflow-x: hidden;
+}
 #section {
     position: absolute;
-    height: 10vh;
+    height: 9vh;
     width: 100vw;
     background-color: white;
-    left: 17.794em;
+    left: 19.3vw;
+    border: 1px solid #D9D9D9;
 }
 
 #greeting {
@@ -11,20 +15,24 @@
     width: 14vw;
     height: 4.5vh;
     background-color: white;
-    top: 3.6vh;
+    top: 3vh;
     left: 3vw;
     font-family: 'Montserrat';
+    font-weight: 400;   
+    font-size: 1.2rem;
 }
 
 #role {
     position: absolute;
-    width: 10vw;
+    width: 15vw;
     height: 4.5vh;
     background-color: white;
-    top: 3.6vh;
+    top: 3vh;
     right: 17vw;
     font-family: 'Montserrat';
     padding-right: 0em;
+    font-weight: 400;
+    font-size: 1.2rem;
 }
 #role-logo {
     position: absolute;

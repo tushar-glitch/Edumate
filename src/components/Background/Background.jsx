@@ -1,10 +1,12 @@
 import React from "react";
 import "./Background.css";
 import Image from "./bgImage";
+import BackgroundPage from "./BackgroundPage.svg";
 
 function Background() {
   return (
     <>
+    {/* <img src={BackgroundPage} alt="background image" className="backgroundMainImg" /> */}
     <div className="AUTHENTICATION">
       <div className="circle1"></div>
       <div className="circle2"></div>
