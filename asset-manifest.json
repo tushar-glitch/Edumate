@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Edumate/static/css/main.953523d5.css",
-    "main.js": "/Edumate/static/js/main.b5c36a74.js",
+    "main.js": "/Edumate/static/js/main.bfb3120e.js",
     "static/media/phone.svg": "/Edumate/static/media/phone.2b8249f0334efecb6048b0dd5f260f6c.svg",
     "static/media/ph_student.svg": "/Edumate/static/media/ph_student.4068bce92a44ee5fe81541b913664644.svg",
     "static/media/feedbackicon.svg": "/Edumate/static/media/feedbackicon.af6e06fac072c8a044c00ba5afdcbc8a.svg",
@@ -10,10 +10,10 @@
     "index.html": "/Edumate/index.html",
     "static/media/updatesicon.svg": "/Edumate/static/media/updatesicon.f034d780191268e01b8eca565dd144be.svg",
     "main.953523d5.css.map": "/Edumate/static/css/main.953523d5.css.map",
-    "main.b5c36a74.js.map": "/Edumate/static/js/main.b5c36a74.js.map"
+    "main.bfb3120e.js.map": "/Edumate/static/js/main.bfb3120e.js.map"
   },
   "entrypoints": [
     "static/css/main.953523d5.css",
-    "static/js/main.b5c36a74.js"
+    "static/js/main.bfb3120e.js"
   ]
 }
