@@ -1,0 +1,292 @@
+.AUTHENTICATION {
+  overflow: hidden;
+}
+#input-box {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 56vw;
+  top: 43vh;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+
+#no-otp-recieved {
+  position: absolute;
+  width: 55vw;
+  height: 5vh;
+  left: 56vw;
+  top: 52vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17px;
+  color: #000000;
+  background: none;
+}
+#resend-otp {
+  position: absolute;
+  width: 189px;
+  height: 37px;
+  left: 65.8vw;
+  top: 50.5vh;
+  background: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  border: none;
+  text-decoration: underline;
+}
+#btn-continue {
+  box-sizing: border-box;
+  position: absolute;
+  width: 26vw;
+  height: 6.5vh;
+  left: 56vw;
+  top: 60vh;
+  background: #6c63ff;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+}
+#OTPid {
+  position: absolute;
+  /* width: 20vw; */
+  height: 7vh;
+  left: 56vw;
+  top: 38vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  background: none;
+}
+#inOtp {
+  position: absolute;
+  width: 22vw;
+  /* height: 20vh; */
+  left: 65vw;
+  top: 67vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
+#timer {
+  position: absolute;
+  width: 4vw;
+  height: 3vh;
+  left: 76.7vw;
+  top: 51.9vh;
+  background: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+#newOtp {
+  position: absolute;
+  width: 22vw;
+  left: 61.4vw;
+  top: 67vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17px;
+  color: #ff0000;
+  background: none;
+}
+@media (max-width: 380px) {
+  body {
+    overflow:hidden;
+  }
+  #OTPid {
+width:70vw;
+height:20vh;
+left: 13.5vw;
+top: 37vh;
+font-weight: 600;
+font-size: 16px;
+  }
+  #input-box {
+    width: 77vw;
+    height: 54px;
+    left: 12.5vw;
+    top: 44vh;
+
+  }
+  #btn-continue {
+    width: 77vw;
+    height: 54px;
+    top:60vh;
+    left:12.5vw;
+  }
+  #otpVerify {
+    font-size: 25px;
+    position:absolute;
+    left:13vw;
+    top:24vh;
+  }
+  #no-otp-recieved {
+    top: 53vh;
+    left: 12.5vw;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  #resend-otp {
+    top: 51.5vh;
+    left: 38.6vw;
+    font-size: 13px;
+  }
+  #timer {
+    top:52.9vh;
+    width:12vw;
+    left:78vw;
+    font-size: 14px;
+  }
+}
+@media (min-width:380px) and (max-width:950px)
+{
+  body {
+    overflow:hidden;
+  }
+  #OTPid {
+width:80vw;
+left: 15vw;
+top: 40.2vh;
+font-weight: 600;
+font-size: 16.5px;
+  }
+  #input-box {
+    position: absolute;
+    width: 77vw;
+    height: 54px;
+    left: 12.5vw;
+    top: 46vh;
+  }
+  #btn-continue {
+    width: 77vw;
+    height: 54px;
+    top:62vh;
+    left:12.5vw;
+  }
+  #otpVerify{
+    width:50vw;
+    height:10vh;
+    left:26vw;
+    top:23vh;
+  }
+  #no-otp-recieved {
+    top: 52.5vh;
+    left: 12.5vw;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  #resend-otp {
+    top: 51.5vh;
+    left: 41.6vw;
+    font-size: 13px;
+  }
+  #timer {
+    top:52.5vh;
+    width:12vw;
+    font-size: 14px;
+    left:78vw;
+  }
+}
+@media (min-width:768px) and (max-width:920px) {
+  #no-otp-recieved {
+    font-size: 17px;
+    left:14.5vw;
+  }
+  #input-box {
+    left:14.5vw;
+  }
+  #btn-continue {
+    left:14.5vw;
+  }
+  #otpVerify {
+    left:23.5vw;
+    font-size:40px;
+  }
+  
+  #resend-otp {
+    font-size: 17px;
+    left:64vw;
+    top:51.8vh;
+  }
+  #timer {
+    font-size: 18px;
+    left:85vw;
+    top:52.56vh;
+  }
+  #OTPid {
+    left:14.5vw;
+  }
+}
+@media (min-width:540px) and (max-width:540px) {
+  #input-box{
+left:15vw;
+  }
+  #otpVerify {
+    left:35vw;
+    font-size:33px;
+    height:15vh;
+  }
+  
+  #btn-continue{
+    left:15vw;
+  }
+  #no-otp-recieved{
+    left:15vw;
+    top:53.7vh;
+  }
+  #resend-otp{
+left:57vw;
+top:52.7vh;
+  }
+  #timer{
+    left:84vw;
+    top:53.5vh;
+  }
+  #OTPid {
+    left:15vw;
+  }
+}
+@media (min-width:280px) and (max-width:280px){
+  #no-otp-recieved{
+display:none;
+  }
+  #resend-otp{
+left:-6vw;
+  }
+  #otpVerify {
+    left:28vw;
+    top:25vh;
+    /* width:2vw; */
+    font-size:25px;
+    height:15vh;
+    line-height: 29px;
+  }
+}
