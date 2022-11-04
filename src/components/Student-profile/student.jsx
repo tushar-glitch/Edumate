@@ -2,10 +2,22 @@ import React from 'react'
 import './student.css'
 import avatar from '../Assests/Images/avatar.png'
 import Navbar from '../Navbar/Navbar'
-const student = () => {
+import SideBar from '../Student/SideBar/sidebar'
+import EditProfile from './editProfile'
+import { useState } from 'react'
+const Student = (prop) => {
+    var name1 = "tushar";
+    const [na, setNa] = useState(name1);
+    function handleEdit() {
+        console.log("fhjbj");
+        document.getElementsByClassName("space1").style.display = "none";
+        setNa(prop.n);
+    }
     return (
         <>
-            <Navbar/>
+            <EditProfile name={name1} />
+            <SideBar />
+            <Navbar />
             <h1 id='dash'>Dashboard &gt; My Profile</h1>
             <div id="background">
                 <div id="avatar">
@@ -36,4 +48,4 @@ const student = () => {
     )
 }
 
-export default student
+export default Student

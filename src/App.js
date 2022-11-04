@@ -24,6 +24,7 @@ function App() {
         <Route path="/dashboard" exact element={<Dashboard/>}/>
         <Route path="/profile" exact element={<StuProfile/>}/>
       </Routes>
+      
     </BrowserRouter>
   </>
 }

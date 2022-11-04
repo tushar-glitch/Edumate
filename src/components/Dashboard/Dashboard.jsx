@@ -4,9 +4,11 @@ import Navbar from '../Navbar/Navbar'
 import profileimg from '../Assests/Images/profile-img.png'
 import updateimg from '../Assests/Images/updates-img-removebg-preview.png'
 import Chart from '../Pie/Pie'
+import SideBar from '../Student/SideBar/sidebar'
 const Dashboard = () => {
     return (
         <>
+            <SideBar/>
             <Navbar />
             <h1 id='dash'>Dashboard</h1>
             <div id="container">
