@@ -50,6 +50,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
   }, [userID]);
   const [credentials, setCredentials] = useState("");
   var data = { userID, password };
+  const [tokenApi,setTokenApi] = useState(false);
   function postdata() {
     if (iscorrectid && iscorrectpass) {
       axios
@@ -58,10 +59,14 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
           console.log(res.data);
           localStorage.setItem("token", res.data.token);
           if (localStorage.getItem("token")) alert(res.data.msg);
+          setTokenApi(true);
+          console.log(tokenApi);
         })
         .catch((err) => {
           console.log(err);
           setCredentials("Invalid credentials.Please check your User Id or Password");
+          setTokenApi(true);
+          console.log(tokenApi);
         });
     }
     else {
@@ -70,6 +75,11 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
       setCredentials("")
     }
   }
+  // useEffect(()=>{
+  //   if(tokenApi){
+  //     axios.post("")
+  //   }
+  // })
   return (
     <div className="AUTHENTICATION">
     <Background />

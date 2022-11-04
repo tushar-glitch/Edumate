@@ -17,7 +17,7 @@ import Student from "./components/Student-profile/student";
 function App() {
  
   return <>
-  <Student />
+  {/* <Student /> */}
   {/* <BrowserRouter>
             <PrivateRoute component={Dashboard} path="/dashboard" />
             <Routes>
@@ -26,7 +26,7 @@ function App() {
         </BrowserRouter>
   <StProfile /> */}
   {/* <Dashboard /> */}
-    {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" exact element={<LogIn />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
@@ -37,7 +37,7 @@ function App() {
         <Route path="/dashboard" exact element={<Dashboard/>}/>
         <Route path="/profile" exact element={<StuProfile/>}/>
       </Routes> 
-    </BrowserRouter> */}
+    </BrowserRouter>
   </>
 }
 
