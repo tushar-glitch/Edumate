@@ -3,8 +3,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #eef1ff;
+  /* background-color: #eef1ff; */
   /* overflow: hidden; */
+}
+.backgroundMainImg{
+  position:absolute;
+  width:100vw;
+  height:100vh;
+   background: no-repeat center fixed; 
+   background-size: cover; 
+   overflow: hidden;
 }
 .AUTHENTICATION div {
   overflow: hidden !important;

@@ -350,7 +350,7 @@ color: #000000;
     background:none;
     border-bottom: 1px solid black;
 }
-#profileName {
+.profileName {
     background:none;
     border:none;
     outline:none;
@@ -372,6 +372,11 @@ color: #000000;
     position:absolute;
     top:125vh;
     left:20vw;
+}
+#saveButton {
+    position:absolute;
+    top:125vh;
+    left:40vw;
 }
 #dis-name {
     font-family: 'Montserrat';

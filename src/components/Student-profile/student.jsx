@@ -6,11 +6,14 @@ import SideBar from '../Student/SideBar/sidebar'
 import { useState } from 'react'
 const Student = () => {
     const [profileName,setProfileName] = useState("Tushar Chauhan");
-    // const [nameAble,setNameAble] = useState("readonly");
+    const [nameAble,setNameAble] = useState("readonly");
     const [editAble,setEditAble]=useState(false);
     function handleEditProfile(){
 setEditAble(true);
 console.log(editAble);
+    }
+    function handleSaveProfile(){
+        setEditAble(false);
     }
    function handleEditPName(e){
     // if(editAble)
@@ -36,9 +39,10 @@ console.log(editAble);
                 <div id="personalinfo">Personal Info</div>
                 <div id="stu-name">Student's Name</div>
                 {/* <span className='space1'>Tushar Chauhan</span> */}
-                
+                {/* onChange={editAble?{handleEditPName}:null} */}
                 <div className='space1'>
-                   <input type="text" id="profileName" value={profileName} onChange={editAble?{handleEditPName}:null} /> 
+                {editAble?(<input type="text" className="profileName" value={profileName} onChange={handleEditPName}/>): 
+                   (<input type="text" className="profileName" value={profileName}  disabled/>)}
                 </div> 
                 <div id="roll">Roll No. <span className='space2'>2100xxxxxxxxx</span></div>
                 <div id="adm-no">Admission No. <span className='space3'>21xxxxx</span></div>
@@ -54,6 +58,8 @@ console.log(editAble);
                 <div id="fat-phone">Father's Mobile No.</div>
                 <div id="mot-phone">Mother's Mobile No.</div>
                 <button id="editButton" onClick={handleEditProfile}>Edit Profile</button>
+                <button id="saveButton" onClick={handleSaveProfile}>Save</button>
+                
             </div>
         </>
     )

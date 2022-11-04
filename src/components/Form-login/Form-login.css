@@ -1,9 +1,7 @@
 * {
   z-index: 2;
 }
-.AUTHENTICATION {
-  overflow: hidden;
-}
+
 #user-id {
   position: absolute;
   width: 5.5vw;
@@ -298,15 +296,16 @@
   }
 
   #eye {
-    top: 56vh;
-    left:80vw;
+    top: 55vh;
+    top:73.6vh;
+    left:49vw;
     font-weight:600;
     font-size:15px;
   }
-  /* #eye {
+  #eye {
     top:56vh;
     width:16px;
-  } */
+  }
   #credential {
     top:84vh;
     left:25vw;
@@ -469,6 +468,12 @@ font-size: 17px;
   }
   #fgtPwd {
     left:69vw;
+  }
+  #timerToken {
+    position:absolute;
+    top:20vh;
+    left:40vw;
+    font-size: 100px;
   }
 }
 @media (min-width:912px) and (max-width:912px){

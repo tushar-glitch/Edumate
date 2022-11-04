@@ -4,10 +4,11 @@ import Background from "../Background/Background";
 import "./Form-login.css";
 import EmailIMG from "./email-icon";
 import LockIMG from "./LockImg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
   const Formlogin = () => {
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
@@ -51,6 +52,27 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
   const [credentials, setCredentials] = useState("");
   var data = { userID, password };
   const [tokenApi,setTokenApi] = useState(false);
+  const navigate = useNavigate();
+
+const [timerToken,setTimerToken] = useState(4000);
+const [timerStart,setTimerStart] = useState(false);
+
+useEffect(()=>{
+  console.log("asjbds,");
+  let intervalId = null;
+  console.log(timerStart);
+  // if(timerStart){
+    console.log("asjbds,");
+  intervalId = setInterval(()=>{
+    setTimerToken(timerToken-1);
+  },1000);
+  return ()=> clearInterval(intervalId)
+// }
+},[timerToken]);
+
+console.log(timerToken);
+sessionStorage.setItem("expiry time",timerToken);
+
   function postdata() {
     if (iscorrectid && iscorrectpass) {
       axios
@@ -58,15 +80,24 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
         .then((res) => {
           console.log(res.data);
           localStorage.setItem("token", res.data.token);
-          if (localStorage.getItem("token")) alert(res.data.msg);
-          setTokenApi(true);
+          const accessToken = res.data.token.access;
+          const refreshToken = res.data.token.refresh;
+          console.log(accessToken);
+          console.log(refreshToken);
+          if(accessToken && refreshToken){
+            setTimerStart(true);
+            // navigate("/profile");
+            storeTokenData(accessToken,refreshToken);
+            setTokenApi(true);
+            console.log(timerStart);
+            console.log(tokenApi);
+          }
+          localStorage.setItem("access token:",res.data.token.access);
           console.log(tokenApi);
         })
         .catch((err) => {
           console.log(err);
           setCredentials("Invalid credentials.Please check your User Id or Password");
-          setTokenApi(true);
-          console.log(tokenApi);
         });
     }
     else {
@@ -75,16 +106,18 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
       setCredentials("")
     }
   }
-  // useEffect(()=>{
-  //   if(tokenApi){
-  //     axios.post("")
-  //   }
-  // })
+
+  function storeTokenData(accessToken,refreshToken){
+    sessionStorage.setItem("access token",accessToken);
+    sessionStorage.setItem("refresh token",refreshToken);
+  }
+
   return (
     <div className="AUTHENTICATION">
     <Background />
       <h5 id="user-id">User id</h5>
       <EmailIMG />
+      <p id="timerToken">{timerToken}</p>
       <input
         type="text"
         id="input-box1"
