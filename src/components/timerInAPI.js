@@ -1,3 +1,5 @@
+import axios from "axios";
+
 function getToken(){
     if(timeOut()){
         const refreshToken = sessionStorage.getItem("refresh token");
@@ -20,5 +22,12 @@ function timeOut(){
     else
     return false;
 }
+
+function getRefreshToken(refreshToken) {
+    axios.post ("https://erp-edumate.herokuapp.com/api/user/token/refresh/",{
+        refresh:refreshToken
+    })
+}
+
 export default getToken;
 console.log(getToken);

@@ -23,22 +23,8 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
     setShow(!show);
   }
   var isnum = /^\d+$/;
-  const [iscorrectpass, setIsCorrectPass] = useState(false);
   const [iscorrectid, setIsCorrectId] = useState(false);
-  const rightpass =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
-  useEffect(() => {
-    if (rightpass.test(password)) {
-      document.getElementById("wrongpass").style.display = "none";
-      // document.getElementById("fgtPwd").style.bottom = "1000";
-      document.getElementById("btn-submit").style.top = "500";
-      console.log("true");
-      setIsCorrectPass(true);
-    } else if (password) {
-      document.getElementById("wrongpass").style.display = "block";
-      setIsCorrectPass(false);
-    }
-  }, [password]);
+  
   useEffect(() => {
     if (isnum.test(userID)) {
       document.getElementById("wrongid").style.display = "none";
@@ -74,7 +60,7 @@ console.log(timerToken);
 sessionStorage.setItem("expiry time",timerToken);
 
   function postdata() {
-    if (iscorrectid && iscorrectpass) {
+    if (iscorrectid) {
       axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
         .then((res) => {
@@ -86,7 +72,7 @@ sessionStorage.setItem("expiry time",timerToken);
           console.log(refreshToken);
           if(accessToken && refreshToken){
             setTimerStart(true);
-            // navigate("/profile");
+            navigate("/profile");
             storeTokenData(accessToken,refreshToken);
             setTokenApi(true);
             console.log(timerStart);
@@ -102,7 +88,6 @@ sessionStorage.setItem("expiry time",timerToken);
     }
     else {
       document.getElementById("wrongid").style.display = "block";
-      document.getElementById("wrongpass").style.display = "block";
       setCredentials("")
     }
   }
@@ -143,7 +128,6 @@ sessionStorage.setItem("expiry time",timerToken);
       ) : (
         <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
       )}
-      <span id="wrongpass">Invalid Password format. The password should atleast contain 1 uppercase 1 lowercase 1 number 1 special digit character and must have length greater than equal to 8.</span>
       <button id="btn-submit" type="submit" onClick={postdata}>
         LOGIN
       </button>
