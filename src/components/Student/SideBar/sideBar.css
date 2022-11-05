@@ -48,3 +48,8 @@ margin-bottom: 7vh;
     position:absolute;
     left:-3.5vw;
 }
+@media (max-width:1000px) {
+ .sideB{
+    display: none;
+ }   
+}

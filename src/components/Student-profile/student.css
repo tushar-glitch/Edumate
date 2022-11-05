@@ -1,15 +1,18 @@
-#dash {
+body {
+    overflow-x: hidden;
+}
+.dash {
     position: absolute;
-    width: 25vw;
-    height: 5vh;
     left: 26vw;
-    top: 17vh;
+    top: 21vh;
+    width: 50vw;
+    height: 5vh;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 30px;
     line-height: 37px;
-    color: #000000;
+    background: none;
 }
 
 #background {
@@ -29,32 +32,31 @@
     left: 3vw;
     height: 50vh;
     width: 13vw;
-
+background: none;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 500;
 font-size: 14px;
 line-height: 17px;
 text-align: center;
-
 color: #000000;
-
+}
+#profileImage{
+    background:none;
+    width:12vw;
 }
 
 #heading1 {
     position: absolute;
     width: 229px;
     height: 37px;
-    left: 20.5vw;
+    left: 22.5vw;
     top: 9.5vh;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 30px;
     line-height: 37px;
-    /* identical to box height */
-
     background-color: white;
     color: #000000;
 }
@@ -64,39 +66,29 @@ color: #000000;
     width: 8vw;
     font-weight: 600;
     height: 5vh;
-    left: 20.5vw;
+    left: 23vw;
     top: 20.5vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
-
     font-size: 1rem;
     line-height: 17px;
-    /* identical to box height */
-
-
     color: #6C63FF;
-
 }
 
 #stu-name {
-
     position: absolute;
     width: 25vw;
     height: 4vh;
-    left: 20.5vw;
+    left: 23vw;
     top: 28vh;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
     background-color: white;
     color: #000000;
-
 }
 
 #roll {
@@ -104,25 +96,20 @@ color: #000000;
     position: absolute;
     width: 20vw;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 35vh;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-
 }
 
 #adm-no {
     position: absolute;
     width: 20vw;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 42vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -130,18 +117,14 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
     color: #000000;
-
 }
 
 #bl-gr {
     position: absolute;
     width: 10vw;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 49vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -149,18 +132,13 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-    color: #000000;
 }
 
 #email {
-
     position: absolute;
     width: 10vw;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 56vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -168,17 +146,13 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-    color: #000000;
 }
 
 #heading2 {
     position: absolute;
     width: 114px;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 63vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -186,18 +160,14 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
     color: #6C63FF;
-
 }
 
 #address {
     position: absolute;
     width: 10vw;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 70vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -205,17 +175,13 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-    color: #000000;
 }
 
 #city {
     position: absolute;
     width: 10vw;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 77vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -223,17 +189,13 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-    color: #000000;
 }
 
 #state {
     position: absolute;
     width: 10vw;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 84vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -241,18 +203,13 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-    color: #000000;
-
 }
 
 #stu-phone {
     position: absolute;
     width: 149px;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 91vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -260,17 +217,13 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-    color: #000000;
 }
 
 #pin {
     position: absolute;
     width: 149px;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 98vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -278,17 +231,13 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-    color: #000000;
 }
 
 #heading3 {
     position: absolute;
     width: 56px;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 105vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -296,9 +245,6 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
     color: #6C63FF;
 }
 
@@ -306,7 +252,7 @@ color: #000000;
     position: absolute;
     width: 149px;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 112vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -314,19 +260,13 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-    color: #000000;
-
 }
 
 #mot-phone {
-
     position: absolute;
     width: 149px;
     height: 17px;
-    left: 313px;
+    left: 23vw;
     top: 119vh;
     background-color: white;
     font-family: 'Montserrat';
@@ -334,43 +274,520 @@ color: #000000;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
-
-
-    color: #000000;
-
 }
 
+.profileField {
+    background:none;
+    border:none;
+    outline:none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+    color:black;
+}
 .space1 {
     position: absolute;
-    color: #000000;
-    margin-left: 6rem;
-    background-color: white;
+    top:27.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
 }
-
 .space2 {
     position: absolute;
-    color: #000000;
-    margin-left: 10rem;
-    background-color: white;
+    top:34.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
 }
 
 .space3 {
     position: absolute;
-    color: #000000;
-    margin-left: 7rem;
-    background-color: white;
+    top:41.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
+}
+.space4{
+    position: absolute;
+    top:48.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
+}
+.space5{
+    position: absolute;
+    top:55.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
+}
+.space6{
+    position: absolute;
+    top:69.8vh;
+    left:38vw;
+    /* width:20vw; */
+    background:none;
+    border-bottom: 1px solid black;
 }
 
+.space7{
+    position: absolute;
+    top:76.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
+}
+.space8{
+    position: absolute;
+    top:83.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
+}
+.space9{
+    position: absolute;
+    top:90.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
+}
+.space10{
+    position: absolute;
+    top:97.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
+}
+.space11{
+    position: absolute;
+    top:111.8vh;
+    left:38vw;
+    background:none;
+    border-bottom: 1px solid black;
+}
+.space12{
+position: absolute;
+top:118.8vh;
+left:38vw;
+background:none;
+border-bottom: 1px solid black;
+}
+#editButton {
+    position:absolute;
+    top:125vh;
+    left:29vw;
+    width:6vw;
+    padding:5px;
+    background-color: rgb(18, 134, 18);
+    border:1px solid black;
+    border-radius: 10px;
+}
+#saveButton {
+    position:absolute;
+    top:125vh;
+    left:37vw;
+    width:6vw;
+    padding:5px;
+    background-color: rgb(197, 56, 46);
+    border:1px solid black;
+    border-radius: 10px;
+}
 #dis-name {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
-    /* identical to box height */
     background-color: white;
-
     color: #6C63FF;
+}
+.CONTACT {
+    background: rgba(238, 241, 255, 0.5);
+}
+.avatarInfo{
+    background: none;
+}
+@media (max-width:940px) {
+    #background {
+        width:72vw;
+    }
+    .space1 , .space2 , .space3 , .space4 , .space5 , .space6 ,.space7 , .space8 , .space9 , .space10 , .space11 , .space12 {
+        left:45vw;
+    }
+    #personalinfo{
+        width:20vw;
+    }
+}
+@media (min-width:340px) and (max-width:920px) {
+    body {
+        overflow-x:hidden ;
+        width:0vw;
+    }
+    .dash{
+        font-size: 1.7rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:23vh;
+    }
+    #heading1 {
+        top:2vh;
+        left:5vw;
+        font-size: 1.3rem;
+        width:50vw;
+    }
+    #background {
+        width:90vw;
+        height:150vh;
+        position:absolute;
+        left:-20.6vw;
+    }
+    #avatar {
+        background-color:  #eef1ff;;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+height:24vh;
+width:80vw;
+left:5vw;
+    }
+    #profileImage {
+        position:absolute;
+        top:6vh;
+        left:4vw;
+        width:20vw;
+    }
+    #PROFILE {
+        position:absolute;
+        top:18vh;
+        left:-10vw;
+    }
+    #personalinfo {
+width:40vw;
+    }
+    #stu-phone , #fat-phone , #mot-phone{
+        width:30vw;
+    }
+    .space1{
+        top:29vh;
+    }
+    .space2{
+        top:34.9vh;
+    }
+    .space3{
+        top:42vh;
+    }
+    .space4{
+        top:50vh;
+    }
+    .space6{
+        top:69.9vh;
+    }
+    .space7{
+        top:76.5vh;
+    }
+    .space8{
+        top:84vh;
+    }
+    .space9{
+        top:91.6vh;
+    }
+    .space10{
+        top:98.5vh;
+    }
+    .space11{
+        top:112vh;
+    }
+    .space12{
+        top:119vh;
+    }
+    #stu-name  , #roll , #adm-no , #bl-gr , #email , #address , #city , #state , #stu-phone , #pin , #fat-phone , #mot-phone {
+        font-size: 0.85rem;
+    }
+    .profileField {
+        position:absolute;
+        left:15vw;
+        width:30vw;
+        font-size: 0.85rem;
+    }
+    #dis-name {
+        background: none;
+        position:absolute;
+        left:27vw;
+        top:7vh;
+    }
+    .avatarInfo {
+        position:absolute;
+        left:28vw;
+        top:10vh;
+    }
+}
+@media (min-width:390px) and (max-width:950px) {
+    .dash{
+        font-size: 1.7rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:25vh;
+    }
+    .profileField , #personalinfo , #heading2 , #heading3 {
+        font-size:1.1rem;
+    }
+    #stu-name  , #roll , #adm-no , #bl-gr , #email , #address , #city , #state , #stu-phone , #pin , #fat-phone , #mot-phone {
+        font-size: 1.1rem;
+    }
+    #heading2{
+        width:50vw;
+    }
+}
+@media (min-width:768px) and (max-width:912px) {
+    .dash{
+        font-size: 2.3rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:25vh;
+    }
+    #heading1 {
+        top:4vh;
+        left:5.5vw;
+        font-size: 1.7rem;
+    }
+    .profileField , #personalinfo , #heading2 , #heading3 {
+        font-size: 1.45rem;
+        width:30vw;
+    }
+    #bl-gr ,#adm-no{
+        width:30vw;
+    }
+    #stu-name  , #roll , #adm-no , #bl-gr , #email , #address , #city , #state , #stu-phone , #pin , #fat-phone , #mot-phone {
+        font-size: 1.4rem;
+    }
+    #dis-name{
+        left:32vw;
+        top:8vh;
+        font-size: 1.45rem;
+        font-weight:600;
+    }
+    .avatarInfo{
+        top:11.4vh;
+        left:32vw;
+        font-size: 1.35rem;
+        font-weight:500;
+        line-height: 25px;
+    }
+    .space1{
+        top:27.3vh;
+    }
+    .space2{
+        top:33.9vh;
+    }
+    .space3{
+        top:41.5vh;
+    }
+    .space4{
+        top:49.2vh;
+    }
+    .space6{
+        top:69.4vh;
+    }
+    .space7{
+        top:75.9vh;
+    }
+    .space8{
+        top:83.5vh;
+    }
+    .space9{
+        top:90.5vh;
+    }
+    .space10{
+        top:97.9vh;
+    }
+    .space11{
+        top:111.5vh;
+    }
+    .space12{
+        top:118.5vh;
+    }
+}
+@media (min-width:912px) and (max-width:912px) {
+    .profileField , #personalinfo , #heading2 , #heading3 {
+        font-size: 1.65rem;
+        width:30vw;
+    }
+    #bl-gr {
+        width:30vw;
+    }
+    #stu-name  , #roll , #adm-no , #bl-gr , #email , #address , #city , #state , #stu-phone , #pin , #fat-phone , #mot-phone {
+        font-size: 1.55rem;
+}
+#dis-name{
+    left:34vw;
+    top:8vh;
+    font-size: 1.65rem;
+    font-weight:600;
+}
+.avatarInfo{
+    top:11.5vh;
+    left:34vw;
+    font-size: 1.45rem;
+    font-weight:500;
+    line-height: 25px;
 
+}
+}
+@media (max-width:540px) and (min-width:540px) {
+    #stu-name  , #roll , #adm-no , #bl-gr , #email , #address , #city , #state , #stu-phone , #pin , #fat-phone , #mot-phone {
+        width:30vw;
+}
+#dis-name{
+    left:35vw;
+    top:8vh;
+  font-weight: 600;
+}
+.avatarInfo{
+    top:11.5vh;
+    left:35vw;
+}
+.space1{
+    top:27.5vh;
+}
+.space2{
+    top:34.9vh;
+}
+.space3{
+    top:41.5vh;
+}
+.space4{
+    top:49vh;
+}
+.space6{
+    top:69.9vh;
+}
+.space7{
+    top:77vh;
+}
+.space8{
+    top:84vh;
+}
+.space9{
+    top:91vh;
+}
+.space10{
+    top:98vh;
+}
+.space11{
+    top:112vh;
+}
+.space12{
+    top:119vh;
+}
+}
+@media (min-width:280px) and (max-width:280px) {
+    body {
+        overflow-x:hidden ;
+        width:0vw;
+    }
+    .dash{
+        font-size: 1.35rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:2vh;
+    }
+    #heading1 {
+        top:2vh;
+        left:5vw;
+        font-size: 1.2rem;
+    }
+    #background {
+        width:90vw;
+        height:150vh;
+        position:absolute;
+        left:-20.6vw;
+    }
+    #avatar {
+        background-color:  #eef1ff;;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+height:24vh;
+width:80vw;
+left:5vw;
+    }
+    #profileImage {
+        position:absolute;
+        top:7vh;
+        left:4vw;
+        width:20vw;
+    }
+    #PROFILE {
+        position:absolute;
+        top:18vh;
+        left:-10vw;
+    }
+    #personalinfo {
+width:40vw;
+    }
+    #stu-phone , #fat-phone , #mot-phone{
+        width:30vw;
+    }
+    #stu-name  , #roll , #adm-no , #bl-gr , #email , #address , #city , #state , #stu-phone , #pin , #fat-phone , #mot-phone {
+        font-size: 0.75rem;
+    }
+    .profileField {
+        position:absolute;
+        left:15vw;
+        width:30vw;
+        font-size: 0.75rem;
+    }
+    #dis-name {
+        background: none;
+        position:absolute;
+        left:26vw;
+        top:7vh;
+        font-size: 0.85rem;
+    }
+    .avatarInfo {
+        position:absolute;
+        left:27vw;
+        top:10.5vh;
+        font-size: 0.75rem;
+    }
+    .space1{
+        top:28.5vh;
+    }
+    .space2{
+        top:35.2vh;
+    }
+    .space3{
+        top:42.3vh;
+    }
+    .space4{
+        top:50vh;
+    }
+    .space5{
+        top:56.2vh;
+    }
+    .space6{
+        top:70vh;
+    }
+    .space7{
+        top:77.2vh;
+    }
+    .space8{
+        top:84.0vh;
+    }
+    .space9{
+        top:91.3vh;
+    }
+    .space10{
+        top:98.3vh;
+    }
+    .space11{
+        top:112.4vh;
+    }
+    .space12{
+        top:119.5vh;
+    }
 }

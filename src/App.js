@@ -8,12 +8,20 @@ import FgtEmail from "./components/Forgotpass/FgtEmail";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Protected from "./components/Forgotpass/protected";
 import Navbar from "./components/Navbar/Navbar";
-import Dashboard from "./components/Dashboard/Dashboard";
 import Chart from "./components/Pie/Pie";
-import StuProfile from './components/Student-profile/student'
+import StProfile from "./components/Student/St_profile";
+import PrivateRoute from "./components/Student/PrivateRoutes";
 function App() {
+ 
   return <>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+  {/* <BrowserRouter>
+            <PrivateRoute component={Dashboard} path="/dashboard" />
+            <Routes>
+            <Route path="/profile" exact element={<StProfile />} />
+            </Routes>
+        </BrowserRouter> */}
+  <StProfile /> 
+    {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" exact element={<LogIn />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
@@ -23,8 +31,8 @@ function App() {
         <Route path="/navbar" exact element={<Navbar />} />
         <Route path="/dashboard" exact element={<Dashboard/>}/>
         <Route path="/profile" exact element={<StuProfile/>}/>
-      </Routes>
-    </BrowserRouter>
+      </Routes> 
+    </BrowserRouter> */}
   </>
 }
 

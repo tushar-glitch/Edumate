@@ -3,6 +3,7 @@ import TimeT from "./TimeTable";
 import "./TT.css" ;
  function Timetable (){
     return <>
+    <div className="TIMETABLE">
      <h1 className="dbTT">Dashboard : Time Table </h1>
     <div className="timeTable">
     <TimeT />
@@ -24,6 +25,7 @@ import "./TT.css" ;
    <li>Dr. Vivek</li>
    <li>Dr. Vivek</li>
 </ul>
+    </div>
     </div>
     </>
  }

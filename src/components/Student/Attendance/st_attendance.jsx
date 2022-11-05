@@ -1,12 +1,7 @@
 import React from "react";
-
+import ProgressBar from "./ProgressBar";
 import "./attend.css";
  function Attendance(){
-    function handleEdit(){
-document.getElementById("name").style.input.type="text";
-document.getElementById("name").style.innerHTML = "dhSJDB";
-document.getElementById("name").style.color="green";
-    }
     return <>
      <h1 className="dbTT">Dashboard : Attendance </h1>
 <div className="attend">
@@ -24,40 +19,47 @@ document.getElementById("name").style.color="green";
             <td>Data Structures</td>
             <td></td>
             <td>Total Classes</td>
-            <td>Attendance in %</td>
+            <td></td>
         </tr>
         <tr >
             <td>KCS 301</td>
             <td>Data Structures</td>
             <td></td>
             <td>Total Classes</td>
-            <td>Attendance in %</td>
+            <td></td>
         </tr>
         <tr >
             <td>KCS 301</td>
             <td>Data Structures</td>
             <td></td>
             <td>Total Classes</td>
-            <td>Attendance in %</td>
+            <td></td>
         </tr>
         <tr >
             <td>KCS 301</td>
             <td>Data Structures</td>
             <td></td>
             <td>Total Classes</td>
-            <td>Attendance in %</td>
+            <td></td>
         </tr>
         <tr >
             <td>KCS 301</td>
             <td>Data Structures</td>
             <td></td>
             <td>Total Classes</td>
-            <td>Attendance in %</td>
+            <td></td>
         </tr>
         </table>
-        <p>name</p>
-        <p id="name">Sanika Goyal</p>
-        <button type="submit" onClick={handleEdit}>Edit profile</button>
+        <div id="bar1">
+<ProgressBar/>
+</div>
+<div id="bar2">
+<ProgressBar/>
+</div>
+<ProgressBar id="bar3"/>
+<ProgressBar id="bar4"/>
+<ProgressBar id="bar5"/>
+<ProgressBar id="bar6"/>
 </div>
     </>
  }

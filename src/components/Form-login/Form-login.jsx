@@ -4,10 +4,11 @@ import Background from "../Background/Background";
 import "./Form-login.css";
 import EmailIMG from "./email-icon";
 import LockIMG from "./LockImg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
   const Formlogin = () => {
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
@@ -22,22 +23,8 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
     setShow(!show);
   }
   var isnum = /^\d+$/;
-  const [iscorrectpass, setIsCorrectPass] = useState(false);
   const [iscorrectid, setIsCorrectId] = useState(false);
-  const rightpass =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
-  useEffect(() => {
-    if (rightpass.test(password)) {
-      document.getElementById("wrongpass").style.display = "none";
-      // document.getElementById("fgtPwd").style.bottom = "1000";
-      document.getElementById("btn-submit").style.top = "500";
-      console.log("true");
-      setIsCorrectPass(true);
-    } else if (password) {
-      document.getElementById("wrongpass").style.display = "block";
-      setIsCorrectPass(false);
-    }
-  }, [password]);
+  
   useEffect(() => {
     if (isnum.test(userID)) {
       document.getElementById("wrongid").style.display = "none";
@@ -50,14 +37,49 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
   }, [userID]);
   const [credentials, setCredentials] = useState("");
   var data = { userID, password };
+  const [tokenApi,setTokenApi] = useState(false);
+  const navigate = useNavigate();
+
+const [timerToken,setTimerToken] = useState(4000);
+const [timerStart,setTimerStart] = useState(false);
+
+useEffect(()=>{
+  console.log("asjbds,");
+  let intervalId = null;
+  console.log(timerStart);
+  // if(timerStart){
+    console.log("asjbds,");
+  intervalId = setInterval(()=>{
+    setTimerToken(timerToken-1);
+  },1000);
+  return ()=> clearInterval(intervalId)
+// }
+},[timerToken]);
+
+console.log(timerToken);
+sessionStorage.setItem("expiry time",timerToken);
+
   function postdata() {
-    if (iscorrectid && iscorrectpass) {
+    if (iscorrectid) {
       axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
         .then((res) => {
           console.log(res.data);
           localStorage.setItem("token", res.data.token);
-          if (localStorage.getItem("token")) alert(res.data.msg);
+          const accessToken = res.data.token.access;
+          const refreshToken = res.data.token.refresh;
+          console.log(accessToken);
+          console.log(refreshToken);
+          if(accessToken && refreshToken){
+            setTimerStart(true);
+            navigate("/profile");
+            storeTokenData(accessToken,refreshToken);
+            setTokenApi(true);
+            console.log(timerStart);
+            console.log(tokenApi);
+          }
+          localStorage.setItem("access token:",res.data.token.access);
+          console.log(tokenApi);
         })
         .catch((err) => {
           console.log(err);
@@ -66,15 +88,21 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
     }
     else {
       document.getElementById("wrongid").style.display = "block";
-      document.getElementById("wrongpass").style.display = "block";
       setCredentials("")
     }
   }
+
+  function storeTokenData(accessToken,refreshToken){
+    sessionStorage.setItem("access token",accessToken);
+    sessionStorage.setItem("refresh token",refreshToken);
+  }
+
   return (
     <div className="AUTHENTICATION">
     <Background />
       <h5 id="user-id">User id</h5>
       <EmailIMG />
+      <p id="timerToken">{timerToken}</p>
       <input
         type="text"
         id="input-box1"
@@ -100,7 +128,6 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
       ) : (
         <FontAwesomeIcon icon={faEyeSlash} id="eye" onClick={showHide} />
       )}
-      <span id="wrongpass">Invalid Password format. The password should atleast contain 1 uppercase 1 lowercase 1 number 1 special digit character and must have length greater than equal to 8.</span>
       <button id="btn-submit" type="submit" onClick={postdata}>
         LOGIN
       </button>

@@ -146,7 +146,7 @@
   background: none;
 }
 @media (max-width:380px) {
-  * {
+  .AUTHENTICATION  {
     overflow: hidden;
   }
   #new-pass-input {
@@ -211,7 +211,7 @@
   }
 }
 @media (min-width:380px) and (max-width:950px) {
-  * {
+  .AUTHENTICATION {
     overflow: hidden;
   }
   #new-pass-input {
