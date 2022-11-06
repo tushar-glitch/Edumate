@@ -4,12 +4,7 @@
 .AUTHENTICATION {
   overflow: hidden;
 }
-#test-btn{
-  position: absolute;
-  height: 200px;
-  width: 200px;
-  background-color: #ff0000;
-}
+
 #user-id {
   position: absolute;
   width: 5.5vw;
@@ -88,24 +83,7 @@
   position: absolute;
   height: 5vh;
   left: 56vw;
-  top: 47.5vh;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  background-color: white;
-  color: #ff0000;
-  display: none;
-  background: none;
-}
-
-#wrongpass {
-  position: absolute;
-  width: 26vw;
-  height: 20vh;
-  left: 56vw;
-  top: 62.5vh;
+  top: 47vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
@@ -124,7 +102,7 @@
   width: 26vw;
   height: 7vh;
   left: 56vw;
-  top: 76vh;
+  top: 71.4vh;
   letter-spacing: 1px;
   background: #6c63ff;
   border: 1px solid #d9d9d9;
@@ -181,7 +159,7 @@
 
 #fgtPwd {
   position: absolute;
-  top: 73vh;
+  top: 68vh;
   left: 71.4vw;
   font-family: "Montserrat";
   font-style: normal;
@@ -214,13 +192,13 @@
   background: none;
   cursor: pointer;
 }
-@media (max-width: 1163px) {
+/* @media (max-width: 1163px) {
   #heading{
   font-size: 1.72em;
 }
-}
+} */
 @media (max-width: 380px) {
-  * {
+  .AUTHENTICATION {
     overflow: hidden;
   }
 
@@ -247,7 +225,7 @@
 
   #user-id {
     position: absolute;
-    top: 31.5vh;
+    top: 32vh;
     left: 15vw;
     width: 24vw;
     font-weight: 600;
@@ -256,7 +234,7 @@
 
   #password {
     position: absolute;
-    top: 49vh;
+    top: 49.99vh;
     left: 15vw;
      width: 26vw;
     font-weight: 600;
@@ -272,7 +250,7 @@
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 76.4vh;
+    top: 70vh;
   }
 
   #lockImg {
@@ -284,7 +262,7 @@
   }
 
   #emailImage {
-    top: 36.7vh;
+    top: 37.5vh;
     left: 17.5vw;
     width:20px;
   }
@@ -294,42 +272,28 @@
     left: 15vw;
   }
 
-  #wrongpass {
-    top: 61.2vh;
-    left: 15vw;
-    width:75vw;
-  }
-
   #fgtPwd {
-    top: 65vh;
+    top: 67vh;
     left: 48vw;
-    font-weight: 600;
-  }
-
-  #eye {
-    top: 55vh;
-    top:73.6vh;
-    left:49vw;
-    font-weight:600;
-    font-size:15px;
+    font-weight: 550;
   }
   #eye {
     top:56vh;
     width:16px;
   }
   #credential {
-    top:84vh;
-    left:25vw;
-    width:60vw;
+    top:78.5vh;
+    left:20vw;
+    width:65vw;
   }
 }
-@media (max-width:820px){
+@media (max-width:920px){
   #heading{
   display: none;
 }
 }
 @media (min-width:380px) and (max-width:950px) {
-  * {
+  .AUTHENTICATION {
     overflow: hidden;
   }
 
@@ -361,7 +325,7 @@
     left: 15.5vw;
     width: 24vw;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   #password {
@@ -370,11 +334,10 @@
     left: 15.5vw;
     width: 24vw;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   #heading {
-    /* display:none; */
     position: absolute;
   left: 30vw;
     width: 50vw;
@@ -386,7 +349,7 @@
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 72.5vh;
+    top: 67vh;
   }
 
   #lockImg {
@@ -405,18 +368,11 @@
     left: 15vw;
   }
 
-  #wrongpass {
-    top: 59.4vh;
-    left: 15vw;
-    width:73vw;
-  }
-
   #fgtPwd {
-    top: 65vh;
+    top: 64.5vh;
     left: 45.6vw;
-    font-weight: 600;
-    left:45.6vw;
-    font-weight:600;
+    font-weight: 500;
+    left:45.8vw;
     font-size: 18px;
   }
   #eye {
@@ -424,9 +380,9 @@
     left:81vw;
   }
   #credential {
-    top:80vh;
-    left:25vw;
-    width:60vw;
+    top:75vh;
+    left:22vw;
+    width:65vw;
   }
 }
 @media (min-width:768px ) and (max-width:920px){
@@ -436,15 +392,19 @@ left:67.5vw;
   #input-box1{
 left:18.5vw;
 padding-left: 60px;
-font-size:19px;
+font-size:1.4rem;
   }
   #input-box2{
     left:18.5vw;
     padding-left: 52px;
-    font-size:19px;
+    font-size:1.4rem;
   }
   #btn-submit{
     left:18.5vw;
+    font-size:1.4rem;
+  }
+  ::placeholder{
+    font-size:1.4rem;
   }
   #eye{
 left:86.5vw;
@@ -457,25 +417,23 @@ left:20.5vw;
     left:21.5vw;
   }
   #user-id{
+    top:32.5vh;
 left:19vw;
-font-size: 17px;
+font-size:1.5rem;
   }
   #password{
     left:19vw;
-    font-size: 17px;
+    font-size:1.5rem;
   }
   #wrongid{
     left:19vw;
-    font-size: 17px;
-  }
-  #wrongpass{
-    left:19vw;
-    font-size: 17px;
+    font-size:1.3rem;
   }
   #credential {
-    font-size: 18px;
-    left:28.5vw;
-    top:80.8vh;
+    font-size:1.4rem;
+    left:23vw;
+    top:76vh;
+    line-height: 25px;
   }
 #timerToken {
     position:absolute;
@@ -484,32 +442,81 @@ font-size: 17px;
     font-size: 100px;
   }
   #fgtPwd {
-    left:69vw;
+    left:66.9vw;
+    font-size:1.3rem;
+    font-weight: 600;
+  }
+  #timerToken {
+    position:absolute;
+    top:20vh;
+    left:40vw;
+    font-size: 100px;
   }
 }
 @media (min-width:912px) and (max-width:912px){
   #fgtPwd {
-    left:72vw;
+    left:65vw;
+  }
+  #input-box1{
+left:14vw;
+padding-left: 8vw;
+  }
+  #input-box2{
+    left:14vw;
+    padding-left: 8vw;
+  }
+  #btn-submit{
+    left:14vw;
+  }
+  #user-id{
+    left:14vw;
+  }
+  #password{
+    left:14vw;
+  }
+  #emailImage{
+    left:16.6vw;
+  }
+  #lockImg{
+left:16vw;
+top:54.6vh;
+  }
+  #eye{
+left:82vw;
+  }
+  #wrongid{
+left:14vw;
+  }
+  #credential{
+    left:15.5vw;
+    width:70vw;
   }
 }
 @media (min-width:280px) and (max-width:280px){
   #fgtPwd {
     left:57vw;
-    top:72vh;
+    top:69vh;
   }
   #lockImg {
-    top: 55.5vh;
+    top: 55.8vh;
     left: 17vw;
+    /* width:20px; */
+  }
+  #emailImage{
+    top:37.8vh;
+    left:18.5vw;
+  }
+  #eye{
+    top:56.2vh;
+  }
+  ::placeholder{
+    font-size: 0.8rem;
   }
   #wrongid {
     font-size: 12px;
   }
-  #wrongpass {
-    font-size:12px;
-    line-height: 12px;
-  }
   #btn-submit {
-    top: 77vh;
+    top: 74.6vh;
   }
 }
 @media (min-width:540px) and (max-width:540px) {
@@ -529,5 +536,9 @@ left:17.2vw;
   }
   #fgtPwd{
     left:57vw;
+  }
+  #credential {
+    left:19vw;
+    width:68vw;
   }
 }

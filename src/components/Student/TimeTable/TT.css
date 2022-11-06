@@ -1,6 +1,10 @@
+/* .TIMETABLE {
+    overflow-x: hidden;
+} */
 .StudentTimeTable{
     height:900px;
 }
+
 .timeTable {
     background-color: #ffffff;
     position:absolute;
@@ -33,6 +37,7 @@ background: none;
     width:8vw;
     text-align: center;
     border:1px solid white;
+    padding: 0 10px;
 }
 .timetableRow {
     background: #6C63FF;
@@ -129,4 +134,139 @@ margin-bottom: 2vh;
     line-height: 25px;
     color: #000000;
     margin-bottom: 2vh;
+}
+@media (max-width:1000px) and (min-width:800px) {
+    .TIMETABLE {
+        overflow-x: hidden;
+       
+    }
+    .timeTable {
+        width:84vw;
+        left:8vw;
+        top:25vh;
+        /* margin-left: 50px; */
+    }
+    .table{
+        width:82vw;
+    }
+    .table td{
+        height: 5.5vh;
+        width:90vw;
+    }
+    .dbTT{
+        left:14vw;
+    }
+    .subject{
+top:55vh;
+    }
+    .faculty{
+        top:55vh;
+        left:50vw;
+    }
+    .subList{
+        top:60vh;
+    }
+    .facList{
+        left:50vw;
+        top:60vh;
+    }
+}
+@media (max-width:800px) {
+    .TIMETABLE {
+      overflow-x: auto;
+    }
+    .timeTable {
+        width:150vw;
+        left:5vw;
+        top:25vh;
+       height:150vh;
+        margin-right:50px;
+    }
+    .table{
+        width:148vw;
+    }
+    .table td{
+        height:7vh;
+        width:8vw;
+    }
+    .subject{
+top:70vh;
+font-size: 1.5rem;
+    }
+    .faculty{
+top:70vh;
+left:50vw;
+font-size: 1.5rem;
+    }
+    .subList{
+top:75vh;
+font-size: 1.3rem;
+    }
+    .facList{
+top:75vh;
+left:50vw;
+font-size: 1.3rem;
+    }
+}
+@media (max-width:450px) {
+    .timeTable {
+        width:280vw;
+        left:5vw;
+        top:30vh;
+        height:150vh;
+       
+        margin-right:50px;
+    }
+    .table{
+        width:278vw;
+    }
+    .table td{
+        font-size: 1.5rem;
+        height:9vh;
+        width:95vw;
+    }
+    .faculty{
+        top:86vh;
+        left:70vw;
+    }
+    .subject{
+        top:86vh;
+    }
+    .subList{
+        top:92vh;
+    }
+    .facList{
+        top:92vh;
+        left:70vw;
+    }
+}
+@media (max-width:300px) {
+    .timeTable {
+        width:250vw;
+        left:5vw;
+        top:30vh;
+        height:200vh;
+        margin-right:50px;
+    }
+    .table{
+        width:248vw;
+    }
+    .table td {
+        width:120vw;
+        height:10vh;
+    }
+    .subject{
+        top:100vh;
+    }
+    .facList{
+        top:108vh;
+        left:95vw;
+    }
+    .faculty{
+        top:100vh;
+        left:95vw;
+    }
+    .subList{
+        top:108vh;
+    }
 }

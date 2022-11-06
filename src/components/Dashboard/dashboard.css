@@ -73,7 +73,7 @@
 
 #dash {
     position: absolute;
-    width: 25vw;
+    width: 45vw;
     height: 5vh;
     left: 22vw;
     top: 11.8vh;
@@ -118,8 +118,8 @@
 
 #chart {
     position: absolute;
-    width: 140px;
-    height: 140px;
+    width: 8.5vw;
+    height: 18.5vh;
     background-color: white;
     left: 2.1vw;
     top: 6.5vh;
@@ -132,9 +132,10 @@
     font-weight: 400;
     font-size: 2rem;
     line-height: 37px;
-    background-color: white;
     top: 7vh;
     left: 3vw;
+    width: 15vw;
+    background-color: white;
 }
 
 .bold {
@@ -230,8 +231,8 @@
 
 .circle_name {
     position: absolute;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 5vh;
+    width: 2.5vw;
     background-color: #6C63FF;
     border-radius: 50%;
     top: 1.5vh;
@@ -360,4 +361,100 @@ color: #000000;
 }
 .bold_name{
     font-weight: 600;
+}
+#right{
+    position: absolute;
+    top: 33vh;
+    left: 4vw;
+}
+@media (max-width:800px){
+    #background-dash{
+    height: 250vh;
+}
+    #section{
+    width: 100vw;
+}
+#greeting{
+    display: none;
+}
+#today_class{
+    top: 105vh;
+    width: 50vw;
+    left: 10vw;
+}
+#class_bg{
+    top: 110vh;
+    width: 60vw;
+    left: 8vw;
+}
+#class1{
+    width: 50vw;
+}
+#class2{
+    width: 50vw;
+}
+#class3{
+    width: 50vw;
+}
+#class4{
+    width: 50vw;
+}
+#class5{
+    width: 50vw;
+}
+.circle_name{
+    width: 5vw;
+    height: 5vh;
+}
+.class_name{
+    left: 10vw;
+    width: 40vw;
+}
+.class_time{
+    left: 10vw;
+    width: 30vw;
+}
+#date{
+    width: 50vw;
+}
+#greeting1{
+    display: none;
+}
+#right{
+    left: -20vw;
+}
+#profile_details{
+    width: 55vw;
+}
+#card1{
+    width: 60vw;
+}
+#card2{
+    width: 60vw;
+}
+#img{
+    height: 20vh;
+    width: 18vw;
+}
+#chart{
+    height: 20vh;
+    width: 18vw;
+}
+#student_details{
+    left: 25vw;
+    line-height: 40px;
+}
+#attendance_details{
+    left: 25vw;
+    line-height: 30px;
+    width: 30vw;
+    top: 10vh;
+}
+#updates{
+    top: 150vh;
+}
+#card3{
+    top: 160vh;
+    width: 58vw;
+}
 }

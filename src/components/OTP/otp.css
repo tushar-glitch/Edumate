@@ -118,92 +118,266 @@
   background: none;
 }
 @media (max-width: 380px) {
-  body {
+  .AUTHENTICATION  {
     overflow:hidden;
   }
+  #OTPHead{
+    font-size: 1.6rem;
+    left:21vw;
+  }
   #OTPid {
-width:80vw;
+width:70vw;
+height:20vh;
 left: 13.5vw;
-top: 37vh;
+top: 37.8vh;
 font-weight: 600;
-font-size: 16px;
+font-size: 0.9rem;
   }
   #input-box {
-    width: 73vw;
-    height: 54px;
-    left: 13.5vw;
-    top: 41.5vh;
+    width: 77vw;
+    height: 6.5vh;
+    left: 12.5vw;
+    top: 44vh;
 
   }
   #btn-continue {
-    width: 73vw;
+    width: 77vw;
     height: 54px;
-    top:58vh;
-    left:13.5vw;
+    top:60vh;
+    left:12.5vw;
   }
-  /* .authImage {
-    visibility: visible;
-    top:57vh;
-    left:26vw;
-  } */
-  .BgHead {
-    top: 23vh;
-    font-size: 33px;
-    width:35vw;
-  font-weight:600;
+  #otpVerify {
+    font-size: 25px;
+    position:absolute;
+    left:13vw;
+    top:24vh;
   }
   #no-otp-recieved {
-    top: 51vh;
-    left: 13.5vw;
-    font-size: 15px;
+    top: 51.5vh;
+    left: 12.5vw;
+    font-size: 13px;
     font-weight: 400;
   }
   #resend-otp {
-    top: 49.5vh;
-    left: 46vw;
-    font-size: 15px;
+    top: 50vh;
+    left: 38.6vw;
+    font-size: 13px;
+  }
+  #timer {
+    top:51.3vh;
+    width:12vw;
+    left:77.5vw;
+    font-size: 14px;
+  }
+  #inOtp{
+    top:68.6vh;
+    left:34.5vw;
+    width:50vw;
+  }
+  #newOtp{
+    top:68.6vh;
+    left:23vw;
+    width:65vw;
   }
 }
 @media (min-width:380px) and (max-width:950px)
 {
-  body {
+  .AUTHENTICATION {
     overflow:hidden;
   }
   #OTPid {
 width:80vw;
-left: 15vw;
+left: 13vw;
 top: 40.2vh;
 font-weight: 600;
 font-size: 16.5px;
   }
   #input-box {
     position: absolute;
-    width: 73vw;
+    width: 77vw;
     height: 54px;
-    left: 15vw;
-    top: 43vh;
+    left: 12.5vw;
+    top: 46vh;
   }
   #btn-continue {
-    width: 73vw;
+    width: 77vw;
     height: 54px;
-    top:58vh;
-    left:13.5vw;
+    top:62vh;
+    left:12.5vw;
   }
-  .BgHead {
+  #otpVerify{
     width:50vw;
     height:10vh;
     left:26vw;
     top:23vh;
   }
   #no-otp-recieved {
-    top: 51vh;
-    left: 15vw;
-    font-size: 16px;
+    top: 52.5vh;
+    left: 12.5vw;
+    font-size: 15px;
     font-weight: 500;
   }
   #resend-otp {
-    top: 49.5vh;
-    left: 47.9vw;
-    font-size: 15px;
+    top: 51.5vh;
+    left: 41.6vw;
+    font-size: 13px;
+  }
+  #timer {
+    top:52.5vh;
+    width:12vw;
+    font-size: 14px;
+    left:75vw;
+  }
+  #inOtp{
+    top:68.6vh;
+    left:35vw;
+    width:30vw;
+  }
+  #newOtp{
+    top:68.6vh;
+    left:25vw;
+    width:70vw;
+  }
+}
+@media (min-width:768px) and (max-width:920px) {
+  #no-otp-recieved {
+    font-size: 1.2rem;
+    left:14.5vw;
+    top:49vh;
+  }
+  #input-box {
+    left:14.5vw;
+    top:43vh;
+    font-size: 1.2rem;
+  }
+  #btn-continue {
+    left:14.5vw;
+    font-size: 1.2rem;
+  }
+  #otpVerify {
+    left:23.5vw;
+    font-size:40px;
+  }
+  #resend-otp {
+    font-size: 1.2rem;
+    left:63.2vw;
+    top:48.3vh;
+  }
+  #timer {
+    font-size: 1.3rem;
+    left:84vw;
+    top:49.1vh;
+  }
+  #OTPid {
+    left:14.5vw;
+    font-size: 1.3rem;
+  }
+  #inOtp{
+    font-size: 1.4rem;
+    top:68.4vh;
+    left:44vw;
+    width:40vw;
+  }
+  #newOtp{
+    font-size: 1.4rem;
+    top:68.6vh;
+    left:35vw;
+    width:70vw;
+  }
+  #OTPHead{
+    top:25vh;
+left:25vw;
+font-size: 2.5rem;
+  }
+}
+@media (min-width:912px) and (max-width:912px) {
+  #OTPHead{
+    top:25vh;
+left:24vw;
+font-size: 2.7rem;
+  }
+  #resend-otp {
+    left:66vw;
+  }
+  #timer{
+    top:48.8vh;
+  }
+  #inOtp{
+    font-size: 1.4rem;
+    top:68vh;
+    left:44vw;
+    width:40vw;
+  }
+  #newOtp{
+    font-size: 1.4rem;
+    top:68vh;
+    left:35vw;
+    width:70vw;
+  }
+}
+@media (min-width:540px) and (max-width:540px) {
+  #input-box{
+left:15vw;
+  }
+  #OTPHead {
+    font-size: 28px;
+    line-height: 34px;
+    /* width:40vw; */
+    height:12vh;
+    left:24vw;
+    top:25vh;
+  }
+  #otpVerify {
+    left:35vw;
+    font-size:33px;
+    height:15vh;
+  }
+  
+  #btn-continue{
+    left:15vw;
+  }
+  #no-otp-recieved{
+    left:15vw;
+    top:53.7vh;
+  }
+  #resend-otp{
+left:57vw;
+top:52.7vh;
+  }
+  #timer{
+    left:84vw;
+    top:54vh;
+  }
+  #OTPid {
+    left:15vw;
+    top:42.5vh;
+  }
+  #inOtp{
+    font-size: 1.2rem;
+    top:71vh;
+    left:42vw;
+    width:40vw;
+  }
+  #newOtp{
+    font-size: 1.2rem;
+    top:71vh;
+    left:32vw;
+    width:70vw;
+  }
+}
+@media (min-width:280px) and (max-width:280px){
+  #no-otp-recieved{
+display:none;
+  }
+  #resend-otp{
+left:-6vw;
+  }
+  #otpVerify {
+    left:28vw;
+    top:25vh;
+    /* width:2vw; */
+    font-size:25px;
+    height:15vh;
+    line-height: 29px;
   }
 }

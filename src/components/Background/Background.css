@@ -6,6 +6,14 @@
   background-color: #eef1ff;
   /* overflow: hidden; */
 }
+.backgroundMainImg{
+  position:absolute;
+  /* width:100vw; */
+  height:100vh;
+   background: no-repeat center fixed; 
+   background-size: cover; 
+   overflow: hidden;
+}
 .AUTHENTICATION div {
   overflow: hidden !important;
 }
@@ -98,8 +106,11 @@
   background: none;
 }
 @media (max-width: 380px) {
-  * {
+  .AUTHENTICATION{
     overflow: hidden;
+  }
+  .backgroundMainImg{
+    display:none;
   }
   body {
     background-color: #eef1ff;
@@ -125,18 +136,21 @@
   .edumate {
     width:75vw;
     height:15vh;
-    left: 20vw;
+    left: 21vw;
     top: 13vh;
     font-weight: 600;
-    font-size: 43px;
+    font-size: 2.8rem;
     line-height: 66px;
     letter-spacing: 0.05em;
     color: #6c63ff;
   }
 }
 @media (min-width:380px) and (max-width:950px) {
-  * {
+  .AUTHENTICATION{
     overflow: hidden;
+  }
+  .backgroundMainImg{
+    display:none;
   }
   body {
     background-color: #eef1ff;
@@ -159,17 +173,6 @@
   #pumpkin {
     display: none;
   }
-  /* .edumate {
-    width: 75vw;
-    height: 15vh;
-    left: 14vw;
-    top: 13vh;
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 66px;
-    letter-spacing: 0.05em;
-    color: #6c63ff;
-  } */
 }
 @media (min-width:380px) and (max-width:819px) {
   .edumate {
@@ -184,14 +187,14 @@
     color: #6c63ff;
   }
 }
-@media (min-width:768px){
+@media (min-width:768px) and (max-width:920px){
   .edumate {
     width: 75vw;
     height: 15vh;
     left: 32vw;
     top: 13vh;
     font-weight: 600;
-    font-size: 68px;
+    font-size: 4.5rem;
     line-height: 66px;
     letter-spacing: 0.05em;
     color: #6c63ff;
@@ -212,6 +215,13 @@
 }
 @media (min-width:540px) and (max-width:540px) {
   .edumate {
-    left:26vw;
+    left:29vw;
+    font-size: 3rem;
+  }
+}
+@media (min-width:912x) and (max-width:912px) {
+  .edumate {
+    left:32vw;
+    font-size: 4.2rem;
   }
 }

@@ -32,11 +32,13 @@ function OTP() {
         console.log(res);
         localStorage.setItem("otp",otp)
         setIncOtp("");
+        setNewOtp("");
         navigate("/rstPwd");
       })
       .catch((err) => {
         console.log(err);
         setIncOtp("Incorrect OTP");
+        setNewOtp("");
       })
 }
 const [newOtp,setNewOtp]= useState("");
@@ -60,7 +62,7 @@ setNewOtp("OTP sent, check your email");
     <>
     <div className="AUTHENTICATION">
       <Background />
-      <h1 className="BgHead">&emsp;&ensp;OTP Verification </h1>
+      <h1 className="BgHead" id="OTPHead">&emsp;&ensp;OTP Verification </h1>
       <p id="OTPid">Enter OTP sent on {email}</p>
       <input
         type="text"

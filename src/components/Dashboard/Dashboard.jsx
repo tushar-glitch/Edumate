@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './dashboard.css'
 import Navbar from '../Navbar/Navbar'
 import profileimg from '../Assests/Images/avatar.png'
@@ -45,6 +46,8 @@ const Dashboard = () => {
                         <span className="class_name">Data Structure</span>
                         <span className="class_time">9:20-10:10</span>
                     </div>
+                </div>
+                <div id="right">
                     <div id="profile_details">Profile Details</div>
                     <div id="card1">
                         <img src={profileimg} alt="" id='img' />

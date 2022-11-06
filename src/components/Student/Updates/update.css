@@ -1,0 +1,149 @@
+.update{
+    position: absolute;
+    left: 27vw;
+    top: 18vh;
+    width: 50vw;
+    height: 5vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 29px;
+    line-height: 37px;
+    background: none;
+}
+.updateWhiteDiv {
+    background-color: #ffffff;
+    position:absolute;
+    width: 67vw;
+height: 80vh;
+left: 27vw;
+top: 26vh;
+border-radius: 15px;
+}
+.updateHead2{
+    position: absolute;
+left: 2vw;
+top: 7vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 550;
+font-size: 30px;
+line-height: 37px;
+background: none;
+}
+.updateGreyRow{
+    position: absolute;
+width: 63vw;
+height: 10vh;
+left: 2vw;
+top: 16.6vh;
+background: rgba(217, 217, 217, 0.4);
+border-radius: 8px;
+text-align: center;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 37px;
+color: #4D4D4D;
+padding-top:2vh;
+}
+#updateImage{
+    position:absolute;
+    left:28vw;
+    top:39.5vh;
+    background: none;
+}
+@media (min-width:340px) and (max-width:920px) {
+    .updateGreyRow{
+        display: none;
+    }
+    .updateWhiteDiv{
+        left:7vw;
+        width:86vw;
+        height:70vh;
+    }
+    .update{
+        font-size: 1.7rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:20vh;
+    }
+    .updateHead2{
+        position:absolute;
+        top:4vh;
+        left:27vw;
+        font-size: 1.6rem;
+    }
+    #updateImage {
+        top:15vh;
+        left:20vw;
+        width:45vw;
+        height:42vh;
+    }
+}
+@media (min-width:390px) and (max-width:950px) {
+    .update{
+        font-size: 1.7rem;
+        width:90vw;
+        position:absolute;
+        left:7.5vw;
+        top:21vh;
+    }
+    .updateHead2{
+        top:3vh;
+        left:28vw;
+    }
+}
+@media (min-width:768px) and (max-width:912px) {
+    .update{
+        font-size: 2.3rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:21vh;
+    }
+    .updateHead2{
+        top:4vh;
+        font-size: 2.2rem;
+        left:34vw;
+    }
+}
+@media (max-width:540px) and (min-width:540px) {
+    .update {
+        top:20vh;
+    }
+    .updateHead2{
+        left:34.5vw;
+    }
+}
+@media (min-width:280px) and (max-width:280px) {
+    .updateGreyRow{
+        display: none;
+    }
+    .updateWhiteDiv{
+        left:7vw;
+        width:86vw;
+        height:70vh;
+    }
+    .update{
+        font-size: 1.35rem;
+        width:90vw;
+        position:absolute;
+        left:8vw;
+        top:20vh;
+    }
+    .updateHead2{
+        position:absolute;
+        top:3vh;
+        left:23vw;
+        font-size: 1.6rem;
+    }
+    #updateImage {
+        top:15vh;
+        left:20vw;
+        width:45vw;
+        height:42vh;
+    }
+}

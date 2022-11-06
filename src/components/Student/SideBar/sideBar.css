@@ -52,6 +52,12 @@
 
 .sidebarIcon {
     background: none;
-    position: absolute;
-    left: -3.5vw;
+    position:absolute;
+    left:-3.5vw;
+}
+@media (max-width:800px) {
+ .sideB{
+    display: none;
+ }   
+
 }
