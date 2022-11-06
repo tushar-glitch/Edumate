@@ -8,10 +8,11 @@ import { Link, useNavigate } from "react-router-dom";
 import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-
-  const Formlogin = () => {
+import useRefreshToken from "../refreshToken";
+const Formlogin = () => {
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
+  const refresh_call = useRefreshToken()
   function handleuserID(e) {
     setuserID(e.target.value);
   }
@@ -37,12 +38,33 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
   }, [userID]);
   const [credentials, setCredentials] = useState("");
   var data = { userID, password };
-  const [tokenApi,setTokenApi] = useState(false);
   const navigate = useNavigate();
+  const [tokenApi, setTokenApi] = useState(false);
 
-const [timerToken,setTimerToken] = useState(4000);
-const [timerStart,setTimerStart] = useState(false);
+  const [timerToken, setTimerToken] = useState(240);
+  const [timerStart, setTimerStart] = useState(false);
 
+  useEffect(() => {
+    // console.log("asjbds,");
+    let intervalId = null;
+    if (timerToken < 230) {
+      setTimerToken(240)
+      refresh_call()
+    }
+    console.log(timerStart);
+    // if(timerStart){
+    // console.log("asjbds,");
+    intervalId = setInterval(() => {
+      setTimerToken(timerToken - 1);
+    }, 1000);
+    return () => clearInterval(intervalId)
+    // }
+    
+  }, [timerToken]);
+
+  console.log(timerToken);
+  
+  sessionStorage.setItem("expiry time", timerToken);
 useEffect(()=>{
   let intervalId = null;
   console.log(timerStart);
@@ -68,15 +90,21 @@ sessionStorage.setItem("expiry time",timerToken);
           const refreshToken = res.data.token.refresh;
           console.log(accessToken);
           console.log(refreshToken);
-          if(accessToken && refreshToken){
+          if (accessToken && refreshToken) {
             setTimerStart(true);
-            navigate("/profile");
-            storeTokenData(accessToken,refreshToken);
+            storeTokenData(accessToken, refreshToken);
             setTokenApi(true);
-            console.log(timerStart);
-            console.log(tokenApi);
+            navigate("/profile");
+            axios.defaults.headers = {
+              accesstoken: accessToken,
+              refreshtoken: refreshToken
+            }
+            axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
+            // console.log(timerStart);
+            // console.log(tokenApi);
+            // navigate("/profile");
           }
-          localStorage.setItem("access token:",res.data.token.access);
+          localStorage.setItem("access token:", res.data.token.access);
           console.log(tokenApi);
         })
         .catch((err) => {
@@ -90,14 +118,13 @@ sessionStorage.setItem("expiry time",timerToken);
     }
   }
 
-  function storeTokenData(accessToken,refreshToken){
-    sessionStorage.setItem("access token",accessToken);
-    sessionStorage.setItem("refresh token",refreshToken);
+  function storeTokenData(accessToken, refreshToken) {
+    sessionStorage.setItem("access token", accessToken);
+    sessionStorage.setItem("refresh token", refreshToken);
   }
-
   return (
     <div className="AUTHENTICATION">
-    <Background />
+      <Background />
       <h5 id="user-id">User id</h5>
       <EmailIMG />
       {/* <p id="timerToken">{timerToken}</p> */}
@@ -129,6 +156,7 @@ sessionStorage.setItem("expiry time",timerToken);
       <button id="btn-submit" type="submit" onClick={postdata}>
         LOGIN
       </button>
+      <button id='test-btn' onClick={()=>refresh_call()}>Refresh</button>
       <span id="credential">{credentials}</span>
       <Loginimg />
     </div>

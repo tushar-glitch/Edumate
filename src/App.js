@@ -9,9 +9,12 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Protected from "./components/Forgotpass/protected";
 import Navbar from "./components/Navbar/Navbar";
 import Chart from "./components/Pie/Pie";
-import StProfile from "./components/Student/St_profile";
+import StProfile from "./components/Student-profile/student";
 import PrivateRoute from "./components/Student/PrivateRoutes";
-import FMain from "./components/Faculty/FacultyMain";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Feedback from "./components/Student/Feedback/Feedback";
+import FacDashboard from "./components/faculty-dashboard/FacDashboard";
+// import FMain from "./components/Faculty/FacultyMain";
 function App() {
  
   return <>
@@ -22,8 +25,7 @@ function App() {
             <Route path="/profile" exact element={<StProfile />} />
             </Routes>
         </BrowserRouter> */}
-  <StProfile /> 
-    {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" exact element={<LogIn />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
@@ -31,10 +33,12 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/formLogin" exact element={<Formlogin />} />
         <Route path="/navbar" exact element={<Navbar />} />
-      
-         <Route path="/profile" exact element={<StProfile/>}/>
-      </Routes>
-    </BrowserRouter> */}
+        <Route path="/stu_dashboard" exact element={<Dashboard />} />
+        <Route path="/feedback" exact element={<Feedback/>} />
+        <Route path="/profile" exact element={<StProfile />} />
+        <Route path="/fac_dashboard" exact element={<FacDashboard/>} />
+      </Routes> 
+    </BrowserRouter>
   </>
 }
 

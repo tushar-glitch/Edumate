@@ -1,10 +1,10 @@
 import React from 'react'
 import 'chart.js/auto';
-import { Pie, defaults } from 'react-chartjs-2'
+import { Pie, defaults, Doughnut } from 'react-chartjs-2'
 const Chart = () => {
     return (
         <>
-            <Pie
+            <Doughnut
                 data={{
                     labels: ['Present', 'Absent'],
                     datasets: [

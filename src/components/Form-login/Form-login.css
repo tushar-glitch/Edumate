@@ -1,6 +1,9 @@
 * {
   z-index: 2;
 }
+.AUTHENTICATION {
+  overflow: hidden;
+}
 
 #user-id {
   position: absolute;
@@ -15,6 +18,7 @@
   line-height: 20px;
   background-color: white;
   background: none;
+
 }
 
 #password {
@@ -46,6 +50,7 @@
   border-radius: 5px;
   background-color: white;
   padding-left: 7vh;
+  outline-color: #6c63ff;
 }
 
 #input-box2 {
@@ -62,6 +67,7 @@
   border-radius: 5px;
   background-color: white;
   padding-left: 7vh;
+  outline-color: #6c63ff;
 }
 
 ::placeholder {
@@ -428,6 +434,12 @@ font-size:1.5rem;
     left:23vw;
     top:76vh;
     line-height: 25px;
+  }
+#timerToken {
+    position:absolute;
+    top:20vh;
+    left:40vw;
+    font-size: 100px;
   }
   #fgtPwd {
     left:66.9vw;

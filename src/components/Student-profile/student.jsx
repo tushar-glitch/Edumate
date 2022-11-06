@@ -68,7 +68,7 @@ console.log(editAble);
     
     return (
         <>
-            {/* <Navbar/> */}
+            <Navbar/>
             <SideBar />
             <h1 className="dash">Dashboard : My Profile</h1>
             <div id="background">

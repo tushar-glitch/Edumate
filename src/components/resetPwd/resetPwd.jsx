@@ -94,7 +94,7 @@ const [passMsg,setPassMsg] = useState("");
         onChange={handlepass}
         value={pass}
       />
-        <span id="wrongpass1">Invalid Password format. The password should atleast contain 1 uppercase 1 lowercase 1 number 1 special digit character and must have length greater than equal to 8.</span>
+        <span id="wrongpass1">Invalid Password format.</span>
       <p id="confirm-pass">Confirm Password</p>
       <input
         type={show2?"text":"password"}
