@@ -1,8 +1,6 @@
 import axios from 'axios';
-// import useAuth from './useAuth';
 
 const useRefreshToken = () => {
-    // const { setAuth } = useAuth();
 
     const refresh_call = async () => {
         const ref_token = sessionStorage.getItem("refresh token")

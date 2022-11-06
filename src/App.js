@@ -13,6 +13,7 @@ import StProfile from "./components/Student-profile/student";
 import PrivateRoute from "./components/Student/PrivateRoutes";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Feedback from "./components/Student/Feedback/Feedback";
+import FacDashboard from "./components/faculty-dashboard/FacDashboard";
 // import FMain from "./components/Faculty/FacultyMain";
 function App() {
  
@@ -32,9 +33,10 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/formLogin" exact element={<Formlogin />} />
         <Route path="/navbar" exact element={<Navbar />} />
-        <Route path="/dashboard" exact element={<Dashboard />} />
+        <Route path="/stu_dashboard" exact element={<Dashboard />} />
         <Route path="/feedback" exact element={<Feedback/>} />
         <Route path="/profile" exact element={<StProfile />} />
+        <Route path="/fac_dashboard" exact element={<FacDashboard/>} />
       </Routes> 
     </BrowserRouter>
   </>
