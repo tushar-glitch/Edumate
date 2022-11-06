@@ -1,0 +1,35 @@
+.SCardCall{
+    display:flex;
+    flex-direction:column;
+    background: none;
+}
+.tableCard{
+    background: none;
+    display: block;
+    width:65vw;
+    height:7vh;
+    margin-left:1vw;
+    background-color: #EEF1FF;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+padding-top: 2vh;
+margin-top:2vh;
+}
+#SCdDate{
+   /* margin-top:-5vh; */
+   width:15vw;
+   padding:10px;
+   /* height:8vh; */
+   /* background-color: black; */
+   border:1px solid white;
+   background: none;
+  position:absolute;
+  left:20vw;
+}
+#SCdStatus{
+    width:15vw;
+    padding:10px;
+    border:1px solid white;
+    background: none;
+}

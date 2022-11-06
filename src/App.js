@@ -11,9 +11,11 @@ import Navbar from "./components/Navbar/Navbar";
 import Chart from "./components/Pie/Pie";
 import StProfile from "./components/Student/St_profile";
 import PrivateRoute from "./components/Student/PrivateRoutes";
+import FMain from "./components/Faculty/FacultyMain";
 function App() {
  
   return <>
+  {/* <FMain /> */}
   {/* <BrowserRouter>
             <PrivateRoute component={Dashboard} path="/dashboard" />
             <Routes>
@@ -29,9 +31,9 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/formLogin" exact element={<Formlogin />} />
         <Route path="/navbar" exact element={<Navbar />} />
-        <Route path="/dashboard" exact element={<Dashboard/>}/>
-        <Route path="/profile" exact element={<StuProfile/>}/>
-      </Routes> 
+      
+         <Route path="/profile" exact element={<StProfile/>}/>
+      </Routes>
     </BrowserRouter> */}
   </>
 }

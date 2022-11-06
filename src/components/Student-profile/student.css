@@ -422,8 +422,10 @@ border-bottom: 1px solid black;
 }
 @media (min-width:340px) and (max-width:920px) {
     body {
-        overflow-x:hidden ;
         width:0vw;
+    }
+    #background {
+ overflow-x:hidden ;
     }
     .dash{
         font-size: 1.7rem;
@@ -686,7 +688,7 @@ width:40vw;
 }
 @media (min-width:280px) and (max-width:280px) {
     body {
-        overflow-x:hidden ;
+        /* overflow-x:hidden ; */
         width:0vw;
     }
     .dash{

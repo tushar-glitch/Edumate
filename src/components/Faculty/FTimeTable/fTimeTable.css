@@ -1,0 +1,44 @@
+.FTimeTable{
+    background-color: #ffffff;
+    position:absolute;
+    width: 67vw;
+height: 100vh;
+left: 27vw;
+top: 18vh;
+border-radius: 15px;
+}
+@media (max-width:1000px) and (min-width:800px) {
+    .FTimeTable {
+        width:84vw;
+        left:8vw;
+        top:25vh;
+    }
+}
+@media (max-width:800px) {
+    .FTimeTable {
+        width:150vw;
+        left:5vw;
+        top:25vh;
+       height:120vh;
+        margin-right:50px;
+    }
+}
+@media (max-width:450px) {
+    .FTimeTable {
+        width:280vw;
+        left:5vw;
+        top:30vh;
+        height:120vh;
+       
+        margin-right:50px;
+    }
+}
+@media (max-width:300px) {
+    .FTimeTable {
+        width:250vw;
+        left:5vw;
+        top:30vh;
+        height:170vh;
+        margin-right:50px;
+    }
+}

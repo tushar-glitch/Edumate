@@ -1,0 +1,259 @@
+#FRollNo {
+    background: none;
+    margin-left:5.5vw;
+    font-size: 1.1rem;
+}
+#FStNo {
+    background: none;
+    margin-left:6.5vw;
+    font-size: 1.1rem;
+}
+#FName , #FCdName{
+    background: none;
+    margin-left:9.5vw;
+    font-size: 1.1rem;
+}
+#FAttendMark {
+    background: none;
+    margin-left:12vw;
+    font-size: 1.1rem;
+}
+#FCdRoll{
+    background: none;
+    margin-left:5.5vw;
+    font-size: 1.1rem;
+}
+#FCdAttend{
+    background: none;
+    margin-left:14vw;
+    font-size: 1.1rem;
+}
+#FCdName{
+    background: none;
+    margin-left:13vw;
+    font-size: 1.1rem;
+}
+#FCdStudent{
+    background: none;
+    margin-left:9vw;
+    font-size: 1.1rem;
+}
+#present{
+    display:block;
+width: 4vw;
+height: 5vh;
+background-color: #62DDB0;
+border-radius: 8px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+text-align: center;
+padding-top:0.8vh;
+}
+#absent {
+    display:block;
+    width: 4vw;
+    height: 5vh;
+    background-color:white;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+text-align: center;
+padding-top:0.8vh;
+}
+@media(min-width:320px) and (max-width:915px){
+    .FAttendanceHead{
+        top:3vh;
+        font-size: 1.8rem;
+    }
+    .FRow1{
+        width:91.5vw;
+        font-size: 1rem;
+    }
+    .FCardRow{
+        width:91.5vw;
+        font-size: 0.8rem;
+    }
+    #FRollNo{
+        font-size: 0.9rem;
+    }
+    #FStNo{
+        display: none;
+    }
+    #FCdStudent{
+        display:none;
+    }
+    #FName{
+        font-size: 0.9rem;
+    }
+    #FAttendMark{
+        font-size: 0.9rem;
+    }
+    #FCdRoll{
+        font-size: 0.9rem;
+    }
+    #FCdName{
+        font-size: 0.9rem;
+    }
+    #FCdAttend{
+        font-size: 0.9rem;
+    }
+}
+@media (min-width:768px) and (max-width:915px){
+    #FRollNo{
+        font-size: 1.6rem;
+    }
+    #FStNo{
+        display: inline;
+        font-size: 1.5rem;
+    }
+    #FCdStudent{
+        display:inline;
+        font-size: 1.4rem;
+        margin-left: 14vw;
+    }
+    #FName{
+        font-size: 1.5rem;
+    }
+    #FAttendMark{
+        font-size: 1.5rem;
+    }
+    #FCdRoll{
+        font-size: 1.4rem;
+    }
+    #FCdName{
+        font-size: 1.4rem;
+    }
+    #FCdAttend{
+        font-size: 1.4rem;
+    }
+    .FAttendanceHead{
+        font-size: 2.4rem;
+    }
+}
+@media (min-width:768px) and (max-width:768px){
+    #FRollNo{
+        font-size: 1.3rem;
+    }
+    #FStNo{
+        display: inline;
+        font-size: 1.3rem;
+    }
+    #FCdStudent{
+        display:inline;
+        font-size: 1.2rem;
+        margin-left: 14vw;
+    }
+    #FName{
+        font-size: 1.3rem;
+    }
+    #FAttendMark{
+        font-size: 1.3rem;
+    }
+    #FCdRoll{
+        font-size: 1.2rem;
+    }
+    #FCdName{
+        font-size: 1.2rem;
+    }
+    #FCdAttend{
+        font-size: 1.2rem;
+    }
+    .FAttendanceHead{
+        font-size: 2.3rem;
+    }
+}
+@media (min-width:540px) and (max-width:540px){
+    .FAttendanceOne{
+        width:136vw;
+        left:3vw;
+        top:23vh;
+    }
+    .FAttendanceHead{
+        top:3vh;
+        font-size: 1.8rem;
+    }
+    .FRow1{
+        width:133.4vw;
+        font-size: 1.5rem;
+    }
+    .FCardRow{
+        width:133.4vw;
+        font-size: 1.2rem;
+    }
+    #DBAttend{
+        top:15vh;
+        font-size: 2.3rem;
+    }
+    #FRollNo{
+        font-size: 1.5rem;
+    }
+    #FStNo{
+        display: inline;
+        font-size: 1.5rem;
+    }
+    #FCdStudent{
+        display:inline;
+        font-size: 1.4rem;
+        margin-left: 14vw;
+    }
+    #FName{
+        font-size: 1.5rem;
+    }
+    #FAttendMark{
+        font-size: 1.5rem;
+    }
+    #FCdRoll{
+        font-size: 1.4rem;
+    }
+    #FCdName{
+        font-size: 1.4rem;
+    }
+    #FCdAttend{
+        font-size: 1.4rem;
+    }
+    .FAttendanceHead{
+        font-size: 2.2rem;
+    }
+}
+@media (min-width:280px) and (max-width:280px) {
+    #FRollNo{
+        font-size: 0.8rem;
+    }
+    #FStNo{
+        display: none;
+    }
+    #FCdStudent{
+        display:none;
+    }
+    #FName{
+        font-size: 0.8rem;
+    }
+    #FAttendMark{
+        font-size: 0.8rem;
+    }
+    #FCdRoll{
+        font-size: 0.7rem;
+    }
+    #FCdName{
+        font-size: 0.7rem;
+    }
+    #FCdAttend{
+        font-size: 0.7rem;
+    }
+    .FAttendanceHead{
+        font-size: 1.4rem;
+        top:6vh;
+    }
+    #DBAttend{
+        top:14vh;
+        left:3.5vw;
+        width:98vw;
+        font-size: 1.35rem;
+    }
+}

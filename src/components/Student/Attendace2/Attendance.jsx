@@ -1,10 +1,19 @@
 import React from "react";
 import arrow from "./arrow.svg";
+import SAttendCard from "./AttendanceCard";
+import SCardArray from "./AttendCardArray";
+import "./Attendance2.css";
 function SubjectAttend (){
+    function CreateStuCard(SCardArray){
+        return (
+            <SAttendCard month={SCardArray.month} date={SCardArray.date} status={SCardArray.status} />
+        )
+    }
     function handleDropDown() {
         console.log("hi");
     }
    return <>
+   
     <div className="tableSub">
     <img src={arrow} className="arrow" onClick={handleDropDown}/>
     <table className="attendTable2" cellSpacing={0}>
@@ -15,57 +24,61 @@ function SubjectAttend (){
 <td className="date">Date</td>
 <td className="status">Status</td>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
     </table>
+    <div className="SCardCall">
+    {SCardArray.map(CreateStuCard)}
+    </div>
+    {/* <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table> */}
     </div>
     <div className="monthList">
         <ul>

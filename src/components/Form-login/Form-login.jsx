@@ -44,11 +44,9 @@ const [timerToken,setTimerToken] = useState(4000);
 const [timerStart,setTimerStart] = useState(false);
 
 useEffect(()=>{
-  console.log("asjbds,");
   let intervalId = null;
   console.log(timerStart);
   // if(timerStart){
-    console.log("asjbds,");
   intervalId = setInterval(()=>{
     setTimerToken(timerToken-1);
   },1000);
@@ -56,7 +54,7 @@ useEffect(()=>{
 // }
 },[timerToken]);
 
-console.log(timerToken);
+// console.log(timerToken);
 sessionStorage.setItem("expiry time",timerToken);
 
   function postdata() {
@@ -102,7 +100,7 @@ sessionStorage.setItem("expiry time",timerToken);
     <Background />
       <h5 id="user-id">User id</h5>
       <EmailIMG />
-      <p id="timerToken">{timerToken}</p>
+      {/* <p id="timerToken">{timerToken}</p> */}
       <input
         type="text"
         id="input-box1"
