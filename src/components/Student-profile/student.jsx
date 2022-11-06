@@ -4,8 +4,15 @@ import avatar from '../Assests/Images/avatar.png'
 import Navbar from '../Navbar/Navbar'
 import SideBar from '../Student/SideBar/sidebar'
 import EditProfile from './editProfile'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+import axios from 'axios'
 const Student = (prop) => {
+    useEffect(() => {
+        (async () => {
+            const data = await axios.get('https://erp-edumate.herokuapp.com/api/user/profiledetails')
+            console.log(data);
+        })()
+    },[])
     var name1 = "tushar";
     const [na, setNa] = useState(name1);
     function handleEdit() {
@@ -18,7 +25,7 @@ const Student = (prop) => {
             <EditProfile name={name1} />
             <SideBar />
             <Navbar />
-            <h1 id='dash'>Dashboard &gt; My Profile</h1>
+            <h1 id='dash-profile'>Dashboard &gt; My Profile</h1>
             <div id="background">
                 <div id="avatar">
                     <img src={avatar} />

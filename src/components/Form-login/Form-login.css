@@ -4,6 +4,12 @@
 .AUTHENTICATION {
   overflow: hidden;
 }
+#test-btn{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-color: #ff0000;
+}
 #user-id {
   position: absolute;
   width: 5.5vw;
@@ -17,6 +23,7 @@
   line-height: 20px;
   background-color: white;
   background: none;
+
 }
 
 #password {
@@ -48,6 +55,7 @@
   border-radius: 5px;
   background-color: white;
   padding-left: 7vh;
+  outline-color: #6c63ff;
 }
 
 #input-box2 {
@@ -64,6 +72,7 @@
   border-radius: 5px;
   background-color: white;
   padding-left: 7vh;
+  outline-color: #6c63ff;
 }
 
 ::placeholder {
@@ -467,6 +476,12 @@ font-size: 17px;
     font-size: 18px;
     left:28.5vw;
     top:80.8vh;
+  }
+#timerToken {
+    position:absolute;
+    top:20vh;
+    left:40vw;
+    font-size: 100px;
   }
   #fgtPwd {
     left:69vw;

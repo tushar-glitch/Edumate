@@ -11,8 +11,22 @@ import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Chart from "./components/Pie/Pie";
 import StuProfile from './components/Student-profile/student'
+import StProfile from "./components/Student/TimeTable/St_profile";
+import StFeedback from "./components/Student/Feedback/Feedback"
+// import PrivateRoute from "./components/Student/PrivateRoutes";
+import Student from "./components/Student-profile/student";
 function App() {
+ 
   return <>
+  {/* <Student /> */}
+  {/* <BrowserRouter>
+            <PrivateRoute component={Dashboard} path="/dashboard" />
+            <Routes>
+            <Route path="/profile" exact element={<StProfile />} />
+            </Routes>
+        </BrowserRouter>
+  <StProfile /> */}
+  {/* <Dashboard /> */}
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" exact element={<LogIn />} />
@@ -22,9 +36,9 @@ function App() {
         <Route path="/formLogin" exact element={<Formlogin />} />
         <Route path="/navbar" exact element={<Navbar />} />
         <Route path="/dashboard" exact element={<Dashboard/>}/>
-        <Route path="/profile" exact element={<StuProfile/>}/>
-      </Routes>
-      
+        <Route path="/profile" exact element={<StuProfile />} />
+        <Route path="/stu_feedback" exact element={<StFeedback/>}/>
+      </Routes> 
     </BrowserRouter>
   </>
 }

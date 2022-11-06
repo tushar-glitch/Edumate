@@ -1,4 +1,4 @@
-#dash {
+#dash-profile {
     position: absolute;
     width: 25vw;
     height: 5vh;
@@ -30,14 +30,14 @@
     height: 50vh;
     width: 13vw;
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 17px;
-text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
 
-color: #000000;
+    color: #000000;
 
 }
 

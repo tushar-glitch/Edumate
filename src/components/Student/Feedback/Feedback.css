@@ -1,0 +1,144 @@
+#background-feedback {
+    position: absolute;
+    height: 150vh;
+    width: 73vw;
+    background-color: white;
+    z-index: 34;
+    left: 22vw;
+    top: 20vh;
+    border-radius: 8px;
+    box-shadow: 0 0 10px;
+}
+
+#ff {
+    position: absolute;
+    width: 25vw;
+    height: 8vh;
+    left: 3vw;
+    top: 6vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.85rem;
+    line-height: 37px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+#heading-feedback {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    height: 12vh;
+    width: 70vw;
+    top: 16vh;
+    left: 1.6vw;
+    background-color: rgba(240, 240, 240);
+    border-radius: 10px;
+}
+
+.heading-1 {
+    background-color: rgba(240, 240, 240);
+    color: #4D4D4D;
+width: 8vw;
+height: 5vh;
+margin-top: 5vh;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1rem;
+line-height: 20px;
+}
+
+.heading-2 {
+    background-color: rgba(240, 240, 240);
+    color: #4D4D4D;
+width: 8vw;
+height: 5vh;
+margin-top: 5vh;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1rem;
+line-height: 20px;
+}
+
+.heading-3 {
+    background-color: rgba(240, 240, 240);
+    color: #4D4D4D;
+width: 8vw;
+height: 5vh;
+margin-top: 5vh;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1rem;
+line-height: 20px;
+}
+
+.heading-4 {
+    background-color: rgba(240, 240, 240);
+    color: #4D4D4D;
+width: 8vw;
+height: 5vh;
+margin-top: 5vh;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1rem;
+line-height: 20px;
+}
+
+.heading-5 {
+    background-color: rgba(240, 240, 240);
+    color: #4D4D4D;
+width: 8vw;
+height: 5vh;
+margin-top: 5vh;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1rem;
+line-height: 20px;
+}
+#faculty-list{
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    height: 10vh;
+    width: 70vw;
+    /* background-color: rgba(240, 240, 240); */
+    background-color: white;
+    border-radius: 10px;
+}
+#faculty-list:hover{
+    background-color: #4D4D4D;
+}
+#faculty-list:hover{
+    background-color: #4D4D4D;
+}
+
+#fac-area{
+    position: absolute;
+    height: 90vh;
+    width: 70vw;
+    top: 30vh;
+    background-color: white;
+    left: 1.5vw;
+    border-radius: 10px;
+}
+#fac-details{
+    background-color: white;
+    font-weight: 600;
+}
+#fac-details:hover{
+    background-color: #4D4D4D;
+}

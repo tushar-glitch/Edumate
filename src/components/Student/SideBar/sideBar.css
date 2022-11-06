@@ -1,12 +1,14 @@
 .sideB {
     box-sizing: border-box;
-position: absolute;
-width: 16.5em;
-height: 160vh;
-background-color: #FFFFFF;
-border: 1px solid #D9D9D9;
+    position: absolute;
+    width: 18.5vw;
+    height: 160vh;
+    background-color: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    top: 0em;
 }
-.edum{
+
+.edum {
     position: absolute;
     width: 15vw;
     height: 10vh;
@@ -15,36 +17,41 @@ border: 1px solid #D9D9D9;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 34px;
+    font-size: calc(2.5vw);
     line-height: 44px;
     letter-spacing: 0.05em;
     color: #6C63FF;
     background: none;
 }
+
 .sideList {
-    background:none;
-    position:absolute;
-    top:20vh;
-    left:6vw;
+    background: none;
+    position: absolute;
+    top: 20vh;
+    left: 6vw;
     list-style: none;
 }
+
 .sideList li {
-width: 13vw;
-height: 29px;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 21px;
-line-height: 29px;
-background:none;
-margin-bottom: 7vh;
+    width: 13vw;
+    height: 29px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(1.3vw);
+    line-height: 29px;
+    background: none;
+    margin-bottom: 7vh;
+    cursor: pointer;
 }
+
 .sideList li:hover {
-    color:#6C63FF;
+    color: #6C63FF;
     /* fill:#6C63FF; */
 }
-.sidebarIcon{
+
+.sidebarIcon {
     background: none;
-    position:absolute;
-    left:-3.5vw;
+    position: absolute;
+    left: -3.5vw;
 }
