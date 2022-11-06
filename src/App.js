@@ -22,8 +22,8 @@ function App() {
             <Route path="/profile" exact element={<StProfile />} />
             </Routes>
         </BrowserRouter> */}
-  <StProfile /> 
-    {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
+  {/* <StProfile />  */}
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" exact element={<LogIn />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
@@ -34,7 +34,7 @@ function App() {
       
          <Route path="/profile" exact element={<StProfile/>}/>
       </Routes>
-    </BrowserRouter> */}
+    </BrowserRouter>
   </>
 }
 
