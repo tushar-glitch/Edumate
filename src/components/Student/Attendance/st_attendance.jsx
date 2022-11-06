@@ -1,12 +1,19 @@
 import React from "react";
 import ProgressBar from "./ProgressBar";
+// import SCard1 from "./SAttendCard1";
+// import SAttend1Array from "./SAttendArray1";
 import "./attend.css";
  function Attendance(){
+    // function CreateSAttendCard1(SAttend1Array){
+    //     return (
+    //     <SCard1 code={SAttend1Array.code} sub={SAttend1Array.sub} attendC={SAttend1Array.attendC} totalC={SAttend1Array.attendTotalC} attendPer={SAttend1Array.attendPer} />
+    //     )
+    // }
     return <>
-     <h1 className="dbTT">Dashboard : Attendance </h1>
+     <h1 className="dbAttend">Dashboard : Attendance </h1>
 <div className="attend">
+<h1 className="attendHead" >Attendance</h1>
     <table className="attendTable" cellSpacing={0}>
-         <tr><td className="attendHead"  colspan={5}>Attendance</td></tr> 
         <tr className="attendRow2">
             <td className="attendData">Subject Code</td>
             <td className="attendSub">Subject Name</td>
@@ -14,7 +21,11 @@ import "./attend.css";
             <td className="attendData">Total Classes</td>
             <td className="attendPer">Attendance in %</td>
         </tr> 
-        <tr >
+        {/* </table>
+        <div className="SAttendCardCall1">
+    {SAttend1Array.map(CreateSAttendCard1)} */}
+{/*  </div> */}
+         <tr >
             <td>KCS 301</td>
             <td>Data Structures</td>
             <td></td>
@@ -56,10 +67,45 @@ import "./attend.css";
 <div id="bar2">
 <ProgressBar/>
 </div>
-<ProgressBar id="bar3"/>
-<ProgressBar id="bar4"/>
-<ProgressBar id="bar5"/>
-<ProgressBar id="bar6"/>
+</div>
+<div className="responsiveTable">
+<table className="attendTableResponse" cellSpacing={0}>
+    <tr className="greyRowResponse">
+<td className="subjectResponse">Subject Name</td>
+<td className="class">Classes</td>
+<td className="responseAttend">Attendace</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
 </div>
     </>
  }

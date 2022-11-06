@@ -10,9 +10,22 @@ left: 27.8vw;
 top: 18vh;
 border-radius: 15px;
 }
+.dbAttend{
+    position: absolute;
+width: 40vw;
+height: 5vh;
+left: 28vw;
+top: 11vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 37px;
+background: none;
+}
 .attendTable{
     width:65vw;
-    margin-top: 2vh;
+    margin-top: 10vh;
      margin-left:1vw;
     /* margin-right: 1vw; */
 }
@@ -39,6 +52,9 @@ line-height: 20px;
 color: #000000;
 }
 .attendHead{
+    position:absolute;
+    top:1vh;
+    left:1vw;
     box-sizing: border-box;
 height:9vh;
 border-radius: 8px 8px 0px 0px;
@@ -51,6 +67,8 @@ font-size: 30px;
 line-height: 37px;
 color: #FFFFFF;
 text-align: center;
+padding-top: 2vh;
+width:65vw;
 }
 .attendData{
     width:10vw;
@@ -61,6 +79,43 @@ text-align: center;
 .attendPer{
     width:17.5vw;
 }
+/* .SAttendCardCall1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+    background: none;
+}
+#SCdCode{
+    background: none;
+    margin-left:2vw;
+    font-size: 0.9rem;
+    color:black;
+}
+#SCdAttend{
+    background: none;
+    margin-left:10vw;
+    font-size: 0.9rem;
+    color:black;
+}
+#SCdTotal{
+    background: none;
+    margin-left:5.5vw;
+    font-size: 0.9rem;
+    color:black;
+}
+#SCdAttendPer{
+    background: none;
+    margin-left:5.5vw;
+    font-size: 0.9rem;
+    color:black;
+}
+#SCdSub{
+    background: none;
+    margin-left:7vw;
+    width:10vw;
+    font-size: 0.85rem;
+    color:black;
+} */
 .tableSub {
    background-color: #FFFFFF;
     height:130vh;
@@ -80,6 +135,17 @@ font-weight: 600;
 font-size: 16px;
 line-height: 20px;
 color: #000000;
+}
+.attendTableResponse td {
+        text-align: center;
+        border: 1px solid #FFFFFF;
+    /* height: 5vh; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
 }
 .attendHead2{
     box-sizing: border-box;
@@ -124,6 +190,9 @@ width:15vw;
     background-color: #D9D9D9;
     width:20vw;
 }
+.subjectResponse , .class , .responseAttend {
+    background-color: #D9D9D9;
+}
 .monthList{
     display:none;
 }
@@ -163,13 +232,13 @@ line-height: 20px;
     z-index: 3;
     box-sizing: border-box;
     width:14vw;
-    height:5.5vh;
+    height:4.5vh;
     background-color: white;
     border: 1px solid #D9D9D9;
     border-radius: 4px;
     position:absolute;
-    top:23vh;
-    left:50.5vw;
+    top:21vh;
+    left:50vw;
 }
 #bar2{
     top:45vh;
@@ -178,18 +247,28 @@ line-height: 20px;
     z-index: 5;
     box-sizing: border-box;
     width:10vw;
-height:5.5vh;
+height:4.4vh;
     background-color: #62DDB0;
 border-radius: 4px;
 position:absolute;
 top:0vh;
 left:0vw;
 }
-@media (max-width:1000px) {
+.responsiveTable {
+    display:none;
+}
+ @media (max-width:1000px) {
+    .dbAttend{
+        font-size: 1.3rem;
+        width:140vw;
+        position:absolute;
+        left:7vw;
+        top:23vh;
+    }
     .tableSub{
         top:20vh;
-        left:11vw;
-        width:80vw;
+        left:5vw;
+        width:0vw;
     }
     .monthList ul{
         left:12.5vw;
@@ -201,7 +280,6 @@ left:0vw;
         margin-left:2vw;
     }
     .attendHead2{
-/* top:5vh; */
 position:absolute;
 top:-46vh;
 padding-top:2vh;
@@ -211,7 +289,7 @@ height:9vh;
     .attendTable2{
         position:absolute;
         top:45vh;
-        width:78vw;
+        width:75vw;
         height:90vh;
     }
     .attendTable2 td{
@@ -222,17 +300,60 @@ height:9vh;
         top:58.6vh;
         left:16.5vw;
     }
+    .attend{
+        top:22vh;
+        left:2vw;
+        width:0vw;
+    }
+    .attendTable{
+        display:none;
+    }
+    .responsiveTable {
+        display:block;
+        width:0vw;
+    }
+    .attendTableResponse{
+        position:absolute;
+        top:60vh;
+        left:4vw;
+        width:94vw;
+        height:80vh;
+    }
+    .attendTableResponse td {
+        font-size: 1.2rem;
+        /* width:26vw;
+        height:5vh; */
+        /* padding:2px; */
+    }
+    /* .subjectResponse { */
+        /* width:20vw; */
+    /* } */
+    .attendHead{
+        position:absolute;
+        top:2vh;
+        padding-top:2vh;
+        width:96vw;
+        height:9vh;
+    }
+           
 }
 @media (max-width:645px) {
 .monthList ul li{
     font-size:0.9rem;
 }
-}
+} 
 @media (max-width:420px){
     body{
         overflow-x:scroll;
-        width:145vw;
+        width:0vw;
         height:140vh;
+    }
+    .dbAttend{
+        font-size: 1.7rem;
+        width:90vw;
+        position:absolute;
+        left:5vw;
+        top:16vh;
     }
     .tableSub {
         width:120vw;
@@ -260,10 +381,35 @@ height:9vh;
         left:24.7vw;
         width:12px;
     }
+    .attend {
+        width:120vw;
+        height:134vh;
+        margin-right:50px;
+    }
+    .attendTableResponse{
+        width:116vw;
+    }
+   .attendHead{
+        width:116vw;
+        left:2vw;
+    }
+    .attendTableResponse td{
+        width:8vw;
+        height:4vh;
+        font-size: 1.5rem;
+        padding:0;
+    }
 }
 @media (min-width:768px) and (max-width:920px) {
     .attendTable2{
         top:25vh;
+    }
+    .dbAttend{
+        font-size: 2.3rem;
+        width:90vw;
+        position:absolute;
+        left:3vw;
+        top:15.4vh;
     }
     .attendHead2{
         top:-27vh;
@@ -282,6 +428,33 @@ height:9vh;
     }
     .arrow {
         top:38.8vh;
+    }
+    .responsiveTable{
+        z-index:2;
+        background-color: white;
+        width:96vw;
+        height:116vh;
+        margin-bottom: 10px;
+        position:absolute;
+        top:20vh;
+        left:2vw;
+    }
+    .attendTableResponse{
+        z-index:3;
+        position:absolute;
+        top:30vh;
+        left:1vw;
+        width:94vw;
+    }
+    .attendTableResponse td {
+        height:10vh;
+        font-size:1.6rem;
+    }
+    .attendHead {
+        z-index:5;
+        position:absolute;
+        top:0vh;
+        left:1vw;
     }
 }
 @media (max-width:912px) and (min-width:912px) {
@@ -302,9 +475,57 @@ height:9vh;
     .arrow {
       left:30.5vw;
     }
+    .dbAttend{
+        font-size: 1.35rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:2vh;
+    }
+    .attendTableResponse td{
+        font-size: 1rem;
+        height:10vh;
+    }
 }
 @media (min-width:412px) and (max-width:412px) {
     .arrow {
         top:54vh;
+    }
+}
+@media (min-width:540px) and (max-width:540px) {
+    .responsiveTable{
+        z-index:2;
+        background-color: white;
+        width:138vw;
+        height:116vh;
+        margin-bottom: 10px;
+        position:absolute;
+        top:20vh;
+        left:2vw;
+    }
+    .attendTableResponse{
+        z-index:3;
+        position:absolute;
+        top:30vh;
+        left:1vw;
+        width:136vw;
+    }
+    .attendTableResponse td {
+        height:10vh;
+        font-size:1.3rem;
+    }
+    .attendHead {
+        z-index:5;
+        position:absolute;
+        top:-18vh;
+        left:1vw;
+        width:136vw;
+    }
+    .dbAttend{
+        font-size: 1.4rem;
+        width:60w;
+        position:absolute;
+        left:3vw;
+        top:14vh;
     }
 }

@@ -1,0 +1,262 @@
+.FAttendanceOne{
+    background-color: #ffffff;
+    position:absolute;
+    width: 67vw;
+height: 100vh;
+left: 27vw;
+top: 18vh;
+border-radius: 15px;
+}
+.FAttendanceHead{
+    position: absolute;
+    left: 2vw;
+    top: 5vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 550;
+    font-size: 1.8rem;
+    line-height: 37px;
+    background: none;
+}
+.FRow1{
+    background: rgba(217, 217, 217, 0.4);
+border-radius: 8px;
+position:absolute;
+top:14vh;
+left:1vw;
+    width:65vw;
+    height:7vh;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.2rem;
+line-height: 20px;
+color: #4D4D4D;
+padding-top:2vh;
+}
+#Fdate{
+    background: none;
+    margin-left:5.5vw;
+}
+#Ftime {
+    background: none;
+    margin-left:8.3vw;
+}
+#Fclass{
+    background: none;
+    margin-left:9.5vw;
+}
+#Fsubject{
+    background: none;
+    margin-left:9vw;
+}
+.FCardContainer1 {
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+.FCardRow{
+    display: block;
+    width:65vw;
+    height:7vh;
+    margin-left:1vw;
+    background-color: #EEF1FF;
+border-radius: 8px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+padding-top: 2vh;
+margin-top:2vh;
+}
+#FCdDate{
+    background: none;
+    margin-left:5.5vw;
+    font-size:  calc(0.8vw+1rem);
+    color:black;
+}
+#FCdTime{
+    background: none;
+    margin-left:8.3vw;
+    font-size: calc(0.8vw+1rem);
+}
+#FCdClass{
+    background: none;
+    margin-left:9.5vw;
+    font-size:  calc(0.8vw+1rem);
+}
+#FCdSubject{
+    background: none;
+    font-size:  calc(0.8vw+1rem);
+    margin-left:9vw;
+}
+.FAttendCardCall{
+    display: flex;
+    flex-direction: column;
+    margin-top:24vh;
+    background: none;
+}
+@media (max-width:1040px){
+    /* #FCdSubject{
+        font-size:0.75rem;
+    } */
+}
+@media(min-width:320px) and (max-width:915px){
+    .FAttendanceOne{
+        overflow-x: hidden;
+        width:94vw;
+        left:3vw;
+        top:23vh;
+    }
+    .FAttendanceHead{
+        top:3vh;
+        font-size: 1.8rem;
+    }
+    .FRow1{
+        width:91.5vw;
+        font-size: 1rem;
+    }
+    .FCardRow{
+        width:91.5vw;
+        font-size: 1rem;
+    }
+    /* #FCdSubject1{
+        width:90vw;
+        height:50vh;
+    } */
+    #FCdSubject{
+        /* font-size: 0.6rem; */
+    }
+}
+@media (min-width:360px) and (max-width:360px) {
+    .FAttendanceOne{
+        top:27vh;
+    }
+    .FAttendanceHead{
+        left:2.5vw;
+    }
+    .FRow1{
+        left:2vw;
+    }
+    .FCardRow{
+        left:2vw;
+    }
+    #DbAttendance{
+        width:97vw;
+        top:21vh;
+        font-size: 1.75rem;
+    }
+}
+@media (min-width:768px) and (max-width:915px){
+    .FAttendanceHead{
+        left:2.5vw;
+        font-size:2.3rem;
+    }
+    #DbAttendance{
+        width:97vw;
+        top:17vh;
+        font-size: 2.8rem;
+    }
+    .FRow1{
+       font-size: 1.5rem;
+       padding-top: 2.5vh;
+    }
+    .FCardRow{
+        font-size: 1.5rem;
+    }
+    #FCdDate{
+        font-size: 1.5rem;
+    }
+    #FCdTime{
+        font-size: 1.5rem;
+    }
+    #FCdSubject{
+        font-size: 1.5rem;
+    }
+    #FCdClass{ font-size: 1.5rem;
+    }
+    #Fdate{
+        font-size: 1.5rem;
+    }
+    #Ftime{
+        font-size: 1.5rem;
+    }
+    #Fclass{
+        font-size: 1.5rem;
+    }
+    #Fsubject{
+        font-size: 1.5rem;
+    }
+}
+@media (min-width:540px) and (max-width:540px){
+    .FAttendanceOne{
+        width:136vw;
+        left:3vw;
+        top:23vh;
+    }
+    .FAttendanceHead{
+        top:3vh;
+        font-size: 1.8rem;
+    }
+    .FRow1{
+        width:133.4vw;
+        font-size: 1.5rem;
+    }
+    .FCardRow{
+        width:133.4vw;
+        font-size: 1.2rem;
+    }
+    #FCdDate{
+       margin-left:10vw;
+    }
+    #FCdTime{
+      margin-left: 15vw;
+    }
+    #FCdSubject{
+        margin-left: 20vw;
+    }
+    #FCdClass{ 
+        margin-left: 25vw;
+    }
+    #Fdate{
+        margin-left:10vw;
+    }
+    #Ftime{
+        margin-left: 15vw;
+    }
+    #Fclass{
+        margin-left: 25vw;
+    }
+    #Fsubject{
+        margin-left: 20vw;
+    }
+    #DbAttendance{
+        /* width:97vw; */
+        top:15vh;
+        font-size: 2.3rem;
+    }
+}
+@media (min-width:280px) and (max-width:280px){
+    .FAttendanceOne{
+        width:94vw;
+        left:3vw;
+        top:23vh;
+    }
+    .FAttendanceHead{
+        top:3vh;
+        font-size: 1.7rem;
+    }
+    .FRow1{
+        width:91.5vw;
+        font-size: 0.9rem;
+    }
+    .FCardRow{
+        width:91.5vw;
+        font-size: 0.8rem;
+    }
+    #DbAttendance{
+        width:91vw;
+        top:14vh;
+        left:3vw;
+        font-size: 1.3rem;
+    }
+}
