@@ -46,6 +46,42 @@ z-index:20;
     top:39.5vh;
     background: none;
 }
+.UpdateCardCall{
+    display:flex;
+    flex-direction: column;
+    background: none;
+    margin-top:20vh;
+}
+.updateCardRow{
+    margin-left:2vw;
+    width: 63vw;
+    height: fit-content;
+    border-radius: 8px;
+    z-index:20;
+    /* background-color: rgb(226, 132, 132); */
+    background-color: rgba(238, 241, 255, 0.5);
+    margin-bottom: 4vh;
+    padding:4px;
+}
+.updateCdTitle{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 0.9rem;
+line-height: 20px;
+color: #000000;
+background:none;
+}
+.updateCdDesc{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: #000000;
+    background:none;
+}
+
 @media (min-width:340px) and (max-width:920px) {
     .updateGreyRow{
         display: none;
