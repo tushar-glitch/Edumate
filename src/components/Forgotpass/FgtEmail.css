@@ -327,17 +327,17 @@ top:45.1vh;
 }
 @media (min-width:912px) and (max-width:912px) {
   #wrongemail{
-left:19vw;
+left:20.5vw;
 font-size: 1.3rem;
 top:50vh;
   }
   #emailValid{
 font-size: 1.6rem;
 top:63vh;
-left:30vw;
+left:31.5vw;
   }
   #pwdHead{
-    left:19vw;
+    left:20.5vw;
     top:39vh;
     line-height: 25px;
     font-size: 1.6rem;
@@ -345,21 +345,21 @@ left:30vw;
   }
   #emailIcon{
 width:25px;
-left:21.2vw;
+left:22.7vw;
 top:45.7vh;
   }
   #btnContinue{
-    left:19vw;
+    left:20.5vw;
     height:6vh;
     font-size: 1.3rem;
   }
   #inputBox{
-    left:19vw;
+    left:20.5vw;
     height:6vh;
     font-size: 1.4rem;
   }
   #Forgot {
     font-size: 3rem;
-    left:21vw;
+    left:22.5vw;
   }
 }

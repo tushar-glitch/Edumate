@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import instance from "../API";
 import useRefreshToken from "../refreshToken";
 import axiosInstance from "../utils/axiosInstance";
 const Formlogin = () => {
@@ -38,7 +39,6 @@ const Formlogin = () => {
   useEffect(() => {
     if (isnum.test(userID)) {
       document.getElementById("wrongid").style.display = "none";
-      console.log("true");
       setIsCorrectId(true);
     } else if (userID) {
       document.getElementById("wrongid").style.display = "block";
@@ -48,44 +48,45 @@ const Formlogin = () => {
   const [credentials, setCredentials] = useState("");
   var data = { userID, password };
   const navigate = useNavigate();
-  const [tokenApi, setTokenApi] = useState(false);
+  // const [tokenApi, setTokenApi] = useState(false);
 
-  const [timerToken, setTimerToken] = useState(240);
-  const [timerStart, setTimerStart] = useState(false);
+  // const [timerToken, setTimerToken] = useState(240);
+  // const [timerStart, setTimerStart] = useState(false);
 
-  useEffect(() => {
-    // console.log("asjbds,");
-    let intervalId = null;
-    if (timerToken < 230) {
-      setTimerToken(240)
-    }
-    console.log(timerStart);
-    // if(timerStart){
-    // console.log("asjbds,");
-    intervalId = setInterval(() => {
-      setTimerToken(timerToken - 1);
-    }, 1000);
-    return () => clearInterval(intervalId)
-    // }
+  // useEffect(() => {
+  //   // console.log("asjbds,");
+  //   let intervalId = null;
+  //   if (timerToken < 230) {
+  //     setTimerToken(240)
+  //     refresh_call()
+  //   }
+  //   console.log(timerStart);
+  //   // if(timerStart){
+  //   // console.log("asjbds,");
+  //   intervalId = setInterval(() => {
+  //     setTimerToken(timerToken - 1);
+  //   }, 1000);
+  //   return () => clearInterval(intervalId)
+  //   // }
     
-  }, [timerToken]);
+  // }, [timerToken]);
 
-  console.log(timerToken);
+  // console.log(timerToken);
   
-  sessionStorage.setItem("expiry time", timerToken);
-useEffect(()=>{
-  let intervalId = null;
-  console.log(timerStart);
-  // if(timerStart){
-  intervalId = setInterval(()=>{
-    setTimerToken(timerToken-1);
-  },1000);
-  return ()=> clearInterval(intervalId)
-// }
-},[timerToken]);
+  // sessionStorage.setItem("expiry time", timerToken);
+// useEffect(()=>{
+//   let intervalId = null;
+//   console.log(timerStart);
+//   // if(timerStart){
+//   intervalId = setInterval(()=>{
+//     setTimerToken(timerToken-1);
+//   },1000);
+//   return ()=> clearInterval(intervalId)
+// // }
+// },[timerToken]);
 
 // console.log(timerToken);
-sessionStorage.setItem("expiry time",timerToken);
+// sessionStorage.setItem("expiry time",timerToken);
   // let postdata = async () => {
   //   if (iscorrectid) {
   //     let res = await axiosInstance.post('https://erp-edumate.herokuapp.com/api/user/login/',data)
@@ -124,35 +125,42 @@ sessionStorage.setItem("expiry time",timerToken);
   //   }
     
   // }
+// // console.log(timerToken);
+// sessionStorage.setItem("expiry time",timerToken);
+const [protectedRoute,setProtectedRoute] = useState(false);
+
   function postdata() {
     if (iscorrectid) {
        axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
         .then((res) => {
           console.log(res);
-          localStorage.setItem("token", res.data.token);
+          // localStorage.setItem("token", res.data.token);
           const accessToken = res.data.token.access;
           const refreshToken = res.data.token.refresh;
           console.log(accessToken);
           console.log(refreshToken);
           if (accessToken && refreshToken) {
-            setTimerStart(true);
+            setProtectedRoute(true);
+            console.log(protectedRoute);
+            localStorage.setItem("protRouteKey",protectedRoute);
             storeTokenData(accessToken, refreshToken);
-            setTokenApi(true);
             navigate("/profile");
-            axios.defaults.headers = {
-              accesstoken: accessToken,
-              refreshtoken: refreshToken
-            }
-            axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
+            // axios.defaults.headers = {
+            //   accesstoken: accessToken,
+            //   refreshtoken: refreshToken
+            // }
+            // axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
             // console.log(timerStart);
             // console.log(tokenApi);
             // navigate("/profile");
           }
-          localStorage.setItem("access token:", res.data.token.access);
-          console.log(tokenApi);
+          // localStorage.setItem("access token:", res.data.token.access);
+          // console.log(tokenApi);
         })
         .catch((err) => {
+          setProtectedRoute(false);
+          localStorage.removeItem("protRouteKey");
           console.log(err);
           setCredentials("Invalid credentials.Please check your User Id or Password");
         });
@@ -162,6 +170,11 @@ sessionStorage.setItem("expiry time",timerToken);
       setCredentials("")
     }
   }
+  // useEffect(()=>{
+  //   setProtectedRoute(RouteKey);
+  // },[RouteKey])
+  // console.log(protectedRoute);
+  // localStorage.setItem("protectedRouteKey",protectedRoute);
 
   function storeTokenData(accessToken, refreshToken) {
     sessionStorage.setItem("access token", accessToken);

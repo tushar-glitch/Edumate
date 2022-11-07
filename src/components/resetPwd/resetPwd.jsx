@@ -31,20 +31,20 @@ function ResetPwd() {
   useEffect(() => {
     if (rightpass.test(pass)) {
       document.getElementById("wrongpass1").style.display = "none";
-      document.getElementById("confirm-pass").style.top = 348 +'px';
-      document.getElementById("confirm-pass-input").style.top = 370 +'px';
-      document.getElementById("pEye2").style.top = 383 +'px';
-      document.getElementById("btn-reset").style.top = 470 +'px';
-      document.getElementById("passMatch").style.top=412+'px';
+      // document.getElementById("confirm-pass").style.top = 348 +'px';
+      // document.getElementById("confirm-pass-input").style.top = 370 +'px';
+      // document.getElementById("pEye2").style.top = 383 +'px';
+      // document.getElementById("btn-reset").style.top = 470 +'px';
+      // document.getElementById("passMatch").style.top=412+'px';
 setIsPass(true)
       console.log("true");
     } else if (pass) {
       document.getElementById("wrongpass1").style.display = "block";
-      document.getElementById("confirm-pass").style.top = 371 +'px';
-      document.getElementById("confirm-pass-input").style.top = 393 +'px';
-      document.getElementById("pEye2").style.top = 406 +'px';
-      document.getElementById("btn-reset").style.top = 490 +'px';
-      document.getElementById("passMatch").style.top=438+'px';
+      // document.getElementById("confirm-pass").style.top = 371 +'px';
+      // document.getElementById("confirm-pass-input").style.top = 393 +'px';
+      // document.getElementById("pEye2").style.top = 406 +'px';
+      // document.getElementById("btn-reset").style.top = 490 +'px';
+      // document.getElementById("passMatch").style.top=438+'px';
     }
   }, [pass]);
   useEffect(() => {
@@ -85,7 +85,7 @@ const [passMsg,setPassMsg] = useState("");
     <>
     <div className="AUTHENTICATION">
       <Background />
-      <h1 className="BgHead">&emsp;&emsp;Reset Password</h1>
+      <h1 className="BgHead" id="RESET">&emsp;&emsp;Reset Password</h1>
       <p id="new-pass">New Password</p>
       <input
         type={show1?"text":"password"}
@@ -94,7 +94,7 @@ const [passMsg,setPassMsg] = useState("");
         onChange={handlepass}
         value={pass}
       />
-        <span id="wrongpass1">Invalid Password format.</span>
+        <span id="wrongpass1">Password must be 1 uppercase 1 lowercase 1 number 1 special digit character and 8 or more characters </span>
       <p id="confirm-pass">Confirm Password</p>
       <input
         type={show2?"text":"password"}

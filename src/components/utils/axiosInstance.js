@@ -6,7 +6,7 @@ const baseURL = 'https://erp-edumate.herokuapp.com'
 let accesstoken = sessionStorage.getItem('access token')?(sessionStorage.getItem('access token')):null
 let refreshtoken = sessionStorage.getItem('refresh token')?(sessionStorage.getItem('refresh token')):null
 const axiosInstance = axios.create({
-    // baseURL,
+    baseURL,
     headers: { Authorization: `Bearer ${accesstoken}` }
 });
 
@@ -15,15 +15,16 @@ axiosInstance.interceptors.request.use(async req => {
     
     const user = jwt_decode(accesstoken)
     const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
-    if (!isExpired) return req
+    if (!isExpired){console.log('not expired yet'); return req} 
     const ref_token = sessionStorage.getItem("refresh token")
+    console.log("ref_token "+ref_token);
     const response =  axios.post(`${baseURL}/api/user/token/refresh`, {
         refresh:ref_token
     })
-    console.log('Done bro');
+    console.log('Done');
     sessionStorage.setItem("access token", response.accesstoken)
     sessionStorage.setItem("refresh token", response.refreshtoken)
-    req.headers.Authorization = `Bearer ${response.access}`
+    req.headers.Authorization = `Bearer ${response.accesstoken}`
     return req
 })
  

@@ -10,10 +10,10 @@ import Protected from "./components/Forgotpass/protected";
 import Navbar from "./components/Navbar/Navbar";
 import Chart from "./components/Pie/Pie";
 import StProfile from "./components/Student-profile/student";
-import PrivateRoute from "./components/Student/PrivateRoutes";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Feedback from "./components/Student/Feedback/Feedback";
 import FacDashboard from "./components/faculty-dashboard/FacDashboard";
+import ProtectedRoute from "./components/utils/ProctectedRoute";
 // import FMain from "./components/Faculty/FacultyMain";
 function App() {
  
@@ -25,10 +25,11 @@ function App() {
             <Route path="/profile" exact element={<StProfile />} />
             </Routes>
         </BrowserRouter> */}
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+  {/* <StProfile />  */}
+    <BrowserRouter >
       <Routes>
-        <Route path="/" exact element={<LogIn />} />
-        <Route path="/fgtEmail" exact element={<FgtEmail />} />
+      <Route element={<ProtectedRoute />} >
+      <Route path="/fgtEmail" exact element={<FgtEmail />} />
         <Route path="/rstPwd" exact element={<ResetPwd />} />
         <Route path="/otp" element={<OTP />} />
         <Route path="/formLogin" exact element={<Formlogin />} />
@@ -37,6 +38,8 @@ function App() {
         <Route path="/feedback" exact element={<Feedback/>} />
         <Route path="/profile" exact element={<StProfile />} />
         <Route path="/fac_dashboard" exact element={<FacDashboard/>} />
+      </Route>
+        <Route path="/" exact element={<LogIn />} />
       </Routes> 
     </BrowserRouter>
   </>
