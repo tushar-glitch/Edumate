@@ -79,6 +79,7 @@ const Formlogin = () => {
 // // console.log(timerToken);
 // sessionStorage.setItem("expiry time",timerToken);
 const [protectedRoute,setProtectedRoute] = useState(false);
+const userIdFirstDigit = String(userID)[0];
 
   function postdata() {
     if (iscorrectid) {
@@ -96,7 +97,9 @@ const [protectedRoute,setProtectedRoute] = useState(false);
             console.log(protectedRoute);
             localStorage.setItem("protRouteKey",protectedRoute);
             storeTokenData(accessToken, refreshToken);
-            navigate("/profile");
+            {userIdFirstDigit==2?navigate("/profile"):navigate("/")};
+            // {userIdFirstDigit==1?navi}
+            
             // axios.defaults.headers = {
             //   accesstoken: accessToken,
             //   refreshtoken: refreshToken

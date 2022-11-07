@@ -12,7 +12,7 @@ function ProtectedRoute(){
     //     else
     //     setValue(false);
     // },[value])
-    const value=true;
+    const value=false;
 return (
     ProtRouteKey?<Outlet />:<Navigate to="/" />
 )
