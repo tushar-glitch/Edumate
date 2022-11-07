@@ -50,7 +50,7 @@ const axiosInstance = axios.create({
 //     return req
 // })
 axiosInstance.interceptors.request.use(async res => {
-    
+
 })
  
 export default axiosInstance

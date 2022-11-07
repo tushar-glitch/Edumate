@@ -4,11 +4,12 @@ body{
 #section {
     position: absolute;
     height: 9vh;
-    width: 81.6vw;
+    width: 84vw;
     background-color: white;
-    /* left: 17.794em; */
+    left: 15em;
     right: 0em;
     top: 0vh;
+    position:fixed;
 }
 
 #greeting {

@@ -7,18 +7,20 @@ import SubjectAttend from "./Attendace2/Attendance";
 import Student from "../Student-profile/student";
 import Dashboard from "../Dashboard/Dashboard";
 import Updates from "./Updates/Updates";
-// import Atte
+import Footer from "../Footer/Footer";
+
 function StProfile (){
     return <>
-    <div className="StudentTimeTable">
+    {/* <div className="StudentTimeTable"> */}
+    {/* <Footer/> */}
     {/* <Updates /> */}
     {/* <Timetable /> */}
     {/* <Student /> */}
     {/* <Dashboard /> */}
-    <SideBar />
-    <SubjectAttend />
+    {/* <SideBar /> */}
+    {/* <SubjectAttend /> */}
     {/* <Attendance /> */}
-    </div>
+    {/* </div> */}
     </>
 }
 export default StProfile;

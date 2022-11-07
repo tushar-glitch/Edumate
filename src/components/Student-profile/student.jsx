@@ -94,7 +94,6 @@ console.log(editAble);
          setProfileMother(res.data.mother_phone);
          setProfileMotherName(res.data.mother_name);
          setProfileFatherName(res.data.father_name);
-
          console.log(postData)
       }).catch(err=>{
          console.log(err);
@@ -103,7 +102,7 @@ console.log(editAble);
 
    function handleSaveProfile(){
       setEditAble(false);
-      axiosInstance.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config,{
+      axiosInstance.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",{
          name:profileName,
          userID:profileRoll,
          sex:profileSex,
@@ -116,8 +115,7 @@ console.log(editAble);
          pincode:profilePin,
          father_phone:profileFather,
          mother_phone:profileMother
-
-      }).then((res)=>{
+      },config).then((res)=>{
          setPostData(res.data);
          setProfileName(res.data.name);
          setProfileRoll(res.data.userID);

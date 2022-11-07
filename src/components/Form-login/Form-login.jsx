@@ -142,10 +142,9 @@ const [protectedRoute,setProtectedRoute] = useState(false);
           console.log(accessToken);
           console.log(refreshToken);
           if (accessToken && refreshToken) {
-            setProtectedRoute(true);
-            console.log(protectedRoute);
-            localStorage.setItem("protRouteKey",protectedRoute);
+            // setTimerStart(true);
             storeTokenData(accessToken, refreshToken);
+            // setTokenApi(true);
             navigate("/profile");
             // axios.defaults.headers = {
             //   accesstoken: accessToken,
@@ -156,21 +155,66 @@ const [protectedRoute,setProtectedRoute] = useState(false);
             // console.log(tokenApi);
             // navigate("/profile");
           }
-          // localStorage.setItem("access token:", res.data.token.access);
+          localStorage.setItem("access token:", res.data.token.access);
           // console.log(tokenApi);
         })
         .catch((err) => {
-          setProtectedRoute(false);
-          localStorage.removeItem("protRouteKey");
           console.log(err);
           setCredentials("Invalid credentials.Please check your User Id or Password");
         });
     }
-    else {
+      else {
       document.getElementById("wrongid").style.display = "block";
       setCredentials("")
     }
   }
+// // console.log(timerToken);
+// sessionStorage.setItem("expiry time",timerToken);
+const userIdFirstDigit = String(userID)[0];
+
+  // function postdata() {
+  //   if (iscorrectid) {
+  //      axios
+  //       .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
+  //       .then((res) => {
+  //         console.log(res);
+  //         // localStorage.setItem("token", res.data.token);
+  //         const accessToken = res.data.token.access;
+  //         const refreshToken = res.data.token.refresh;
+  //         console.log(accessToken);
+  //         console.log(refreshToken);
+  //         if (accessToken && refreshToken) {
+  //           setProtectedRoute(true);
+  //           console.log(protectedRoute);
+  //           localStorage.setItem("protRouteKey",protectedRoute);
+  //           storeTokenData(accessToken, refreshToken);
+  //           {userIdFirstDigit==2?navigate("/profile"):navigate("/")};
+  //           // {userIdFirstDigit==1?navi}
+            
+  //           // axios.defaults.headers = {
+  //           //   accesstoken: accessToken,
+  //           //   refreshtoken: refreshToken
+  //           // }
+  //           // axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
+  //           // console.log(timerStart);
+  //           // console.log(tokenApi);
+  //           // navigate("/profile");
+  //         }
+  //         // localStorage.setItem("access token:", res.data.token.access);
+  //         // console.log(tokenApi);
+  //       })
+  //       .catch((err) => {
+  //         setProtectedRoute(false);
+  //         localStorage.removeItem("protRouteKey");
+  //         console.log(err);
+  //         setCredentials("Invalid credentials.Please check your User Id or Password");
+  //       });
+  //   }
+  //   else {
+  //     document.getElementById("wrongid").style.display = "block";
+  //     setCredentials("")
+  //   }
+  // }
   // useEffect(()=>{
   //   setProtectedRoute(RouteKey);
   // },[RouteKey])
