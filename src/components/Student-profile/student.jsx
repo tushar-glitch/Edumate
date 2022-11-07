@@ -64,9 +64,15 @@ console.log(editAble);
    function handleEditPFather(e){
     setProfileFather(e.target.value);
    }
+   function handleEditPFatherName(e){
+      setProfileFatherName(e.target.value);
+     }
    function handleEditPMother(e){
     setProfileMother(e.target.value);
    }
+   function handleEditPMotherName(e){
+      setProfileMotherName(e.target.value);
+     }
     
    const [postData,setPostData] = useState(null);
    const accessToken = sessionStorage.getItem("access token");
@@ -77,7 +83,7 @@ console.log(editAble);
       }
    }
    useEffect(()=>{
-      axiosInstance.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
+      axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
          console.log(res);
          setPostData(res.data);
          setProfileName(res.data.name);
@@ -102,7 +108,7 @@ console.log(editAble);
 
    function handleSaveProfile(){
       setEditAble(false);
-      axiosInstance.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",{
+      axios.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",{
          name:profileName,
          userID:profileRoll,
          sex:profileSex,
@@ -113,10 +119,13 @@ console.log(editAble);
          state:profileState,
          student_phone:profileMobile,
          pincode:profilePin,
+         father_name:profileFatherName,
+         mother_name:profileMotherName,
          father_phone:profileFather,
          mother_phone:profileMother
       },config).then((res)=>{
          setPostData(res.data);
+         console.log(res.data);
          setProfileName(res.data.name);
          setProfileRoll(res.data.userID);
          setProfileSex(res.data.sex);
@@ -129,6 +138,8 @@ console.log(editAble);
          setProfilePin(res.data.pincode);
          setProfileFather(res.data.father_phone);
          setProfileMother(res.data.mother_phone);
+         setProfileFatherName(res.data.father_name);
+         setProfileMotherName(res.data.mother_name);
       })
   }
     return ( 
@@ -208,18 +219,29 @@ console.log(editAble);
                 </div>
                 </div>
                 <div id="heading3">Parents</div>
-                <div id="fat-phone">Father's Mobile No.</div>
+                <div id="fat-phone">Father's Name</div>
+                <div className='space12'>
+                {editAble?(<ProfileInputField value={profileFatherName} class="profileField" type="text" onChange={handleEditPFatherName} />): 
+                   (<ProfileInputDisabled  value={profileFatherName} class="profileField" type="text"/>)}
+                </div>
+                <div id="mot-phone">Father's Mobile No.</div>
                 <div className='space11'>
                 {editAble?(<ProfileInputField value={profileFather} class="profileField" type="text" onChange={handleEditPFather} />): 
                    (<ProfileInputDisabled  value={profileFather} class="profileField" type="text"/>)}
                 </div>
-                <div id="mot-phone">Mother's Mobile No.</div>
-                <div className='space12'>
+                <div id="fat-phone2">Mother's Name</div>
+                <div className='space13'>
+                {editAble?(<ProfileInputField value={profileMotherName} class="profileField" type="text" onChange={handleEditPMotherName} />): 
+                   (<ProfileInputDisabled  value={profileMotherName} class="profileField" type="text"/>)}
+                </div>
+                <div id="mot-phone2">Mother's Mobile No.</div>
+                <div className='space14'>
                 {editAble?(<ProfileInputField value={profileMother} class="profileField" type="text" onChange={handleEditPMother} />): 
                    (<ProfileInputDisabled  value={profileMother} class="profileField" type="text"/>)}
                 </div>
+
                 <button id="editButton" onClick={handleEditProfile}>Edit Profile</button>
-                <button id="saveButton" onClick={handleSaveProfile}>Save</button>
+                <button id="saveButton" onClick={handleSaveProfile}>Save</button> 
                 </div>
             </div>
         </>

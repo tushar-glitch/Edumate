@@ -1,9 +1,9 @@
 import React from "react";
-function UpdateCard (){
+function UpdateCard (props){
     return <>
 <div className="updateCardRow">
-    <div className="updateCdTitle">Title</div>
-    <div className="updateCdDesc">Description</div>
+    <div className="updateCdTitle">{props.title}</div>
+    <div className="updateCdDesc">{props.desc}</div>
 </div>
     </>
 }

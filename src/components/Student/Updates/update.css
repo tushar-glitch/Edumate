@@ -1,4 +1,4 @@
-.update {
+.update{
     position: absolute;
     left: 27vw;
     top: 18vh;
@@ -11,10 +11,9 @@
     line-height: 37px;
     background: none;
 }
-
 .updateWhiteDiv {
     background-color: #ffffff;
-    position: absolute;
+    position:absolute;
     width: 67vw;
 height: 80vh;
 left: 27vw;
@@ -41,119 +40,138 @@ color: #FFFFFF;
 padding-top:2vh;
 z-index:20;
 }
-
-#updateImage {
-    position: absolute;
-    left: 28vw;
-    top: 39.5vh;
+#updateImage{
+    position:absolute;
+    left:28vw;
+    top:39.5vh;
     background: none;
+}
+.UpdateCardCall{
+    display:flex;
+    flex-direction: column;
+    background: none;
+    margin-top:20vh;
+}
+.updateCardRow{
+    margin-left:2vw;
+    width: 63vw;
+    height: fit-content;
+    border-radius: 8px;
+    z-index:20;
+    /* background-color: rgb(226, 132, 132); */
+    background-color: rgba(238, 241, 255, 0.5);
+    margin-bottom: 4vh;
+    padding:4px;
+}
+.updateCdTitle{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 0.9rem;
+line-height: 20px;
+color: #000000;
+background:none;
+}
+.updateCdDesc{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: #000000;
+    background:none;
 }
 
 @media (min-width:340px) and (max-width:920px) {
-    .updateGreyRow {
+    .updateGreyRow{
         display: none;
     }
-
-    .updateWhiteDiv {
-        left: 7vw;
-        width: 86vw;
-        height: 70vh;
+    .updateWhiteDiv{
+        left:7vw;
+        width:86vw;
+        height:70vh;
     }
-
-    .update {
+    .update{
         font-size: 1.7rem;
-        width: 90vw;
-        position: absolute;
-        left: 7vw;
-        top: 20vh;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:20vh;
     }
-
-    .updateHead2 {
-        position: absolute;
-        top: 4vh;
-        left: 27vw;
+    .updateHead2{
+        position:absolute;
+        top:4vh;
+        left:27vw;
         font-size: 1.6rem;
     }
-
     #updateImage {
-        top: 15vh;
-        left: 20vw;
-        width: 45vw;
-        height: 42vh;
+        top:15vh;
+        left:20vw;
+        width:45vw;
+        height:42vh;
     }
 }
-
 @media (min-width:390px) and (max-width:950px) {
-    .update {
+    .update{
         font-size: 1.7rem;
-        width: 90vw;
-        position: absolute;
-        left: 7.5vw;
-        top: 21vh;
+        width:90vw;
+        position:absolute;
+        left:7.5vw;
+        top:21vh;
     }
-
-    .updateHead2 {
-        top: 3vh;
-        left: 28vw;
+    .updateHead2{
+        top:3vh;
+        left:28vw;
     }
 }
-
 @media (min-width:768px) and (max-width:912px) {
-    .update {
+    .update{
         font-size: 2.3rem;
-        width: 90vw;
-        position: absolute;
-        left: 7vw;
-        top: 21vh;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:21vh;
     }
-
-    .updateHead2 {
-        top: 4vh;
+    .updateHead2{
+        top:4vh;
         font-size: 2.2rem;
-        left: 34vw;
+        left:34vw;
     }
 }
-
 @media (max-width:540px) and (min-width:540px) {
     .update {
-        top: 20vh;
+        top:20vh;
     }
-
-    .updateHead2 {
-        left: 34.5vw;
+    .updateHead2{
+        left:34.5vw;
     }
 }
-
 @media (min-width:280px) and (max-width:280px) {
-    .updateGreyRow {
+    .updateGreyRow{
         display: none;
     }
-
-    .updateWhiteDiv {
-        left: 7vw;
-        width: 86vw;
-        height: 70vh;
+    .updateWhiteDiv{
+        left:7vw;
+        width:86vw;
+        height:70vh;
     }
-
-    .update {
+    .update{
         font-size: 1.35rem;
-        width: 90vw;
-        position: absolute;
-        left: 8vw;
-        top: 20vh;
+        width:90vw;
+        position:absolute;
+        left:8vw;
+        top:20vh;
     }
-
-    .updateHead2 {
-        position: absolute;
-        top: 3vh;
-        left: 23vw;
+    .updateHead2{
+        position:absolute;
+        top:3vh;
+        left:23vw;
         font-size: 1.6rem;
     }
-
     #updateImage {
-        top: 15vh;
-        left: 20vw;
-        width: 45vw;
-        height: 42vh;
+        top:15vh;
+        left:20vw;
+        width:45vw;
+        height:42vh;
     }
 }
