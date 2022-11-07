@@ -10,10 +10,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import instance from "../API";
 import useRefreshToken from "../refreshToken";
+import axiosInstance from "../utils/axiosInstance";
 const Formlogin = () => {
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
-  const refresh_call = useRefreshToken()
+  // const refresh_call = useRefreshToken()
   function handleuserID(e) {
     setuserID(e.target.value);
   }
@@ -27,6 +28,14 @@ const Formlogin = () => {
   var isnum = /^\d+$/;
   const [iscorrectid, setIsCorrectId] = useState(false);
   
+  // useEffect(()=> {
+  //       getNotes()
+  //   }, [])
+  // let getNotes = async () => {
+  //   let response = await axiosInstance.post('api/user/login')
+  //   console.log('/tushar');
+  //   console.log(response);
+  // }
   useEffect(() => {
     if (isnum.test(userID)) {
       document.getElementById("wrongid").style.display = "none";
@@ -76,6 +85,46 @@ const Formlogin = () => {
 // // }
 // },[timerToken]);
 
+// console.log(timerToken);
+// sessionStorage.setItem("expiry time",timerToken);
+  // let postdata = async () => {
+  //   if (iscorrectid) {
+  //     let res = await axiosInstance.post('https://erp-edumate.herokuapp.com/api/user/login/',data)
+  //       // .then((res) => {
+  //         console.log(res.data);
+  //         localStorage.setItem("token", res.data.token);
+  //         const accessToken = res.data.token.access;
+  //         const refreshToken = res.data.token.refresh;
+  //         console.log(accessToken);
+  //         console.log(refreshToken);
+  //         if (accessToken && refreshToken) {
+  //           setTimerStart(true);
+  //           storeTokenData(accessToken, refreshToken);
+  //           setTokenApi(true);
+  //           // navigate("/profile");
+  //           axios.defaults.headers = {
+  //             accesstoken: accessToken,
+  //             refreshtoken: refreshToken
+  //           }
+  //           axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
+  //           // console.log(timerStart);
+  //           // console.log(tokenApi);
+  //           // navigate("/profile");
+  //         }
+  //         localStorage.setItem("access token:", res.data.token.access);
+  //         console.log(tokenApi);
+  //       // })
+  //       // .catch((err) => {
+  //         // console.log(err);
+  //       //   setCredentials("Invalid credentials.Please check your User Id or Password");
+  //       // });
+  //   }
+  //     else {
+  //     document.getElementById("wrongid").style.display = "block";
+  //     setCredentials("")
+  //   }
+    
+  // }
 // // console.log(timerToken);
 // sessionStorage.setItem("expiry time",timerToken);
 const [protectedRoute,setProtectedRoute] = useState(false);
@@ -83,7 +132,7 @@ const userIdFirstDigit = String(userID)[0];
 
   function postdata() {
     if (iscorrectid) {
-      axios
+       axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
         .then((res) => {
           console.log(res);
@@ -168,7 +217,6 @@ const userIdFirstDigit = String(userID)[0];
       <button id="btn-submit" type="submit" onClick={postdata}>
         LOGIN
       </button>
-      <button id='test-btn' onClick={()=>refresh_call()}>Refresh</button>
       <span id="credential">{credentials}</span>
       <Loginimg />
     </div>
