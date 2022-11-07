@@ -12,6 +12,8 @@
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   padding-left: 7.5vh;
+background-color: white;
+outline-color: #6c63ff;
 }
 
 #btnContinue {
