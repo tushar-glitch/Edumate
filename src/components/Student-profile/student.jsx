@@ -6,28 +6,29 @@ import SideBar from '../Student/SideBar/sidebar'
 import ProfileInputField from '../ProfileInputField'
 import ProfileInputDisabled from '../ProfileInputDiabled'
 import { useState } from 'react'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 const Student = () => {
-    const [profileName,setProfileName] = useState("Tushar Chauhan");
-    const [profileRoll,setProfileRoll] = useState("2100270100108");
-    const [profileAdm,setProfileAdm] = useState("62354i4");
-    const [profileBG,setProfileBg] = useState("B+");
-    const [profileEmail,setProfileEmail] = useState("62354i4");
-    const [profileAddr,setProfileAddr] = useState("djsghxfvbj");
-    const [profileCity,setProfileCity] = useState("aligarh");
-    const [profileState,setProfileState] = useState("62354i4");
-    const [profileMobile,setProfileMobile] = useState("62354i4");
-    const [profilePin,setProfilePin] = useState("62354i4");
-    const [profileFather,setProfileFather] = useState("62354i4");
-    const [profileMother,setProfileMother] = useState("62354i4");
+    const [profileName,setProfileName] = useState(null);
+    const [profileRoll,setProfileRoll] = useState(null);
+    const [profileSex,setProfileSex] = useState(null);
+    const [profileBG,setProfileBg] = useState(null);
+    const [profileDOB,setProfileDOB] = useState(null);
+    const [profileAddr,setProfileAddr] = useState(null);
+    const [profileCity,setProfileCity] = useState(null);
+    const [profileState,setProfileState] = useState(null);
+    const [profileMobile,setProfileMobile] = useState(null);
+    const [profilePin,setProfilePin] = useState(null);
+    const [profileFather,setProfileFather] = useState(null);
+    const [profileMother,setProfileMother] = useState(null);
+    const [profileFatherName,setProfileFatherName] = useState(null);
+    const [profileMotherName,setProfileMotherName] = useState(null);
 
     const [editAble,setEditAble]=useState(false);
     function handleEditProfile(){
 setEditAble(true);
 console.log(editAble);
-    }
-    function handleSaveProfile(){
-        setEditAble(false);
     }
    function handleEditPName(e){
     setProfileName(e.target.value)
@@ -35,14 +36,14 @@ console.log(editAble);
    function handleEditProll(e){
     setProfileRoll(e.target.value);
    }
-   function handleEditPAdm(e){
-    setProfileAdm(e.target.value);
+   function handleEditPSex(e){
+    setProfileSex(e.target.value);
    }
    function handleEditPBG(e){
     setProfileBg(e.target.value);
    }
-   function handleEditPEmail(e){
-    setProfileEmail(e.target.value);
+   function handleEditPDOB(e){
+    setProfileDOB(e.target.value);
    }
    function handleEditPAddr(e){
     setProfileAddr(e.target.value);
@@ -66,9 +67,74 @@ console.log(editAble);
     setProfileMother(e.target.value);
    }
     
-    return (
+   const [postData,setPostData] = useState(null);
+   const accessToken = sessionStorage.getItem("access token");
+   console.log(accessToken);
+   const config = {
+      headers:{
+         Authorization: `Bearer ${accessToken}`
+      }
+   }
+   useEffect(()=>{
+      axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
+         console.log(res);
+         setPostData(res.data);
+         setProfileName(res.data.name);
+         setProfileRoll(res.data.userID);
+         setProfileSex(res.data.sex);
+         setProfileBg(res.data.blood_group);
+         setProfileDOB(res.data.DOB);
+         setProfileAddr(res.data.address);
+         setProfileCity(res.data.city);
+         setProfileState(res.data.state);
+         setProfileMobile(res.data.student_phone);
+         setProfilePin(res.data.pincode);
+         setProfileFather(res.data.father_phone);
+         setProfileMother(res.data.mother_phone);
+         setProfileMotherName(res.data.mother_name);
+         setProfileFatherName(res.data.father_name);
+
+         console.log(postData)
+      }).catch(err=>{
+         console.log(err);
+      })
+   },[])
+
+   function handleSaveProfile(){
+      setEditAble(false);
+      axios.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config,{
+         name:profileName,
+         userID:profileRoll,
+         sex:profileSex,
+         blood_group:profileBG,
+         DOB:profileDOB,
+         address:profileAddr,
+         city:profileCity,
+         state:profileState,
+         student_phone:profileMobile,
+         pincode:profilePin,
+         father_phone:profileFather,
+         mother_phone:profileMother
+
+      }).then((res)=>{
+         setPostData(res.data);
+         setProfileName(res.data.name);
+         setProfileRoll(res.data.userID);
+         setProfileSex(res.data.sex);
+         setProfileBg(res.data.blood_group);
+         setProfileDOB(res.data.DOB);
+         setProfileAddr(res.data.address);
+         setProfileCity(res.data.city);
+         setProfileState(res.data.state);
+         setProfileMobile(res.data.student_phone);
+         setProfilePin(res.data.pincode);
+         setProfileFather(res.data.father_phone);
+         setProfileMother(res.data.mother_phone);
+      })
+  }
+    return ( 
         <>
-            {/* <Navbar/> */}
+            <Navbar/>
             <SideBar />
             <h1 className="dash">Dashboard : My Profile</h1>
             <div id="background">
@@ -89,25 +155,30 @@ console.log(editAble);
                 {editAble?(<ProfileInputField value={profileName} class="profileField" type="text" onChange={handleEditPName} />): 
                    (<ProfileInputDisabled  value={profileName} class="profileField" type="text"/>)}
                 </div> 
-                <div id="roll">Roll No. </div>
+                <div id="roll">Sex</div>
                 <div className='space2'>
+                {editAble?(<ProfileInputField value={profileSex} class="profileField" type="text" onChange={handleEditPSex} />): 
+                   (<ProfileInputDisabled  value={profileSex} class="profileField" type="text"/>)}
+                </div>
+                <div id="adm-no">Roll No.</div>
+                <div className='space3'>
                 {editAble?(<ProfileInputField value={profileRoll} class="profileField" type="text" onChange={handleEditProll} />): 
                    (<ProfileInputDisabled  value={profileRoll} class="profileField" type="text"/>)}
                 </div>
-                <div id="adm-no">Admission No. </div>
+                {/* <div id="adm-no">Admission No. </div>
                 <div className='space3'>
                 {editAble?(<ProfileInputField value={profileAdm} class="profileField" type="text" onChange={handleEditPAdm} />): 
                    (<ProfileInputDisabled  value={profileAdm} class="profileField" type="text"/>)}
-                </div>
+                </div> */}
                 <div id="bl-gr">Blood Group</div>
                 <div className='space4'>
                 {editAble?(<ProfileInputField value={profileBG} class="profileField" type="text" onChange={handleEditPBG} />): 
                    (<ProfileInputDisabled  value={profileBG} class="profileField" type="text"/>)}
                 </div>
-                <div id="email">Email</div>
+                <div id="email">Date of Birth</div>
                 <div className='space5'>
-                {editAble?(<ProfileInputField value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} />): 
-                   (<ProfileInputDisabled  value={profileEmail} class="profileField" type="text"/>)}
+                {editAble?(<ProfileInputField value={profileDOB} class="profileField" type="text" onChange={handleEditPDOB} />): 
+                   (<ProfileInputDisabled  value={profileDOB} class="profileField" type="text"/>)}
                 </div>
                 <div className='CONTACT'>
                 <div id="heading2">Contact Details</div>

@@ -1,5 +1,5 @@
 {
-  "homepage": "http://tushar-glitch.github.io/Edumate",
+  "homepage": "",
   "name": "edumate-frontend",
   "version": "0.1.0",
   "private": true,
@@ -30,7 +30,7 @@
   "scripts": {
     "build": "react-scripts build --openssl-legacy-provider",
     "predeploy": "npm run build",
-    "deploy":"gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts --openssl-legacy-provider start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

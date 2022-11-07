@@ -3,14 +3,14 @@
 }
 #new-pass {
   position: absolute;
-  width: 220px;
-  height: 20px;
+  width: 10vw;
+  height: 2.6vh;
   left: 56vw;
   top: 37vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 20px;
   color: #000000;
   background: none;
@@ -90,7 +90,7 @@
 #wrongpass1 {
   position: absolute;
   width: 26vw;
-  height: 20vh;
+  height: 3vh;
   left: 56vw;
   top: 46.5vh;
   font-family: "Montserrat";
@@ -135,8 +135,8 @@
   position: absolute;
   width: 22vw;
   /* height: 20vh; */
-  left: 59vw;
-  top: 75vh;
+  left: 63vw;
+  top: 78vh;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -160,17 +160,18 @@
     top: 40vh;
   }
 #pEye2{
-    top: 55vh;
+    top: 61.2vh;
   }
   #confirm-pass-input{
     position: absolute;
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 52vh;
+    top: 58.5vh;
   }
   #new-pass {
     position: absolute;
+    width:75vw;
     top: 34vh;
     left: 15vw;
     font-weight: 600;
@@ -179,7 +180,7 @@
   }
   #confirm-pass {
     position: absolute;
-    top: 49vh;
+    top: 55vh;
     left: 15vw;
     font-weight: 600;
     font-size: 16px;
@@ -190,15 +191,18 @@
     width: 73vw;
     height: 7.5vh;
     left: 15vw;
-    top: 65vh;
+    top: 72vh;
     background: #6c63ff;
     border-radius: 5px;
   }
-  #wrongpass {
+  #wrongpass1 {
     top:45vh;
+    left:15vw;
+    width:73.85vw;
+    background: none;
   }
   #passMatch {
-    top:60vh;
+    top:66.2vh;
     width:70vw;
     /* height:10vh; */
     left:15vw;
@@ -208,6 +212,18 @@
     font-size:7px;
     margin-left:-30px;
     font-weight:600;
+  }
+  #pwdMsg{
+    left:29vw;
+    top:80vh;
+    width:70vw;
+  }
+  #RESET{
+    font-size:1.6rem;
+    left:18vw;
+    top:25vh;
+    width:70vw;
+    line-height: 20px;
   }
 }
 @media (min-width:380px) and (max-width:950px) {
@@ -224,23 +240,23 @@
     width: 73vw;
     height: 54px;
     left: 15vw;
-    top: 51vh;
+    top: 54.5vh;
   }
   #pEye1{
     top: 41vh;
   }
 #pEye2{
-    top: 53vh;
+    top: 56.4vh;
   }
   #new-pass {
     top: 36vh;
     left: 15.4vw;
-   width: 30vw;
+   width: 70vw;
     font-weight: 600;
     font-size: 16px;
   }
   #confirm-pass {
-    top: 48.2vh;
+    top: 52vh;
     left: 15.4vw;
      width: 40vw;
     font-weight: 600;
@@ -250,17 +266,160 @@
     width: 73vw;
     height: 54px;
     left: 15vw;
-    top: 63vh;
+    top: 67vh;
     background: #6c63ff;
     border-radius: 5px;
-  }
-  #wrongpass {
-    top:35vh;
   }
   .BgHead {
     width:100vw;
     height:10vh;
     left:3vw;
     top:23vh;
+  }
+  #wrongpass1 {
+    top:45.5vh;
+    left:15vw;
+    width:73.85vw;
+    background: none;
+  }
+  #passMatch {
+    top:61vh;
+    width:70vw;
+    /* height:10vh; */
+    left:15vw;
+  }
+  #RESET{
+    font-size:1.68rem;
+    left:13vw;
+    top:25vh;
+    width:70vw;
+    line-height: 20px;
+  }
+  #pwdMsg{
+    left:25vw;
+    font-size: 1.2rem;
+    top:74vh;
+    width:70vw;
+  }
+}
+@media (min-width:360px) and (max-width:360px) {
+  #RESET{
+    font-size:1.6rem;
+    left:17vw;
+    top:25vh;
+    width:90vw;
+    line-height: 20px;
+  } 
+}
+@media (min-width:768px) and (max-width:913px) {
+  #new-pass{
+font-size: 1.3rem;
+top:36.5vh;
+  }
+  #pwdMsg{
+    font-size: 1.5rem;
+  }
+  #passMatch{
+    font-size: 1.3rem;
+    top:62.5vh;
+  }
+  #wrongpass1{
+    font-size: 1.3rem;
+    top:45.5vh;
+    line-height:23px;
+  }
+  #confirm-pass{
+    font-size: 1.3rem;
+    top:53.5vh;
+  }
+  #pEye1{
+    left:83vw;
+    top:41vh;
+  }
+  #pEye2{
+    left:83vw;
+    top:58.6vh;
+  }
+  #new-pass-input {
+    height:6vh;
+    font-size: 1.3rem;
+  }
+  #confirm-pass-input {
+    height:6vh;
+    top:56vh;
+    font-size: 1.3rem;
+}
+#btn-reset{
+  height:6vh;
+  font-size: 1.3rem;
+}
+#pwdMsg{
+  left:34vw;
+  top:75vh;
+}
+#RESET{
+  font-size:2.4rem;
+  left:25vw;
+  top:25vh;
+  width:70vw;
+  line-height: 20px;
+} 
+}
+@media (min-width:912px) and (max-width:912px){
+  #RESET{
+    font-size:2.7rem;
+    left:25vw;
+    top:25vh;
+    width:60vw;
+    line-height: 20px;
+  } 
+}
+@media (min-width:540px) and (max-width:540px){
+  #RESET{
+    font-size:2rem;
+    left:18vw;
+    top:25vh;
+    width:60vw;
+    line-height: 20px;
+  } 
+  #wrongpass1{
+top:46.5vh;
+  }
+  #confirm-pass{
+top:55vh;
+  }
+  #confirm-pass-input{
+    top:58vh;
+  }
+  #pEye1{
+top:42vh;
+  }
+  #pEye2{
+top:61vh;
+  }
+  #passMatch{
+top:65.5vh;
+  }
+  #btn-reset{
+    top:72vh;
+  }
+  #pwdMsg{
+    left:34vw;
+    top:80vh;
+  }
+}
+@media(min-width:280px) and (max-width:280px) {
+  #pEye1 , #pEye2{
+    left:77vw;
+    width:15px;
+  }
+  #pwdMsg{
+    left:31vw;
+  }
+  #RESET{
+    font-size:1.4rem;
+    left:14vw;
+    top:25vh;
+    width:80vw;
   }
 }

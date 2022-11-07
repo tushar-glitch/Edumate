@@ -1,12 +1,12 @@
 import React from 'react'
 
-import './dashboard.css'
+import './fac-dashboard.css'
 import Navbar from '../Navbar/Navbar'
 import profileimg from '../Assests/Images/avatar.png'
 import updateimg from '../Assests/Images/updates-img-removebg-preview.png'
 import Chart from '../Pie/Pie'
 import SideBar from '../Student/SideBar/sidebar'
-const Dashboard = () => {
+const FacDashboard = () => {
     return (
         <>
             <SideBar/>
@@ -51,12 +51,7 @@ const Dashboard = () => {
                     <div id="profile_details">Profile Details</div>
                     <div id="card1">
                         <img src={profileimg} alt="" id='img' />
-                        <div id="student_details"><span className='bold_name'>Name</span><br/>Male<br/>21xxxx<br/>CSE<br/>student@akgec.ac.in</div>
-                    </div>
-                    <div id="attendance">Attendance</div>
-                    <div id="card2">
-                        <span id="chart"><Chart /></span>
-                        <div id="attendance_details">Overall Present: 80<br/>Overall Lecture: 100<br/>Overall Attendance: 80%</div>
+                        <div id="student_details"><span className='bold_name'>Name</span><br/>Male<br/>22xxxx<br/>CSE<br/>faculty@akgec.ac.in</div>
                     </div>
                     <div id="updates">Updates</div>
                     <div id="card3"></div>
@@ -66,4 +61,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+export default FacDashboard;

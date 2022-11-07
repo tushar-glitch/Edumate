@@ -4,9 +4,10 @@ body{
 #section {
     position: absolute;
     height: 9vh;
-    width: 100vw;
+    width: 81.6vw;
     background-color: white;
-    left: 17.794em;
+    /* left: 17.794em; */
+    right: 0em;
     top: 0vh;
 }
 
@@ -24,11 +25,11 @@ body{
 
 #role {
     position: absolute;
-    width: 10vw;
+    width: 5vw;
     height: 4.5vh;
     background-color: white;
     top: 3vh;
-    right: 17vw;
+    right: 2.3vw;
     font-family: 'Montserrat';
     padding-right: 0em;
     font-weight: 400;
@@ -39,8 +40,48 @@ body{
     width: 2vw;
     height: 4.5vh;
     background-color: white;
-    top: 3vh;
-    right: 20vw;
+    top: 2.5vh;
+    right: 0.9vw;
     font-family: 'Montserrat';
     padding-right: 0em;
+    cursor: pointer;
+    border: none;
+}
+#dropdown{
+    position: absolute;
+    height: 22.5vh;
+    width: 11.5vw;
+    background-color: white;
+    right: 0.9vw;
+    top: 9vh;
+    z-index: 99999;
+    display: none;
+}
+.dropdown_items{
+    line-height: 5vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 0.9rem;
+/* identical to box height */
+margin-left: 2.5vw;
+background-color: white;
+color: #000000;
+}
+.dropdown_img{
+    background-color: white;
+    position: absolute;
+    left: 1vw;
+}
+#dropdown_img1{
+    top: 1.3vh;
+}
+#dropdown_img2{
+    top: 6.3vh;
+}
+#dropdown_img3{
+    top: 11.3vh;
+}
+#dropdown_img4{
+    top: 16.3vh;
 }
