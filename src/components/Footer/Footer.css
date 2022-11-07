@@ -1,0 +1,30 @@
+.FooterDiv{
+    position:absolute;
+    top:83vh;
+    left:1.5vw;
+    width:16vw;
+    height:15vh;
+   background: white;
+   z-index: 10;
+   position:fixed;
+}
+.footerHead{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+    color: #6C63FF;
+    background-color:white;
+}
+.footerPara{
+    margin-top:2.5vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 18px;
+    color: #000000;
+    background:white;
+}

@@ -1,6 +1,6 @@
-/* .TIMETABLE {
-    overflow-x: hidden;
-} */
+.TIMETABLE {
+    overflow-y:scroll;
+}
 .StudentTimeTable{
     height:900px;
 }

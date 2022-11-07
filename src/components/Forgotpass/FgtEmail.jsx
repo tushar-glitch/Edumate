@@ -30,10 +30,11 @@ function postemail() {
     .then((res) => {
       console.log(res.data);
       localStorage.setItem("email", email);
-      navigate("/otp");
+      // {value2?<Navigate to="/otp" />:null}
     })
     
     .catch((err) => {
+      navigate("/otp")
       console.log(err);
       setEmValid("Please enter a valid email id");
     })

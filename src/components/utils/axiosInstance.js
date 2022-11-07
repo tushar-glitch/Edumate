@@ -18,6 +18,7 @@ axiosInstance.interceptors.request.use(async req => {
     if (!isExpired){console.log('not expired yet'); return req} 
     const ref_token = sessionStorage.getItem("refresh token")
     console.log("ref_token "+ref_token);
+    
     const response =  axios.post(`${baseURL}/api/user/token/refresh`, {
         refresh:ref_token
     })
