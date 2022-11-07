@@ -8,6 +8,7 @@ import ProfileInputDisabled from '../ProfileInputDiabled'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
+import axiosInstance from '../utils/axiosInstance'
 
 const Student = () => {
     const [profileName,setProfileName] = useState(null);
@@ -76,7 +77,7 @@ console.log(editAble);
       }
    }
    useEffect(()=>{
-      axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
+      axiosInstance.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
          console.log(res);
          setPostData(res.data);
          setProfileName(res.data.name);
@@ -102,7 +103,7 @@ console.log(editAble);
 
    function handleSaveProfile(){
       setEditAble(false);
-      axios.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config,{
+      axiosInstance.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config,{
          name:profileName,
          userID:profileRoll,
          sex:profileSex,
