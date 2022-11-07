@@ -129,11 +129,12 @@ const Formlogin = () => {
 // sessionStorage.setItem("expiry time",timerToken);
 const [protectedRoute,setProtectedRoute] = useState(false);
 
-  function postdata() {
+  async function postdata() {
     if (iscorrectid) {
-       axios
+       await axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
-        .then((res) => {
+         .then((res) => {
+          debugger
           console.log(res);
           // localStorage.setItem("token", res.data.token);
           const accessToken = res.data.token.access;

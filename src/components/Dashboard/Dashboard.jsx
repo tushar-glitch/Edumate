@@ -58,8 +58,8 @@ const Dashboard = () => {
                         <span id="chart"><Chart /></span>
                         <div id="attendance_details">Overall Present: 80<br/>Overall Lecture: 100<br/>Overall Attendance: 80%</div>
                     </div>
-                    <div id="updates">Updates</div>
-                    <div id="card3"></div>
+                    <div id="updates1">Updates</div>
+                    <div id="card31"></div>
                 </div>
             </div>
         </>
