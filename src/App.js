@@ -30,9 +30,9 @@ function App() {
   return <>
   {/* <UpdateEmail /> */}
   {/* <Updates /> */}
-  {/* <SideBar />
-  <Navbar />
-  <Footer />  */}
+  {/* <SideBar /> */}
+  {/* <Navbar /> */}
+  <Footer /> 
   {/* <FMain /> */}
   {/* <BrowserRouter>
             <PrivateRoute component={Dashboard} path="/dashboard" />
@@ -51,7 +51,7 @@ function App() {
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
         <Route path="/profile" exact element={<Student />} />
       
-     
+     <Route path="/chngPwd" exact element={<Changepass />} />
         {/* <Route path="/profile" element={<PrivateRoute>
           <UpdateEmail />
         </PrivateRoute> }/> */}

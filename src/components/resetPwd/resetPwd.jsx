@@ -68,9 +68,10 @@ const [passMsg,setPassMsg] = useState("");
           .post("https://erp-edumate.herokuapp.com/api/user/changepassword/",data)
           .then((res) => {
             console.log(res.data);
-            // confirm("Password changed");
+            sessionStorage.setItem("previous_password",Cpass)
             setPassMsg("Password changed")
             navigate("/");
+            localStorage.clear();
           })
           .catch((err) => {
             console.log(err);
@@ -80,7 +81,7 @@ const [passMsg,setPassMsg] = useState("");
       else{
           document.getElementById("passMatch").style.display = "block";
       }
-  }
+    }
   return (
     <>
     <div className="AUTHENTICATION">
