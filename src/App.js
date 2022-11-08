@@ -50,7 +50,7 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
         <Route path="/profile" exact element={<Student />} />
-      
+      <Route path="/update_email" exact element={<UpdateEmail/>} />
      
         {/* <Route path="/profile" element={<PrivateRoute>
           <UpdateEmail />
