@@ -21,7 +21,9 @@ import SideBar from "./components/Student/SideBar/sidebar";
 import UpdateEmail from "./components/UpdateEmail/UpdateEmail";
 import Footer from "./components/Footer/Footer";
 import Attendance from "./components/Student/Attendance/st_attendance";
-import Student from "./components/Student-profile/student";
+import Timetable from "./components/Student/TimeTable/student-TT";
+import FacultyProfile from "./components/Faculty/FacultyProfile/FacultyProfile";
+import Profile from "./components/Student-profile/profile";
 // import FMain from "./components/Faculty/FacultyMain";
 function App() {
 //  const isAuthenticate = sessionStorage.getItem("access token");
@@ -43,13 +45,15 @@ function App() {
   {/* <StProfile />  */}
     <BrowserRouter>
       <Routes>
+      <Route path="/stTimetable" exact element={<Timetable/>} />
+      <Route path="/facProfile" exact element={<FacultyProfile/>} />
       <Route path="/updateEmail" exact element={<UpdateEmail />} />
       <Route path="/updates" exact element={<Updates />} />
       <Route path="/" exact element={<LogIn />} />
         <Route path="/rstPwd" exact element={<ResetPwd />} />
         <Route path="/otp" element={<OTP />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
-        <Route path="/profile" exact element={<Student />} />
+        <Route path="/profile" exact element={<Profile />} />
       
      <Route path="/chngPwd" exact element={<Changepass />} />
         {/* <Route path="/profile" element={<PrivateRoute>

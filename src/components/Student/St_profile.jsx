@@ -4,7 +4,7 @@ import Attendance from "./Attendance/st_attendance";
 import Timetable from "./TimeTable/student-TT"; 
 import SideBar from "./SideBar/sidebar";
 import SubjectAttend from "./Attendace2/Attendance";
-import Student from "../Student-profile/student";
+import Student from "../Student-profile/profile";
 import Dashboard from "../Dashboard/Dashboard";
 import Updates from "./Updates/Updates";
 import Footer from "../Footer/Footer";

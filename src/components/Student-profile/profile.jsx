@@ -1,16 +1,16 @@
 import React from 'react'
-import './student.css'
+import './profile.css'
 import avatar from '../Assests/Images/avatar.png'
 import Navbar from '../Navbar/Navbar'
 import SideBar from '../Student/SideBar/sidebar'
-import ProfileInputField from '../ProfileInputField'
-import ProfileInputDisabled from '../ProfileInputDiabled'
+import ProfileInputField from '../utils/ProfileInputField'
+import ProfileInputDisabled from '../utils/ProfileInputDiabled'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
 import axiosInstance from '../utils/axiosInstance'
 
-const Student = () => {
+const Profile = () => {
     const [profileName,setProfileName] = useState(null);
     const [profileRoll,setProfileRoll] = useState(null);
     const [profileSex,setProfileSex] = useState(null);
@@ -27,10 +27,24 @@ const Student = () => {
     const [profileMotherName,setProfileMotherName] = useState(null);
 
     const [editAble,setEditAble]=useState(false);
+    const [show,setShow] = useState(false)
     function handleEditProfile(){
 setEditAble(true);
 console.log(editAble);
+if (!show) {
+   setShow(true);
+   document.getElementById('saveButton').style.display = "block";
+   document.getElementById('cancelButton').style.display = "block";
+   document.getElementById('editButton').style.display = "none";
     }
+   else {
+       setShow(false)
+       document.getElementById('saveButton').style.display = "none";
+       document.getElementById('cancelButton').style.display = "none";
+   }
+}
+
+const [show3,setShow3] = useState(false);
    function handleEditPName(e){
     setProfileName(e.target.value)
    }
@@ -85,9 +99,7 @@ console.log(editAble);
    useEffect(()=>{
       axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
          console.log(res);
-         setPostData(res.data);
          setProfileName(res.data.name);
-         setProfileRoll(res.data.userID);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
          setProfileDOB(res.data.DOB);
@@ -106,11 +118,59 @@ console.log(editAble);
       })
    },[])
 
+   const [show2,setShow2] = useState(false);
+   function handleCancel(){
+      setEditAble(false);
+      if (!show2) {
+         setShow2(true);
+         document.getElementById('saveButton').style.display = "none";
+         document.getElementById('cancelButton').style.display = "none";
+         document.getElementById('editButton').style.display = "block";
+          }
+         else {
+             setShow2(false)
+             document.getElementById('saveButton').style.display = "block";
+             document.getElementById('cancelButton').style.display = "block";
+             document.getElementById('editButton').style.display = "none";
+         }
+         axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
+            console.log(res);
+            setProfileName(res.data.name);
+            setProfileSex(res.data.sex);
+            setProfileBg(res.data.blood_group);
+            setProfileDOB(res.data.DOB);
+            setProfileAddr(res.data.address);
+            setProfileCity(res.data.city);
+            setProfileState(res.data.state);
+            setProfileMobile(res.data.student_phone);
+            setProfilePin(res.data.pincode);
+            setProfileFather(res.data.father_phone);
+            setProfileMother(res.data.mother_phone);
+            setProfileMotherName(res.data.mother_name);
+            setProfileFatherName(res.data.father_name);
+            console.log(postData)
+         }).catch(err=>{
+            console.log(err);
+         })
+
+   }
+
    function handleSaveProfile(){
+      if (!show3) {
+         setShow3(true);
+         document.getElementById('saveButton').style.display = "none";
+         document.getElementById('cancelButton').style.display = "none";
+         document.getElementById('editButton').style.display = "block";
+          }
+         else {
+             setShow3(false)
+             document.getElementById('saveButton').style.display = "block";
+             document.getElementById('cancelButton').style.display = "block";
+             document.getElementById('editButton').style.display = "none";
+         }
       setEditAble(false);
       axios.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",{
          name:profileName,
-         userID:profileRoll,
          sex:profileSex,
          blood_group:profileBG,
          DOB:profileDOB,
@@ -150,102 +210,90 @@ console.log(editAble);
             <div id="background">
                 <div id="avatar">
                     <img src={avatar} id="profileImage"/>
-                    <span id='dis-name'>TUSHAR CHAUHAN </span><br />
+                    <span id='dis-name'>{profileName}</span><br />
                     <div className='avatarInfo'>
                     Mon 3 SEPT 2001 <br />
                     B.TECH 2ND YEAR <br />
-                    CSE
                     </div>
                 </div>
                 <div id="heading1">Student Profile</div>
-                <div id="PROFILE">
+                {/* <div id="PROFILE"> */}
                 <div id="personalinfo">Personal Info</div>
                 <div id="stu-name">Student's Name</div>
                 <div className='space1'>
                 {editAble?(<ProfileInputField value={profileName} class="profileField" type="text" onChange={handleEditPName} />): 
                    (<ProfileInputDisabled  value={profileName} class="profileField" type="text"/>)}
                 </div> 
-                <div id="roll">Sex</div>
+                <div id="sex">Sex</div>
                 <div className='space2'>
                 {editAble?(<ProfileInputField value={profileSex} class="profileField" type="text" onChange={handleEditPSex} />): 
                    (<ProfileInputDisabled  value={profileSex} class="profileField" type="text"/>)}
                 </div>
-                <div id="adm-no">Roll No.</div>
-                <div className='space3'>
-                {editAble?(<ProfileInputField value={profileRoll} class="profileField" type="text" onChange={handleEditProll} />): 
-                   (<ProfileInputDisabled  value={profileRoll} class="profileField" type="text"/>)}
-                </div>
-                {/* <div id="adm-no">Admission No. </div>
-                <div className='space3'>
-                {editAble?(<ProfileInputField value={profileAdm} class="profileField" type="text" onChange={handleEditPAdm} />): 
-                   (<ProfileInputDisabled  value={profileAdm} class="profileField" type="text"/>)}
-                </div> */}
                 <div id="bl-gr">Blood Group</div>
-                <div className='space4'>
+                <div className='space3'>
                 {editAble?(<ProfileInputField value={profileBG} class="profileField" type="text" onChange={handleEditPBG} />): 
                    (<ProfileInputDisabled  value={profileBG} class="profileField" type="text"/>)}
                 </div>
-                <div id="email">Date of Birth</div>
-                <div className='space5'>
+                <div id="dob">Date of Birth</div>
+                <div className='space4'>
                 {editAble?(<ProfileInputField value={profileDOB} class="profileField" type="text" onChange={handleEditPDOB} />): 
                    (<ProfileInputDisabled  value={profileDOB} class="profileField" type="text"/>)}
                 </div>
-                <div className='CONTACT'>
                 <div id="heading2">Contact Details</div>
                 <div id="address">Address</div>
-                <div className='space6'>
+                <div className='space5'>
                 {editAble?(<ProfileInputField value={profileAddr} class="profileField" type="text" onChange={handleEditPAddr} />): 
                    (<ProfileInputDisabled  value={profileAddr} class="profileField" type="text"/>)}
                 </div>
                 <div id="city">City</div>
-                <div className='space7'>
+                <div className='space6'>
                 {editAble?(<ProfileInputField value={profileCity} class="profileField" type="text" onChange={handleEditPCity} />): 
                    (<ProfileInputDisabled  value={profileCity} class="profileField" type="text"/>)}
                 </div>
                 <div id="state">State</div>
-                <div className='space8'>
+                <div className='space7'>
                 {editAble?(<ProfileInputField value={profileState} class="profileField" type="text" onChange={handleEditPState} />): 
                    (<ProfileInputDisabled  value={profileState} class="profileField" type="text"/>)}
                 </div>
                 <div id="stu-phone">Student's Mobile No.</div>
-                <div className='space9'>
+                <div className='space8'>
                 {editAble?(<ProfileInputField value={profileMobile} class="profileField" type="text" onChange={handleEditPMobile} />): 
                    (<ProfileInputDisabled  value={profileMobile} class="profileField" type="text"/>)}
                 </div>
                 <div id="pin">Pincode</div>
-                <div className='space10'>
+                <div className='space9'>
                 {editAble?(<ProfileInputField value={profilePin} class="profileField" type="text" onChange={handleEditPPin} />): 
                    (<ProfileInputDisabled  value={profilePin} class="profileField" type="text"/>)}
                 </div>
-                </div>
                 <div id="heading3">Parents</div>
-                <div id="fat-phone">Father's Name</div>
-                <div className='space12'>
+                <div id="fat-name">Father's Name</div>
+                <div className='space10'>
                 {editAble?(<ProfileInputField value={profileFatherName} class="profileField" type="text" onChange={handleEditPFatherName} />): 
                    (<ProfileInputDisabled  value={profileFatherName} class="profileField" type="text"/>)}
                 </div>
-                <div id="mot-phone">Father's Mobile No.</div>
+                <div id="fat-phone">Father's Mobile No.</div>
                 <div className='space11'>
                 {editAble?(<ProfileInputField value={profileFather} class="profileField" type="text" onChange={handleEditPFather} />): 
                    (<ProfileInputDisabled  value={profileFather} class="profileField" type="text"/>)}
                 </div>
-                <div id="fat-phone2">Mother's Name</div>
-                <div className='space13'>
+                <div id="mot-name">Mother's Name</div>
+                <div className='space12'>
                 {editAble?(<ProfileInputField value={profileMotherName} class="profileField" type="text" onChange={handleEditPMotherName} />): 
                    (<ProfileInputDisabled  value={profileMotherName} class="profileField" type="text"/>)}
                 </div>
-                <div id="mot-phone2">Mother's Mobile No.</div>
-                <div className='space14'>
+                <div id="mot-phone">Mother's Mobile No.</div>
+                <div className='space13'>
                 {editAble?(<ProfileInputField value={profileMother} class="profileField" type="text" onChange={handleEditPMother} />): 
                    (<ProfileInputDisabled  value={profileMother} class="profileField" type="text"/>)}
                 </div>
-
                 <button id="editButton" onClick={handleEditProfile}>Edit Profile</button>
                 <button id="saveButton" onClick={handleSaveProfile}>Save</button> 
-                </div>
+                <button id="cancelButton" onClick={handleCancel}>Cancel</button> 
+                <div className='CONTACT'>
+            </div>
             </div>
         </>
     )
 }
 
-export default Student
+export default Profile;
