@@ -24,6 +24,14 @@ import Attendance from "./components/Student/Attendance/st_attendance";
 import Timetable from "./components/Student/TimeTable/student-TT";
 import FacultyProfile from "./components/Faculty/FacultyProfile/FacultyProfile";
 import Profile from "./components/Student-profile/profile";
+import FUpdate from "./components/Faculty/FUpdate/FUpdate";
+import FTimeTable from "./components/Faculty/FTimeTable/FtimeTable";
+import AUpdates from "./components/ADMIN/Admin_Updates/AUpdates";
+import NewUpdateCard from "./components/ADMIN/Admin_Updates/makeNewUpdateAdmin";
+import EditUpdateCard from "./components/ADMIN/Admin_Updates/editUpdateCard";
+import AdminAddDeptClass from "./components/ADMIN/Admin_department/adminDept";
+import AddNewDeptComp from "./components/ADMIN/Admin_department/add_new_dept_comp";
+import AddNewClassComp from "./components/ADMIN/Admin_/Admin_class/adminAddClass1";
 // import FMain from "./components/Faculty/FacultyMain";
 function App() {
 //  const isAuthenticate = sessionStorage.getItem("access token");
@@ -34,7 +42,7 @@ function App() {
   {/* <Updates /> */}
   {/* <SideBar /> */}
   {/* <Navbar /> */}
-  <Footer /> 
+  {/* <Footer />  */}
   {/* <FMain /> */}
   {/* <BrowserRouter>
             <PrivateRoute component={Dashboard} path="/dashboard" />
@@ -45,6 +53,14 @@ function App() {
   {/* <StProfile />  */}
     <BrowserRouter>
       <Routes>
+      <Route path="/adminAddClass" exact element={<AddNewClassComp/>} />
+      <Route path="/adminAddNew" exact element={<AddNewDeptComp/>} />
+      <Route path="/adminAdd" exact element={<AdminAddDeptClass />} />
+      <Route path="/editUpdates" exact element={<EditUpdateCard />} />
+      <Route path="/newUpdate" exact element={<NewUpdateCard />} />
+      <Route path="/aUpdate" exact element={<AUpdates />} />
+      <Route path="/ftimetable" exact element={<FTimeTable />} />
+      <Route path="/Fupdate" exact element={<FUpdate />} />
       <Route path="/stTimetable" exact element={<Timetable/>} />
       <Route path="/facProfile" exact element={<FacultyProfile/>} />
       <Route path="/updateEmail" exact element={<UpdateEmail />} />

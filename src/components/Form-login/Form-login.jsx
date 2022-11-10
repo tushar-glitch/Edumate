@@ -28,14 +28,6 @@ const Formlogin = () => {
   var isnum = /^\d+$/;
   const [iscorrectid, setIsCorrectId] = useState(false);
   
-  // useEffect(()=> {
-  //       getNotes()
-  //   }, [])
-  // let getNotes = async () => {
-  //   let response = await axiosInstance.post('api/user/login')
-  //   console.log('/tushar');
-  //   console.log(response);
-  // }
   useEffect(() => {
     if (isnum.test(userID)) {
       document.getElementById("wrongid").style.display = "none";
@@ -50,45 +42,7 @@ const Formlogin = () => {
   const navigate = useNavigate();
   localStorage.removeItem("protectedRouteKey");
   localStorage.removeItem("protRouteKey");
-  // const [tokenApi, setTokenApi] = useState(false);
-
-  // const [timerToken, setTimerToken] = useState(240);
-  // const [timerStart, setTimerStart] = useState(false);
-
-  // useEffect(() => {
-  //   // console.log("asjbds,");
-  //   let intervalId = null;
-  //   if (timerToken < 230) {
-  //     setTimerToken(240)
-  //     refresh_call()
-  //   }
-  //   console.log(timerStart);
-  //   // if(timerStart){
-  //   // console.log("asjbds,");
-  //   intervalId = setInterval(() => {
-  //     setTimerToken(timerToken - 1);
-  //   }, 1000);
-  //   return () => clearInterval(intervalId)
-  //   // }
-    
-  // }, [timerToken]);
-
-  // console.log(timerToken);
-  
-  // sessionStorage.setItem("expiry time", timerToken);
-// useEffect(()=>{
-//   let intervalId = null;
-//   console.log(timerStart);
-//   // if(timerStart){
-//   intervalId = setInterval(()=>{
-//     setTimerToken(timerToken-1);
-//   },1000);
-//   return ()=> clearInterval(intervalId)
-// // }
-// },[timerToken]);
-
-// console.log(timerToken);
-// sessionStorage.setItem("expiry time",timerToken);
+ 
   // let postdata = async () => {
   //   if (iscorrectid) {
   //     let res = await axiosInstance.post('https://erp-edumate.herokuapp.com/api/user/login/',data)
@@ -129,36 +83,68 @@ const Formlogin = () => {
   // }
 // // console.log(timerToken);
 // sessionStorage.setItem("expiry time",timerToken);
-const [protectedRoute,setProtectedRoute] = useState(false);
+/*LOADING SCREEN*/
 
+const [loadingScreen , setLoadingScreen] = useState(false);
+const [protectedRoute,setProtectedRoute] = useState(false);
+const [bool,setBool] = useState(false);
+// function postdataCheck(){
+//   console.log("hsmv")
+// if(!bool)
+// setBool(true);
+// else
+// setBool(false);
+// }
+// useEffect(()=>{
+//   console.log(loadingScreen)
+// },[loadingScreen])
+console.log(bool)
+const userIdFirstDigit = String(userID)[0];
   async function postdata() {
     if (iscorrectid) {
        await axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
          .then((res) => {
-          // debugger
           console.log(res);
-          // localStorage.setItem("token", res.data.token);
+          setLoadingScreen(true);
+          console.log(loadingScreen)
           const accessToken = res.data.token.access;
           const refreshToken = res.data.token.refresh;
           console.log(accessToken);
           console.log(refreshToken);
           if (accessToken && refreshToken) {
-            // setTimerStart(true);
             storeTokenData(accessToken, refreshToken);
-            // setTokenApi(true);
-            navigate("/profile");
-            // axios.defaults.headers = {
-            //   accesstoken: accessToken,
-            //   refreshtoken: refreshToken
-            // }
-            // axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
-            // console.log(timerStart);
-            // console.log(tokenApi);
-            // navigate("/profile");
+            {if(userIdFirstDigit==1){
+              navigate("/facProfile")
+              console.log("aDBHMASHF");
+              sessionStorage.setItem("Faculty_access_token", accessToken);
+            }
+            else
+            {
+              navigate("/");
+              sessionStorage.removeItem("Faculty_access_token")
+            }};
+            {if(userIdFirstDigit==2){
+              navigate("/profile")
+              sessionStorage.setItem("access token", accessToken);
+            }
+            else
+            {
+              navigate("/");
+              sessionStorage.removeItem("access token")
+            }};
+            {if(userIdFirstDigit==9){
+              // navigate("/facProfile")
+              console.log("aDBHMASHF");
+              sessionStorage.setItem("Admin_access_token", accessToken);
+            }
+            else
+            {
+              navigate("/");
+              sessionStorage.removeItem("Admin_access_token")
+            }};
           }
-          localStorage.setItem("access token:", res.data.token.access);
-          // console.log(tokenApi);
+          localStorage.setItem("access token:", res.data.token.access)
         })
         .catch((err) => {
           console.log(err);
@@ -170,9 +156,14 @@ const [protectedRoute,setProtectedRoute] = useState(false);
       setCredentials("")
     }
   }
+  // useEffect(()=>{
+  //   if(bool)
+  //   postdata();
+  // },[bool])
+  // console.log(loadingScreen)
 // // console.log(timerToken);
 // sessionStorage.setItem("expiry time",timerToken);
-const userIdFirstDigit = String(userID)[0];
+
 
   // function postdata() {
   //   if (iscorrectid) {

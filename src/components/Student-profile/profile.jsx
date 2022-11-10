@@ -12,7 +12,6 @@ import axiosInstance from '../utils/axiosInstance'
 
 const Profile = () => {
     const [profileName,setProfileName] = useState(null);
-    const [profileRoll,setProfileRoll] = useState(null);
     const [profileSex,setProfileSex] = useState(null);
     const [profileBG,setProfileBg] = useState(null);
     const [profileDOB,setProfileDOB] = useState(null);
@@ -25,6 +24,7 @@ const Profile = () => {
     const [profileMother,setProfileMother] = useState(null);
     const [profileFatherName,setProfileFatherName] = useState(null);
     const [profileMotherName,setProfileMotherName] = useState(null);
+    const [profileEmail,setProfileEmail] = useState(null);
 
     const [editAble,setEditAble]=useState(false);
     const [show,setShow] = useState(false)
@@ -48,8 +48,8 @@ const [show3,setShow3] = useState(false);
    function handleEditPName(e){
     setProfileName(e.target.value)
    }
-   function handleEditProll(e){
-    setProfileRoll(e.target.value);
+   function handleEditPEmail(e){
+    setProfileEmail(e.target.value);
    }
    function handleEditPSex(e){
     setProfileSex(e.target.value);
@@ -138,6 +138,7 @@ const [show3,setShow3] = useState(false);
             setProfileName(res.data.name);
             setProfileSex(res.data.sex);
             setProfileBg(res.data.blood_group);
+            setProfileEmail(res.data.email);
             setProfileDOB(res.data.DOB);
             setProfileAddr(res.data.address);
             setProfileCity(res.data.city);
@@ -182,12 +183,13 @@ const [show3,setShow3] = useState(false);
          father_name:profileFatherName,
          mother_name:profileMotherName,
          father_phone:profileFather,
-         mother_phone:profileMother
+         mother_phone:profileMother,
+         email:profileEmail
       },config).then((res)=>{
          setPostData(res.data);
          console.log(res.data);
          setProfileName(res.data.name);
-         setProfileRoll(res.data.userID);
+         setProfileEmail(res.data.email);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
          setProfileDOB(res.data.DOB);
@@ -217,7 +219,6 @@ const [show3,setShow3] = useState(false);
                     </div>
                 </div>
                 <div id="heading1">Student Profile</div>
-                {/* <div id="PROFILE"> */}
                 <div id="personalinfo">Personal Info</div>
                 <div id="stu-name">Student's Name</div>
                 <div className='space1'>
@@ -239,50 +240,55 @@ const [show3,setShow3] = useState(false);
                 {editAble?(<ProfileInputField value={profileDOB} class="profileField" type="text" onChange={handleEditPDOB} />): 
                    (<ProfileInputDisabled  value={profileDOB} class="profileField" type="text"/>)}
                 </div>
+                <div id="email">Email</div>
+                <div className='space5'>
+                {editAble?(<ProfileInputField value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} />): 
+                   (<ProfileInputDisabled  value={profileEmail} class="profileField" type="text"/>)}
+                </div>
                 <div id="heading2">Contact Details</div>
                 <div id="address">Address</div>
-                <div className='space5'>
+                <div className='space6'>
                 {editAble?(<ProfileInputField value={profileAddr} class="profileField" type="text" onChange={handleEditPAddr} />): 
                    (<ProfileInputDisabled  value={profileAddr} class="profileField" type="text"/>)}
                 </div>
                 <div id="city">City</div>
-                <div className='space6'>
+                <div className='space7'>
                 {editAble?(<ProfileInputField value={profileCity} class="profileField" type="text" onChange={handleEditPCity} />): 
                    (<ProfileInputDisabled  value={profileCity} class="profileField" type="text"/>)}
                 </div>
                 <div id="state">State</div>
-                <div className='space7'>
+                <div className='space8'>
                 {editAble?(<ProfileInputField value={profileState} class="profileField" type="text" onChange={handleEditPState} />): 
                    (<ProfileInputDisabled  value={profileState} class="profileField" type="text"/>)}
                 </div>
                 <div id="stu-phone">Student's Mobile No.</div>
-                <div className='space8'>
+                <div className='space9'>
                 {editAble?(<ProfileInputField value={profileMobile} class="profileField" type="text" onChange={handleEditPMobile} />): 
                    (<ProfileInputDisabled  value={profileMobile} class="profileField" type="text"/>)}
                 </div>
                 <div id="pin">Pincode</div>
-                <div className='space9'>
+                <div className='space10'>
                 {editAble?(<ProfileInputField value={profilePin} class="profileField" type="text" onChange={handleEditPPin} />): 
                    (<ProfileInputDisabled  value={profilePin} class="profileField" type="text"/>)}
                 </div>
                 <div id="heading3">Parents</div>
                 <div id="fat-name">Father's Name</div>
-                <div className='space10'>
+                <div className='space11'>
                 {editAble?(<ProfileInputField value={profileFatherName} class="profileField" type="text" onChange={handleEditPFatherName} />): 
                    (<ProfileInputDisabled  value={profileFatherName} class="profileField" type="text"/>)}
                 </div>
                 <div id="fat-phone">Father's Mobile No.</div>
-                <div className='space11'>
+                <div className='space12'>
                 {editAble?(<ProfileInputField value={profileFather} class="profileField" type="text" onChange={handleEditPFather} />): 
                    (<ProfileInputDisabled  value={profileFather} class="profileField" type="text"/>)}
                 </div>
                 <div id="mot-name">Mother's Name</div>
-                <div className='space12'>
+                <div className='space13'>
                 {editAble?(<ProfileInputField value={profileMotherName} class="profileField" type="text" onChange={handleEditPMotherName} />): 
                    (<ProfileInputDisabled  value={profileMotherName} class="profileField" type="text"/>)}
                 </div>
                 <div id="mot-phone">Mother's Mobile No.</div>
-                <div className='space13'>
+                <div className='space14'>
                 {editAble?(<ProfileInputField value={profileMother} class="profileField" type="text" onChange={handleEditPMother} />): 
                    (<ProfileInputDisabled  value={profileMother} class="profileField" type="text"/>)}
                 </div>

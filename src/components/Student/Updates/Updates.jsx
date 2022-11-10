@@ -13,19 +13,18 @@ const config = {
        Authorization: `Bearer ${accessToken}`
     }
  }
- const [updateTitle,setUpdateObject]=useState({});
 const [updateCdArr,setUpdateCdArr]=useState([]);
 useEffect(()=>{
-    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/10/",config).
+    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/",config).
     then((res)=>{
         console.log(res.data[0]);
         setUpdateCdArr(res.data[0]);
-        // updateCdArr.push_back()
     })
     .catch((err)=>{
         console.log(err);
     })
 },[])
+
 function CreateUpdateCard(updateCdArr){
     return (
     <UpdateCard title={updateCdArr.title} desc={updateCdArr.description} />

@@ -19,7 +19,7 @@ body {
 #background {
     position: absolute;
     width: 65vw;
-    height: 160vh;
+    height: 170vh;
     background-color: white;
     margin-top: 25vh;
     margin-left: 26vw;
@@ -147,26 +147,12 @@ color: #000000;
     line-height: 17px;
 }
 
-/* #email {
-    position: absolute;
-    width: 10vw;
-    height: 17px;
-    left: 23vw;
-    top: 60.5vh;
-    background-color: white;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-} */
-
 #heading2 {
     position: absolute;
     width: 114px;
     height: 17px;
     left: 23vw;
-    top: 62vh;
+    top: 69vh;
     background: none;
     font-family: 'Montserrat';
     font-style: normal;
@@ -177,12 +163,12 @@ color: #000000;
     z-index:30;
 }
 
-#address {
+#email {
     position: absolute;
     width: 10vw;
     height: 17px;
     left: 23vw;
-    top: 69vh;
+    top: 61vh;
     background: none;
     font-family: 'Montserrat';
     font-style: normal;
@@ -192,7 +178,7 @@ color: #000000;
     z-index:30;
 }
 
-#city {
+#address {
     position: absolute;
     width: 10vw;
     height: 17px;
@@ -207,7 +193,7 @@ color: #000000;
     z-index:30;
 }
 
-#state {
+#city {
     position: absolute;
     width: 10vw;
     height: 17px;
@@ -222,7 +208,7 @@ color: #000000;
     z-index:30;
 }
 
-#stu-phone {
+#state {
     position: absolute;
     width: 149px;
     height: 17px;
@@ -237,12 +223,26 @@ color: #000000;
     background: none;
 }
 
-#pin {
+#stu-phone {
     position: absolute;
     width: 149px;
     height: 17px;
     left: 23vw;
     top: 102vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    z-index:30;
+    background: none;
+}
+#pin{
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 110vh;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -257,7 +257,7 @@ color: #000000;
     width: 56px;
     height: 17px;
     left: 23vw;
-    top: 111vh;
+    top: 119vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -280,7 +280,7 @@ color: #000000;
     font-size: 14px;
     line-height: 17px;
 }
-#mot-name {
+#fat-phone {
     position: absolute;
     width: 149px;
     height: 17px;
@@ -294,7 +294,7 @@ color: #000000;
     line-height: 17px;
 }
 
-#fat-phone {
+#fat-name {
     position: absolute;
     width: 149px;
     height: 17px;
@@ -307,7 +307,7 @@ color: #000000;
     font-size: 14px;
     line-height: 17px;
 }
-#mot-phone {
+#mot-name {
     position: absolute;
     width: 149px;
     height: 17px;
@@ -320,7 +320,19 @@ color: #000000;
     font-size: 14px;
     line-height: 17px;
 }
-
+#mot-phone{
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 152vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
 .profileField {
     background:none;
     /* border:none; */
@@ -366,16 +378,9 @@ padding-left: 6px;
     background:none;
     /* border-bottom: 1px solid black; */
 }
-/* .space5{
-    position: absolute;
-    top:59vh;
-    left:38vw;
-    background:none;
-    border-bottom: 1px solid black; */
-/* } */
 .space5{
     position: absolute;
-    top:68vh;
+    top:59vh;
     left:38vw;
     /* width:20vw; */
     background:none;
@@ -424,7 +429,7 @@ padding-left: 6px;
 }
 .space10{
 position: absolute;
-top:117.5vh;
+top:108vh;
 left:38vw;
 background:none;
 /* border-bottom: 1px solid black; */
@@ -443,6 +448,13 @@ background:none;
         background:none;
         /* border-bottom: 1px solid black; */
         }
+        .space14{
+            position: absolute;
+            top:149.7vh;
+            left:38vw;
+            background:none;
+            /* border-bottom: 1px solid black; */
+            }
 #editButton {
     position:absolute;
     top:44vh;
@@ -494,16 +506,16 @@ cursor: pointer;
 }
 .CONTACT {
     position:absolute;
-    top:60vh;
+    top:67vh;
     width:65vw;
-    height:48vh;
+    height:50vh;
     background-color: rgba(238, 241, 255, 0.5);
     z-index:25;
 }
 .avatarInfo{
     background: none;
 }
-@media (max-width:940px) {
+/* @media (max-width:940px) {
     #background {
         width:72vw;
     }
@@ -782,7 +794,7 @@ width:40vw;
 }
 @media (min-width:280px) and (max-width:280px) {
     body {
-        /* overflow-x:hidden ; */
+      
         width:0vw;
     }
     .dash{
@@ -883,4 +895,4 @@ width:40vw;
     .space10{
         top:119.5vh;
     }
-}
+} */
