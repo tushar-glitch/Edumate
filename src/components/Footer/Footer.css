@@ -28,3 +28,19 @@
     color: #000000;
     background:white;
 }
+@media (min-width:200px) and (max-width:920px) {
+    .FooterDiv{
+        width:100vw;
+        height:20vh;
+        position:absolute;
+        left:0vw;
+        position:fixed;
+    }
+    .footerHead{
+        padding-top: 2vh;
+        padding-left: 3vw;
+    }
+    .footerPara{
+        padding-left: 3vw;
+    }
+}

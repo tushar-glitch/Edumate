@@ -22,6 +22,10 @@ import UpdateEmail from "./components/UpdateEmail/UpdateEmail";
 import Footer from "./components/Footer/Footer";
 import Attendance from "./components/Student/Attendance/st_attendance";
 import Student from "./components/Student-profile/student";
+import AdminDashboard from "./components/Admin/Dasboard/Dashboard";
+import Logout from "./components/Logout/Logout";
+import Add_stu from "./components/Student/Add_stu/Add_stu";
+import Add_fac from "./components/Faculty/Add_fac/Add_fac";
 // import FMain from "./components/Faculty/FacultyMain";
 function App() {
 //  const isAuthenticate = sessionStorage.getItem("access token");
@@ -30,9 +34,9 @@ function App() {
   return <>
   {/* <UpdateEmail /> */}
   {/* <Updates /> */}
-  {/* <SideBar />
-  <Navbar />
-  <Footer />  */}
+  {/* <SideBar /> */}
+  {/* <Navbar /> */}
+  <Footer /> 
   {/* <FMain /> */}
   {/* <BrowserRouter>
             <PrivateRoute component={Dashboard} path="/dashboard" />
@@ -50,8 +54,14 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
         <Route path="/profile" exact element={<Student />} />
+        <Route path="/admin_dashboard" exact element={<AdminDashboard/>} />
       <Route path="/update_email" exact element={<UpdateEmail/>} />
-     
+        <Route path="/logout" exact element={<Logout/>} />
+        <Route path="/feedback" exact element={<Feedback/>} />
+        <Route path="/add_stu" exact element={<Add_stu/>} />
+        <Route path="/chngPwd" exact element={<Changepass />} />
+        <Route path="/add_fac" exact element={<Add_fac />} />
+        <Route path="/stu_dashboard" exact element={<Dashboard />}/>
         {/* <Route path="/profile" element={<PrivateRoute>
           <UpdateEmail />
         </PrivateRoute> }/> */}

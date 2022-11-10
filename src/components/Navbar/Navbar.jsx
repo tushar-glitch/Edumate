@@ -6,6 +6,9 @@ import ch_em from '../Assests/Images/change_email.png'
 import ch_pas from '../Assests/Images/change_pass.png'
 import logout from '../Assests/Images/Logout.png'
 import { useState } from 'react'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SideBar from '../Student/SideBar/sidebar'
 const Navbar = () => {
     const [show,setShow] = useState(false)
     function toggle_dropdown() {
@@ -20,10 +23,15 @@ const Navbar = () => {
     }
     return (
         <>
+        <SideBar />
             <div id="section">
-                <div id="greeting">Welcome, Name</div>
+                <div id="greetingNav">Welcome, Name</div>
+                <input type="checkbox" id="NavCheck" />
+                <label for="navSideBarIcon" className='navSBIcon'>
+              <FontAwesomeIcon icon={faBars} id="navBarLogo" />
+                </label>
                 <div id="role">Name</div>
-                <button id="role-logo" onClick={toggle_dropdown}><img src={profileicon} alt="" /></button>
+                <button id="role-logo" onClick={toggle_dropdown}><img src={profileicon} id="profile-logo" alt="" /></button>
                 <div id="dropdown">
                     <div id='nav_name' className='dropdown_items'><img className='dropdown_img' id='dropdown_img1' src={nameimg} />Name</div>
                     <div id='nav_ch_em' className='dropdown_items'><img className='dropdown_img' id='dropdown_img2' src={ch_em} />Change Email</div>

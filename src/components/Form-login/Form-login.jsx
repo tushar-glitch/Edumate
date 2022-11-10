@@ -48,6 +48,8 @@ const Formlogin = () => {
   const [credentials, setCredentials] = useState("");
   var data = { userID, password };
   const navigate = useNavigate();
+  localStorage.removeItem("protectedRouteKey");
+  localStorage.removeItem("protRouteKey");
   // const [tokenApi, setTokenApi] = useState(false);
 
   // const [timerToken, setTimerToken] = useState(240);
@@ -134,7 +136,7 @@ const [protectedRoute,setProtectedRoute] = useState(false);
        await axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
          .then((res) => {
-          debugger
+          // debugger
           console.log(res);
           // localStorage.setItem("token", res.data.token);
           const accessToken = res.data.token.access;

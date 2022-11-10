@@ -4,22 +4,22 @@ body{
 #section {
     position: absolute;
     height: 9vh;
-    width: 84vw;
+    width: 82vw;
     background-color: white;
-    left: 15em;
+    left: 18.5vw;
     right: 0em;
     top: 0vh;
     position:fixed;
-    z-index:20;
+    z-index:2000;
 }
 
-#greeting {
+#greetingNav {
     position: absolute;
     width: 14vw;
     height: 4.5vh;
     background-color: white;
-    top: 3vh;
-    left: 3vw;
+    top: 2.5vh;
+    left: 2vw;
     font-family: 'Montserrat';
     font-weight: 400;   
     font-size: 1.2rem;
@@ -30,8 +30,8 @@ body{
     width: 5vw;
     height: 4.5vh;
     background-color: white;
-    top: 3vh;
-    right: 2.3vw;
+    top: 2.7vh;
+    right: 4vw;
     font-family: 'Montserrat';
     padding-right: 0em;
     font-weight: 400;
@@ -41,20 +41,24 @@ body{
     position: absolute;
     width: 2vw;
     height: 4.5vh;
-    background-color: white;
-    top: 2.5vh;
-    right: 0.9vw;
+    top: 2.7vh;
+    right: 1.9vw;
     font-family: 'Montserrat';
     padding-right: 0em;
     cursor: pointer;
     border: none;
+    background-color: white;
+    /* background: none; */
+}
+#profile-logo{
+    background:none;
 }
 #dropdown{
     position: absolute;
     height: 22.5vh;
-    width: 11.5vw;
+    width: 12vw;
     background-color: white;
-    right: 0.9vw;
+    right: 0.6vw;
     top: 9vh;
     z-index: 99999;
     display: none;
@@ -66,7 +70,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 0.9rem;
 /* identical to box height */
-margin-left: 2.5vw;
+margin-left: 3vw;
 background-color: white;
 color: #000000;
 }
@@ -86,4 +90,134 @@ color: #000000;
 }
 #dropdown_img4{
     top: 16.3vh;
+}
+#NavCheck{
+    display:none;
+}
+.navSBIcon{
+    display:none;
+}
+@media (min-width:200px) and (max-width:920px) {
+    #section{
+        left:0vw;
+        position: fixed;
+    }
+    #greetingNav{
+        left:8vw;
+        font-size: 1.08rem;
+        width:50vw;
+        top:3vh;
+    }
+    #role{
+        right:19vw;
+        top:3vh;
+        font-size: 1.08rem;
+    }
+    #role-logo{
+        right:6vw;
+    }
+    #profile-logo{
+        width:5vw;
+    }
+    #dropdown {
+        right:0vw;
+        top:9vh;
+        width:35vw;
+        height:24vh;
+        padding-bottom: 0vh;
+    }
+    .dropdown_img{
+        width:4vw;
+        height:2vh;
+    }
+    .dropdown_items{
+        font-size: 0.7rem;
+        margin-left:7vw;
+    }
+    .navSBIcon{
+display:block;
+background:none;
+position:absolute;
+left:2vw;
+top:3.5vh;
+
+    }
+    #navBarLogo{
+        background:none;
+        cursor: pointer;
+    }
+    .sideB{
+        width:80vw;
+        position:fixed;
+        left:0;
+}
+#navSideBarIcon{
+    cursor: pointer;
+}
+#navSideBarIcon:checked ~ .sideB {
+    left:0;
+}
+}
+@media (min-width:390px) and (max-width:920px){
+    #greetingNav{
+        font-size: 1.2rem;
+    }
+    #role{
+        font-size: 1.2rem;
+    }
+    #role-logo{
+        top:2.5vh;
+    }
+    #profile-logo{
+        width:6vw;
+    }
+    #dropdown{
+        height: 26vh;
+    }
+    .dropdown_items{
+        font-size: 1rem;
+    }
+}
+@media (min-width:280px) and (max-width:280px) {
+    #greetingNav{
+        font-size: 0.9rem;
+        top:3.4vh;
+    }
+    #role{
+        font-size: 0.9rem;
+        top:3.4vh;
+        position:absolute;
+        right:21vw;
+    }
+    #role-logo{
+        top:2.6vh;
+    }
+    #profile-logo{
+        width:5vw;
+    }
+    #dropdown{
+        width:44vw;
+        height:20vh;
+    }
+    .dropdown_items{
+        line-height: 24px;
+        /* width:50vw; */
+        font-size: 0.7rem;
+    } 
+    .dropdown_img{
+        width:4vw;
+        height:1.5vh;
+    }
+    #dropdown_img1{
+        top: 1.3vh;
+    }
+    #dropdown_img2{
+        top: 5vh;
+    }
+    #dropdown_img3{
+        top: 8.4vh;
+    }
+    #dropdown_img4{
+        top: 12.2vh;
+    }
 }

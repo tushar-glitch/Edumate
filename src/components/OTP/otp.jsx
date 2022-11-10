@@ -43,6 +43,7 @@ function OTP() {
 }
 const [newOtp,setNewOtp]= useState("");
 function postResOtp(){
+  localStorage.removeItem("otp");
   var data = { email }
   setSeconds(59);
   axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", data)
