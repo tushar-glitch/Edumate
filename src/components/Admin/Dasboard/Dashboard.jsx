@@ -2,14 +2,13 @@ import React from 'react'
 
 import './dashboard1.css'
 import profileimg from '../../Assests/Images/avatar.png'
+import AdmBar from '../admin_bar/AdmBar'
 
-import Navbar from '../../Navbar/Navbar'
-import SideBar from '../../Student/SideBar/sidebar'
+
 const AdminDashboard = () => {
     return (
         <>
-            <SideBar/>
-            <Navbar/>
+         <AdmBar />
             <h1 id='dash'>Dashboard</h1>
             <div id="container">
                 <div id="container1">

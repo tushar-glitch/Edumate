@@ -5,6 +5,7 @@ import "../../Student/Updates/update.css";
 import AUpdateCard from "./AUpdateCard";
 import NewUpdateCard from "./makeNewUpdateAdmin";
 import { useNavigate } from "react-router-dom";
+import AdmBar from "../admin_bar/AdmBar";
 function AUpdates(){
     const adminAccessToken = localStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
@@ -53,6 +54,7 @@ function handleEditUpdates(editCardId,editCardTitle,editCardDescription){
 
 function CreateUpdateCard(updateACdArr){
     return (
+      
     <AUpdateCard delete={()=>handleDeleteUpdates(updateACdArr.id,updateACdArr.title,updateACdArr.description)} edit={()=>handleEditUpdates(updateACdArr.id,updateACdArr.title,updateACdArr.description)} title={updateACdArr.title} desc={updateACdArr.description} />
     )
 }
@@ -61,6 +63,7 @@ function createNewUpdate(){
 navigate("/newUpdate");
 }
    return <>
+     <AdmBar />
   <h1 className="update">Dashboard : Updates</h1>
         <div className="updateWhiteDiv" id="adminUpdatesDiv">
             <h1 className="updateGreyRow">Events</h1>

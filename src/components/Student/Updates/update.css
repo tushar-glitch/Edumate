@@ -43,8 +43,12 @@ z-index:20;
 #updateImage{
     position:absolute;
     left:28vw;
-    top:39.5vh;
+    top:25vh;
     background: none;
+    display:none;
+}
+#imageDiv{
+    height:fit-content;
 }
 .UpdateCardCall{
     display:flex;

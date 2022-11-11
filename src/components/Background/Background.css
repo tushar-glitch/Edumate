@@ -9,7 +9,7 @@
 .backgroundMainImg{
   position:absolute;
   /* width:100vw;*/
-  height:97.6vh; 
+  height:100vh; 
    background: no-repeat center fixed; 
    background-size: cover; 
    overflow: hidden;

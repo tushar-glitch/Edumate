@@ -4,7 +4,12 @@
 .AUTHENTICATION {
   overflow: hidden;
 }
-
+    #apiloader{
+      position:absolute;
+      top:45vh;
+      left:50vw;
+      background:none;
+    }
 #user-id {
   position: absolute;
   width: 5.5vw;

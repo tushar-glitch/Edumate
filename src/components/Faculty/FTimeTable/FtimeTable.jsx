@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import "../../Student/TimeTable/TimeTable.jsx";
+import Navbar from "../../utils/Navbar/Navbar.jsx";
 import "./fTimeTable.css";
  function FTimeTable (){
     const facAccessToken = sessionStorage.getItem("Faculty_access_token");
@@ -47,6 +48,7 @@ const config = {
     },[])
 
     return <>
+    <Navbar />
      <h1 className="dbTT">Dashboard : Time Table </h1>
     <div className="FTimeTable">
     <table cellSpacing={0} className="table">

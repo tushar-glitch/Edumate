@@ -1,16 +1,15 @@
 import React from 'react'
-import "../../Student/Student-profile/profile.css";
-import avatar from "../../Assests/Images/avatar.png";
-import ProfileInputField from "../../utils/ProfileInputField"
+import './profile.css'
+import avatar from '../../Assests/Images/avatar.png'
+import Navbar from '../../utils/Navbar/Navbar'
+import ProfileInputField from '../../utils/ProfileInputField'
 import ProfileInputDisabled from '../../utils/ProfileInputDiabled'
-
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
-import Navbar from '../../utils/Navbar/Navbar';
-// import axiosInstance from '../utils/axiosInstance'
+import axiosInstance from '../../utils/axiosInstance'
 
-const FacultyProfile = () => {
+const Profile = () => {
     const [profileName,setProfileName] = useState(null);
     const [profileSex,setProfileSex] = useState(null);
     const [profileBG,setProfileBg] = useState(null);
@@ -20,6 +19,10 @@ const FacultyProfile = () => {
     const [profileState,setProfileState] = useState(null);
     const [profileMobile,setProfileMobile] = useState(null);
     const [profilePin,setProfilePin] = useState(null);
+    const [profileFather,setProfileFather] = useState(null);
+    const [profileMother,setProfileMother] = useState(null);
+    const [profileFatherName,setProfileFatherName] = useState(null);
+    const [profileMotherName,setProfileMotherName] = useState(null);
     const [profileEmail,setProfileEmail] = useState(null);
 
     const [editAble,setEditAble]=useState(false);
@@ -44,6 +47,9 @@ const [show3,setShow3] = useState(false);
    function handleEditPName(e){
     setProfileName(e.target.value)
    }
+   function handleEditPEmail(e){
+    setProfileEmail(e.target.value);
+   }
    function handleEditPSex(e){
     setProfileSex(e.target.value);
    }
@@ -53,9 +59,6 @@ const [show3,setShow3] = useState(false);
    function handleEditPDOB(e){
     setProfileDOB(e.target.value);
    }
-   function handleEditPEmail(e){
-      setProfileEmail(e.target.value);
-     }
    function handleEditPAddr(e){
     setProfileAddr(e.target.value);
    }
@@ -71,27 +74,44 @@ const [show3,setShow3] = useState(false);
    function handleEditPMobile(e){
     setProfileMobile(e.target.value);
    }
+   function handleEditPFather(e){
+    setProfileFather(e.target.value);
+   }
+   function handleEditPFatherName(e){
+      setProfileFatherName(e.target.value);
+     }
+   function handleEditPMother(e){
+    setProfileMother(e.target.value);
+   }
+   function handleEditPMotherName(e){
+      setProfileMotherName(e.target.value);
+     }
     
-   const FacAccessToken = sessionStorage.getItem("Faculty_access_token");
-   console.log(FacAccessToken);
+   const [postData,setPostData] = useState(null);
+   const accessToken = sessionStorage.getItem("access token");
+   console.log(accessToken);
    const config = {
       headers:{
-         Authorization: `Bearer ${FacAccessToken}`
+         Authorization: `Bearer ${accessToken}`
       }
    }
    useEffect(()=>{
-      axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",config).then((res)=>{
+      axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
          console.log(res);
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
-         setProfileEmail(res.data.email);
          setProfileDOB(res.data.DOB);
          setProfileAddr(res.data.address);
          setProfileCity(res.data.city);
          setProfileState(res.data.state);
-         setProfileMobile(res.data.teacher_phone);
+         setProfileMobile(res.data.student_phone);
          setProfilePin(res.data.pincode);
+         setProfileFather(res.data.father_phone);
+         setProfileMother(res.data.mother_phone);
+         setProfileMotherName(res.data.mother_name);
+         setProfileFatherName(res.data.father_name);
+         console.log(postData)
       }).catch(err=>{
          console.log(err);
       })
@@ -112,7 +132,7 @@ const [show3,setShow3] = useState(false);
              document.getElementById('cancelButton').style.display = "block";
              document.getElementById('editButton').style.display = "none";
          }
-         axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",config).then((res)=>{
+         axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
             console.log(res);
             setProfileName(res.data.name);
             setProfileSex(res.data.sex);
@@ -122,8 +142,13 @@ const [show3,setShow3] = useState(false);
             setProfileAddr(res.data.address);
             setProfileCity(res.data.city);
             setProfileState(res.data.state);
-            setProfileMobile(res.data.teacher_phone);
+            setProfileMobile(res.data.student_phone);
             setProfilePin(res.data.pincode);
+            setProfileFather(res.data.father_phone);
+            setProfileMother(res.data.mother_phone);
+            setProfileMotherName(res.data.mother_name);
+            setProfileFatherName(res.data.father_name);
+            console.log(postData)
          }).catch(err=>{
             console.log(err);
          })
@@ -144,36 +169,45 @@ const [show3,setShow3] = useState(false);
              document.getElementById('editButton').style.display = "none";
          }
       setEditAble(false);
-      axios.put("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",{
+      axios.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",{
          name:profileName,
          sex:profileSex,
          blood_group:profileBG,
          DOB:profileDOB,
-         email:profileEmail,
          address:profileAddr,
          city:profileCity,
          state:profileState,
-         teacher_phone:profileMobile,
+         student_phone:profileMobile,
          pincode:profilePin,
-         email:"erp.edumate.testEr@gmail.com"
+         father_name:profileFatherName,
+         mother_name:profileMotherName,
+         father_phone:profileFather,
+         mother_phone:profileMother,
+         email:profileEmail
       },config).then((res)=>{
+         setPostData(res.data);
+         console.log(res.data);
          setProfileName(res.data.name);
+         setProfileEmail(res.data.email);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
-         setProfileEmail(res.data.email);
          setProfileDOB(res.data.DOB);
          setProfileAddr(res.data.address);
          setProfileCity(res.data.city);
          setProfileState(res.data.state);
-         setProfileMobile(res.data.teacher_phone);
+         setProfileMobile(res.data.student_phone);
          setProfilePin(res.data.pincode);
+         setProfileFather(res.data.father_phone);
+         setProfileMother(res.data.mother_phone);
+         setProfileFatherName(res.data.father_name);
+         setProfileMotherName(res.data.mother_name);
       })
   }
     return ( 
         <>
-       <Navbar />
+            <Navbar/>
             <h1 className="dash">Dashboard : My Profile</h1>
-            <div id="facultyBackground" >
+            <div id="background">
                 <div id="avatar">
                     <img src={avatar} id="profileImage"/>
                     <span id='dis-name'>{profileName}</span><br />
@@ -182,9 +216,9 @@ const [show3,setShow3] = useState(false);
                     B.TECH 2ND YEAR <br />
                     </div>
                 </div>
-                <div id="heading1">Faculty Profile</div>
+                <div id="heading1">Student Profile</div>
                 <div id="personalinfo">Personal Info</div>
-                <div id="stu-name">Faculty's Name</div>
+                <div id="stu-name">Student's Name</div>
                 <div className='space1'>
                 {editAble?(<ProfileInputField value={profileName} class="profileField" type="text" onChange={handleEditPName} />): 
                    (<ProfileInputDisabled  value={profileName} class="profileField" type="text"/>)}
@@ -235,7 +269,28 @@ const [show3,setShow3] = useState(false);
                 {editAble?(<ProfileInputField value={profilePin} class="profileField" type="text" onChange={handleEditPPin} />): 
                    (<ProfileInputDisabled  value={profilePin} class="profileField" type="text"/>)}
                 </div>
-                <button id="editButton" onClick={handleEditProfile} >Edit Profile</button>
+                <div id="heading3">Parents</div>
+                <div id="fat-name">Father's Name</div>
+                <div className='space11'>
+                {editAble?(<ProfileInputField value={profileFatherName} class="profileField" type="text" onChange={handleEditPFatherName} />): 
+                   (<ProfileInputDisabled  value={profileFatherName} class="profileField" type="text"/>)}
+                </div>
+                <div id="fat-phone">Father's Mobile No.</div>
+                <div className='space12'>
+                {editAble?(<ProfileInputField value={profileFather} class="profileField" type="text" onChange={handleEditPFather} />): 
+                   (<ProfileInputDisabled  value={profileFather} class="profileField" type="text"/>)}
+                </div>
+                <div id="mot-name">Mother's Name</div>
+                <div className='space13'>
+                {editAble?(<ProfileInputField value={profileMotherName} class="profileField" type="text" onChange={handleEditPMotherName} />): 
+                   (<ProfileInputDisabled  value={profileMotherName} class="profileField" type="text"/>)}
+                </div>
+                <div id="mot-phone">Mother's Mobile No.</div>
+                <div className='space14'>
+                {editAble?(<ProfileInputField value={profileMother} class="profileField" type="text" onChange={handleEditPMother} />): 
+                   (<ProfileInputDisabled  value={profileMother} class="profileField" type="text"/>)}
+                </div>
+                <button id="editButton" onClick={handleEditProfile}>Edit Profile</button>
                 <button id="saveButton" onClick={handleSaveProfile}>Save</button> 
                 <button id="cancelButton" onClick={handleCancel}>Cancel</button> 
                 <div className='CONTACT'>
@@ -245,4 +300,4 @@ const [show3,setShow3] = useState(false);
     )
 }
 
-export default FacultyProfile
+export default Profile;

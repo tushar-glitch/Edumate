@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import Navbar from "../../utils/Navbar/Navbar";
 import TimeT from "./TimeTable";
 import "./TT.css" ;
  function Timetable (){
@@ -47,6 +48,7 @@ console.log(fac);
   },[subject])
 
     return <>
+    <Navbar />
     <div className="TIMETABLE">
      <h1 className="dbTT">Dashboard : Time Table </h1>
     <div className="timeTable">

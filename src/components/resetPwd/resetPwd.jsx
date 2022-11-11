@@ -6,6 +6,7 @@ import "./resetPwd.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import * as ReactBootStrap from "react-bootstrap";
 
 function ResetPwd() {
   const [pass, setPass] = useState("");
@@ -58,7 +59,9 @@ setIsPass(true)
   }, [Cpass]);
   const navigate = useNavigate();
 const [passMsg,setPassMsg] = useState("");
+const [loadBool,setLoadBool] = useState(false);
   function rstPassword(){
+    setLoadBool(!loadBool)
     var email = localStorage.getItem("email")
     console.log(email);
     var otp = localStorage.getItem("otp");
@@ -68,6 +71,7 @@ const [passMsg,setPassMsg] = useState("");
           .post("https://erp-edumate.herokuapp.com/api/user/changepassword/",data)
           .then((res) => {
             console.log(res.data);
+            setLoadBool(false)
             sessionStorage.setItem("previous_password",Cpass)
             setPassMsg("Password changed")
             navigate("/");
@@ -75,6 +79,7 @@ const [passMsg,setPassMsg] = useState("");
           })
           .catch((err) => {
             console.log(err);
+            setLoadBool(false)
             setPassMsg("Password reset failed")
           });
       }
@@ -117,6 +122,7 @@ const [passMsg,setPassMsg] = useState("");
        <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
        <span id="pwdMsg">{passMsg}</span>
       <ResetImg />
+      {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
       </div>
     </>
   );

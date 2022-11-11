@@ -4,8 +4,8 @@ import './ad_feed.css'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import SideBar from '../../Student/SideBar/sidebar'
-import Navbar from '../../Navbar/Navbar'
+import AdmBar from '../admin_bar/AdmBar'
+
 const Ad_feed = () => {
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
@@ -51,8 +51,7 @@ const Ad_feed = () => {
     }, [])
     return (
         <>
-            <SideBar />
-            <Navbar/>
+        <AdmBar />
             <h1 id='dash'>Dashboard &gt; Feedback</h1>
             <div id="background-feedback">
                 <div id="ff">Faculty Feedback</div>
