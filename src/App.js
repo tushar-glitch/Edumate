@@ -21,11 +21,23 @@ import SideBar from "./components/Student/SideBar/sidebar";
 import UpdateEmail from "./components/UpdateEmail/UpdateEmail";
 import Footer from "./components/Footer/Footer";
 import Attendance from "./components/Student/Attendance/st_attendance";
-import Student from "./components/Student-profile/student";
+// import Student from "./components/Student-profile/student";
 import AdminDashboard from "./components/Admin/Dasboard/Dashboard";
 import Logout from "./components/Logout/Logout";
 import Add_stu from "./components/Student/Add_stu/Add_stu";
 import Add_fac from "./components/Faculty/Add_fac/Add_fac";
+import Timetable from "./components/Student/TimeTable/student-TT";
+import FacultyProfile from "./components/Faculty/FacultyProfile/FacultyProfile";
+import Profile from "./components/Student-profile/profile";
+import FUpdate from "./components/Faculty/FUpdate/FUpdate";
+import FTimeTable from "./components/Faculty/FTimeTable/FtimeTable";
+import AUpdates from "./components/ADMIN/Admin_Updates/AUpdates";
+import NewUpdateCard from "./components/ADMIN/Admin_Updates/makeNewUpdateAdmin";
+import EditUpdateCard from "./components/ADMIN/Admin_Updates/editUpdateCard";
+import AdminAddDeptClass from "./components/ADMIN/Admin_department/adminDept";
+import AddNewDeptComp from "./components/ADMIN/Admin_department/add_new_dept_comp";
+import AddNewClassComp from "./components/ADMIN/Admin_/Admin_class/adminAddClass1";
+import Ad_feed from "./components/ADMIN/admin_feedback/Ad_feed";
 // import FMain from "./components/Faculty/FacultyMain";
 function App() {
 //  const isAuthenticate = sessionStorage.getItem("access token");
@@ -36,7 +48,7 @@ function App() {
   {/* <Updates /> */}
   {/* <SideBar /> */}
   {/* <Navbar /> */}
-  <Footer /> 
+  {/* <Footer />  */}
   {/* <FMain /> */}
   {/* <BrowserRouter>
             <PrivateRoute component={Dashboard} path="/dashboard" />
@@ -47,13 +59,24 @@ function App() {
   {/* <StProfile />  */}
     <BrowserRouter>
       <Routes>
+      <Route path="/adminAddClass" exact element={<AddNewClassComp/>} />
+      <Route path="/adminAddNew" exact element={<AddNewDeptComp/>} />
+      <Route path="/adminAdd" exact element={<AdminAddDeptClass />} />
+      <Route path="/editUpdates" exact element={<EditUpdateCard />} />
+      <Route path="/newUpdate" exact element={<NewUpdateCard />} />
+      <Route path="/aUpdate" exact element={<AUpdates />} />
+      <Route path="/ftimetable" exact element={<FTimeTable />} />
+      <Route path="/Fupdate" exact element={<FUpdate />} />
+      <Route path="/stTimetable" exact element={<Timetable/>} />
+      <Route path="/facProfile" exact element={<FacultyProfile/>} />
       <Route path="/updateEmail" exact element={<UpdateEmail />} />
       <Route path="/updates" exact element={<Updates />} />
       <Route path="/" exact element={<LogIn />} />
         <Route path="/rstPwd" exact element={<ResetPwd />} />
         <Route path="/otp" element={<OTP />} />
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
-        <Route path="/profile" exact element={<Student />} />
+        {/* <Route path="/profile" exact element={<Student />} /> */}
+        <Route path="/profile" exact element={<Profile/>} />
         <Route path="/admin_dashboard" exact element={<AdminDashboard/>} />
       <Route path="/update_email" exact element={<UpdateEmail/>} />
         <Route path="/logout" exact element={<Logout/>} />
@@ -62,6 +85,9 @@ function App() {
         <Route path="/chngPwd" exact element={<Changepass />} />
         <Route path="/add_fac" exact element={<Add_fac />} />
         <Route path="/stu_dashboard" exact element={<Dashboard />}/>
+        <Route path="/profile" exact element={<Profile />} />
+        <Route path="/ad_feedback" exact element={<Ad_feed/>} />
+     <Route path="/chngPwd" exact element={<Changepass />} />
         {/* <Route path="/profile" element={<PrivateRoute>
           <UpdateEmail />
         </PrivateRoute> }/> */}

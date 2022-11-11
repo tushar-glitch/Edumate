@@ -9,6 +9,7 @@ import SideBar from '../Student/SideBar/sidebar'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
+import Classcard from './Classcard'
 const Dashboard = () => {
     const [name, setName] = useState('')
     const [dob, setDob] = useState('')
@@ -26,6 +27,23 @@ const Dashboard = () => {
                 setName(res.data.name)
                 setDob(res.data.DOB)
             })
+    }, [])
+    useEffect(()=>{
+        axios.get("https://erp-edumate.herokuapp.com/api/user/student/timetable/",config).
+        then((res)=>{
+            console.log(res.data);
+            for (let i = 0; i < 30; ++i){
+                if (res.data[i].day === "Monday" && res.data[i].subject) {
+                    console.log("asdf" + res.data[i].period);
+                    console.log("fdsa" + res.data[i].subject);
+                    // <Classcard time={jvdvghnvbm} />
+                    <Classcard name={res.data[i].subject} time={res.data[i].period}/>
+                }
+            }
+        }).
+        catch((err)=>{
+            console.log(err);
+        })
     },[])
             return (
                 <>
@@ -41,12 +59,14 @@ const Dashboard = () => {
                         <div id="today_class">Today's Classes</div>
                         <div id="class_bg">
                             <div id="date">16 Nov, 2022 Wednesday</div>
-                            <div id="class1" className='class'>
+                            {/* <Classcard /> */}
+                            {/* {updateCdArr.map(CreateUpdateCard)} */}
+                            {/* <div id="class1" className='class'>
                                 <span className="circle_name"></span>
                                 <span className="class_name">Data Structure</span>
                                 <span className="class_time">9:20-10:10</span>
-                            </div>
-                            <div id="class2" className='class'>
+                            </div> */}
+                            {/* <div id="class2" className='class'>
                                 <span className="circle_name"></span>
                                 <span className="class_name">Data Structure</span>
                                 <span className="class_time">9:20-10:10</span>
@@ -65,7 +85,7 @@ const Dashboard = () => {
                                 <span className="circle_name"></span>
                                 <span className="class_name">Data Structure</span>
                                 <span className="class_time">9:20-10:10</span>
-                            </div>
+                            </div> */}
                         </div>
                         <div id="right">
                             <div id="profile_details">Profile Details</div>

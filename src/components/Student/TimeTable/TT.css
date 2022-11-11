@@ -1,5 +1,5 @@
 .TIMETABLE {
-    overflow-y:scroll;
+    overflow-x:scroll;
 }
 .StudentTimeTable{
     height:900px;
@@ -38,6 +38,9 @@ background: none;
     text-align: center;
     border:1px solid white;
     padding: 0 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
 }
 .timetableRow {
     background: #6C63FF;
@@ -54,7 +57,7 @@ line-height: 30px;
     color:white;
 font-family: 'Montserrat';
 font-style: normal;
-font-weight: 550;
+font-weight: 600;
 font-size: 22px;
 line-height: 30px;
 }

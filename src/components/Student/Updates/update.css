@@ -15,7 +15,7 @@
     background-color: #ffffff;
     position:absolute;
     width: 67vw;
-height: 80vh;
+height: fit-content;
 left: 27vw;
 top: 26vh;
 border-radius: 15px;
@@ -54,14 +54,16 @@ z-index:20;
 }
 .updateCardRow{
     margin-left:2vw;
-    width: 63vw;
+    width: 69vw;
     height: fit-content;
     border-radius: 8px;
     z-index:20;
     /* background-color: rgb(226, 132, 132); */
     background-color: rgba(238, 241, 255, 0.5);
     margin-bottom: 4vh;
-    padding:4px;
+    padding: 5px;
+    padding-right:8px;
+    padding-left:8px;
 }
 .updateCdTitle{
     font-family: 'Montserrat';

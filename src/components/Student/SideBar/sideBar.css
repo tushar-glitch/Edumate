@@ -69,7 +69,7 @@
         width:60vw;
         position:fixed;
         z-index: 99999;
-        /* left:100%; */
+        left:100%;
 }
 .edum{
     position: absolute;
