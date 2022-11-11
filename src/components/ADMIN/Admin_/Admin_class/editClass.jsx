@@ -3,11 +3,15 @@ import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import "./adminAddClass.css";
- function AddNewClassComp (){
-    const [className,setClassName] = useState("");
-    const [deptName,setDeptName] = useState("");
-    const [yearName,setYearName] = useState("");
-    const [secName,setSecName] = useState("");
+ function EditClassComp (){
+    const editClass =localStorage.getItem("EditClassId");
+const editDepart = localStorage.getItem("EditClassYear");
+const editYear = localStorage.getItem("EditClassSection");
+const editSect = localStorage.getItem("EditClassDepartment");
+    const [className,setClassName] = useState(editClass);
+    const [deptName,setDeptName] = useState(editDepart);
+    const [yearName,setYearName] = useState(editYear);
+    const [secName,setSecName] = useState(editSect);
     function handleClassName(e){
         setClassName(e.target.value);
     }
@@ -20,8 +24,7 @@ import "./adminAddClass.css";
     function handleSecName(e){
         setSecName(e.target.value);
     }
-    // const [AdminClAdd,setAdminClAdd] = useState(localStorage.getItem("Admin_class_array"))
-    const [AdminClAdd, setAdminClAdd] = useState(localStorage.getItem("Admin_class_object"))
+    const [AdminClAdd,setAdminClAdd] = useState(localStorage.getItem("Admin_class_array"))
 const adminAccessToken = localStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
 const config = {
@@ -29,16 +32,17 @@ const config = {
        Authorization: `Bearer ${adminAccessToken}`
     }
  }
- const addDeptInfo ={
-    department:deptName,
+ const addDeptInfo = {
+    id:className,
+    year:yearName,
+    section:secName,
+    department:deptName
  }
-    
  const navigate = useNavigate();
-    function handlePostClassApi(){
+    function handlePostEdClassApi(){
         console.log("ahsj,")
-        axios.post("https://erp-edumate.herokuapp.com/api/user/admin/classes/0/",addDeptInfo,config).
+        axios.put("https://erp-edumate.herokuapp.com/api/user/admin/classes/",addDeptInfo,config).
         then((res)=>{
-            console.log(res);
             console.log(res.data);
             setAdminClAdd(AdminClAdd=>[...AdminClAdd,addDeptInfo])
             navigate("/adminAdd")
@@ -46,8 +50,8 @@ const config = {
             console.log(err);
         })
     }
-    function handleCancelClassApi(){
-        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classes/"+"ALL",config).
+    function handleCancelEdClassApi(){
+        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classes/",{id:"ALL"},config).
         then((res)=>{
             console.log(res.data);
             setAdminClAdd(AdminClAdd);
@@ -68,10 +72,10 @@ const config = {
         <input type="text" id="sec-name" className="sec_head_input" value={secName} onChange={handleSecName} /><br />
         <label for="class-name" className="class_head">Class ID</label><br />
         <input type="text" id="class-name" className="class_head_input" value={className} onChange={handleClassName} /><br />
-        <button className="cancel_add_dept" id="class_add" onClick={handlePostClassApi}>Continue</button>
-        <button className="done_add_dept" id="class_cancel" onClick={handleCancelClassApi}>Cancel</button>
+        <button className="cancel_add_dept" id="class_add" onClick={handlePostEdClassApi}>Continue</button>
+        <button className="done_add_dept" id="class_cancel" onClick={handleCancelEdClassApi}>Cancel</button>
     </div>
  </div>
     </>
  }
- export default AddNewClassComp;
+ export default EditClassComp;

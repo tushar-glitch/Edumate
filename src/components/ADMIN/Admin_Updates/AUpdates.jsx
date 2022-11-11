@@ -6,22 +6,23 @@ import AUpdateCard from "./AUpdateCard";
 import NewUpdateCard from "./makeNewUpdateAdmin";
 import { useNavigate } from "react-router-dom";
 function AUpdates(){
-    const adminAccessToken = sessionStorage.getItem("Admin_access_token");
+    const adminAccessToken = localStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
 const config = {
     headers:{
        Authorization: `Bearer ${adminAccessToken}`
     }
  }
+ console.log(config);
  const [updateACdArr,setUpdateACdArr]=useState([]);
 useEffect(()=>{
-    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/",config).
+    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
     then((res)=>{
         console.log(res)
         console.log(res.data[0]);
         setUpdateACdArr(res.data[0]);
         console.log(updateACdArr);
-        sessionStorage.setItem("Admin_updates_array",JSON.stringify(updateACdArr))
+        localStorage.setItem("Admin_updates_array",JSON.stringify(updateACdArr))
     })
     .catch((err)=>{
         console.log(err);
@@ -29,25 +30,30 @@ useEffect(()=>{
 },[])
 function handleDeleteUpdates(id,title,description){
     console.log(id);
-    axios.delete("https://erp-edumate.herokuapp.com/api/user/updatesection/",{id:id},config)
+    const url = `https://erp-edumate.herokuapp.com/api/user/updatesection/`;
+    axios.delete((url+id),{
+        headers:{
+           Authorization: `Bearer ${adminAccessToken}`
+        }
+     })
     .then((res)=>
-    console.log(res)).
-    catch((err)=>{
+    console.log(res))
+    .catch((err)=>{
         console.log(err)
     })
 }
 // delete={()=>handleDeleteUpdates(updateACdArr.id,updateACdArr.title,updateACdArr.description)}
 function handleEditUpdates(editCardId,editCardTitle,editCardDescription){
     console.log(editCardId);
-    sessionStorage.setItem("EditUpdatesId",editCardId);
-    sessionStorage.setItem("EditUpdatesTitle",editCardTitle);
-    sessionStorage.setItem("EditUpdatesDesc",editCardDescription);
+    localStorage.setItem("EditUpdatesId",editCardId);
+    localStorage.setItem("EditUpdatesTitle",editCardTitle);
+    localStorage.setItem("EditUpdatesDesc",editCardDescription);
     navigate("/editUpdates")
 }
 
 function CreateUpdateCard(updateACdArr){
     return (
-    <AUpdateCard edit={()=>handleEditUpdates(updateACdArr.id,updateACdArr.title,updateACdArr.description)} title={updateACdArr.title} desc={updateACdArr.description} />
+    <AUpdateCard delete={()=>handleDeleteUpdates(updateACdArr.id,updateACdArr.title,updateACdArr.description)} edit={()=>handleEditUpdates(updateACdArr.id,updateACdArr.title,updateACdArr.description)} title={updateACdArr.title} desc={updateACdArr.description} />
     )
 }
 const navigate = useNavigate();

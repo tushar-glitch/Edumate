@@ -38,6 +38,10 @@ import AdminAddDeptClass from "./components/ADMIN/Admin_department/adminDept";
 import AddNewDeptComp from "./components/ADMIN/Admin_department/add_new_dept_comp";
 import AddNewClassComp from "./components/ADMIN/Admin_/Admin_class/adminAddClass1";
 import Ad_feed from "./components/ADMIN/admin_feedback/Ad_feed";
+import LoadingScreen from "./components/utils/LoadingScreen";
+import EditClassComp from "./components/ADMIN/Admin_/Admin_class/editClass";
+import SubjectAttend from "./components/Student/Attendace2/Attendance";
+import EditDeptComp from "./components/ADMIN/Admin_department/edit_admin_comp";
 // import FMain from "./components/Faculty/FacultyMain";
 function App() {
 //  const isAuthenticate = sessionStorage.getItem("access token");
@@ -59,6 +63,12 @@ function App() {
   {/* <StProfile />  */}
     <BrowserRouter>
       <Routes>
+      <Route path="/editDeptCom" exact element={<EditDeptComp />} />
+      <Route path="/stAttendance" exact element={<Attendance />} />
+      <Route path="/stAttend" exact element={<SubjectAttend />} />
+      <Route path="/editClass" exact element={<EditClassComp />} />
+      <Route path="/editDept" exact element={<EditUpdateCard />} />
+      <Route path="/loadingscreen" exact element={<LoadingScreen />} />
       <Route path="/adminAddClass" exact element={<AddNewClassComp/>} />
       <Route path="/adminAddNew" exact element={<AddNewDeptComp/>} />
       <Route path="/adminAdd" exact element={<AdminAddDeptClass />} />
@@ -89,7 +99,10 @@ function App() {
         <Route path="/ad_feedback" exact element={<Ad_feed/>} />
      <Route path="/chngPwd" exact element={<Changepass />} />
         {/* <Route path="/profile" element={<PrivateRoute>
-          <UpdateEmail />
+          <Profile />
+        </PrivateRoute> }/>
+        <Route path="/facProfile" element={<PrivateRoute>
+          <FacultyProfile />
         </PrivateRoute> }/> */}
         </Routes> 
         </BrowserRouter>
@@ -110,7 +123,6 @@ function App() {
       </Routes> 
     </BrowserRouter>
         <Route path="/fac_dashboard" exact element={<FacDashboard/>} /> */}
-          {/* <PrivateRoute path="/profile" isAuth={isAuthenticate} exact element={<StProfile />}/> */}
   </>
 }
 
