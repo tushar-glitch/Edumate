@@ -1,0 +1,14 @@
+.loadingScreen{
+    width:100vw;
+    height:100vh;
+    background:transparent;
+}
+.loadSpinner{
+    margin:auto;
+    text-align: center;
+    padding-top:50vh;
+    background:none;
+}
+#loader{
+    background:none;
+}

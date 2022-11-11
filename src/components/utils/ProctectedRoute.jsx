@@ -24,27 +24,18 @@ import { BrowserRouter, Navigate, Outlet , Route, Routes , useNavigate , redirec
 // }
 
 function PrivateRoute({children }){
-    // const isAuth= sessionStorage.getItem("access token") ? true : false;
-    const isAuth=true;
+    const isAuthSt= sessionStorage.getItem("access token") ? true : false;
+    // const isAuthFac = sessionStorage.getItem("Faculty_access_token") ? true:false;
+    // const isAuthAdm = localStorage.getItem("Admin_access_token") ? true:false;
+    // const isAuth=true;
     console.log(children);
-    console.log(isAuth);
+    // console.log(isAuth);
    
-    if(!isAuth){
+    if(isAuthSt){
         return children
     }else {
       return <Navigate to="/" /> 
     // return redirect("/");
     }
-    // return(<>
-
-    // <BrowserRouter>
-    // <Routes>
-    //     <Route {...rest} 
-    //     render={()=>
-    //     isAuth?(children):
-    //     } />
-    //     </Routes>
-    //     </BrowserRouter>
-    // </>)
 }
 export default PrivateRoute;

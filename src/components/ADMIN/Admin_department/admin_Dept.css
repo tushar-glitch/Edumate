@@ -77,19 +77,20 @@ padding-top:0.8vh;
     display:flex;
     flex-wrap: wrap;
     background:none;
-    margin-top:5vh;
+    margin-top:1vh;
     justify-content: space-between;
 }
 .AdmWhiteCompField{
     box-sizing: border-box;
     width: 14vw;
+    background:none;
     height: 5.2vh;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
     line-height: 20px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border: 1px solid #D9D9D9;
     border-radius: 4px;
     text-align: center;
@@ -98,11 +99,85 @@ padding-top:0.8vh;
 .addInnerBlock{
     position: absolute;
 width: 45vw;
-height: 50vh;
+height: 57vh;
 left: 11.5vw;
 top: 10vh;
 background: #FFFFFF;
 border-radius: 8px;
+}
+.editClassMain{
+    width:11.5vw;
+    height:2vh;
+    margin-left:1.5vw;
+    margin-bottom:9vh;
+    background:none;
+    padding-left:10px;
+}
+.editWhiteCompField{
+    box-sizing: border-box;
+    width: 14vw;
+    height: 9vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 15px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    /* text-align: center; */
+padding-top:1.3vh;
+padding-left:1vw;
+
+}
+.editted{
+    background:none;
+    position:relative;
+    top:6vh;
+    left:11vw;
+    cursor: pointer;
+}
+.editAdminDept{
+    box-sizing: border-box;
+    width:7vw;
+    /* height:/0vh; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 0.9rem;
+    background:none;
+    text-align: center;
+padding-top:0.8vh;
+cursor:pointer;
+}
+.dltAdminDept{
+    box-sizing: border-box;
+    width:7vw;
+    /* height:10vh; */
+    background:none;
+    font-size: 0.9rem;
+    background:none;
+padding-top:0.8vh;
+cursor:pointer;
+
+}
+#dDEditValue{
+width:7vw;
+background-color:#FFFFFF;
+height:10vh;
+font-size:0.6rem;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+border: 1px solid #D9D9D9;
+border-radius: 4px;
+text-align: center;
+padding-top:0.8vh;
+position:relative;
+bottom:12vh;
+left:12vw;
+display:none;
 }
 .add-new-dept{
     width:42vw;
@@ -125,6 +200,17 @@ line-height: 22px;
 margin-left:1.5vw;
 background:none;
 }
+.dept_head_id{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 22px;
+    margin-left:1.5vw;
+    background:none;
+    position:relative;
+    top:4.5vh;
+}
 .dept_head_input{
     box-sizing: border-box;
 
@@ -132,8 +218,21 @@ position: absolute;
 width: 19vw;
 height: 5vh;
 margin-left: 1.5vw;
-top: 19vh;
+top: 18.5vh;
+padding-left: 5px;
+background: #FFFFFF;
+border: 1px solid #D9D9D9;
+border-radius: 8px;
+}
+.dept_head_id_input{
+    box-sizing: border-box;
 
+position: absolute;
+width: 19vw;
+height: 5vh;
+margin-left: 1.5vw;
+top: 30vh;
+padding-left: 5px;
 background: #FFFFFF;
 border: 1px solid #D9D9D9;
 border-radius: 8px;
@@ -152,7 +251,7 @@ width: 19vw;
 height: 5.2vh;
 margin-left: 1.5vw;
 position:absolute;
-top:27vh;
+top:38vh;
 border:0.5px solid black;
 }
 .done_add_dept{
@@ -168,6 +267,19 @@ border:0.5px solid black;
     height: 5.2vh;
     margin-left: 1.5vw;
     position:absolute;
-    top:35vh;
+    top:46vh;
     border:0.5px solid black;
+}
+.newDeptErr{
+    background:none;
+    color:red;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    position:relative;
+    top:23vh;
+    left:2vw;
+    text-transform: capitalize;
 }

@@ -1,14 +1,14 @@
 import React from "react";
 import ProgressBar from "./ProgressBar";
-// import SCard1 from "./SAttendCard1";
-// import SAttend1Array from "./SAttendArray1";
+import SCard1 from "./SAttendCard1";
+import SAttend1Array from "./SAttendArray1";
 import "./attend.css";
  function Attendance(){
-    // function CreateSAttendCard1(SAttend1Array){
-    //     return (
-    //     <SCard1 code={SAttend1Array.code} sub={SAttend1Array.sub} attendC={SAttend1Array.attendC} totalC={SAttend1Array.attendTotalC} attendPer={SAttend1Array.attendPer} />
-    //     )
-    // }
+    function CreateSAttendCard1(SAttend1Array){
+        return (
+        <SCard1 code={SAttend1Array.code} sub={SAttend1Array.sub} attendC={SAttend1Array.attendC} totalC={SAttend1Array.attendTotalC} attendPer={SAttend1Array.attendPer} />
+        )
+    }
     return <>
      <h1 className="dbAttend">Dashboard : Attendance </h1>
 <div className="attend">
@@ -21,11 +21,12 @@ import "./attend.css";
             <td className="attendData">Total Classes</td>
             <td className="attendPer">Attendance in %</td>
         </tr> 
-        {/* </table>
+        </table>
         <div className="SAttendCardCall1">
-    {SAttend1Array.map(CreateSAttendCard1)} */}
-{/*  </div> */}
-         <tr >
+    {SAttend1Array.map(CreateSAttendCard1)} 
+    </div>
+{/*  </div>
+         {/* <tr >
             <td>KCS 301</td>
             <td>Data Structures</td>
             <td></td>
@@ -105,7 +106,7 @@ import "./attend.css";
         <td></td>
         <td></td>
     </tr>
-    </table>
+    </table> */}
 </div>
     </>
  }
