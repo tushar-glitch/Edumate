@@ -1,0 +1,207 @@
+#add_stu_bg {
+    height: 56vh;
+    width: 55vw;
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    left: 32vw;
+    top: 20vh;
+}
+
+#add_stu_head {
+    position: absolute;
+    width: 54vw;
+    height: 7vh;
+    left: 0.5vw;
+    top: 1.5vh;
+    background-color: #6C63FF;
+    border-radius: 8px;
+}
+
+#add_stu_heading {
+    position: absolute;
+    width: 15vw;
+    height: 4vh;
+    left: 22vw;
+    top: 2vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 22px;
+    /* identical to box height */
+
+    background-color: #6C63FF;
+    color: #FFFFFF;
+}
+
+
+
+
+#add_stu_name {
+
+    position: absolute;
+    width: 5vw;
+    height: 4vh;
+    left: 1vw;
+    top: 12vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 20px;
+    /* identical to box height */
+
+    background-color: white;
+    color: #000000;
+
+}
+#add_stu_dob {
+
+    position: absolute;
+    width: 5vw;
+    height: 4vh;
+    left: 1vw;
+    top: 20vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 20px;
+    /* identical to box height */
+
+    background-color: white;
+    color: #000000;
+
+}
+#add_stu_email {
+
+    position: absolute;
+    width: 5vw;
+    height: 4vh;
+    left: 1vw;
+    top: 28vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 20px;
+    /* identical to box height */
+
+    background-color: white;
+    color: #000000;
+
+}
+
+#add_stu_class_id {
+
+    position: absolute;
+    width: 5vw;
+    height: 4vh;
+    left: 1vw;
+    top: 36vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 20px;
+    /* identical to box height */
+
+    background-color: white;
+    color: #000000;
+
+}
+#add_stu_input_name {
+    position: absolute;
+    width: 15vw;
+    height: 5vh;
+    left: 5.5vw;
+    top: 11vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 20px;
+    padding-left: 10px;
+    /* identical to box height */
+    outline-color: #6C63FF;
+    background-color: white;
+    color: #000000;
+    border-radius: 10px;
+border: 1px solid #D9D9D9;
+
+}
+#add_stu_input_dob {
+    position: absolute;
+    width: 15vw;
+    height: 5vh;
+    left: 5.5vw;
+padding-left: 10px;
+    top: 19vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 20px;
+    /* identical to box height */
+    outline-color: #6C63FF;
+    background-color: white;
+    color: #000000;
+    border-radius: 10px;
+border: 1px solid #D9D9D9;
+
+}
+#add_stu_input_email {
+    position: absolute;
+    width: 25vw;
+    height: 5vh;
+    left: 5.5vw;
+    top: 27vh;
+padding-left: 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 20px;
+    /* identical to box height */
+    outline-color: #6C63FF;
+    background-color: white;
+    color: #000000;
+    border-radius: 10px;
+border: 1px solid #D9D9D9;
+
+}
+#add_stu_input_id {
+    position: absolute;
+    width: 15vw;
+    height: 5vh;
+    left: 6vw;
+    top: 35vh;
+padding-left: 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 20px;
+    /* identical to box height */
+    outline-color: #6C63FF;
+    background-color: white;
+    color: #000000;
+    border-radius: 10px;
+border: 1px solid #D9D9D9;
+
+}
+#add_stu_btn{
+    position: absolute;
+width: 100px;
+height: 40px;
+left: 676px;
+top: 331px;
+color: white;
+background: #6C63FF;
+border-radius: 8px;
+border: none;
+font-size: 1.1rem;
+font-family: 'Montserrat';
+}

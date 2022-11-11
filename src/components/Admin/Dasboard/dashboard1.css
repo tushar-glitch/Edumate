@@ -1,0 +1,496 @@
+#background-dash {
+    position: absolute;
+    height: 150vh;
+    width: 73vw;
+    background-color: white;
+    z-index: 34;
+    left: 22vw;
+    top: 20vh;
+    border-radius: 8px;
+    box-shadow: 0 0 10px;
+}
+
+#container1 {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10vh;
+}
+
+#container2 {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#container3 {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#card1 {
+    position: absolute;
+    width: 36.5vw;
+    height: 33vh;
+    left: 29vw;
+    top: -15vh;
+
+    background: #EEF1FF;
+    border-radius: 8px;
+}
+
+#card2 {
+    position: absolute;
+    width: 36.5vw;
+    height: 33vh;
+    left: 29vw;
+    top: 32vh;
+
+    background: #EEF1FF;
+    border-radius: 8px;
+}
+
+#card32 {
+    position: absolute;
+    width: 36.5vw;
+    height: 33vh;
+    left: 29vw;
+    top: 35vh;
+
+    background: #EEF1FF;
+    border-radius: 8px;
+}
+
+#dash {
+    position: absolute;
+    width: 45vw;
+    height: 5vh;
+    left: 22vw;
+    top: 11.8vh;
+    /* background-color: red; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: calc(1.8vw+1rem);
+    line-height: 37px;
+    color: #000000;
+}
+
+#img {
+    height: 18.5vh;
+    width: 8.5vw;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid black;
+    top: 6vh;
+    left: 1.7vw;
+    background-color: white;
+}
+
+.heading {
+    width: 100%;
+    height: 3em;
+    background-color: #6C63FF;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.title {
+    position: absolute;
+    background-color: #6C63FF;
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    top: 1.7vh;
+}
+
+#chart {
+    position: absolute;
+    width: 8.5vw;
+    height: 18.5vh;
+    background-color: white;
+    left: 2.1vw;
+    top: 6.5vh;
+}
+
+#greeting1 {
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 37px;
+    top: 7vh;
+    left: 3vw;
+    width: 15vw;
+    background-color: white;
+}
+
+.bold {
+    background-color: white;
+    font-weight: 900;
+}
+
+#greeting2 {
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    /* identical to box height */
+    position: absolute;
+    width: 26vw;
+    color: #7C7C7C;
+}
+
+#today_class {
+    position: absolute;
+    width: 16vw;
+    height: 6vh;
+    left: 3vw;
+    top: 21vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.9rem;
+    line-height: 37px;
+    /* identical to box height */
+
+    background-color: white;
+    color: #000000;
+
+}
+#today_class1 {
+    position: absolute;
+    width: 16vw;
+    height: 6vh;
+    left: 3vw;
+    top: 57vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.9rem;
+    line-height: 37px;
+    /* identical to box height */
+
+    background-color: white;
+    color: #000000;
+
+}
+
+#class_bg1 {
+    position: absolute;
+    width: 24vw;
+    height: 21vh;
+    left: 3vw;
+    top: 30vh;
+    background: #EEF1FF;
+    border-radius: 8px;
+}
+#class_bg2 {
+    position: absolute;
+    width: 24vw;
+    height: 21vh;
+    left: 3vw;
+    top: 68vh;
+    background: #EEF1FF;
+    border-radius: 8px;
+}
+
+#date {
+    position: absolute;
+    width: 14.5vw;
+    height: 3.2vh;
+    left: 17px;
+    top: 12px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 20px;
+    color: #252525;
+}
+
+.class1 {
+    position: absolute;
+    width: 21.3vw;
+    height: 9vh;
+    left: 1.3vw;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+#class1 {
+    top: 7vh;
+}
+
+#class2 {
+    top: 5vh;
+}
+
+#class3 {
+    top: 31vh;
+}
+
+#class4 {
+    top: 43vh;
+}
+
+#class5 {
+    top: 55vh;
+}
+
+.circle_name {
+    position: absolute;
+    height: 5vh;
+    width: 2.5vw;
+    background-color: #6C63FF;
+    border-radius: 50%;
+    top: 1.5vh;
+    left: 1vw;
+}
+
+.class_name1 {
+    position: absolute;
+    width: 14vw;
+    height: 6vh;
+    left: 4.5vw;
+    top: 2.8vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 20px;
+    /* identical to box height */
+    color: #252525;
+}
+.plus{
+    position: absolute;
+    top: -0.45vh;
+    left: 0.5vw;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 500;
+    background: none;
+}
+
+.class_time {
+    position: absolute;
+    width: 4vw;
+    height: 2vh;
+    left: 3.8vw;
+    top: 4.3vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 15px;
+    /* identical to box height */
+
+
+    color: #4B4B4B;
+}
+
+#profile_details {
+    position: absolute;
+    width: 14vw;
+    height: 5vh;
+    left: 29vw;
+    top: -24vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+
+#attendance {
+
+    position: absolute;
+    width: 12vw;
+    height: 4.2vh;
+    left: 29vw;
+    top: 23vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    /* identical to box height */
+    background-color: white;
+
+    color: #000000;
+}
+#attendance_details{
+    position: absolute;
+width: 15vw;
+height: 15vh;
+left: 13vw;
+top: 8vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1rem;
+line-height: 24px;
+/* identical to box height */
+
+
+color: #000000;
+}
+#updates2 {
+    position: absolute;
+    width: 128px;
+    height: 37px;
+    left: 29vw;
+    top: 25vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+
+#student_details {
+    position: absolute;
+    height: 15vh;
+    width: 15vw;
+    left: 13vw;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 17px;
+    line-height: 24px;
+    top: 6vh;
+    color: #000000;
+}
+.bold_name{
+    font-weight: 600;
+}
+#right{
+    position: absolute;
+    top: 33vh;
+    left: 4vw;
+}
+@media (max-width:800px){
+    #background-dash{
+    height: 250vh;
+}
+    #section{
+    width: 100vw;
+}
+#greeting{
+    display: none;
+}
+#today_class{
+    top: 105vh;
+    width: 50vw;
+    left: 10vw;
+}
+#class_bg{
+    top: 110vh;
+    width: 60vw;
+    left: 8vw;
+}
+#class1{
+    width: 50vw;
+}
+/* #{
+    width: 50vw;
+} */
+#class3{
+    width: 50vw;
+}
+#class4{
+    width: 50vw;
+}
+#class5{
+    width: 50vw;
+}
+.circle_name{
+    width: 5vw;
+    height: 5vh;
+}
+.class_name{
+    left: 10vw;
+    width: 40vw;
+}
+.class_time{
+    left: 10vw;
+    width: 30vw;
+}
+#date{
+    width: 50vw;
+}
+#greeting1{
+    display: none;
+}
+#right{
+    left: -20vw;
+}
+#profile_details{
+    width: 55vw;
+}
+#card1{
+    width: 60vw;
+}
+#card2{
+    width: 60vw;
+}
+#img{
+    height: 20vh;
+    width: 18vw;
+}
+#chart{
+    height: 20vh;
+    width: 18vw;
+}
+#student_details{
+    left: 25vw;
+    line-height: 40px;
+}
+#attendance_details{
+    left: 25vw;
+    line-height: 30px;
+    width: 30vw;
+    top: 10vh;
+}
+#updates1{
+    top: 150vh;
+}
+#card31{
+    top: 160vh;
+    width: 58vw;
+}
+}

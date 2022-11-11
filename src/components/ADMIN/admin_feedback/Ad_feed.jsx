@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../../Navbar/Navbar'
-import SideBar from '../SideBar/sidebar'
-import faculty from '../faculty'
-import './Feedback.css'
+import faculty from '../../Student/faculty'
+import './ad_feed.css'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
-const Feedback = () => {
+import SideBar from '../../Student/SideBar/sidebar'
+import Navbar from '../../Navbar/Navbar'
+const Ad_feed = () => {
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
     const config = {
@@ -17,7 +17,6 @@ const Feedback = () => {
     const [details, SetDetails] = useState([])
     const id = "S1"
     const feed = 2
-    const userID = 100000
     // useEffect(() => {
     //     axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/feedback/', config, {
     //         id
@@ -30,8 +29,9 @@ const Feedback = () => {
     //         })
     // }, [])
     useEffect(() => {
-        axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/'+{userID,feed},
-             config)
+        axios.post('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', config, {
+            feed
+        })
             .then((res) => {
                 console.log(res);
             })
@@ -39,19 +39,8 @@ const Feedback = () => {
                 console.log(err);
             })
     }, [])
-    // useEffect(() => {
-    //     axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/'+`${userID}`+'/'+`${feed}`+'/', 
-    //          config)
-    //         .then((res) => {
-    //             console.log(res);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    // }, [])
     useEffect(() => {
-        axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/'+`${feed}`+'/', 
-             config)
+        axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/', { id }, config)
             .then((res) => {
                 console.log(res);
                 SetDetails(res.data.classdetails.department)
@@ -59,11 +48,11 @@ const Feedback = () => {
             .catch((err) => {
                 console.log(err);
             })
-    },[])
+    }, [])
     return (
         <>
             <SideBar />
-            <Navbar />
+            <Navbar/>
             <h1 id='dash'>Dashboard &gt; Feedback</h1>
             <div id="background-feedback">
                 <div id="ff">Faculty Feedback</div>
@@ -74,6 +63,10 @@ const Feedback = () => {
                     <div className="heading-4">Mail</div>
                     <div className="heading-5">Feedback</div>
                 </div>
+                <select name="" id="select">
+                    <option value="">Faculty</option>
+                    <option value="">Student</option>
+                </select>
                 <div id="fac-area">
                     {faculty.map(fac => {
 
@@ -205,4 +198,4 @@ const Feedback = () => {
     )
 }
 
-export default Feedback
+export default Ad_feed

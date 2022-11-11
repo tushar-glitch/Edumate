@@ -1,0 +1,30 @@
+#bg-logout {
+    position: absolute;
+    width: 35vw;
+    height: 44vh;
+    left: 39vw;
+    top: 27vh;
+    /* background: #FFFFFF; */
+    background-color: red;
+    border-radius: 12px;
+}
+
+#logout_head {
+    position: absolute;
+width: 235px;
+height: 20px;
+left: 24px;
+top: 69px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+text-align: center;
+
+
+
+}

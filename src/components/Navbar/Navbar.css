@@ -10,7 +10,7 @@ body{
     right: 0em;
     top: 0vh;
     position:fixed;
-    z-index:20;
+    z-index:2000;
 }
 
 #greetingNav {

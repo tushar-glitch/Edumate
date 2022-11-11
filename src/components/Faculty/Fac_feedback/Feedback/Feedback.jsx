@@ -4,62 +4,8 @@ import SideBar from '../SideBar/sidebar'
 import faculty from '../faculty'
 import './Feedback.css'
 import axios from 'axios'
-import { useState } from 'react'
-import { useEffect } from 'react'
 const Feedback = () => {
-    const accessToken = sessionStorage.getItem("access token");
-    console.log(accessToken);
-    const config = {
-        headers: {
-            Authorization: `Bearer ${accessToken}`
-        }
-    }
-    const [details, SetDetails] = useState([])
-    const id = "S1"
-    const feed = 2
-    const userID = 100000
-    // useEffect(() => {
-    //     axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/feedback/', config, {
-    //         id
-    //     })
-    //         .then((res) => {
-    //             console.log(res);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    // }, [])
-    useEffect(() => {
-        axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/'+{userID,feed},
-             config)
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }, [])
-    // useEffect(() => {
-    //     axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/'+`${userID}`+'/'+`${feed}`+'/', 
-    //          config)
-    //         .then((res) => {
-    //             console.log(res);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    // }, [])
-    useEffect(() => {
-        axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/'+`${feed}`+'/', 
-             config)
-            .then((res) => {
-                console.log(res);
-                SetDetails(res.data.classdetails.department)
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    },[])
+
     return (
         <>
             <SideBar />
@@ -76,7 +22,13 @@ const Feedback = () => {
                 </div>
                 <div id="fac-area">
                     {faculty.map(fac => {
-
+                        const accessToken = sessionStorage.getItem("access token");
+                        console.log(accessToken);
+                        const config = {
+                            headers: {
+                                Authorization: `Bearer ${accessToken}`
+                            }
+                        }
                         let rating = document.getElementsByClassName('feed_circle')
                         let ratings = document.getElementsByClassName('ratings')
                         function handlerating1() {
@@ -89,7 +41,7 @@ const Feedback = () => {
                             }
                             let userID = 234223
                             let feed = 1;
-                            var data = { userID, feed }
+                            var data = {userID, feed}
                             axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
@@ -113,7 +65,7 @@ const Feedback = () => {
                             }
                             let userID
                             let feed = 2;
-                            var data = { userID, feed }
+                            var data = {userID, feed}
                             axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
@@ -134,7 +86,7 @@ const Feedback = () => {
                             }
                             let userID
                             let feed = 3;
-                            var data = { userID, feed }
+                            var data = {userID, feed}
                             axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
@@ -153,7 +105,7 @@ const Feedback = () => {
                             ratings[4].style.color = 'black'
                             let userID
                             let feed = 4;
-                            var data = { userID, feed }
+                            var data = {userID, feed}
                             axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
@@ -170,7 +122,7 @@ const Feedback = () => {
                             }
                             let userID
                             let feed = 5;
-                            var data = { userID, feed }
+                            var data = {userID, feed}
                             axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);

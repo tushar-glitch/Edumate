@@ -1,20 +1,20 @@
 export default [
     {
-        name: 'Name',
+        name: 'Name1',
         subject: 'Maths',
         mob_no: '9999999999',
         mail: 'name@gmail.com',
         feedback: 'feedback'
     },
     {
-        name: 'Name',
+        name: 'Name2',
         subject: 'Maths',
         mob_no: '9999999999',
         mail: 'name@gmail.com',
         feedback: 'feedback'
     },
     {
-        name: 'Name',
+        name: 'Name3',
         subject: 'Maths',
         mob_no: '9999999999',
         mail: 'name@gmail.com',
