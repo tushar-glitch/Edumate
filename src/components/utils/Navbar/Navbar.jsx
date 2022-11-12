@@ -43,7 +43,7 @@ const Navbar = () => {
          <div className="sideB">
             <h1 className="edum">Edumate</h1>
             <FontAwesomeIcon icon={faXmark} className="XMark" />
-            <ul className="sideList">
+            <ul className="sideList" >
            {userIdLog==1?(<Link to="/facDashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)}
            {userIdLog==2?(<Link to="/stu_dashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)}
            {/* {userIdLog==9?(<Link to="/admin_dashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)} */}

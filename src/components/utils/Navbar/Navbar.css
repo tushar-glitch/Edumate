@@ -263,19 +263,21 @@ top:3.5vh;
     /* top: 11vh; */
     left: 3vw;
     list-style: none;
+    background-color: #000000;
 }
 
 .sideList li {
     width: 13vw;
-    height: 29px;
+    /* height:3vh ; */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: calc(1.3vw);
-    line-height: 15px;
+    line-height: 5px;
     background: none;
-    margin-bottom: 7vh;
+    margin-bottom: 1vh;
     cursor: pointer;
+  
 }
 
 .sideList li:hover {
@@ -293,6 +295,8 @@ top:3.5vh;
     background: none;
  position:absolute;
  left:0.9vw;
+ margin-bottom:-10vh;
+
 }
 .XMark {
     display: none;

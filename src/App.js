@@ -37,7 +37,7 @@ import FacFeedback from "./components/Faculty/Fac_feedback/Feedback/Feedback";
 import PrivateRouteOne from "./components/utils/ProctectedRoute1";
 import PrivateRouteTwo from "./components/utils/PrivateRoute2";
 import UpdateEmail from "./components/utils/UpdateEmailLog/UpdateEmail";
-import Assign_fac from "./components/ADMIN/Assign_fac/Assign_fac";
+import AdmAttend from "./components/ADMIN/Admin_attend/AdminAttendanceTwo/adminAttend";
 function App() {
  
 //  const isStudent = sessionStorage.getItem("access token");
@@ -71,7 +71,7 @@ function App() {
      
       {/* <Route path="/loadingscreen" exact element={<LoadingScreen />} /> */}
     
-      
+      <Route path="/admAttendance" exact element={<AdmAttend />} />
       {loggedInUser==1?( <Route path="/facDashboard" exact element={<FacDashboard/>} />):(null) }
       {loggedInUser==1?(<Route path="/ftimetable" exact element={<FTimeTable />} />):(null) }
       {loggedInUser==1?( <Route path="/facFeed" exact element={<FacFeedback />} />):(null)}
