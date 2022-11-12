@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
- function AddNewDeptComp (){
-    const [deptName,setDeptName] = useState("");
-    const [deptId,setDeptId] = useState("");
+ function EditDeptComp (){
+    const editDeptIdNew = localStorage.getItem("editDeptId");
+    const editDeptNameNew = localStorage.getItem("editDeptName");
+    const [deptName,setDeptName] = useState(editDeptNameNew);
+    const [deptId,setDeptId] = useState(editDeptIdNew);
     function handleDeptName(e){
         setDeptName(e.target.value);
     }
@@ -23,30 +25,25 @@ const config = {
     id:deptId,
     name:deptName
  }
- const [newDeptErrMsg, setNewDeptErrMsg] = useState([]);
  const navigate = useNavigate();
-    function handlePostDeptApi(){
+    function handlePostEditClassApi(){
         console.log("ahsj,")
-        axios.post("https://erp-edumate.herokuapp.com/api/user/admin/departments/0/",addDeptInfo,config).
+        axios.put("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+deptId+"/",addDeptInfo,config).
         then((res)=>{
-            console.log(res);
             console.log(res.data);
             setAdminDeptArr(AdminDeptArr=>[...AdminDeptArr,addDeptInfo])
             console.log(AdminDeptArr)
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
-            console.log(err.response.data.id)
-            if(err.response.status===400)
-            setNewDeptErrMsg(err.response.data.id)
-            console.log(newDeptErrMsg);
         })
     }
-    function handleCancelDeptApi(){
-        const url = "https://erp-edumate.herokuapp.com/api/user/admin/departments/"
-        axios.get(url+"ALL",{headers:{
-            Authorization: `Bearer ${adminAccessToken}`
-         }}).
+    function handleCancelEditClassApi(){
+        const url = "https://erp-edumate.herokuapp.com/api/user/admin/departments/";
+        axios.get(url+"ALL",{
+            headers:{
+                Authorization: `Bearer ${adminAccessToken}`
+             }}).
         then((res)=>{
             console.log(res.data);
             setAdminDeptArr(AdminDeptArr);
@@ -63,11 +60,10 @@ const config = {
         <input type="text" id="dept-name" className="dept_head_input" value={deptName} onChange={handleDeptName} /><br />
         <label for="dept-id" className="dept_head_id">Department Id</label><br />
         <input type="text" id="dept-id" className="dept_head_id_input" value={deptId} onChange={handleDeptId} /><br />
-        <p className="newDeptErr">{newDeptErrMsg}</p>
-        <button className="cancel_add_dept" onClick={handlePostDeptApi}>Continue</button>
-        <button className="done_add_dept" onClick={handleCancelDeptApi}>Cancel</button>
+        <button className="cancel_add_dept" onClick={handlePostEditClassApi}>Continue</button>
+        <button className="done_add_dept" onClick={handleCancelEditClassApi}>Cancel</button>
     </div>
  </div>
     </>
  }
- export default AddNewDeptComp;
+ export default EditDeptComp;

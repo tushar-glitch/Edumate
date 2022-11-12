@@ -1,7 +1,7 @@
 import React from "react";
 function SCard1(props){
     return <>
-<div className="FCardRow">
+<div className="stA1CardRow">
 <span id="SCdCode">{props.code}</span>
 <span id="SCdSub">{props.sub}</span>
 <span id="SCdAttend">{props.attendC}</span>

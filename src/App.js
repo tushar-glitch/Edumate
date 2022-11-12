@@ -8,6 +8,7 @@ import FgtEmail from "./components/Forgotpass/FgtEmail";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Protected from "./components/Forgotpass/protected";
 import Navbar from "./components/Navbar/Navbar";
+import FAttendance1 from "./components/Faculty/FAttendance/FAttend1/FAttendance1";
 import Chart from "./components/Pie/Pie";
 import StProfile from "./components/Student/St_profile";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -38,6 +39,12 @@ import AdminAddDeptClass from "./components/ADMIN/Admin_department/adminDept";
 import AddNewDeptComp from "./components/ADMIN/Admin_department/add_new_dept_comp";
 import AddNewClassComp from "./components/ADMIN/Admin_/Admin_class/adminAddClass1";
 import Ad_feed from "./components/ADMIN/admin_feedback/Ad_feed";
+import LoadingScreen from "./components/utils/LoadingScreen";
+import EditClassComp from "./components/ADMIN/Admin_/Admin_class/editClass";
+import SubjectAttend from "./components/Student/Attendace2/Attendance";
+import EditDeptComp from "./components/ADMIN/Admin_department/edit_admin_comp";
+import Assign_fac from "./components/Faculty/Assign_fac/Assign_fac";
+import FAttendance2 from "./components/Faculty/FAttendance/FAttend2/FAttendance2";
 // import FMain from "./components/Faculty/FacultyMain";
 function App() {
 //  const isAuthenticate = sessionStorage.getItem("access token");
@@ -59,7 +66,15 @@ function App() {
   {/* <StProfile />  */}
     <BrowserRouter>
       <Routes>
-      <Route path="/adminAddClass" exact element={<AddNewClassComp/>} />
+      <Route path="/editDeptCom" exact element={<EditDeptComp />} />
+      <Route path="/stAttendance" exact element={<Attendance />} />
+      <Route path="/stAttend" exact element={<SubjectAttend />} />
+      <Route path="/editClass" exact element={<EditClassComp />} />
+      <Route path="/editDept" exact element={<EditUpdateCard />} />
+      <Route path="/loadingscreen" exact element={<LoadingScreen />} />
+        <Route path="/adminAddClass" exact element={<AddNewClassComp />} />
+        <Route path="/f_att1" exact element={<FAttendance1 />} />
+        <Route path="/f_att2" exact element={<FAttendance2/>} />
       <Route path="/adminAddNew" exact element={<AddNewDeptComp/>} />
       <Route path="/adminAdd" exact element={<AdminAddDeptClass />} />
       <Route path="/editUpdates" exact element={<EditUpdateCard />} />
@@ -69,7 +84,8 @@ function App() {
       <Route path="/Fupdate" exact element={<FUpdate />} />
       <Route path="/stTimetable" exact element={<Timetable/>} />
       <Route path="/facProfile" exact element={<FacultyProfile/>} />
-      <Route path="/updateEmail" exact element={<UpdateEmail />} />
+        <Route path="/updateEmail" exact element={<UpdateEmail />} />
+        <Route path="/assignfac" exact element={<Assign_fac/>} />
       <Route path="/updates" exact element={<Updates />} />
       <Route path="/" exact element={<LogIn />} />
         <Route path="/rstPwd" exact element={<ResetPwd />} />
@@ -89,7 +105,10 @@ function App() {
         <Route path="/ad_feedback" exact element={<Ad_feed/>} />
      <Route path="/chngPwd" exact element={<Changepass />} />
         {/* <Route path="/profile" element={<PrivateRoute>
-          <UpdateEmail />
+          <Profile />
+        </PrivateRoute> }/>
+        <Route path="/facProfile" element={<PrivateRoute>
+          <FacultyProfile />
         </PrivateRoute> }/> */}
         </Routes> 
         </BrowserRouter>
@@ -110,7 +129,6 @@ function App() {
       </Routes> 
     </BrowserRouter>
         <Route path="/fac_dashboard" exact element={<FacDashboard/>} /> */}
-          {/* <PrivateRoute path="/profile" isAuth={isAuthenticate} exact element={<StProfile />}/> */}
   </>
 }
 

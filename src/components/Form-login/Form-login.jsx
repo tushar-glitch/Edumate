@@ -8,13 +8,14 @@ import { Link, useNavigate } from "react-router-dom";
 import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+// import * as ReactBootStrap from "react-bootstrap";
 import instance from "../API";
 import useRefreshToken from "../refreshToken";
 import axiosInstance from "../utils/axiosInstance";
+import LoadingScreen from "../utils/LoadingScreen";
 const Formlogin = () => {
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
-  // const refresh_call = useRefreshToken()
   function handleuserID(e) {
     setuserID(e.target.value);
   }
@@ -40,9 +41,6 @@ const Formlogin = () => {
   const [credentials, setCredentials] = useState("");
   var data = { userID, password };
   const navigate = useNavigate();
-  localStorage.removeItem("protectedRouteKey");
-  localStorage.removeItem("protRouteKey");
- 
   // let postdata = async () => {
   //   if (iscorrectid) {
   //     let res = await axiosInstance.post('https://erp-edumate.herokuapp.com/api/user/login/',data)
@@ -87,7 +85,8 @@ const Formlogin = () => {
 
 const [loadingScreen , setLoadingScreen] = useState(false);
 const [protectedRoute,setProtectedRoute] = useState(false);
-const [bool,setBool] = useState(false);
+const [loadBool,setLoadBool] = useState(false);
+const [playLoad, setPlayLoad] = useState(false);
 // function postdataCheck(){
 //   console.log("hsmv")
 // if(!bool)
@@ -98,61 +97,71 @@ const [bool,setBool] = useState(false);
 // useEffect(()=>{
 //   console.log(loadingScreen)
 // },[loadingScreen])
-console.log(bool)
+// console.log(loadBool)
 const userIdFirstDigit = String(userID)[0];
-  async function postdata() {
+ function postdata() {
+  setPlayLoad(!playLoad)
+  console.log(playLoad)
+    setLoadBool(true);
     if (iscorrectid) {
-       await axios
+    axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
          .then((res) => {
           console.log(res);
-          setLoadingScreen(true);
-          console.log(loadingScreen)
+          setLoadBool(false);
+         console.log(loadBool)
           const accessToken = res.data.token.access;
           const refreshToken = res.data.token.refresh;
           console.log(accessToken);
           console.log(refreshToken);
           if (accessToken && refreshToken) {
-            // storeTokenData(accessToken, refreshToken);
-            // {
-              if (userIdFirstDigit == 1) {
-              
+            storeTokenData(accessToken, refreshToken);
+            {if(userIdFirstDigit===1){
               navigate("/facProfile")
               console.log("aDBHMASHF");
               sessionStorage.setItem("Faculty_access_token", accessToken);
+              console.log(accessToken)
             }
-            else
+            else if(userIdFirstDigit===2)
             {
-              navigate("/");
-              sessionStorage.removeItem("Faculty_access_token")
-              }
-            // };
-            
-              if (userIdFirstDigit == 2) {
-              console.log(userIdFirstDigit);
               navigate("/profile")
               sessionStorage.setItem("access token", accessToken);
+              console.log(accessToken)
             }
-            else
-            {
-              navigate("/");
-              sessionStorage.removeItem("access token")
-            }
-            if(userIdFirstDigit==9){
-              // navigate("/facProfile")
-              console.log("aDBHMASHF");
-              sessionStorage.setItem("Admin_access_token", accessToken);
-            }
-            else
-            {
-              navigate("/");
-              sessionStorage.removeItem("Admin_access_token")
-            }
+          else if(userIdFirstDigit==9){
+            navigate("/facProfile")
+            console.log("aDBHMASHF");
+            localStorage.setItem("Admin_access_token", accessToken)
+            console.log(accessToken)
           }
-          localStorage.setItem("access token:", res.data.token.access)
+       };
+      }
+    
+            // {if(userIdFirstDigit===2){
+            //   navigate("/profile")
+            //   sessionStorage.setItem("access token", accessToken);
+            // }
+            // else
+            // {
+            //   navigate("/");
+            //   sessionStorage.removeItem("access token")
+            // }};
+            // {if(userIdFirstDigit==9){
+            //   // navigate("/facProfile")
+            //   console.log("aDBHMASHF");
+            //   localStorage.setItem("Admin_access_token", accessToken);
+            // }
+            // else
+            // {
+            //   navigate("/");
+            //   sessionStorage.removeItem("Admin_access_token")
+            // }};
+          //}
         })
         .catch((err) => {
           console.log(err);
+          setLoadBool(false);
+          console.log(loadBool)
           setCredentials("Invalid credentials.Please check your User Id or Password");
         });
     }
@@ -161,74 +170,24 @@ const userIdFirstDigit = String(userID)[0];
       setCredentials("")
     }
   }
-  // useEffect(()=>{
-  //   if(bool)
-  //   postdata();
-  // },[bool])
-  // console.log(loadingScreen)
-// // console.log(timerToken);
-// sessionStorage.setItem("expiry time",timerToken);
-
-
-  // function postdata() {
-  //   if (iscorrectid) {
-  //      axios
-  //       .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
-  //       .then((res) => {
-  //         console.log(res);
-  //         // localStorage.setItem("token", res.data.token);
-  //         const accessToken = res.data.token.access;
-  //         const refreshToken = res.data.token.refresh;
-  //         console.log(accessToken);
-  //         console.log(refreshToken);
-  //         if (accessToken && refreshToken) {
-  //           setProtectedRoute(true);
-  //           console.log(protectedRoute);
-  //           localStorage.setItem("protRouteKey",protectedRoute);
-  //           storeTokenData(accessToken, refreshToken);
-  //           {userIdFirstDigit==2?navigate("/profile"):navigate("/")};
-  //           // {userIdFirstDigit==1?navi}
-            
-  //           // axios.defaults.headers = {
-  //           //   accesstoken: accessToken,
-  //           //   refreshtoken: refreshToken
-  //           // }
-  //           // axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
-  //           // console.log(timerStart);
-  //           // console.log(tokenApi);
-  //           // navigate("/profile");
-  //         }
-  //         // localStorage.setItem("access token:", res.data.token.access);
-  //         // console.log(tokenApi);
-  //       })
-  //       .catch((err) => {
-  //         setProtectedRoute(false);
-  //         localStorage.removeItem("protRouteKey");
-  //         console.log(err);
-  //         setCredentials("Invalid credentials.Please check your User Id or Password");
-  //       });
-  //   }
-  //   else {
-  //     document.getElementById("wrongid").style.display = "block";
-  //     setCredentials("")
-  //   }
-  // }
-  // useEffect(()=>{
-  //   setProtectedRoute(RouteKey);
-  // },[RouteKey])
-  // console.log(protectedRoute);
-  // localStorage.setItem("protectedRouteKey",protectedRoute);
-
+localStorage.removeItem("expiry time");
   function storeTokenData(accessToken, refreshToken) {
     sessionStorage.setItem("access token", accessToken);
     sessionStorage.setItem("refresh token", refreshToken);
   }
+  useEffect(()=>{
+    if(1){
+      { loadBool ? navigate("/loadingScreen") : console.log("oiqwe"); }
+      console.log("asdfadsfasdf");
+    }
+  },[playLoad,loadBool])
   return (
+  
     <div className="AUTHENTICATION">
+     
       <Background />
       <h5 id="user-id">User id</h5>
       <EmailIMG />
-      {/* <p id="timerToken">{timerToken}</p> */}
       <input
         type="text"
         id="input-box1"
@@ -259,6 +218,9 @@ const userIdFirstDigit = String(userID)[0];
       </button>
       <span id="credential">{credentials}</span>
       <Loginimg />
+      {/* <LoadingScreen /> */}
+      {/* {<ReactBootStrap.Spinner animation="border" />} */}
+     {/* {loadBool?navigate("/loadingScreen"):navigate("/")} */}
     </div>
   );
 };

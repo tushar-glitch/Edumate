@@ -79,10 +79,10 @@ width:65vw;
 .attendPer{
     width:17.5vw;
 }
-/* .SAttendCardCall1{
+.SAttendCardCall1{
     display: flex;
     flex-direction: column;
-    margin-top: 3vh;
+    margin-top: 3.5vh;
     background: none;
 }
 #SCdCode{
@@ -115,7 +115,28 @@ width:65vw;
     width:10vw;
     font-size: 0.85rem;
     color:black;
-} */
+}
+.stA1CardRow{
+    /* position:absolute;
+    top:1vh;
+    left:1vw; */
+    margin-left:1.5vw;
+    box-sizing: border-box;
+height:8vh;
+border-radius: 6px 6px 4px 4px;
+background: none;
+background-color: #6C63FF;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 37px;
+color: #FFFFFF;
+text-align: center;
+padding-top: 2vh;
+width:64vw;
+margin-bottom:4vh;
+}
 .tableSub {
    background-color: #FFFFFF;
     height:130vh;

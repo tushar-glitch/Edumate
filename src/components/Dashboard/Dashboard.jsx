@@ -37,7 +37,7 @@ const Dashboard = () => {
                     console.log("asdf" + res.data[i].period);
                     console.log("fdsa" + res.data[i].subject);
                     // <Classcard time={jvdvghnvbm} />
-                    <Classcard name={res.data[i].subject} time={res.data[i].period}/>
+                    // <Classcard name={res.data[i].subject} time={res.data[i].period}/>
                 }
             }
         }).

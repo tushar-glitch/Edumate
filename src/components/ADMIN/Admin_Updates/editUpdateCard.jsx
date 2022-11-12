@@ -6,9 +6,9 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 function EditUpdateCard (props){
 
-    const EditCardTitle = sessionStorage.getItem("EditUpdatesTitle");
-const EditCardDescription = sessionStorage.getItem("EditUpdatesDesc");
-const EditCardId = sessionStorage.getItem("EditUpdatesId");
+    const EditCardTitle = localStorage.getItem("EditUpdatesTitle");
+const EditCardDescription = localStorage.getItem("EditUpdatesDesc");
+const EditCardId = localStorage.getItem("EditUpdatesId");
 const [cardTitle,setCardTitle] = useState(EditCardTitle);
 const [cardDesc,setCardDesc] = useState(EditCardDescription);
 const [updateListValue, setUpdateListValue] = useState("3");
@@ -28,8 +28,8 @@ function handleUpdatesListValues(e){
 //     if(updateListValue)
 //     setBool(false);
 // },[updateListValue,bool])
-const [AdminUpdate,setAdminUpdate] = useState(sessionStorage.getItem("Admin_updates_array"))
-const adminAccessToken = sessionStorage.getItem("Admin_access_token");
+const [AdminUpdate,setAdminUpdate] = useState(localStorage.getItem("Admin_updates_array"))
+const adminAccessToken = localStorage.getItem("Admin_access_token");
 
 console.log(EditCardDescription)
 console.log(EditCardTitle)
@@ -47,7 +47,7 @@ const config = {
  }
 function handleDoneNCdApi(){
     console.log("ahsj,")
-    axios.put("https://erp-edumate.herokuapp.com/api/user/updatesection/",nCard,config).
+    axios.put("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",nCard,config).
     then((res)=>{
         console.log(res.data);
         setAdminUpdate(AdminUpdate=>[...AdminUpdate,nCard])
@@ -58,7 +58,7 @@ function handleDoneNCdApi(){
 }
 const navigate = useNavigate();
 function handleCancelNCdApi(){
-    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/",config).
+    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
     then((res)=>{
         console.log(res.data);
         setAdminUpdate(AdminUpdate);
@@ -78,6 +78,7 @@ console.log(updateListValue)
             <input type="textarea" id="newCardDescribe" value={cardDesc} onChange={handleCardDesc}></input><br/>
             <label for="selectNCdDropdown" className="nCdVisible">Visible to:</label>
             <select className="visibleList" onChange={(e)=>setUpdateListValue(e.target.value)}>
+            <option disabled>Select Dropdown</option>
                 <option value={"1"} className="visibleListItem1">Student</option>
                 <option value={"2"} className="visibleListItem2">Faculty</option>
                 <option value={"3"} className="visibleListItem3">Both</option>
