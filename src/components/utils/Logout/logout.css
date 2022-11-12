@@ -5,26 +5,78 @@
     left: 39vw;
     top: 27vh;
     /* background: #FFFFFF; */
-    background-color: red;
+    background-color: white;
     border-radius: 12px;
 }
 
 #logout_head {
     position: absolute;
-width: 235px;
-height: 20px;
-left: 24px;
-top: 69px;
+    width: 20vw;
+    height: 10vh;
+    /* left: -1vw; */
+    top: 69px;
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    background-color: white;
+    text-align: center;
 
-text-align: center;
 
 
+}
 
+#logout_heading {
+    position: absolute;
+    width: 10vw;
+    height: 29px;
+    left: 0vw;
+    top: -6vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    background-color: white;
+    color: #000000;
+}
+
+#logout_text {
+    font-family: 'Montserrat';
+    background-color: white;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#btn_logout {
+    font-family: 'Montserrat';
+    position: absolute;
+    width: 20vw;
+    height: 40px;
+    left: 1.5vw;
+    top: 18vh;
+    font-size: 1.2rem;
+    color: white;
+    background: #6C63FF;
+    border-radius: 8px;
+    border: none;
+}
+
+#btn_logout_cancel {
+    font-family: 'Montserrat';
+    position: absolute;
+    width: 20vw;
+    height: 40px;
+    left: 1.5vw;
+    top: 27vh;
+    font-size: 1.2rem;
+    color: black;
+    background: #F2F2F2;
+    border-radius: 8px;
+    border: none;
 }

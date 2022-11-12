@@ -125,6 +125,7 @@ function App() {
         <Route path="/facProfile" element={<PrivateRoute>
           <FacultyProfile />
         </PrivateRoute> }/> */}
+        <Route path="/assign_fac" exact element={<Assign_fac/>} />
         </Routes> 
         </BrowserRouter>
       

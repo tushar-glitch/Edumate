@@ -6,9 +6,10 @@ import * as ReactBootStrap from "react-bootstrap";
 function FAttendance2(){
     function CreateFAttendCard2(FAttend2Array){
         return (
-        <FCard2 roll={FAttend2Array.roll} stNo={FAttend2Array.stNo} name={FAttend2Array.name} attend={FAttend2Array.attend} />
+            <FCard2 roll={FAttend2Array.roll} stNo={FAttend2Array.stNo} name={FAttend2Array.name} attend={FAttend2Array.attend} />
         )
     }
+    
     return <>
     <h1 className="dbAttend" id="DBAttend">Dashboard : Attendance </h1>
     <div className="FAttendanceOne">

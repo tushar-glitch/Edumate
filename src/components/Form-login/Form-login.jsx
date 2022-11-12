@@ -162,64 +162,6 @@ sessionStorage.setItem("Route_to_login",routeToLogin);
       setCredentials("")
     }
   }
-  // useEffect(()=>{
-  //   if(bool)
-  //   postdata();
-  // },[bool])
-  // console.log(loadingScreen)
-// // console.log(timerToken);
-// sessionStorage.setItem("expiry time",timerToken);
-
-
-  // function postdata() {
-  //   if (iscorrectid) {
-  //      axios
-  //       .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
-  //       .then((res) => {
-  //         console.log(res);
-  //         // localStorage.setItem("token", res.data.token);
-  //         const accessToken = res.data.token.access;
-  //         const refreshToken = res.data.token.refresh;
-  //         console.log(accessToken);
-  //         console.log(refreshToken);
-  //         if (accessToken && refreshToken) {
-  //           setProtectedRoute(true);
-  //           console.log(protectedRoute);
-  //           localStorage.setItem("protRouteKey",protectedRoute);
-  //           storeTokenData(accessToken, refreshToken);
-  //           {userIdFirstDigit==2?navigate("/profile"):navigate("/")};
-  //           // {userIdFirstDigit==1?navi}
-            
-  //           // axios.defaults.headers = {
-  //           //   accesstoken: accessToken,
-  //           //   refreshtoken: refreshToken
-  //           // }
-  //           // axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
-  //           // console.log(timerStart);
-  //           // console.log(tokenApi);
-  //           // navigate("/profile");
-  //         }
-  //         // localStorage.setItem("access token:", res.data.token.access);
-  //         // console.log(tokenApi);
-  //       })
-  //       .catch((err) => {
-  //         setProtectedRoute(false);
-  //         localStorage.removeItem("protRouteKey");
-  //         console.log(err);
-  //         setCredentials("Invalid credentials.Please check your User Id or Password");
-  //       });
-  //   }
-  //   else {
-  //     document.getElementById("wrongid").style.display = "block";
-  //     setCredentials("")
-  //   }
-  // }
-  // useEffect(()=>{
-  //   setProtectedRoute(RouteKey);
-  // },[RouteKey])
-  // console.log(protectedRoute);
-  // localStorage.setItem("protectedRouteKey",protectedRoute);
-// localStorage.clear();
 localStorage.removeItem("expiry time");
   function storeTokenData(accessToken, refreshToken) {
     sessionStorage.setItem("access token", accessToken);

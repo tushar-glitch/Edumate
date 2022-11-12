@@ -40,6 +40,7 @@ const Dashboard = () => {
                 if (res.data[i].day === "Monday" && res.data[i].subject) {
                     console.log("asdf" + res.data[i].period);
                     console.log("fdsa" + res.data[i].subject);
+                    // <Classcard time={jvdvghnvbm} />
                     // <Classcard name={res.data[i].subject} time={res.data[i].period}/>
                 }
             }

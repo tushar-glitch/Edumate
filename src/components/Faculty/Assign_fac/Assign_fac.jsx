@@ -4,7 +4,8 @@ import * as ReactBootStrap from "react-bootstrap";
 const Assign_fac = () => {
   return (
     <>
-      
+          <Navbar />
+          <SideBar/>
     </>
   )
 }

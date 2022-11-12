@@ -1,6 +1,6 @@
 import React from 'react'
-import './dashboard.css'
-const Classcard1 = (props) => {
+import './fac-dashboard.css'
+const Classcard = (props) => {
     return (
         <>
             <div id="class1" className='class'>
@@ -12,4 +12,4 @@ const Classcard1 = (props) => {
     )
 }
 
-export default Classcard1
+export default Classcard
