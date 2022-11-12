@@ -1,11 +1,12 @@
 import React from 'react'
-import Navbar from '../../Navbar/Navbar'
-import SideBar from '../SideBar/sidebar'
+
 import faculty from '../faculty'
 import './Feedback.css'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Navbar from '../../utils/Navbar/Navbar'
+import * as ReactBootStrap from "react-bootstrap";
 const Feedback = () => {
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
@@ -19,25 +20,46 @@ const Feedback = () => {
     
     const id = "S1"
     const feed = 2
-    const userID = 200000
+    const userID = 100000
+    // useEffect(() => {
+    //     axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/feedback/', config, {
+    //         id
+    //     })
+    //         .then((res) => {
+    //             console.log(res);
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         })
+    // }, [])
+    const [loadBool,setLoadBool] = useState(false)
     useEffect(() => {
+        setLoadBool(true)
         axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/'+`${id}`+'/', 
              config)
             .then((res) => {
                 console.log(res);
+                setLoadBool(false)
                 console.log(res.data.classdetails);
                 SetDetails(res.data.classdetails)
                 setFaculty1(res.data.teachers)
                 console.log(details);
             })
             .catch((err) => {
+                setLoadBool(false)
                 console.log(err);
             })
     },[])
+
+    useEffect(()=>{
+        if(loadBool)
+        document.body.style.opacity="0.5"
+        else
+        document.body.style.opacity="1"
+      },[loadBool])
     return (
         <>
-            <SideBar />
-            <Navbar />
+
             <h1 id='dash'>Dashboard &gt; Feedback</h1>
             <div id="background-feedback">
                 <div id="ff">Faculty Feedback</div>
@@ -153,6 +175,7 @@ const Feedback = () => {
                         }
                         return (
                             <>
+                            <Navbar />
                                 <div id='faculty-list'>
                                     <div className="heading-1" id='fac-details'>{faculty1[0]}</div>
                                     <div className="heading-2" id='fac-details'>{details.department}</div>
@@ -170,7 +193,7 @@ const Feedback = () => {
                     })}
                 </div>
             </div>
-
+            {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
         </>
     )
 }

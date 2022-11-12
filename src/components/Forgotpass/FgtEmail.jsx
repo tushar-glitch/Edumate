@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import * as ReactBootStrap from "react-bootstrap";
 import Background from "../Background/Background";
 import EmailImg from "./emailImg";
 import "./FgtEmail.css";
@@ -22,20 +23,27 @@ const[ckEmail,setCkEmail] = useState(false);
     }
   },[email]);
 const [emValid,setEmValid] = useState("");
+const [loadBool,setLoadBool] = useState(false);
+const [navigateOtp,setNavigateOtp] = useState(false);
 const navigate = useNavigate();
 function postemail() {
+  setLoadBool(!loadBool);
   console.log("ahgfj");
   if(ckEmail){
   axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
     .then((res) => {
       console.log(res.data);
       localStorage.setItem("email", email);
+      setNavigateOtp(true);
+      sessionStorage.setItem("NavigateOtp",navigateOtp)
+      setLoadBool(false);
       // {value2?<Navigate to="/otp" />:null}
     })
     
     .catch((err) => {
       navigate("/otp")
       console.log(err);
+      setLoadBool(false);
       setEmValid("Please enter a valid email id");
     })
 }
@@ -44,6 +52,12 @@ else
   document.getElementById("wrongemail").style.display = "block";
 }
 }
+useEffect(()=>{
+  if(loadBool)
+  document.body.style.opacity="0.5"
+  else
+  document.body.style.opacity="1"
+},[loadBool])
   return (
     <div className="AUTHENTICATION">
       <Background />
@@ -66,6 +80,7 @@ else
         </button>
         <span id="emailValid">{emValid}</span>
       <EmailImg />
+      {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </div>
   );
 }

@@ -8,12 +8,13 @@ import { Link, useNavigate } from "react-router-dom";
 import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-// import * as ReactBootStrap from "react-bootstrap";
+import * as ReactBootStrap from "react-bootstrap";
 import instance from "../API";
 import useRefreshToken from "../refreshToken";
 import axiosInstance from "../utils/axiosInstance";
 import LoadingScreen from "../utils/LoadingScreen";
 const Formlogin = () => {
+  sessionStorage.clear();
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
   function handleuserID(e) {
@@ -98,12 +99,14 @@ const [playLoad, setPlayLoad] = useState(false);
 //   console.log(loadingScreen)
 // },[loadingScreen])
 // console.log(loadBool)
+const [routeToLogin ,setRouteToLogin]= useState(false);
 const userIdFirstDigit = String(userID)[0];
  function postdata() {
-  setPlayLoad(!playLoad)
+
   console.log(playLoad)
-    setLoadBool(true);
+  setLoadBool(!loadBool);
     if (iscorrectid) {
+      setPlayLoad(!playLoad)
     axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
          .then((res) => {
@@ -116,47 +119,36 @@ const userIdFirstDigit = String(userID)[0];
           console.log(refreshToken);
           if (accessToken && refreshToken) {
             storeTokenData(accessToken, refreshToken);
-            {if(userIdFirstDigit===1){
-              navigate("/facProfile")
+setRouteToLogin(true);
+console.log(routeToLogin)
+sessionStorage.setItem("Route_to_login",routeToLogin)
+            console.log(userIdFirstDigit)
+            sessionStorage.setItem("LoggedInUserId" ,userIdFirstDigit)
+            sessionStorage.setItem("UserIdLogger",userID);
+          
+            {if(userIdFirstDigit==1){
+              navigate("/facDashboard")
               console.log("aDBHMASHF");
+              sessionStorage.setItem("Faculty_userId",userID)
               sessionStorage.setItem("Faculty_access_token", accessToken);
               console.log(accessToken)
             }
-            else if(userIdFirstDigit===2)
+            if(userIdFirstDigit==2)
             {
-              navigate("/profile")
+              navigate("/stu_dashboard")
+              sessionStorage.setItem("Student_userId",userID)
               sessionStorage.setItem("access token", accessToken);
               console.log(accessToken)
             }
           else if(userIdFirstDigit==9){
-            navigate("/facProfile")
+            navigate("/admin_dashboard")
             console.log("aDBHMASHF");
-            localStorage.setItem("Admin_access_token", accessToken)
+            sessionStorage.setItem("Admin_userId",userID)
+            sessionStorage.setItem("Admin_access_token", accessToken)
             console.log(accessToken)
           }
        };
       }
-    
-            // {if(userIdFirstDigit===2){
-            //   navigate("/profile")
-            //   sessionStorage.setItem("access token", accessToken);
-            // }
-            // else
-            // {
-            //   navigate("/");
-            //   sessionStorage.removeItem("access token")
-            // }};
-            // {if(userIdFirstDigit==9){
-            //   // navigate("/facProfile")
-            //   console.log("aDBHMASHF");
-            //   localStorage.setItem("Admin_access_token", accessToken);
-            // }
-            // else
-            // {
-            //   navigate("/");
-            //   sessionStorage.removeItem("Admin_access_token")
-            // }};
-          //}
         })
         .catch((err) => {
           console.log(err);
@@ -176,16 +168,14 @@ localStorage.removeItem("expiry time");
     sessionStorage.setItem("refresh token", refreshToken);
   }
   useEffect(()=>{
-    if(1){
-      { loadBool ? navigate("/loadingScreen") : console.log("oiqwe"); }
-      console.log("asdfadsfasdf");
-    }
-  },[playLoad,loadBool])
+    if(loadBool)
+    document.body.style.opacity="0.5"
+    else
+    document.body.style.opacity="1"
+  },[loadBool])
   return (
-  
+ 
     <div className="AUTHENTICATION">
-     
-      <Background />
       <h5 id="user-id">User id</h5>
       <EmailIMG />
       <input
@@ -219,8 +209,8 @@ localStorage.removeItem("expiry time");
       <span id="credential">{credentials}</span>
       <Loginimg />
       {/* <LoadingScreen /> */}
-      {/* {<ReactBootStrap.Spinner animation="border" />} */}
-     {/* {loadBool?navigate("/loadingScreen"):navigate("/")} */}
+      {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
+     {/* {loadBool?navigate("/loadingScreen"):null} */}
     </div>
   );
 };

@@ -17,6 +17,7 @@ padding-top: 2vh;
 margin-top:2vh;
 }
 #SCdDate{
+   
    /* margin-top:-5vh; */
    width:15vw;
    padding:10px;
@@ -32,4 +33,59 @@ margin-top:2vh;
     padding:10px;
     border:1px solid white;
     background: none;
+}
+#SCdMonth1{
+    position:absolute;
+    left:19vw;
+    font-size:1rem;
+    color:black;
+}
+#SCdDate1{
+    position:absolute;
+    left:28vw;
+    font-size:1rem;
+    color:black;
+}
+#SCdStatus1{
+    position:absolute;
+    right:1.2vw;
+    font-size:1rem;
+    color:black;
+    background-color:   #62DDB0;
+    height:7.4vh;
+    width:21vw;
+    padding-top:1vh;
+    margin-top: -1.8vh;
+}
+#attendbarNew{
+    /* background-color: aqua; */
+    /* width:40vw; */
+    /* height:5vh; */
+}
+.monthListNew{
+    position:absolute;
+    top:36.2vh;
+    left:28.9vw;
+    list-style: none;
+    width:13.5vw;
+    height:7.2vh;
+    background:transparent;
+    opacity:1;
+}
+.month2{
+    width:10vw;
+    opacity:0;
+}
+.date2{
+    padding-right:0;
+    width:7vw;
+}
+.day2{
+    width:10vw;
+}
+.time2{
+    width:10vw;
+}
+.status2{
+    width:10vw;
 }

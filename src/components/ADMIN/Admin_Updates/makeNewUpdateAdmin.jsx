@@ -26,8 +26,8 @@ useEffect(()=>{
     }
 },[updateListValue])
 
-const [AdminUpdate,setAdminUpdate] = useState(localStorage.getItem("Admin_updates_array"))
-const adminAccessToken = localStorage.getItem("Admin_access_token");
+const [AdminUpdate,setAdminUpdate] = useState(sessionStorage.getItem("Admin_updates_array"))
+const adminAccessToken = sessionStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
 const config = {
     headers:{

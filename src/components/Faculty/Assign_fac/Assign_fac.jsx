@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from '../../Navbar/Navbar'
-import SideBar from '../../Student/SideBar/sidebar'
+import * as ReactBootStrap from "react-bootstrap";
 
 const Assign_fac = () => {
   return (

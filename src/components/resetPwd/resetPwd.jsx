@@ -6,6 +6,7 @@ import "./resetPwd.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import * as ReactBootStrap from "react-bootstrap";
 
 function ResetPwd() {
   const [pass, setPass] = useState("");
@@ -31,20 +32,10 @@ function ResetPwd() {
   useEffect(() => {
     if (rightpass.test(pass)) {
       document.getElementById("wrongpass1").style.display = "none";
-      // document.getElementById("confirm-pass").style.top = 348 +'px';
-      // document.getElementById("confirm-pass-input").style.top = 370 +'px';
-      // document.getElementById("pEye2").style.top = 383 +'px';
-      // document.getElementById("btn-reset").style.top = 470 +'px';
-      // document.getElementById("passMatch").style.top=412+'px';
 setIsPass(true)
       console.log("true");
     } else if (pass) {
       document.getElementById("wrongpass1").style.display = "block";
-      // document.getElementById("confirm-pass").style.top = 371 +'px';
-      // document.getElementById("confirm-pass-input").style.top = 393 +'px';
-      // document.getElementById("pEye2").style.top = 406 +'px';
-      // document.getElementById("btn-reset").style.top = 490 +'px';
-      // document.getElementById("passMatch").style.top=438+'px';
     }
   }, [pass]);
   useEffect(() => {
@@ -58,7 +49,9 @@ setIsPass(true)
   }, [Cpass]);
   const navigate = useNavigate();
 const [passMsg,setPassMsg] = useState("");
+const [loadBool,setLoadBool] = useState(false);
   function rstPassword(){
+    setLoadBool(!loadBool)
     var email = localStorage.getItem("email")
     console.log(email);
     var otp = localStorage.getItem("otp");
@@ -68,6 +61,7 @@ const [passMsg,setPassMsg] = useState("");
           .post("https://erp-edumate.herokuapp.com/api/user/changepassword/",data)
           .then((res) => {
             console.log(res.data);
+            setLoadBool(false)
             sessionStorage.setItem("previous_password",Cpass)
             setPassMsg("Password changed")
             navigate("/");
@@ -75,6 +69,7 @@ const [passMsg,setPassMsg] = useState("");
           })
           .catch((err) => {
             console.log(err);
+            setLoadBool(false)
             setPassMsg("Password reset failed")
           });
       }
@@ -82,6 +77,12 @@ const [passMsg,setPassMsg] = useState("");
           document.getElementById("passMatch").style.display = "block";
       }
     }
+    useEffect(()=>{
+      if(loadBool)
+      document.body.style.opacity="0.5"
+      else
+      document.body.style.opacity="1"
+    },[loadBool])
   return (
     <>
     <div className="AUTHENTICATION">
@@ -117,6 +118,7 @@ const [passMsg,setPassMsg] = useState("");
        <button id="btn-reset" onClick={rstPassword}>RESET PASSWORD</button>
        <span id="pwdMsg">{passMsg}</span>
       <ResetImg />
+      {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
       </div>
     </>
   );

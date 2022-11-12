@@ -3,6 +3,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import "../../Student/TimeTable/TimeTable.jsx";
+import Navbar from "../../utils/Navbar/Navbar.jsx";
+import * as ReactBootStrap from "react-bootstrap";
 import "./fTimeTable.css";
  function FTimeTable (){
     const facAccessToken = sessionStorage.getItem("Faculty_access_token");
@@ -17,10 +19,13 @@ const config = {
     const [array3,setArray3] = useState([]);
     const [array4,setArray4] = useState([]);
     const [array5,setArray5] = useState([]);
-
+const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
+        setLoadBool(true)
         axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/timetable/",config).
         then((res)=>{
+            console.log(res)
+            setLoadBool(false)
             console.log(res.data);
             for(let i=0;i<30;i++){
             if(res.data[i].period === "8:30 - 9:20"){
@@ -43,10 +48,17 @@ const config = {
         }).
         catch((err)=>{
             console.log(err);
+            setLoadBool(false)
         })
     },[])
-
+    useEffect(()=>{
+        if(loadBool)
+        document.body.style.opacity="0.5"
+        else
+        document.body.style.opacity="1"
+      },[loadBool])
     return <>
+    <Navbar />
      <h1 className="dbTT">Dashboard : Time Table </h1>
     <div className="FTimeTable">
     <table cellSpacing={0} className="table">
@@ -115,6 +127,7 @@ const config = {
             </tr>
         </table>
         </div>
+        {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>
  }
  export default FTimeTable;

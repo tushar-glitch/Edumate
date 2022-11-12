@@ -1,6 +1,6 @@
 import React from "react";
 import "./Background.css";
-import Image from "./bgImage";
+
 import BackgroundPage from "./BackgroundPage.svg";
 
 function Background() {
@@ -17,9 +17,6 @@ function Background() {
       </p>
       <div className="panel1"></div>
       <div className="panel2"></div>
-      <p>
-        <Image />
-      </p>
     </div>
     </>
   );

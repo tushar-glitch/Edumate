@@ -1,0 +1,343 @@
+body{
+    overflow-x: hidden;
+}
+#section {
+    position: absolute;
+    height: 9vh;
+    width: 82vw;
+    background-color: white;
+    left: 18.5vw;
+    right: 0em;
+    top: 0vh;
+    position:fixed;
+    z-index:2000;
+}
+
+#greetingNav {
+    position: absolute;
+    width: 14vw;
+    height: 4.5vh;
+    background-color: white;
+    top: 2.5vh;
+    left: 2vw;
+    font-family: 'Montserrat';
+    font-weight: 400;   
+    font-size: 1.2rem;
+}
+
+#role {
+    position: absolute;
+    width: 5vw;
+    height: 4.5vh;
+    background-color: white;
+    top: 2.7vh;
+    right: 5vw;
+    font-family: 'Montserrat';
+    padding-right: 0em;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+#role-logo {
+    position: absolute;
+    width: 2vw;
+    height: 4.5vh;
+    top: 2.7vh;
+    right: 1.9vw;
+    font-family: 'Montserrat';
+    padding-right: 0em;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    /* background: none; */
+}
+#profile-logo{
+    background:none;
+}
+#dropdown{
+    position: absolute;
+    height: 22.5vh;
+    width: 12vw;
+    background-color: white;
+    right: 0.6vw;
+    top: 9vh;
+    z-index: 99999;
+    display: none;
+}
+#dropdown a{
+    text-decoration: none;
+}
+.dropdown_items{
+    line-height: 5vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 0.8rem;
+
+margin-left: 3vw;
+background-color: white;
+color: #000000;
+text-decoration: none;
+}
+.dropdown_img{
+    background-color: white;
+    position: absolute;
+    left: 1vw;
+}
+#dropdown_img1{
+    top: 1.3vh;
+}
+#dropdown_img2{
+    top: 6.3vh;
+}
+#dropdown_img3{
+    top: 11.3vh;
+}
+#dropdown_img4{
+    top: 16.3vh;
+}
+#NavCheck{
+    display:none;
+}
+.navSBIcon{
+    display:none;
+}
+@media (min-width:200px) and (max-width:920px) {
+    #section{
+        left:0vw;
+        position: fixed;
+    }
+    #greetingNav{
+        left:8vw;
+        font-size: 1.08rem;
+        width:50vw;
+        top:3vh;
+    }
+    #role{
+        right:19vw;
+        top:3vh;
+        font-size: 1.08rem;
+    }
+    #role-logo{
+        right:6vw;
+    }
+    #profile-logo{
+        width:5vw;
+    }
+    #dropdown {
+        right:0vw;
+        top:9vh;
+        width:35vw;
+        height:24vh;
+        padding-bottom: 0vh;
+    }
+    .dropdown_img{
+        width:4vw;
+        height:2vh;
+    }
+    .dropdown_items{
+        font-size: 0.7rem;
+        margin-left:7vw;
+    }
+    .navSBIcon{
+display:block;
+background:none;
+position:absolute;
+left:2vw;
+top:3.5vh;
+
+    }
+    #navBarLogo{
+        background:none;
+        cursor: pointer;
+    }
+    .sideB{
+        width:80vw;
+        position:fixed;
+        left:0;
+}
+#navSideBarIcon{
+    cursor: pointer;
+}
+/* #navSideBarIcon:checked ~ .sideB {
+    left:0;
+} */
+}
+@media (min-width:390px) and (max-width:920px){
+    #greetingNav{
+        font-size: 1.2rem;
+    }
+    #role{
+        font-size: 1.2rem;
+    }
+    #role-logo{
+        top:2.5vh;
+    }
+    #profile-logo{
+        width:6vw;
+    }
+    #dropdown{
+        height: 26vh;
+    }
+    .dropdown_items{
+        font-size: 1rem;
+    }
+}
+@media (min-width:280px) and (max-width:280px) {
+    #greetingNav{
+        font-size: 0.9rem;
+        top:3.4vh;
+    }
+    #role{
+        font-size: 0.9rem;
+        top:3.4vh;
+        position:absolute;
+        right:21vw;
+    }
+    #role-logo{
+        top:2.6vh;
+    }
+    #profile-logo{
+        width:5vw;
+    }
+    #dropdown{
+        width:44vw;
+        height:20vh;
+    }
+    .dropdown_items{
+        line-height: 24px;
+        /* width:50vw; */
+        font-size: 0.7rem;
+    } 
+    .dropdown_img{
+        width:4vw;
+        height:1.5vh;
+    }
+    #dropdown_img1{
+        top: 1.3vh;
+    }
+    #dropdown_img2{
+        top: 5vh;
+    }
+    #dropdown_img3{
+        top: 8.4vh;
+    }
+    #dropdown_img4{
+        top: 12.2vh;
+    }
+}
+
+/*SIDEBAR*/
+
+.sideB {
+    box-sizing: border-box;
+    position: absolute;
+    width: 18.5vw;
+    height: 160vh;
+    background-color: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    top: 0em;
+    z-index:5;
+    position:fixed;
+    left:0;
+}
+
+.edum {
+    position: absolute;
+    width: 15vw;
+    height: 10vh;
+    left: 2.5vw;
+    top: 6vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(2.5vw);
+    line-height: 44px;
+    letter-spacing: 0.05em;
+    color: #6C63FF;
+    background: none;
+}
+
+.sideList {
+    background: none;
+    position: absolute;
+    /* top: 11vh; */
+    left: 3vw;
+    list-style: none;
+}
+
+.sideList li {
+    width: 13vw;
+    height: 29px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(1.3vw);
+    line-height: 15px;
+    background: none;
+    margin-bottom: 7vh;
+    cursor: pointer;
+}
+
+.sideList li:hover {
+    color: #6C63FF;
+    /* fill:#6C63FF; */
+}
+
+.sidebarIcon {
+    z-index: 50;
+    background: none;
+    position:absolute;
+    left:0vw;
+}
+.sideBarListValue{
+    background: none;
+ position:absolute;
+ left:0.9vw;
+}
+.XMark {
+    display: none;
+}
+@media (max-width:800px) {
+    .sideB{
+        width:60vw;
+        position:fixed;
+        z-index: 99999;
+        left:100%;
+}
+.edum{
+    position: absolute;
+width: 120px;
+height: 29px;
+left: 6vw;
+top: 8vh;
+font-weight: 500;
+font-size: 1.65rem;
+line-height: 29px;
+letter-spacing: 0.05em;
+}
+.sideList{
+    left:6vw;
+    top: 18vh;
+}
+.sideList li{
+    margin-bottom: 4vh;
+}
+.sideBarListValue {
+    font-size: 0.9rem;
+    width:120vw;
+    margin-left: 10vw;
+}
+#navSideBarIcon:checked ~ .sideB {
+    left:0;
+}
+.XMark{
+    display: block;
+    background: none;
+    position:absolute;
+    top:8.7vh;
+    left:51vw;
+    width:3.5vw;
+    height:3vh;
+    opacity: 0.7;
+}
+}

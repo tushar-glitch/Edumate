@@ -1,0 +1,36 @@
+.updateFacDiv{
+    background-color: #ffffff;
+    margin-left:25vw;
+    margin-top: 30vh;
+    top:26vh;
+    border-radius: 15px;
+z-index:5;
+    /* position:absolute; */
+    box-sizing:border-box;
+    width: 67vw;
+    padding-top:5vh;
+height: fit-content;
+}
+.updateFacRow{
+    width: 63vw;
+    height: 9vh;
+    background: #6C63FF;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 37px;
+    color: #FFFFFF;
+    padding-top:2vh;
+    z-index:20;
+    margin-top:0vh;
+    margin-left:2vw;
+}
+.UpdateFacCardCall{
+    display:flex;
+    flex-direction: column;
+    background: none;
+    margin-top:5vh;
+}

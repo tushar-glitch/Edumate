@@ -1,15 +1,56 @@
 import React from "react";
 import ProgressBar from "./ProgressBar";
 import SCard1 from "./SAttendCard1";
-import SAttend1Array from "./SAttendArray1";
 import "./attend.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
+import Navbar from "../../utils/Navbar/Navbar";
+import * as ReactBootStrap from "react-bootstrap";
  function Attendance(){
+
+    const accessToken = sessionStorage.getItem("access token");
+    console.log(accessToken);
+    const config = {
+       headers:{
+          Authorization: `Bearer ${accessToken}`
+       }
+    }
+    const [loadBool, setLoadBool] = useState(false)
+    const [SAttend1Array,setAttend1Array]= useState([]);
+    useEffect(()=>{
+        setLoadBool(true)
+        axios.get("https://erp-edumate.herokuapp.com/api/user/student/studentoverallattendance/",config)
+        .then((res)=>{
+            console.log(res);
+            setLoadBool(false)
+            setAttend1Array(res.data);
+        })
+        .catch((err)=>{
+            console.log(err);
+            setLoadBool(false)
+        })
+    },[])
+    const navigate = useNavigate();
+    function AttendanceTwo(code,name){
+        console.log("chdkj");
+        navigate("/stAttend")
+        sessionStorage.setItem("subject_code",code)
+        sessionStorage.setItem("subject_name",name)
+    }
     function CreateSAttendCard1(SAttend1Array){
         return (
-        <SCard1 code={SAttend1Array.code} sub={SAttend1Array.sub} attendC={SAttend1Array.attendC} totalC={SAttend1Array.attendTotalC} attendPer={SAttend1Array.attendPer} />
+        <SCard1 code={SAttend1Array.subject_code} navigator={()=>AttendanceTwo(SAttend1Array.subject_code,SAttend1Array.subject_name)} sub={SAttend1Array.subject_name} attendC={SAttend1Array.attended_classes} totalC={SAttend1Array.total_classes} attendPer={SAttend1Array.attendance_percent} />
         )
     }
+    useEffect(()=>{
+        if(loadBool)
+        document.body.style.opacity="0.5"
+        else
+        document.body.style.opacity="1"
+      },[loadBool])
     return <>
+    <Navbar />
      <h1 className="dbAttend">Dashboard : Attendance </h1>
 <div className="attend">
 <h1 className="attendHead" >Attendance</h1>
@@ -22,92 +63,11 @@ import "./attend.css";
             <td className="attendPer">Attendance in %</td>
         </tr> 
         </table>
-        <div className="SAttendCardCall1">
+        <div className="SAttendCardCallA2">
     {SAttend1Array.map(CreateSAttendCard1)} 
     </div>
-{/*  </div>
-         {/* <tr >
-            <td>KCS 301</td>
-            <td>Data Structures</td>
-            <td></td>
-            <td>Total Classes</td>
-            <td></td>
-        </tr>
-        <tr >
-            <td>KCS 301</td>
-            <td>Data Structures</td>
-            <td></td>
-            <td>Total Classes</td>
-            <td></td>
-        </tr>
-        <tr >
-            <td>KCS 301</td>
-            <td>Data Structures</td>
-            <td></td>
-            <td>Total Classes</td>
-            <td></td>
-        </tr>
-        <tr >
-            <td>KCS 301</td>
-            <td>Data Structures</td>
-            <td></td>
-            <td>Total Classes</td>
-            <td></td>
-        </tr>
-        <tr >
-            <td>KCS 301</td>
-            <td>Data Structures</td>
-            <td></td>
-            <td>Total Classes</td>
-            <td></td>
-        </tr>
-        </table>
-        <div id="bar1">
-<ProgressBar/>
 </div>
-<div id="bar2">
-<ProgressBar/>
-</div>
-</div>
-<div className="responsiveTable">
-<table className="attendTableResponse" cellSpacing={0}>
-    <tr className="greyRowResponse">
-<td className="subjectResponse">Subject Name</td>
-<td className="class">Classes</td>
-<td className="responseAttend">Attendace</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    </table> */}
-</div>
+  {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>
  }
  export default Attendance;

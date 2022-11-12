@@ -1,11 +1,9 @@
 import React from 'react'
-import Navbar from '../../Navbar/Navbar'
-import SideBar from '../SideBar/sidebar'
-import faculty from '../faculty'
 import './Feedback.css'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Navbar from '../../../utils/Navbar/Navbar'
 const FacFeedback = () => {
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
@@ -67,8 +65,7 @@ const FacFeedback = () => {
     },[])
     return (
         <>
-            <SideBar />
-            <Navbar />
+            <Navbar/>
             <h1 id='dash'>Dashboard &gt; Feedback</h1>
             <div id="background-feedback">
                 <div id="ff">Faculty Feedback</div>
@@ -202,7 +199,7 @@ const FacFeedback = () => {
                 </div>
             </div>
 
-        </>
+//         </>
     )
 }
 
