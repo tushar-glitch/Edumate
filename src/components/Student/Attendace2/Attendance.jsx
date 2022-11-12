@@ -17,6 +17,7 @@ function SubjectAttend (){
         setMonth(e.target.value)
     }
     console.log(month)
+    console.log(month)
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
     const config = {
@@ -49,11 +50,12 @@ function SubjectAttend (){
     //   },[loadBool])
    return <>
    <Navbar />
+   <h1 className="dbAttend">Dashboard : Attendance </h1>
     <div className="tableSub">
-    <table className="attendTable2" cellSpacing={0}>
-    <tr><td className="attendHead2"  colspan={3}>Attendance</td></tr> 
+    <h1 className="attendHeadSub">Attendance</h1>
+    <table className="attendTableSub" cellSpacing={0}>
     <tr><td className="attendEachSub"  colspan={3}>{subjectA}&emsp;{code}</td></tr> 
-    <tr className="greyRow">
+    <tr className="attendRowSub">
     <td className="month2">mo</td>
 <td className="date2">Date</td>
 <td className="day2">Day</td>
@@ -61,6 +63,7 @@ function SubjectAttend (){
 <td className="status2">Status</td>
     </tr>
     </table>
+    <CreateStuCard />
     <div className="SCardCall">
     {attendSubArray.map(CreateStuCard)}
     </div>

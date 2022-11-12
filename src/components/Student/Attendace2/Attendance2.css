@@ -57,35 +57,176 @@ margin-top:2vh;
     padding-top:1vh;
     margin-top: -1.8vh;
 }
-#attendbarNew{
-    /* background-color: aqua; */
-    /* width:40vw; */
-    /* height:5vh; */
-}
 .monthListNew{
     position:absolute;
-    top:36.2vh;
-    left:28.9vw;
+    top:36.35vh;
+    left:28.8vw;
     list-style: none;
-    width:13.5vw;
-    height:7.2vh;
+    width:13vw;
+    height: 8.6vh;
     background:transparent;
     opacity:1;
 }
 .month2{
-    width:10vw;
+    width:13vw;
     opacity:0;
 }
 .date2{
     padding-right:0;
-    width:7vw;
+    width:11.5vw;
 }
 .day2{
-    width:10vw;
+    width:13.5vw;
 }
 .time2{
-    width:10vw;
+    width:12.5vw;
 }
 .status2{
-    width:10vw;
+    width:14.5vw;
 }
+.attendHeadSub{
+    position:absolute;
+    top:1vh;
+    left:1vw;
+    box-sizing: border-box;
+height:9vh;
+border-radius: 8px 8px 0px 0px;
+background: none;
+background-color: #6C63FF;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 37px;
+color: #FFFFFF;
+text-align: center;
+padding-top: 2vh;
+width:65vw;
+}
+.attendEachSub{
+    position:absolute;
+    top:10vh;
+    left:1vw;
+    box-sizing: border-box;
+height:9vh;
+background: none;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 37px;
+background-color:#EEF1FF;
+color: #FFFFFF;
+text-align: center;
+padding-top: 2vh;
+width:65vw;
+}
+.attendTableSub{
+    width:65vw;
+    margin-top: 10vh;
+     margin-left:1vw;
+}
+.attendRowSub{
+    position:absolute;
+    top:18vh;
+    left:1vw;
+    box-sizing: border-box;
+height:9vh;
+border-radius: 8px 8px 0px 0px;
+background: none;
+background-color:  #D9D9D9;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 37px;
+color: #FFFFFF;
+text-align: center;
+/* padding-top: 2vh; */
+width:65vw;
+}
+.attendRowSub td{
+    background: #D9D9D9;
+    border: 1px solid #FFFFFF;
+    height: 9vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+.stAttCardRow{
+    margin-left:1vw;
+    box-sizing: border-box;
+height:7vh;
+border-radius: 6px 6px 4px 4px;
+background: none;
+/* background-color: #6C63FF; */
+background-color: #EEF1FF;;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 37px;
+color: #FFFFFF;
+text-align: center;
+padding-top: 1.7vh;
+position:absolute;
+top:30vh;
+width:65vw;
+margin-bottom:1vh;
+}
+#StCdDate1{
+    color:black;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1.1rem;
+position:absolute;
+left:16vw;
+line-height: 20px;
+color: #000000;
+background:none;
+}
+#StCdDay1{
+    color:black;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1.1rem;
+position:absolute;
+left:28vw;
+line-height: 20px;
+color: #000000;
+background:none;
+}
+#StcdTime1{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1.1rem;
+position:absolute;
+left:40.5vw;
+line-height: 20px;
+color: #000000;
+background:none;
+}
+#attendbarNew{
+    width:13.8vw;
+    height:7vh;
+    background-color: aquamarine;
+    position:absolute;
+    left:51vw;
+    margin-top:-1.8vh;
+}
+ #StCdStatus1{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1.1rem;
+line-height: 20px;
+color: #000000;
+background:none;
+padding-top:1.5vh;
+ }

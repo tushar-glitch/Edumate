@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./adminAddClass.css";
 import { useEffect } from "react";
 import { faGameConsoleHandheld } from "@fortawesome/sharp-solid-svg-icons";
+import AdmBar from "../../admin_bar/AdmBar";
  function AddNewClassComp (){
     const [classId,setClassId] = useState("");
     const [deptId,setDeptId] = useState("");
@@ -58,7 +59,7 @@ const config = {
     },[])
      function DropdownDeptList (deptList){
 return <>
-    <option  id="class-name" className="dept_head_input" value={deptList[2]}>{deptList[1]}</option>
+    <option  id="class-name" className="dept_head_input" value={deptList.id}>{deptList.name}</option>
 </>
      }
  const navigate = useNavigate();
@@ -86,6 +87,7 @@ return <>
     }
 
     return <>
+    <AdmBar />
  <div className="updateOuterDiv">
     <div className="addInnerBlockClass">
         <div className="add-new-dept">Add New Class</div>

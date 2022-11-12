@@ -71,7 +71,7 @@ const config = {
 
     function DropdownDeptList (deptList){
         return <>
-            <option  id="class-name" className="dept_head_input" value={deptList[2]}>{deptList[1]}</option>
+            <option  id="class-name" className="dept_head_input" value={deptList.id}>{deptList.name}</option>
         </>
              }
     function handleCancelEdClassApi(){

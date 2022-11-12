@@ -121,7 +121,7 @@ const userIdFirstDigit = String(userID)[0];
             storeTokenData(accessToken, refreshToken);
 setRouteToLogin(true);
 console.log(routeToLogin)
-sessionStorage.setItem("Route_to_login",routeToLogin)
+sessionStorage.setItem("Route_to_login",routeToLogin);
             console.log(userIdFirstDigit)
             sessionStorage.setItem("LoggedInUserId" ,userIdFirstDigit)
             sessionStorage.setItem("UserIdLogger",userID);
