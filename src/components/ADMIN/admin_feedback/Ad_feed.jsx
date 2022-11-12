@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import AdmBar from '../admin_bar/AdmBar'
+import * as ReactBootStrap from "react-bootstrap";
 
 const Ad_feed = () => {
     const accessToken = sessionStorage.getItem("access token");
@@ -49,6 +50,12 @@ const Ad_feed = () => {
                 console.log(err);
             })
     }, [])
+    // useEffect(()=>{
+    //     if(loadBool)
+    //     document.body.style.opacity="0.5"
+    //     else
+    //     document.body.style.opacity="1"
+    //   },[loadBool])
     return (
         <>
         <AdmBar />

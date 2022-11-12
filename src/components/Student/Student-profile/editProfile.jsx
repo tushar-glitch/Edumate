@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Student from "./student";
+
  function EditProfile (props) {
     const nam = props.name;
     const [name,setName]=useState();

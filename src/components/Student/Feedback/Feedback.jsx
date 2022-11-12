@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Navbar from '../../utils/Navbar/Navbar'
+import * as ReactBootStrap from "react-bootstrap";
 const Feedback = () => {
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
@@ -29,6 +30,7 @@ const Feedback = () => {
     //             console.log(err);
     //         })
     // }, [])
+    const [loadBool,setLoadBool] = useState(false)
     useEffect(() => {
         axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/'+{userID,feed},
              config)
@@ -50,16 +52,26 @@ const Feedback = () => {
     //         })
     // }, [])
     useEffect(() => {
+        setLoadBool(true)
         axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/'+`${feed}`+'/', 
              config)
             .then((res) => {
                 console.log(res);
+                setLoadBool(false)
                 SetDetails(res.data.classdetails.department)
             })
             .catch((err) => {
+                setLoadBool(false)
                 console.log(err);
             })
     },[])
+
+    useEffect(()=>{
+        if(loadBool)
+        document.body.style.opacity="0.5"
+        else
+        document.body.style.opacity="1"
+      },[loadBool])
     return (
         <>
 
@@ -200,7 +212,7 @@ const Feedback = () => {
                     })}
                 </div>
             </div>
-
+            {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
         </>
     )
 }

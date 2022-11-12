@@ -16,6 +16,7 @@ import updatesicon from "../../Assests/Images/updatesicon.svg";
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import Footer from "../../utils/Footer/Footer"
 // import SideBar from '../Student/SideBar/sidebar'
 const AdmBar = () => {
     const [show,setShow] = useState(false)
@@ -35,17 +36,18 @@ const AdmBar = () => {
     }
     return (
         <>
+        <Footer />
          <div className="sideB">
             <h1 className="edum">Edumate</h1>
             <FontAwesomeIcon icon={faXmark} className="XMark" />
             <ul className="sideList">
            <Link to="/admin_dashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>
                 <Link to="/add_stu"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">Student</span></li></Link>
-                {userIdLog==9?(<Link to="/add_fac"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Faculty</span></li></Link>):(null)}
-             {userIdLog==9?(<Link to=""><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Attendance</span></li></Link>):(null)}
-             {userIdLog==9?(<Link to="/ad_feedback"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Feedback</span></li></Link>):(null)}
-                {userIdLog==9?(<Link to="/adminAdd"><li><img src={timetableicon} className="sidebarIcon" /><span className="sideBarListValue">Departments and Classes</span></li></Link>):(null)}
-                {userIdLog==1?(<Link to="/Fupdate"><li><img src={updatesicon} className="sidebarIcon" /><span className="sideBarListValue">Updates</span></li></Link>):(null)}
+                <Link to="/add_fac"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Faculty</span></li></Link>
+            <Link to=""><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Attendance</span></li></Link>
+             <Link to="/ad_feedback"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Feedback</span></li></Link>
+               <Link to="/adminAdd"><li><img src={timetableicon} className="sidebarIcon" /><span className="sideBarListValue">Departments and Classes</span></li></Link>
+                <Link to="/aUpdate"><li><img src={updatesicon} className="sidebarIcon" /><span className="sideBarListValue">Updates</span></li></Link>
                 {/* {userIdLog==2?(<Link to="/updates"><li><img src={updatesicon} className="sidebarIcon" /><span className="sideBarListValue">Updates</span></li></Link>):(null)} */}
                 </ul>
         </div>

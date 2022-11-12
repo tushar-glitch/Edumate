@@ -3,6 +3,7 @@ import "../../Student/Student-profile/profile.css";
 import avatar from "../../Assests/Images/avatar.png";
 import ProfileInputField from "../../utils/ProfileInputField"
 import ProfileInputDisabled from '../../utils/ProfileInputDiabled'
+import * as ReactBootStrap from "react-bootstrap";
 
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -79,8 +80,11 @@ const [show3,setShow3] = useState(false);
          Authorization: `Bearer ${FacAccessToken}`
       }
    }
+   const [loadBool, setLoadBool] = useState(false)
    useEffect(()=>{
+      setLoadBool(true)
       axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",config).then((res)=>{
+         setLoadBool(false)
          console.log(res);
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
@@ -94,6 +98,7 @@ const [show3,setShow3] = useState(false);
          setProfilePin(res.data.pincode);
       }).catch(err=>{
          console.log(err);
+         setLoadBool(false)
       })
    },[])
 
@@ -155,7 +160,7 @@ const [show3,setShow3] = useState(false);
          state:profileState,
          teacher_phone:profileMobile,
          pincode:profilePin,
-         email:"erp.edumate.testEr@gmail.com"
+         // email:"erp.edumate.testEr@gmail.com"
       },config).then((res)=>{
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
@@ -169,6 +174,13 @@ const [show3,setShow3] = useState(false);
          setProfilePin(res.data.pincode);
       })
   }
+  sessionStorage.setItem("FacultyName",profileName)
+  useEffect(()=>{
+   if(loadBool)
+   document.body.style.opacity="0.5"
+   else
+   document.body.style.opacity="1"
+ },[loadBool])
     return ( 
         <>
        <Navbar />
@@ -206,8 +218,8 @@ const [show3,setShow3] = useState(false);
                 </div>
                 <div id="email">Email</div>
                 <div className='space5'>
-                {editAble?(<ProfileInputField value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} />): 
-                   (<ProfileInputDisabled  value={profileEmail} class="profileField" type="text"/>)}
+                {editAble?(<input value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} disabled/>): 
+                   (<input  value={profileEmail} class="profileField" type="text" disabled/>)}
                 </div>
                 <div id="heading2">Contact Details</div>
                 <div id="address">Address</div>
@@ -241,6 +253,7 @@ const [show3,setShow3] = useState(false);
                 <div className='CONTACT'>
             </div>
             </div>
+            {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
         </>
     )
 }

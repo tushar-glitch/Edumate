@@ -47,6 +47,7 @@ function OTP() {
       })
 }
 const [newOtp,setNewOtp]= useState("");
+const [navigatePwd,setNavigatePwd] = useState(false);
 function postResOtp(){
   setLoadBool(!loadBool);
   localStorage.removeItem("otp");
@@ -57,6 +58,8 @@ function postResOtp(){
       console.log(res);
       localStorage.setItem("otp",otp)
       setLoadBool(false);
+      setNavigatePwd(true);
+      sessionStorage.setItem("NavigatePassword",navigatePwd)
       setIncOtp("");
 setNewOtp("OTP sent, check your email");
     })
@@ -67,6 +70,12 @@ setNewOtp("OTP sent, check your email");
       setNewOtp("OTP sent, check your email");
     })
 }
+useEffect(()=>{
+  if(loadBool)
+  document.body.style.opacity="0.5"
+  else
+  document.body.style.opacity="1"
+},[loadBool])
   return (
     <>
     <div className="AUTHENTICATION">

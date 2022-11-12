@@ -1,7 +1,7 @@
 .FooterDiv{
     position:absolute;
-    top:83vh;
-    left:1.5vw;
+    top:86vh;
+    left:1vw;
     width:16vw;
     height:15vh;
    background: white;
@@ -19,7 +19,7 @@
     background-color:white;
 }
 .footerPara{
-    margin-top:2.5vh;
+    margin-top:1.5vh;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;

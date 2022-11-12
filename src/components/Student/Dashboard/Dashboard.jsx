@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './dashboard.css'
+import * as ReactBootStrap from "react-bootstrap";
 
 import profileimg from '../../Assests/Images/avatar.png'
 // import updateimg from '../Assests/Images/updates-img-removebg-preview.png'
@@ -28,10 +29,13 @@ const Dashboard = () => {
                 setDob(res.data.DOB)
             })
     }, [])
+    const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
+        setLoadBool(true)
         axios.get("https://erp-edumate.herokuapp.com/api/user/student/timetable/",config).
         then((res)=>{
             console.log(res.data);
+            setLoadBool(false)
             for (let i = 0; i < 30; ++i){
                 if (res.data[i].day === "Monday" && res.data[i].subject) {
                     console.log("asdf" + res.data[i].period);
@@ -41,9 +45,16 @@ const Dashboard = () => {
             }
         }).
         catch((err)=>{
+            setLoadBool(false)
             console.log(err);
         })
     },[])
+    useEffect(()=>{
+        if(loadBool)
+        document.body.style.opacity="0.5"
+        else
+        document.body.style.opacity="1"
+      },[loadBool])
             return (
                 <>
                    <Navbar />
@@ -58,33 +69,6 @@ const Dashboard = () => {
                         <div id="today_class">Today's Classes</div>
                         <div id="class_bg">
                             <div id="date">16 Nov, 2022 Wednesday</div>
-                            {/* <Classcard /> */}
-                            {/* {updateCdArr.map(CreateUpdateCard)} */}
-                            {/* <div id="class1" className='class'>
-                                <span className="circle_name"></span>
-                                <span className="class_name">Data Structure</span>
-                                <span className="class_time">9:20-10:10</span>
-                            </div> */}
-                            {/* <div id="class2" className='class'>
-                                <span className="circle_name"></span>
-                                <span className="class_name">Data Structure</span>
-                                <span className="class_time">9:20-10:10</span>
-                            </div>
-                            <div id="class3" className='class'>
-                                <span className="circle_name"></span>
-                                <span className="class_name">Data Structure</span>
-                                <span className="class_time">9:20-10:10</span>
-                            </div>
-                            <div id="class4" className='class'>
-                                <span className="circle_name"></span>
-                                <span className="class_name">Data Structure</span>
-                                <span className="class_time">9:20-10:10</span>
-                            </div>
-                            <div id="class5" className='class'>
-                                <span className="circle_name"></span>
-                                <span className="class_name">Data Structure</span>
-                                <span className="class_time">9:20-10:10</span>
-                            </div> */}
                         </div>
                         <div id="right">
                             <div id="profile_details">Profile Details</div>
@@ -101,6 +85,7 @@ const Dashboard = () => {
                             <div id="card31"></div>
                         </div>
                     </div>
+                    {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
                 </>
             )
         }

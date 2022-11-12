@@ -5,8 +5,15 @@ import profileimg from '../../Assests/Images/avatar.png'
 import updateimg from '../../Assests/Images/updates-img-removebg-preview.png'
 import Chart from '../../utils/Pie/Pie'
 import Navbar from '../../utils/Navbar/Navbar'
+import * as ReactBootStrap from "react-bootstrap";
 
 const FacDashboard = () => {
+    // useEffect(()=>{
+    //     if(loadBool)
+    //     document.body.style.opacity="0.5"
+    //     else
+    //     document.body.style.opacity="1"
+    //   },[loadBool])
     return (
         <>
            <Navbar />
@@ -56,6 +63,7 @@ const FacDashboard = () => {
                     <div id="card3"></div>
                 </div>
             </div>
+            {/* {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null} */}
         </>
     )
 }

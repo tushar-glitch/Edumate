@@ -2,18 +2,14 @@ import React from "react";
 
 function SAttendCard(props){
     return <>
-    <table className="tableCard">
-    <tr>
-        <td id="SCdMonth">{props.month}</td>
-        <td id="SCdDate">{props.date}</td>
-        <td id="SCdStatus">{props.status}</td>
-    </tr>
-    </table>
-{/* <div className="FCardRow">
-<span >{props.month}</span>
-<span >{props.date}</span>
-<span >{props.status}</span>
-</div> */}
+    <div className="stA1CardRow">
+<span id="SCdDate1">{props.date}</span>
+<span id="SCdDay1">{props.day}</span>
+<span id="ScdTime1">{props.period}</span>
+<div id="attendbarNew">
+<span id="SCdStatus1">true</span>
+   </div>
+   </div>
     </>
 }
 export default SAttendCard;

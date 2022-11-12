@@ -5,6 +5,7 @@ import AdminComponent from "./Admin_department/AdminDptComp1";
 import AdminClComponent from "./Admin_class/adminClComp";
 import "../Dept_class/Admin_department/admin_Dept.css";
 import AdmBar from "../admin_bar/AdmBar";
+
 function AdminAddDeptClass (){
     return <>
     <AdmBar />

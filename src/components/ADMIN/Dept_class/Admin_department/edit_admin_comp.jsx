@@ -2,9 +2,10 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
+import AdmBar from "../../admin_bar/AdmBar";
  function EditDeptComp (){
-    const editDeptIdNew = localStorage.getItem("editDeptId");
-    const editDeptNameNew = localStorage.getItem("editDeptName");
+    const editDeptIdNew = sessionStorage.getItem("editDeptId");
+    const editDeptNameNew = sessionStorage.getItem("editDeptName");
     const [deptName,setDeptName] = useState(editDeptNameNew);
     const [deptId,setDeptId] = useState(editDeptIdNew);
     function handleDeptName(e){
@@ -13,8 +14,8 @@ import { useNavigate } from "react-router-dom";
     function handleDeptId(e){
         setDeptId(e.target.value);
     }
-    const [AdminDeptArr,setAdminDeptArr] = useState(localStorage.getItem("Admin_department_array"))
-const adminAccessToken = localStorage.getItem("Admin_access_token");
+    const [AdminDeptArr,setAdminDeptArr] = useState(sessionStorage.getItem("Admin_department_array"))
+const adminAccessToken = sessionStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
 const config = {
     headers:{
@@ -53,11 +54,12 @@ const config = {
         })
     }
     return <>
- <div className="updateOuterDiv">
+    <AdmBar />
+ <div className="updateOuterDiv" id="DEPART">
     <div className="addInnerBlock">
-        <div className="add-new-dept">Add New Department</div>
+        <div className="add-new-dept">Edit Department</div>
         <label for="dept-name" className="dept_head">Department Name</label><br />
-        <input type="text" id="dept-name" className="dept_head_input" value={deptName} onChange={handleDeptName} /><br />
+        <input type="text" id="dept-name2" className="dept_head_inputD" value={deptName} onChange={handleDeptName} /><br />
         <label for="dept-id" className="dept_head_id">Department Id</label><br />
         <input type="text" id="dept-id" className="dept_head_id_input" value={deptId} onChange={handleDeptId} /><br />
         <button className="cancel_add_dept" onClick={handlePostEditClassApi}>Continue</button>

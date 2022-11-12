@@ -2,6 +2,7 @@ import React from "react";
 import "./Fattend2.css";
 import FCard2 from "./FAttendCard2";
 import FAttend2Array from "./FAttendArray2";
+import * as ReactBootStrap from "react-bootstrap";
 function FAttendance2(){
     function CreateFAttendCard2(FAttend2Array){
         return (
@@ -22,6 +23,7 @@ function FAttendance2(){
     {FAttend2Array.map(CreateFAttendCard2)}
 </div>
 </div>
+  {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>
 }
 export default FAttendance2;

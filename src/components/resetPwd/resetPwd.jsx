@@ -32,20 +32,10 @@ function ResetPwd() {
   useEffect(() => {
     if (rightpass.test(pass)) {
       document.getElementById("wrongpass1").style.display = "none";
-      // document.getElementById("confirm-pass").style.top = 348 +'px';
-      // document.getElementById("confirm-pass-input").style.top = 370 +'px';
-      // document.getElementById("pEye2").style.top = 383 +'px';
-      // document.getElementById("btn-reset").style.top = 470 +'px';
-      // document.getElementById("passMatch").style.top=412+'px';
 setIsPass(true)
       console.log("true");
     } else if (pass) {
       document.getElementById("wrongpass1").style.display = "block";
-      // document.getElementById("confirm-pass").style.top = 371 +'px';
-      // document.getElementById("confirm-pass-input").style.top = 393 +'px';
-      // document.getElementById("pEye2").style.top = 406 +'px';
-      // document.getElementById("btn-reset").style.top = 490 +'px';
-      // document.getElementById("passMatch").style.top=438+'px';
     }
   }, [pass]);
   useEffect(() => {
@@ -87,6 +77,12 @@ const [loadBool,setLoadBool] = useState(false);
           document.getElementById("passMatch").style.display = "block";
       }
     }
+    useEffect(()=>{
+      if(loadBool)
+      document.body.style.opacity="0.5"
+      else
+      document.body.style.opacity="1"
+    },[loadBool])
   return (
     <>
     <div className="AUTHENTICATION">

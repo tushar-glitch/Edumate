@@ -230,6 +230,21 @@ background: none;
     color: #ff0000;
     display: none;
 }
+#chngPassNew {
+    position: absolute;
+    width: 45vw;
+    height: 3vh;
+    left: 2vw;
+    top: 69vh;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    background: none;
+    color: #ff0000;
+    display: none;
+}
 
 @media (min-width:200px) and (max-width:920px) {
 .updateWhiteDiv{

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../../utils/Navbar/Navbar";
 import TimeT from "./TimeTable";
+import * as ReactBootStrap from "react-bootstrap";
 import "./TT.css" ;
  function Timetable (){
    const accessToken = sessionStorage.getItem("access token");
@@ -17,20 +18,24 @@ import "./TT.css" ;
    const [subject,setSubject] = useState([]);
    const [mainArray, setMainArray] = useState([]);
    const [fac,setFac] = useState([]);
-
+const [loadBool,setLoadBool] = useState(false)
    useEffect(()=>{
+      setLoadBool(true)
       axios.get("https://erp-edumate.herokuapp.com/api/user/student/timetable/",config).
       then((res)=>{
           console.log(res.data);
+          setLoadBool(false)
           setMainArray(res.data);
           console.log(mainArray)
           for(let i=0;i<30;i++){
               setSubject([...new Set(res.data.map((subjectArray)=>subjectArray.subject))])
             }  
             console.log(subject);
-         for(let i=0;i<subject.length();i++){
+         for(let i=0;i<subject.length;i++){
             for(let j=0;j<30;j++){
-               if(subject[i]===res.data[j].subject){
+               console.log("djan");
+               if(subject[i]==res.data[j].subject){
+                  console.log(res.data[j].subject);
                   setFac(oldFac=>[...oldFac,res.data[i].subject]);
                   break;
                }
@@ -39,14 +44,22 @@ import "./TT.css" ;
       }).
       catch((err)=>{
           console.log(err);
+          setLoadBool(false)
       })
   },[])
 console.log(fac);
   console.log(subject)
   useEffect(()=>{
    console.log(subject);
-  },[subject])
-
+   console.log(fac);
+  },[subject,fac])
+  
+  useEffect(()=>{
+   if(loadBool)
+   document.body.style.opacity="0.5"
+   else
+   document.body.style.opacity="1"
+ },[loadBool])
     return <>
     <Navbar />
     <div className="TIMETABLE">
@@ -73,6 +86,7 @@ console.log(fac);
 </ul>
     </div>
     </div>
+    {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>
  }
  export default Timetable;

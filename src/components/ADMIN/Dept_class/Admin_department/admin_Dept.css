@@ -87,7 +87,7 @@ text-align: end;
     display:flex;
     flex-wrap: wrap;
     background:none;
-    margin-top:1vh;
+    margin-top:4.5vh;
     justify-content: space-between;
 }
 .AdmWhiteCompField{
@@ -292,4 +292,41 @@ border:0.5px solid black;
     top:23vh;
     left:2vw;
     text-transform: capitalize;
+}
+#threeDot1{
+    background:none;
+    font-weight:700;
+    font-size: 1.35rem;
+    position:relative;
+    left:9.5vw;
+    bottom:9vh;
+    cursor: pointer;
+}
+#threeDot2{
+    background:none;
+    font-weight:700;
+    font-size: 1.35rem;
+    position:relative;
+    left:11.3vw;
+    bottom:14.1vh;
+    cursor: pointer;
+}
+#DEPART{
+    width:100vw;
+    height:91vh;
+    margin-left:-1.5vw;
+    margin-top:-1vh;
+}
+.dept_head_inputD{
+    
+    box-sizing: border-box;
+    position: absolute;
+    width: 19vw;
+    height: 5vh;
+    margin-left: 1.5vw;
+    top: 19vh;
+    padding-left: 5px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
 }

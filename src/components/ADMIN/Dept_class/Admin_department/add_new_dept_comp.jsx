@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
+import AdmBar from "../../admin_bar/AdmBar";
  function AddNewDeptComp (){
     const [deptName,setDeptName] = useState("");
     const [deptId,setDeptId] = useState("");
@@ -12,7 +13,7 @@ import { useNavigate } from "react-router-dom";
         setDeptId(e.target.value);
     }
     const [AdminDeptArr,setAdminDeptArr] = useState(localStorage.getItem("Admin_department_array"))
-const adminAccessToken = localStorage.getItem("Admin_access_token");
+const adminAccessToken = sessionStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
 const config = {
     headers:{
@@ -56,11 +57,12 @@ const config = {
         })
     }
     return <>
+    <AdmBar />
  <div className="updateOuterDiv">
     <div className="addInnerBlock">
         <div className="add-new-dept">Add New Department</div>
         <label for="dept-name" className="dept_head">Department Name</label><br />
-        <input type="text" id="dept-name" className="dept_head_input" value={deptName} onChange={handleDeptName} /><br />
+        <input type="text" id="dept-nameD" className="dept_head_inputD" value={deptName} onChange={handleDeptName} /><br />
         <label for="dept-id" className="dept_head_id">Department Id</label><br />
         <input type="text" id="dept-id" className="dept_head_id_input" value={deptId} onChange={handleDeptId} /><br />
         <p className="newDeptErr">{newDeptErrMsg}</p>

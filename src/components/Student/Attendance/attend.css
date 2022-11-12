@@ -79,27 +79,32 @@ width:65vw;
 .attendPer{
     width:17.5vw;
 }
-.SAttendCardCall1{
+.SAttendCardCallA2{
     display: flex;
     flex-direction: column;
-    margin-top: 3.5vh;
+    margin-top:0vh;
     background: none;
 }
 #SCdCode{
     background: none;
-    margin-left:2vw;
+    /* margin-left:2vw; */
+    position:absolute;
+    left:4vw;
     font-size: 0.9rem;
     color:black;
+    text-transform:uppercase;
 }
 #SCdAttend{
     background: none;
-    margin-left:10vw;
+    position:absolute;
+    left:33.5vw;
     font-size: 0.9rem;
     color:black;
 }
 #SCdTotal{
     background: none;
-    margin-left:5.5vw;
+    position:absolute;
+    left:43vw;
     font-size: 0.9rem;
     color:black;
 }
@@ -111,21 +116,22 @@ width:65vw;
 }
 #SCdSub{
     background: none;
-    margin-left:7vw;
-    width:10vw;
+    position:absolute;
+    left:12vw;
+    /* width:40vw; */
     font-size: 0.85rem;
     color:black;
+    cursor:pointer;
+    text-decoration: underline;
 }
 .stA1CardRow{
-    /* position:absolute;
-    top:1vh;
-    left:1vw; */
-    margin-left:1.5vw;
+    margin-left:1vw;
     box-sizing: border-box;
 height:8vh;
 border-radius: 6px 6px 4px 4px;
 background: none;
-background-color: #6C63FF;
+/* background-color: #6C63FF; */
+background-color: #EEF1FF;;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 500;
@@ -134,8 +140,8 @@ line-height: 37px;
 color: #FFFFFF;
 text-align: center;
 padding-top: 2vh;
-width:64vw;
-margin-bottom:4vh;
+width:65vw;
+margin-bottom:1vh;
 }
 .tableSub {
    background-color: #FFFFFF;
@@ -258,7 +264,6 @@ line-height: 20px;
     border: 1px solid #D9D9D9;
     border-radius: 4px;
     position:absolute;
-    top:21vh;
     left:50vw;
 }
 #bar2{
@@ -267,7 +272,7 @@ line-height: 20px;
 .progressBar {
     z-index: 5;
     box-sizing: border-box;
-    width:10vw;
+    width:10%;
 height:4.4vh;
     background-color: #62DDB0;
 border-radius: 4px;

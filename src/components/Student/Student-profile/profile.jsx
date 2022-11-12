@@ -4,10 +4,12 @@ import avatar from '../../Assests/Images/avatar.png'
 import Navbar from '../../utils/Navbar/Navbar'
 import ProfileInputField from '../../utils/ProfileInputField'
 import ProfileInputDisabled from '../../utils/ProfileInputDiabled'
+import * as ReactBootStrap from "react-bootstrap";
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
 import axiosInstance from '../../utils/axiosInstance'
+import { setUncaughtExceptionCaptureCallback } from 'process'
 
 const Profile = () => {
     const [profileName,setProfileName] = useState(null);
@@ -27,6 +29,7 @@ const Profile = () => {
 
     const [editAble,setEditAble]=useState(false);
     const [show,setShow] = useState(false)
+    const [loadBool,setLoadBool] = useState(false);
     function handleEditProfile(){
 setEditAble(true);
 console.log(editAble);
@@ -42,6 +45,7 @@ if (!show) {
        document.getElementById('cancelButton').style.display = "none";
    }
 }
+sessionStorage.setItem("StudentName",profileName)
 
 const [show3,setShow3] = useState(false);
    function handleEditPName(e){
@@ -96,8 +100,10 @@ const [show3,setShow3] = useState(false);
       }
    }
    useEffect(()=>{
+      setLoadBool(true)
       axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
          console.log(res);
+         setLoadBool(false)
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
@@ -111,8 +117,10 @@ const [show3,setShow3] = useState(false);
          setProfileMother(res.data.mother_phone);
          setProfileMotherName(res.data.mother_name);
          setProfileFatherName(res.data.father_name);
+         setProfileEmail(res.data.email)
          console.log(postData)
       }).catch(err=>{
+         setLoadBool(false)
          console.log(err);
       })
    },[])
@@ -203,6 +211,12 @@ const [show3,setShow3] = useState(false);
          setProfileMotherName(res.data.mother_name);
       })
   }
+  useEffect(()=>{
+   if(loadBool)
+   document.body.style.opacity="0.5"
+   else
+   document.body.style.opacity="1"
+ },[loadBool])
     return ( 
         <>
             <Navbar/>
@@ -296,6 +310,7 @@ const [show3,setShow3] = useState(false);
                 <div className='CONTACT'>
             </div>
             </div>
+            {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
         </>
     )
 }

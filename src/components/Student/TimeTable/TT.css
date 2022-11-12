@@ -89,7 +89,8 @@ line-height: 22px;
 color: #6C63FF;
 position:absolute;
 left:2vw;
-top:78vh;
+top:84vh;
+background:none;
 
 }
 .faculty {
@@ -101,15 +102,17 @@ font-size: 18px;
 line-height: 22px;
 color: #6C63FF;
 position:absolute;
-left:26vw;
-top:78vh;
+left:28vw;
+top:84vh;
+background:none;
 }
 .subList {
     position:absolute;
-    top:85vh;
-    left:2.5vw;
+    top:90vh;
+    left:0vw;
     list-style: none;
-    background-color:  #ffffff;
+    background:none;
+    /* background-colorrgb(13, 11, 11)fff; */
 }
 .subList li {
     background-color:  #ffffff;
@@ -127,6 +130,7 @@ margin-bottom: 2vh;
     top:85vh;
     left:26vw;
     list-style: none;
+    background:none;
 }
 .facList li {
     background-color:  #ffffff;

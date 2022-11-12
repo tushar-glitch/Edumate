@@ -14,6 +14,7 @@ import useRefreshToken from "../refreshToken";
 import axiosInstance from "../utils/axiosInstance";
 import LoadingScreen from "../utils/LoadingScreen";
 const Formlogin = () => {
+  sessionStorage.clear();
   const [userID, setuserID] = useState("");
   const [password, setPassword] = useState("");
   function handleuserID(e) {
@@ -98,6 +99,7 @@ const [playLoad, setPlayLoad] = useState(false);
 //   console.log(loadingScreen)
 // },[loadingScreen])
 // console.log(loadBool)
+const [routeToLogin ,setRouteToLogin]= useState(false);
 const userIdFirstDigit = String(userID)[0];
  function postdata() {
 
@@ -117,8 +119,13 @@ const userIdFirstDigit = String(userID)[0];
           console.log(refreshToken);
           if (accessToken && refreshToken) {
             storeTokenData(accessToken, refreshToken);
+setRouteToLogin(true);
+console.log(routeToLogin)
+sessionStorage.setItem("Route_to_login",routeToLogin)
             console.log(userIdFirstDigit)
             sessionStorage.setItem("LoggedInUserId" ,userIdFirstDigit)
+            sessionStorage.setItem("UserIdLogger",userID);
+          
             {if(userIdFirstDigit==1){
               navigate("/facDashboard")
               console.log("aDBHMASHF");
@@ -218,11 +225,12 @@ localStorage.removeItem("expiry time");
     sessionStorage.setItem("access token", accessToken);
     sessionStorage.setItem("refresh token", refreshToken);
   }
-  // useEffect(()=>{
-  //   if(playLoad){
-  //     {loadBool?navigate("/loadingScreen"):navigate("/")}
-  //   }
-  // },[playLoad,loadBool])
+  useEffect(()=>{
+    if(loadBool)
+    document.body.style.opacity="0.5"
+    else
+    document.body.style.opacity="1"
+  },[loadBool])
   return (
  
     <div className="AUTHENTICATION">

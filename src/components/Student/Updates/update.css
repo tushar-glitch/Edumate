@@ -14,14 +14,44 @@
 .updateWhiteDiv {
     background-color: #ffffff;
     position:absolute;
+    box-sizing:border-box;
     width: 67vw;
 height: fit-content;
-left: 27vw;
-top: 26vh;
+/* left: 27vw; */
+/* top: 26vh; */
 border-radius: 15px;
 z-index:5;
 }
-
+.updateDivBlock{
+    background-color: #ffffff;
+    margin-left:25vw;
+    margin-top: 30vh;
+    top:26vh;
+    border-radius: 15px;
+z-index:5;
+    /* position:absolute; */
+    box-sizing:border-box;
+    width: 67vw;
+    padding-top:5vh;
+height: fit-content;
+}
+.stUpdRowS{
+    width: 63vw;
+height: 10vh;
+background: #6C63FF;
+border-radius: 8px;
+text-align: center;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 37px;
+color: #FFFFFF;
+padding-top:2vh;
+z-index:20;
+margin-top:-2vh;
+margin-left:2vw;
+}
 .updateGreyRow{
     position: absolute;
 width: 63vw;
@@ -50,15 +80,15 @@ z-index:20;
 #imageDiv{
     height:fit-content;
 }
-.UpdateCardCall{
+.SUpdateCardCall{
     display:flex;
     flex-direction: column;
     background: none;
-    margin-top:20vh;
+    margin-top:5vh;
 }
-.updateCardRow{
+.updateCardRowS{
     margin-left:2vw;
-    width: 69vw;
+    width: 63vw;
     height: fit-content;
     border-radius: 8px;
     z-index:20;

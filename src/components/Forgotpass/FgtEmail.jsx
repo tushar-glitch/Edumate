@@ -24,6 +24,7 @@ const[ckEmail,setCkEmail] = useState(false);
   },[email]);
 const [emValid,setEmValid] = useState("");
 const [loadBool,setLoadBool] = useState(false);
+const [navigateOtp,setNavigateOtp] = useState(false);
 const navigate = useNavigate();
 function postemail() {
   setLoadBool(!loadBool);
@@ -33,6 +34,8 @@ function postemail() {
     .then((res) => {
       console.log(res.data);
       localStorage.setItem("email", email);
+      setNavigateOtp(true);
+      sessionStorage.setItem("NavigateOtp",navigateOtp)
       setLoadBool(false);
       // {value2?<Navigate to="/otp" />:null}
     })
@@ -49,6 +52,12 @@ else
   document.getElementById("wrongemail").style.display = "block";
 }
 }
+useEffect(()=>{
+  if(loadBool)
+  document.body.style.opacity="0.5"
+  else
+  document.body.style.opacity="1"
+},[loadBool])
   return (
     <div className="AUTHENTICATION">
       <Background />

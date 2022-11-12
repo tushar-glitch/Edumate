@@ -15,8 +15,8 @@ border-radius: 8px;
     line-height: 22px;
     margin-left:1.5vw;
     background:none;
-    position:relative;
-    top:3vh;
+    position:absolute;
+    top:24.3vh;
 }
 .sec_head{
     font-family: 'Montserrat';
@@ -26,8 +26,8 @@ border-radius: 8px;
     line-height: 22px;
     margin-left:1.5vw;
     background:none;
-    position:relative;
-    top:6vh;
+    position:absolute;
+    top:34vh;
 }
 .class_head{
     font-family: 'Montserrat';
@@ -37,8 +37,8 @@ border-radius: 8px;
     line-height: 22px;
     margin-left:1.5vw;
     background:none;
-    position:relative;
-    top:9vh;
+    position:absolute;
+    top:44.2vh;
 }
 #dept{
     font-size: 1.1rem;
@@ -48,8 +48,8 @@ border-radius: 8px;
     position: absolute;
     width: 19vw;
     height: 5vh;
-    margin-left: 1.5vw;
-    top: 18vh;
+    margin-left: 10.3vw;
+    top: 28vh;
     padding-left: 5px;
     background: #FFFFFF;
     border: 1px solid #D9D9D9;
@@ -76,7 +76,7 @@ border-radius: 8px;
     width: 19vw;
     height: 5vh;
     margin-left: 1.5vw;
-    top: 38.5vh;
+    top: 37.8vh;
     padding-left: 5px;
     background: #FFFFFF;
     border: 1px solid #D9D9D9;
@@ -88,7 +88,7 @@ border-radius: 8px;
     width: 19vw;
     height: 5vh;
     margin-left: 1.5vw;
-    top: 48.7vh;
+    top: 47.8vh;
     padding-left: 5px;
     background: #FFFFFF;
     border: 1px solid #D9D9D9;
@@ -101,4 +101,10 @@ top:55.5vh;
 #class_cancel{
     position:absolute;
     top:63vh;
+}
+.classAddDept{
+    font-size:1rem;
+   margin-top:-4vh;
+   margin-left:0.5vw;
+    background:none;
 }

@@ -2,12 +2,19 @@ import React from "react";
 import "./FAttend1.css";
 import FCard1 from "./FAttendCard";
 import FAttend1Array from "./FAttendArray";
+import * as ReactBootStrap from "react-bootstrap";
 function FAttendance1(){
     function CreateFAttendCard(FAttend1Array){
         return (
         <FCard1 date={FAttend1Array.date} time={FAttend1Array.time} subject={FAttend1Array.subject} class={FAttend1Array.class} />
         )
     }
+    // useEffect(()=>{
+    //     if(loadBool)
+    //     document.body.style.opacity="0.5"
+    //     else
+    //     document.body.style.opacity="1"
+    //   },[loadBool])
     return <>
      <h1 className="dbAttend" id="DbAttendance">Dashboard : Attendance </h1>
     <div className="FAttendanceOne">
@@ -23,6 +30,7 @@ function FAttendance1(){
 </div>
 {/* <FCard1 date="" time="" subject="" class="" /> */}
 </div>
+  {/* {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null} */}
     </>
 }
 export default FAttendance1;
