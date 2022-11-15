@@ -1,0 +1,36 @@
+#adminSideBar li{
+    margin-bottom:3vh;
+}
+#adminSideBar li {
+    width: 13vw;
+    height:4vh ;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(1.3vw);
+    line-height: 20px;
+    background: none;
+    margin-bottom: 4vh;
+    cursor: pointer;
+    color:black;
+}
+.admSidebarIcon{
+    z-index: 50;
+    background: none;
+    position:absolute;
+    /* background-color: #000000; */
+    left:0.2vw;
+    margin-bottom:-4vh;
+    /* margin-bottom:1vh; */
+}
+.admSideBarListValue{
+    background: none;
+    position:absolute;
+    left:3.5vw;
+    padding-top: 0vh;
+    height:8vh;
+}
+#adminSideBar li:hover {
+    color: #6C63FF;
+    
+}

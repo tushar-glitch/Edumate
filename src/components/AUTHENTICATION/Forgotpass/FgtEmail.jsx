@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import Background from "../Background/Background";
 import EmailImg from "./emailImg";
 import "./FgtEmail.css";
@@ -27,12 +29,18 @@ const [loadBool,setLoadBool] = useState(false);
 const [navigateOtp,setNavigateOtp] = useState(false);
 const navigate = useNavigate();
 function postemail() {
-  setLoadBool(!loadBool);
+
   console.log("ahgfj");
   if(ckEmail){
+    setLoadBool(true);
   axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
     .then((res) => {
+      toast.success("OTP sent successfully",{
+        position: "top-center",
+    background:"none"
+      })
       console.log(res.data);
+      navigate("/otp")
       localStorage.setItem("email", email);
       setNavigateOtp(true);
       sessionStorage.setItem("NavigateOtp",navigateOtp)
@@ -41,10 +49,12 @@ function postemail() {
     })
     
     .catch((err) => {
-      navigate("/otp")
+      toast.error(err.response.data.msg+" "+email,{
+        position: "top-center",
+    background:"none"
+      })
       console.log(err);
       setLoadBool(false);
-      setEmValid("Please enter a valid email id");
     })
 }
 else
@@ -81,6 +91,7 @@ useEffect(()=>{
         <span id="emailValid">{emValid}</span>
       <EmailImg />
       {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
+      <ToastContainer />
     </div>
   );
 }

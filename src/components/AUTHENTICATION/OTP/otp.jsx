@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 import Background from "../Background/Background";
 import OTPImg from "./otpImg";
@@ -27,47 +29,56 @@ function OTP() {
   const [loadBool,setLoadBool] = useState(false);
   const navigate = useNavigate();
   function postotp(){
-    setLoadBool(!loadBool);
+    setLoadBool(true);
     console.log(email);
     var data = { email, otp }
     axios.post("https://erp-edumate.herokuapp.com/api/user/verifyotp/", data)
       .then((res) => {
         console.log(res);
         localStorage.setItem("otp",otp)
-        setIncOtp("");
-        setNewOtp("");
+        setNavigateOtpToPwd(true);
+        sessionStorage.setItem("NavigatePassword",navigateOtpToPwd)
         navigate("/rstPwd");
         setLoadBool(false)
       })
       .catch((err) => {
         console.log(err);
-        setIncOtp("Incorrect OTP");
-        setNewOtp("");
+        toast.error(err.response.data.msg,{
+          position: "top-center",
+      background:"none"
+        })
         setLoadBool(false)
+        setNavigateOtpToPwd(false);
       })
 }
 const [newOtp,setNewOtp]= useState("");
-const [navigatePwd,setNavigatePwd] = useState(false);
+const [navigateOtpToPwd,setNavigateOtpToPwd] = useState(false);
 function postResOtp(){
-  setLoadBool(!loadBool);
+  setLoadBool(true);
   localStorage.removeItem("otp");
   var data = { email }
   setSeconds(59);
   axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", data)
     .then((res) => {
       console.log(res);
+      toast.success("OTP sent successfully on "+email,{
+        position: "top-center",
+    background:"none"
+      })
       localStorage.setItem("otp",otp)
       setLoadBool(false);
-      setNavigatePwd(true);
-      sessionStorage.setItem("NavigatePassword",navigatePwd)
-      setIncOtp("");
-setNewOtp("OTP sent, check your email");
+      setNavigateOtpToPwd(true);
+      sessionStorage.setItem("NavigatePassword",navigateOtpToPwd)
+      // navigate("/rstPwd");
     })
     .catch((err) => {
       console.log(err);
+      toast.error(err.response.data.msg+" "+email,{
+        position: "top-center",
+    background:"none"
+      })
       setLoadBool(false);
-      setIncOtp("");
-      setNewOtp("OTP sent, check your email");
+      setNavigateOtpToPwd(false);
     })
 }
 useEffect(()=>{
@@ -76,6 +87,13 @@ useEffect(()=>{
   else
   document.body.style.opacity="1"
 },[loadBool])
+
+useEffect(()=>{
+  toast.success("OTP sent successfully on "+email,{
+    position: "top-center",
+background:"none"
+  })
+},[])
   return (
     <>
     <div className="AUTHENTICATION">
@@ -93,12 +111,11 @@ useEffect(()=>{
       <span id="no-otp-recieved">Don’t recieve an OTP?</span>
       <button id="resend-otp" onClick={postResOtp}>Resend OTP</button>
       <span id="timer">00:{seconds}</span>
-      <span id="newOtp">{newOtp}</span>
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
-        <span id="inOtp">{incOTP}</span>
       <OTPImg />
       {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
       </div>
+      <ToastContainer />
     </>
   );
 }

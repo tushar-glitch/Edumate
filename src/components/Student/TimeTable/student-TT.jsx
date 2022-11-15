@@ -29,6 +29,7 @@ const [loadBool,setLoadBool] = useState(false)
           console.log(mainArray)
           for(let i=0;i<30;i++){
               setSubject([...new Set(res.data.map((subjectArray)=>subjectArray.subject))])
+              setFac([...new Set(res.data.map((facArray)=>facArray.teacher))])
             }  
             console.log(subject);
          for(let i=0;i<subject.length;i++){

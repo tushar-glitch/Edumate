@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import Background from "../Background/Background";
 import "./Form-login.css";
 import EmailIMG from "./email-icon";
@@ -9,10 +11,10 @@ import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import * as ReactBootStrap from "react-bootstrap";
-import instance from "../API";
-import useRefreshToken from "../refreshToken";
-import axiosInstance from "../utils/axiosInstance";
-import LoadingScreen from "../utils/LoadingScreen";
+// import instance from "../API";
+// import useRefreshToken from "../refreshToken";
+// import axiosInstance from "../utils/axiosInstance";
+
 const Formlogin = () => {
   sessionStorage.clear();
   const [userID, setuserID] = useState("");
@@ -29,7 +31,8 @@ const Formlogin = () => {
   }
   var isnum = /^\d+$/;
   const [iscorrectid, setIsCorrectId] = useState(false);
-  
+  const [isCorrectPwd, setIsCorrectPwd] = useState(false);
+
   useEffect(() => {
     if (isnum.test(userID)) {
       document.getElementById("wrongid").style.display = "none";
@@ -39,6 +42,18 @@ const Formlogin = () => {
       setIsCorrectId(false);
     }
   }, [userID]);
+
+  useEffect(()=>{
+if(password){
+  document.getElementById("wrongPassLogin").style.display="block";
+  setIsCorrectPwd(false);
+}
+else if(!password)
+{
+  document.getElementById("wrongPassLogin").style.display="none";
+  setIsCorrectPwd(true);
+}
+  },[password])
   const [credentials, setCredentials] = useState("");
   var data = { userID, password };
   const navigate = useNavigate();
@@ -88,36 +103,37 @@ const [loadingScreen , setLoadingScreen] = useState(false);
 const [protectedRoute,setProtectedRoute] = useState(false);
 const [loadBool,setLoadBool] = useState(false);
 const [playLoad, setPlayLoad] = useState(false);
-// function postdataCheck(){
-//   console.log("hsmv")
-// if(!bool)
-// setBool(true);
-// else
-// setBool(false);
-// }
-// useEffect(()=>{
-//   console.log(loadingScreen)
-// },[loadingScreen])
-// console.log(loadBool)
+
 const [routeToLogin ,setRouteToLogin]= useState(false);
 const userIdFirstDigit = String(userID)[0];
  function postdata() {
-
+  
   console.log(playLoad)
   setLoadBool(!loadBool);
     if (iscorrectid) {
       setPlayLoad(!playLoad)
+      setLoadBool(true)
     axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
          .then((res) => {
+          toast.success("Login Succcessful",{
+            position: "top-center",
+        background:"none"
+          })
+          console.log("dsbjh")
           console.log(res);
+            //  window.location.reload();
           setLoadBool(false);
          console.log(loadBool)
           const accessToken = res.data.token.access;
           const refreshToken = res.data.token.refresh;
           console.log(accessToken);
           console.log(refreshToken);
+
           if (accessToken && refreshToken) {
+            toast.success("Login Succcessful",{
+              position: "top-center",
+            })
             storeTokenData(accessToken, refreshToken);
 setRouteToLogin(true);
 console.log(routeToLogin)
@@ -127,6 +143,7 @@ sessionStorage.setItem("Route_to_login",routeToLogin);
             sessionStorage.setItem("UserIdLogger",userID);
           
             {if(userIdFirstDigit==1){
+           
               navigate("/facDashboard")
               console.log("aDBHMASHF");
               sessionStorage.setItem("Faculty_userId",userID)
@@ -135,12 +152,14 @@ sessionStorage.setItem("Route_to_login",routeToLogin);
             }
             if(userIdFirstDigit==2)
             {
+              // window.location.reload();
               navigate("/stu_dashboard")
               sessionStorage.setItem("Student_userId",userID)
               sessionStorage.setItem("access token", accessToken);
               console.log(accessToken)
             }
           else if(userIdFirstDigit==9){
+            // window.location.reload();
             navigate("/admin_dashboard")
             console.log("aDBHMASHF");
             sessionStorage.setItem("Admin_userId",userID)
@@ -151,14 +170,22 @@ sessionStorage.setItem("Route_to_login",routeToLogin);
       }
         })
         .catch((err) => {
+          console.log(err.response.data.errors.non_field_errors)
+          toast.error("UserID or Password is not Valid",{
+            position: "top-center",
+          })
           console.log(err);
+          console.log("dsbjh")
           setLoadBool(false);
           console.log(loadBool)
-          setCredentials("Invalid credentials.Please check your User Id or Password");
+          // setCredentials("Invalid credentials.Please check your User Id or Password");
         });
     }
       else {
+        setLoadBool(false)
+        console.log("dsbjh")
       document.getElementById("wrongid").style.display = "block";
+      document.getElementById("wrongPassLogin").style.display = "block";
       setCredentials("")
     }
   }
@@ -173,6 +200,21 @@ localStorage.removeItem("expiry time");
     else
     document.body.style.opacity="1"
   },[loadBool])
+
+/*Reset Pwd to Login*/
+
+  const pwdToLogin=sessionStorage.getItem("NavToLogin");
+
+  useEffect(()=>{
+   if(pwdToLogin){
+    toast.success("Password has been changed Successfuly !!",{
+      position: "top-center",
+  background:"none"
+    })
+    console.log("ddsvbmhcx")
+  }
+  },[pwdToLogin])
+/**/ 
   return (
  
     <div className="AUTHENTICATION">
@@ -198,6 +240,7 @@ localStorage.removeItem("expiry time");
         onChange={handlepass}
         value={password}
       />
+      <span id="wrongPassLogin">Please fill out this field</span>
       {show ? (
         <FontAwesomeIcon icon={faEye} id="eye" onClick={showHide} />
       ) : (
@@ -208,8 +251,9 @@ localStorage.removeItem("expiry time");
       </button>
       <span id="credential">{credentials}</span>
       <Loginimg />
-      {/* <LoadingScreen /> */}
       {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
+
+      <ToastContainer />
      {/* {loadBool?navigate("/loadingScreen"):null} */}
     </div>
   );

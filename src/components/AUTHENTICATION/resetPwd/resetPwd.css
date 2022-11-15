@@ -17,6 +17,7 @@
 }
 
 #new-pass-input {
+  cursor: pointer;
   box-sizing: border-box;
   position: absolute;
   width: 26vw;
@@ -59,6 +60,7 @@
   border-radius: 5px;
   padding-left: 20px;
   font-size:16px;
+  cursor:pointer;
 }
 
 #btn-reset {

@@ -1,6 +1,6 @@
 .FooterDiv{
     position:absolute;
-    top:86vh;
+    top:82vh;
     left:1vw;
     width:16vw;
     height:15vh;
@@ -26,7 +26,29 @@
     font-size: 0.9rem;
     line-height: 18px;
     color: #000000;
-    background:white;
+    background:none;
+}
+    .privacy{
+        background:white; 
+         margin-top:1.5vh;
+        font-weight: 400;
+        font-size: 0.7rem;
+        line-height: 18px;
+        color: #000000;
+        font-family: 'Montserrat';
+        font-style: normal;
+}
+.agreement{
+    background:white; 
+    margin-top:1.5vh;
+   font-weight: 400;
+   font-size: 0.7rem;
+   line-height: 18px;
+   color: #000000;
+   margin-left:6.5vw;
+   margin-top:-4vh;
+   font-family: 'Montserrat';
+   font-style: normal;
 }
 @media (min-width:200px) and (max-width:920px) {
     .FooterDiv{

@@ -29,6 +29,7 @@ const Dashboard = () => {
                 setDob(res.data.DOB)
             })
     }, [])
+    sessionStorage.setItem("StudentName",name)
     const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
         setLoadBool(true)

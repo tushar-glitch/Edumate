@@ -1,16 +1,16 @@
-#updatediv {
+.CHNGPASS{
     position: absolute;
     top: 15vh;
 }
 
-.updateWhiteDiv {
+.CHNGPASS{
     background-color: #ffffff;
     position: absolute;
-    width: 73vw;
-    height: 80vh;
-    left: 23vw;
-    top: 26vh;
     border-radius: 15px;
+    width: 68vw;
+    height: 70vh;
+    left: 25vw;
+    top: 18vh;
 }
 
 #changepassdiv {
@@ -23,23 +23,7 @@
     border-radius: 8px;
 }
 
-.updateGreyRow {
-    position: absolute;
-    width: 69vw;
-    height: 10vh;
-    left: 2vw;
-    top: 4vh;
-    background: #6C63FF;
-    border-radius: 8px;
-    text-align: center;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.8rem;
-    line-height: 37px;
-    color: white;
-    padding-top: 2vh;
-}
+
 
 #pre_pass {
 
@@ -47,7 +31,7 @@
     width: 20vw;
     height: 3vh;
     left: 2vw;
-    top: 22vh;
+    top: 20vh;
     background:none;
     font-family: 'Montserrat';
     font-style: normal;
@@ -66,15 +50,13 @@
     left: 21px;
     top: 24vh;
     box-sizing: border-box;
-    position:absolute;
-    top:26vh;
     left:2vw;
-    width:45vw;
-    height:6vh;
+    width:37vw;
+    height:5.5vh;
 opacity: 0.9;
 padding-left:1vw;
 border: 1px solid #000000;
-border-radius: 3px;
+border-radius: 5px;
 background:none;
 font-family: 'Montserrat';
 font-style: normal;
@@ -85,18 +67,15 @@ color:#030404;
 }
 #input_new_pass{
     position: absolute;
-    left: 21px;
-    top: 24vh;
+    top: 36vh;
     box-sizing: border-box;
-    position:absolute;
-    top:39vh;
     left:2vw;
-    width:45vw;
-    height:6vh;
+    width:37vw;
+    height:5.5vh;
 opacity: 0.9;
 padding-left:1vw;
 border: 1px solid #000000;
-border-radius: 3px;
+border-radius: 5px;
 background:none;
 font-family: 'Montserrat';
 font-style: normal;
@@ -110,16 +89,13 @@ color:#030404;
     width: 10vw;
     height: 3vh;
     left: 2vw;
-    top: 35vh;
+    top: 32vh;
     background:none;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 1rem;
     line-height: 20px;
-    /* identical to box height */
-
-
     color: #252525;
 }
 #con_new_pass{
@@ -127,7 +103,7 @@ color:#030404;
     width: 20vw;
     height: 3vh;
     left: 2vw;
-    top: 50vh;
+    top: 44.5vh;
     background:none;
     font-family: 'Montserrat';
     font-style: normal;
@@ -140,14 +116,11 @@ color:#030404;
     color: #201f1f;
 }
 #input_con_new_pass{
-    position: absolute;
-    left: 21px;
-    top: 24vh;
     box-sizing: border-box;
     position:absolute;
-    top:54vh;
+    top:48vh;
     left:2vw;
-    width:45vw;
+    width:37vw;
     height:6vh;
 opacity: 0.9;
 padding-left:1vw;
@@ -166,9 +139,9 @@ color: white;
 background: #6C63FF;
 box-sizing: border-box;
 position:absolute;
-top:68vh;
+top:58vh;
 left:2vw;
-width:45vw;
+width:37vw;
 height:6vh;
 padding-left:1vw;
 border: 1px solid #000000;
@@ -182,22 +155,22 @@ line-height: 20px;
 #changepass-img{
     position: absolute;
 width: 18vw;
-height:36vh;
-left: 50vw;
-top: 29vh;
+height:38vh;
+left: 45vw;
+top: 25vh;
 background: none;
 }
 #cgPwdEye1{
     position:absolute;
-    top:41vh;
+    top:37.8vh;
     background:none ;
-    left:45.2vw;
+    left:37vw;
     height:2.2vh;
 }
 #cgPwdEye2{
     position:absolute;
-    top:55.9vh;
-    left:45.2vw;
+    top:50vh;
+    left:37vw;
     height:2.2vh;
 }
 #chngWrongpass1{

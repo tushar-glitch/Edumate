@@ -13,6 +13,8 @@ import feedbackicon from "../../Assests/Images/feedbackicon.svg";
 import ph_student from "../../Assests/Images/ph_student.svg";
 import timetableicon from "../../Assests/Images/timetableicon.svg";
 import updatesicon from "../../Assests/Images/updatesicon.svg";
+import addFaculty from "../../Assests/Images/addFaculty.svg";
+import dashboard from "../../Assests/Images/dashboard.svg";
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
@@ -43,14 +45,16 @@ const Navbar = () => {
          <div className="sideB">
             <h1 className="edum">Edumate</h1>
             <FontAwesomeIcon icon={faXmark} className="XMark" />
-            <ul className="sideList" >
-           {userIdLog==1?(<Link to="/facDashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)}
-           {userIdLog==2?(<Link to="/stu_dashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)}
+            <ul className="sideBarList" >
+           {userIdLog==1?(<Link to="/facDashboard"><li onClick={()=>{
+            window.location.reload();
+           }}><img src={dashboard} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)}
+           {userIdLog==2?(<Link to="/stu_dashboard"><li><img src={dashboard} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)}
            {/* {userIdLog==9?(<Link to="/admin_dashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)} */}
                 {userIdLog==1?(<Link to="/facProfile"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">My Profile</span></li></Link>):(null)}
-                {userIdLog==2?(<Link to="/profile"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">My Profile</span></li></Link>):(null)}
+                {userIdLog==2?(<Link to="/profile" ><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">My Profile</span></li></Link>):(null)}
                 {/* {userIdLog==1?(<Link to=""><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">My Profile</span></li></Link>):(null)} */}
-                <li><img src={attendanceicon} className="sidebarIcon" /><span className="sideBarListValue">Attendance</span></li>
+                {userIdLog==2?(<Link to="/stAttendance"><li><img src={attendanceicon} className="sidebarIcon" /><span className="sideBarListValue">Attendance</span></li></Link>):(null)}
              {userIdLog==1?(<Link to="/facFeed"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Feedback</span></li></Link>):(null)}
              {userIdLog==2?(<Link to="/feedback"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Feedback</span></li></Link>):(null)}
                 {userIdLog==1?(<Link to="/ftimetable"><li><img src={timetableicon} className="sidebarIcon" /><span className="sideBarListValue">Time Table</span></li></Link>):(null)}
@@ -75,8 +79,10 @@ const Navbar = () => {
                    {userIdLog==1?(<Link to="/facProfile"><div id='nav_name' className='dropdown_items'><img className='dropdown_img' id='dropdown_img1' src={nameimg} />Name</div></Link>):(null)}
                    {userIdLog==2?(<Link to="/profile"><div id='nav_name' className='dropdown_items'><img className='dropdown_img' id='dropdown_img1' src={nameimg} />Name</div></Link>):(null)}
                    {/* {userIdLog==9?(<Link to=""><div id='nav_name' className='dropdown_items'><img className='dropdown_img' id='dropdown_img1' src={nameimg} />Name</div></Link>):(null)} */}
-                    <Link to="/update_email"><div id='nav_ch_em' className='dropdown_items'><img className='dropdown_img' id='dropdown_img2' src={ch_em} />Change Email</div></Link>
-                    <Link to="/chngPwd"><div id='nav_ch_pass' className='dropdown_items'><img className='dropdown_img' id='dropdown_img3' src={ch_pas} />Change Password</div></Link>
+                   {userIdLog==1?( <Link to="/facUpdateEmail"><div id='nav_ch_em' className='dropdown_items'><img className='dropdown_img' id='dropdown_img2' src={ch_em} />Change Email</div></Link>):(null)}
+                   {userIdLog==2?( <Link to="/stUpdateEmail"><div id='nav_ch_em' className='dropdown_items'><img className='dropdown_img' id='dropdown_img2' src={ch_em} />Change Email</div></Link>):(null)}
+                    {userIdLog==2?(<Link to="/studChngPwd"><div id='nav_ch_pass' className='dropdown_items'><img className='dropdown_img' id='dropdown_img3' src={ch_pas} />Change Password</div></Link>):(null)}
+                    {userIdLog==1?(<Link to="/facChngPwd"><div id='nav_ch_pass' className='dropdown_items'><img className='dropdown_img' id='dropdown_img3' src={ch_pas} />Change Password</div></Link>):(null)}
                     <Link to="/logout"><div id='nav_logout' className='dropdown_items'><img className='dropdown_img' id='dropdown_img4' src={logout} />Logout</div></Link>
                 </div>
             </div>

@@ -22,10 +22,10 @@ function SAttendCard(props){
 <span id="StCdStatus1">true</span>
    </div>
    </div> */}
-   <div className="stAttCardRow">
-<span id="StCdDate1">props.date</span>
-<span id="StCdDay1">props.day</span>
-<span id="StcdTime1">props.period</span>
+   <div className="stAttCardRowNew">
+<span id="StCdDate1">{props.date}</span>
+<span id="StCdDay1">{props.day}</span>
+<span id="StcdTime1">{props.period}</span>
 <div id="attendbarNew">
 <span id="StCdStatus1">Present</span>
    </div>

@@ -57,8 +57,31 @@ color: #000000;
 #profileImage{
     background:none;
     width:12vw;
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    height: 24vh;
+    width: 12vw;
+    border-radius: 45%;
 }
-
+#dis-name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    background:none;
+    color: #6C63FF;
+    position:absolute;
+    top:25.5vh;
+    left:3vw;
+}
+.avatarInfo{
+    background:none;
+    position:absolute;
+    top:29.5vh;
+    left:2.2vw;
+}
 #heading1 {
     position: absolute;
     width: 229px;
@@ -103,7 +126,13 @@ color: #000000;
     background-color: white;
     color: #000000;
 }
-
+#wrongName {
+    position:absolute;
+    top:36vh;
+    left:38vw;
+    width:20vw;
+    color:rgba(255,0,0,0.7)
+}
 #sex {
     background-color: white;
     position: absolute;
@@ -117,7 +146,27 @@ color: #000000;
     font-size: 14px;
     line-height: 17px;
 }
-
+.dropdownGender{
+    position: absolute;
+    top:35vh;
+    left:38vw;
+    background:none;
+    background:none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+    color:black;
+width: 12vw;
+height: 5vh;
+border: 0.5px solid #D9D9D9;
+border-radius: 8px;
+padding-left: 6px;
+/* border:1px solid rgba(104, 101, 101, 0.05); */
+border:none;
+/* outline:none;  */
+}
 #bl-gr {
     position: absolute;
     width: 20vw;
@@ -135,7 +184,7 @@ color: #000000;
 
 #dob {
     position: absolute;
-    width: 10vw;
+    width: 13vw;
     height: 17px;
     left: 23vw;
     top: 52.4vh;
@@ -335,8 +384,7 @@ color: #000000;
 }
 .profileField {
     background:none;
-    /* border:none; */
-    /* outline:none; */
+   
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -348,6 +396,8 @@ height: 5vh;
 border: 0.5px solid #D9D9D9;
 border-radius: 8px;
 padding-left: 6px;
+border:none;
+/* border:1px solid rgba(104, 101, 101, 0.05); */
 }
 .space1 {
     position: absolute;
@@ -457,8 +507,8 @@ background:none;
             }
 #editButton {
     position:absolute;
-    top:44vh;
-    left:5vw;
+    top:45vh;
+    left:5.3vw;
 background: #FFFFFF;
 border: 1px solid #D9D9D9;
 border-radius: 8px;
@@ -469,8 +519,8 @@ border-radius: 8px;
 }
 #cancelButton {
     position:absolute;
-    top:44vh;
-    left:5vw;
+    top:45vh;
+    left:5.3vw;
 background: #FFFFFF;
 border: 1px solid #D9D9D9;
 border-radius: 8px;
@@ -482,8 +532,8 @@ border-radius: 8px;
 }
 #saveButton {
     position:absolute;
-    top:51vh;
-    left:5vw;
+    top:52vh;
+    left:5.3vw;
     width:9vw;
     height:5vh;
     padding:5px;
@@ -495,15 +545,7 @@ display: none;
 cursor: pointer;
 
 }
-#dis-name {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    background-color: white;
-    color: #6C63FF;
-}
+
 .CONTACT {
     position:absolute;
     top:67vh;

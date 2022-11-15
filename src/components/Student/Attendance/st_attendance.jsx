@@ -52,8 +52,8 @@ import * as ReactBootStrap from "react-bootstrap";
     return <>
     <Navbar />
      <h1 className="dbAttend">Dashboard : Attendance </h1>
-<div className="attend">
-<h1 className="attendHead" >Attendance</h1>
+<div className="attendATTEND">
+<h1 className="attendHeadSA" >Attendance</h1>
     <table className="attendTable" cellSpacing={0}>
         <tr className="attendRow2">
             <td className="attendData">Subject Code</td>

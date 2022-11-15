@@ -1,14 +1,19 @@
 body {
     overflow-x: hidden;
 }
-.attend{
+.attendATTEND{
     background-color: #FFFFFF;
-    height:80vh;
+    /* height:80vh; */
     width:67vw;
-    position: absolute;
-left: 27.8vw;
-top: 18vh;
+    /* position: absolute; */
+/* left: 27.8vw; */
+/* top: 18vh; */
 border-radius: 15px;
+margin-top:20vh;
+margin-left:26vw;
+height:fit-content;
+padding-top:0.5vh;
+padding-bottom:2vh;
 }
 .dbAttend{
     position: absolute;
@@ -51,10 +56,10 @@ font-size: 16px;
 line-height: 20px;
 color: #000000;
 }
-.attendHead{
+.attendHeadSA{
     position:absolute;
-    top:1vh;
-    left:1vw;
+    top:22vh;
+    left:27vw;
     box-sizing: border-box;
 height:9vh;
 border-radius: 8px 8px 0px 0px;
@@ -85,63 +90,61 @@ width:65vw;
     margin-top:0vh;
     background: none;
 }
-#SCdCode{
+#SCdCodeS{
     background: none;
     /* margin-left:2vw; */
     position:absolute;
-    left:4vw;
+    left:30vw;
     font-size: 0.9rem;
     color:black;
     text-transform:uppercase;
 }
-#SCdAttend{
+#SCdAttendS4{
     background: none;
     position:absolute;
-    left:33.5vw;
+    left:69vw;
     font-size: 0.9rem;
     color:black;
 }
-#SCdTotal{
+#SCdTotalS4{
     background: none;
     position:absolute;
-    left:43vw;
+    left:60vw;
     font-size: 0.9rem;
     color:black;
 }
 #SCdAttendPer{
     background: none;
-    margin-left:5.5vw;
+    position:absolute;
+    left:65vw;
     font-size: 0.9rem;
     color:black;
 }
-#SCdSub{
+#SCdSubS{
     background: none;
     position:absolute;
-    left:12vw;
+    left:39vw;
     /* width:40vw; */
     font-size: 0.85rem;
     color:black;
     cursor:pointer;
     text-decoration: underline;
 }
-.stA1CardRow{
+ .studentAttendCardRow   {
     margin-left:1vw;
     box-sizing: border-box;
 height:8vh;
-border-radius: 6px 6px 4px 4px;
 background: none;
-/* background-color: #6C63FF; */
 background-color: #EEF1FF;;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 500;
 font-size: 30px;
 line-height: 37px;
-color: #FFFFFF;
 text-align: center;
 padding-top: 2vh;
 width:65vw;
-margin-bottom:1vh;
+margin-bottom:0.1vh;
 }
 .tableSub {
    background-color: #FFFFFF;
@@ -264,12 +267,12 @@ line-height: 20px;
     border: 1px solid #D9D9D9;
     border-radius: 4px;
     position:absolute;
-    left:50vw;
+    left:76vw;
 }
 #bar2{
     top:45vh;
 }
-.progressBar {
+.progressBarSA {
     z-index: 5;
     box-sizing: border-box;
     width:10%;
@@ -279,6 +282,9 @@ border-radius: 4px;
 position:absolute;
 top:0vh;
 left:0vw;
+}
+#SCdAttendS4{
+
 }
 .responsiveTable {
     display:none;

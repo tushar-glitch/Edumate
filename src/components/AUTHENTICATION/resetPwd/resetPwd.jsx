@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import Background from "../Background/Background";
 import ResetImg from "./resPwdImg";
 import {Link, useNavigate} from "react-router-dom";
@@ -50,27 +52,37 @@ setIsPass(true)
   const navigate = useNavigate();
 const [passMsg,setPassMsg] = useState("");
 const [loadBool,setLoadBool] = useState(false);
+const [navRstToLogin, setNavRstToLogin] = useState(false)
   function rstPassword(){
-    setLoadBool(!loadBool)
+   
     var email = localStorage.getItem("email")
     console.log(email);
     var otp = localStorage.getItem("otp");
     var data={email,otp,password:pass,confirmpassword:Cpass};
       if (isPass && isCPass && pass===Cpass) {
+        setLoadBool(true)
         axios
           .post("https://erp-edumate.herokuapp.com/api/user/changepassword/",data)
           .then((res) => {
             console.log(res.data);
+            toast.success(res.data.msg,{
+              position: "top-center",
+          background:"none"
+            })
+            setNavRstToLogin(true)
+            sessionStorage.setItem("Nav_rst_Login",navRstToLogin)
             setLoadBool(false)
             sessionStorage.setItem("previous_password",Cpass)
-            setPassMsg("Password changed")
             navigate("/");
             localStorage.clear();
           })
           .catch((err) => {
             console.log(err);
+            toast.error(err.response.data.msg,{
+              position: "top-center",
+          background:"none"
+            })
             setLoadBool(false)
-            setPassMsg("Password reset failed")
           });
       }
       else{
@@ -119,6 +131,7 @@ const [loadBool,setLoadBool] = useState(false);
        <span id="pwdMsg">{passMsg}</span>
       <ResetImg />
       {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
+      <ToastContainer />
       </div>
     </>
   );

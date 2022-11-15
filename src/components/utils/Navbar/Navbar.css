@@ -15,14 +15,14 @@ body{
 
 #greetingNav {
     position: absolute;
-    width: 14vw;
+    width: 50vw;
     height: 4.5vh;
     background-color: white;
-    top: 2.5vh;
+    top: 2.65vh;
     left: 2vw;
     font-family: 'Montserrat';
     font-weight: 400;   
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 #role {
@@ -265,39 +265,57 @@ top:3.5vh;
     list-style: none;
     background-color: #000000;
 }
-
-.sideList li {
+.sideBarList{
+    background: none;
+    position: absolute;
+    left: 3vw;
+    top:20vh;
+    list-style: none;
+}
+.sideBarList li {
+   
     width: 13vw;
-    /* height:3vh ; */
+    height:4vh ;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: calc(1.3vw);
     line-height: 5px;
     background: none;
-    margin-bottom: 1vh;
+    margin-bottom: 5vh;
     cursor: pointer;
+    color:black;
   
 }
-
-.sideList li:hover {
-    color: #6C63FF;
-    /* fill:#6C63FF; */
+.sideBarList li:active{
+    text-decoration: underline;
+    text-decoration: #000000;
+    
 }
-
+.sideBarList li:hover {
+    color: #6C63FF;
+    
+}
+/* .sideList li: */
 .sidebarIcon {
     z-index: 50;
     background: none;
     position:absolute;
-    left:0vw;
+    /* background-color: #000000; */
+    left:0.2vw;
+    margin-bottom:-5vh;
+    /* margin-bottom:1vh; */
 }
 .sideBarListValue{
     background: none;
  position:absolute;
- left:0.9vw;
- margin-bottom:-10vh;
-
+ left:3.5vw;
+ padding-top: 1vh;
+ height:8vh;
+ /* background-color: #6C63FF; */
+ /* margin-bottom:-10vh; */
 }
+
 .XMark {
     display: none;
 }

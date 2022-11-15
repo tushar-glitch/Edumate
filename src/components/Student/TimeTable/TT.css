@@ -1,5 +1,6 @@
 .TIMETABLE {
     overflow-x:scroll;
+   
 }
 .StudentTimeTable{
     height:900px;
@@ -28,7 +29,7 @@ line-height: 37px;
 background: none;
 }
 .table {
-    width:65vw;
+    width:60vw;
     margin-left: 1vw;
     margin-top: 1.5vh;;
 }
@@ -127,7 +128,7 @@ margin-bottom: 2vh;
 .facList {
     background-color:  #ffffff;
     position:absolute;
-    top:85vh;
+    top:90vh;
     left:26vw;
     list-style: none;
     background:none;
@@ -276,4 +277,8 @@ font-size: 1.3rem;
     .subList{
         top:108vh;
     }
+}
+
+.TIMETABLE{
+    width:fit-content;
 }
