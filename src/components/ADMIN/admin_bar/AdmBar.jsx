@@ -19,6 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import "./admBar.css";
 import Footer from "../../utils/Footer/Footer"
+import './admin_bar.css'
 // import SideBar from '../Student/SideBar/sidebar'
 const AdmBar = () => {
     const [show,setShow] = useState(false)

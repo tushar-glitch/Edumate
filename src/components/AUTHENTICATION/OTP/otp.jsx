@@ -20,8 +20,12 @@ function OTP() {
    const timer=
     seconds>0 && setInterval(() => {
       setSeconds(seconds-1)
-    },1000);
-    return ()=> clearInterval(timer);
+    }, 1000);
+    if (seconds <= 0) {
+      document.getElementById('resend-otp').disabled = false;
+    }
+    return () => clearInterval(timer);
+    
   },[seconds]);
 
   let email = localStorage.getItem("email")
@@ -109,7 +113,7 @@ background:"none"
       />
       <br />
       <span id="no-otp-recieved">Don’t recieve an OTP?</span>
-      <button id="resend-otp" onClick={postResOtp}>Resend OTP</button>
+      <button id="resend-otp" onClick={postResOtp} disabled>Resend OTP</button>
       <span id="timer">00:{seconds}</span>
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
       <OTPImg />

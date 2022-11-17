@@ -192,3 +192,21 @@
     background: none;
     color: #000000;
 }
+
+#assign_card{
+    position: absolute;
+    height: 10vh;
+    width: 47vw;
+    left: 2vw;
+    background-color: #EEF1FF;
+    top: 50vh;
+    border-radius: 8px;
+ /* position: absolute;
+    width: 47vw;
+    height: 7vh;
+    left: 2vw;
+    top: 35vh;
+
+    background: #6C63FF;
+    border-radius: 8px; */
+}

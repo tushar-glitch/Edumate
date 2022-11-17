@@ -1,12 +1,13 @@
 import axios from "axios";
 import React from "react";
 import { useState , useEffect} from "react";
-import Navbar from "../Navbar/Navbar";
-import SideBar from "../../SideBar/sidebar";
 import "./UpdateEmail.css";
 import updateEmailImg from "./updateEmailImg.svg";
 import * as ReactBootStrap from "react-bootstrap";
+import Navbar from "../Navbar/Navbar";
+import { Navigate, useNavigate } from "react-router-dom";
 function UpdateEmail() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("")
     const [otp, setOtp] = useState('')
     const userLId = sessionStorage.getItem("LoggedInUserId")
@@ -58,6 +59,9 @@ const [loadBool,setLoadBool] = useState(false)
         axios.put("https://erp-edumate.herokuapp.com/api/user/updateemail/", { email,otp }, config)
             .then((res) => {
                 console.log(res);
+                if (res.status == 200) {
+                    navigate('/')
+                }
             })
             .catch((err) => {
                 console.log(err);

@@ -46,6 +46,7 @@ function postemail() {
       sessionStorage.setItem("NavigateOtp",navigateOtp)
       setLoadBool(false);
       // {value2?<Navigate to="/otp" />:null}
+      navigate("/otp")
     })
     
     .catch((err) => {

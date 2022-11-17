@@ -234,14 +234,15 @@
     left: 1.3vw;
     background: #FFFFFF;
     border-radius: 8px;
+    top: 4vh;
 }
 
 #class1 {
-    top: 7vh;
+    top: 30vh;
 }
 
-#class2 {
-    top: 5vh;
+#class23 {
+    top: 90vh;
 }
 
 #class3 {
@@ -256,14 +257,14 @@
     top: 55vh;
 }
 
-.circle_name {
+.circle_name_plus {
     position: absolute;
     height: 5vh;
     width: 2.5vw;
     background-color: #6C63FF;
     border-radius: 50%;
-    top: 1.5vh;
-    left: 1vw;
+    top: 6.2vh;
+    left: 1.5vw;
 }
 
 .class_name1 {
@@ -271,7 +272,7 @@
     width: 14vw;
     height: 6vh;
     left: 4.5vw;
-    top: 2.8vh;
+    top: 6.2vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -281,22 +282,44 @@
     /* identical to box height */
     color: #252525;
 }
-.plus{
+.class_name9 {
     position: absolute;
-    top: -2.4vh;
-    left: 0.4vw;
+    width: 14vw;
+    height: 6vh;
+    left: 4.5vw;
+    top: 1.2vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 20px;
+    /* identical to box height */
+    color: #252525;
+}
+.plus1{
+    position: absolute;
+    top: 44.4vh;
+    left: -0.4vw;
     color: white;
     font-size: 2.5rem;
     font-weight: 500;
     background: none;
 }
-
+.plus2{
+    position: absolute;
+    top: -54.4vh;
+    left: -0.4vw;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 500;
+    background: none;
+}
 .class_time {
     position: absolute;
     width: 4vw;
     height: 2vh;
     left: 3.8vw;
-    top: 4.3vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -327,7 +350,9 @@
     color: #000000;
 
 }
-
+#ad_dash_fac{
+    /* background-color: red; */
+}
 #attendance {
 
     position: absolute;
@@ -402,6 +427,11 @@ color: #000000;
     position: absolute;
     top: 33vh;
     left: 4vw;
+}
+#ad_dash_stu{
+    position: absolute;
+    top: 0vh;
+    cursor: pointer;
 }
 @media (max-width:800px){
     #background-dash{
