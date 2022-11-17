@@ -14,6 +14,7 @@
   padding-left: 7.5vh;
 background-color: white;
 outline-color: #6c63ff;
+cursor:pointer;
 }
 
 #btnContinue {

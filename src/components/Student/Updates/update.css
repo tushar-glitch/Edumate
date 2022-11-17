@@ -72,8 +72,8 @@ z-index:20;
 }
 #updateImage{
     position:absolute;
-    left:28vw;
-    top:25vh;
+    left:50vw;
+    top:50vh;
     background: none;
     display:none;
 }

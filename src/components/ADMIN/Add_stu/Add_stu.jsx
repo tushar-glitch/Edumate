@@ -64,7 +64,8 @@ const Add_stu = () => {
   }, [loadBool])
   return (
     <>
-      <AdmBar />
+     <AdmBar />
+     <div className="ADDSTUD">
       <div id="add_stu_bg">
         <div id="add_stu_head"><span id="add_stu_heading">Add New Student</span></div>
         <div id="add_stu_name">Name</div>
@@ -86,7 +87,8 @@ const Add_stu = () => {
 
         <button onClick={senddata} id='add_stu_btn'>Done</button>
       </div>
-      {loadBool ? (<ReactBootStrap.Spinner animation="border" id="apiloader" />) : null}
+      {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
+      </div>
     </>
   )
 }

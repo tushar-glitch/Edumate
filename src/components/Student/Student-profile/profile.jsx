@@ -26,31 +26,39 @@ const Profile = () => {
     const [profileFatherName,setProfileFatherName] = useState(null);
     const [profileMotherName,setProfileMotherName] = useState(null);
     const [profileEmail,setProfileEmail] = useState(null);
-
+const [profileImage,setProfileImage] = useState(avatar);
     const [editAble,setEditAble]=useState(false);
     const [show,setShow] = useState(false)
     const [loadBool,setLoadBool] = useState(false);
+
     function handleEditProfile(){
 setEditAble(true);
 console.log(editAble);
+
 if (!show) {
    setShow(true);
    document.getElementById('saveButton').style.display = "block";
    document.getElementById('cancelButton').style.display = "block";
    document.getElementById('editButton').style.display = "none";
+   document.getElementsByClassName("profileField")[0].style.border = "solid";
+document.getElementsByClassName("dropdownGender")[0].style.border = "solid";
+
     }
    else {
        setShow(false)
        document.getElementById('saveButton').style.display = "none";
        document.getElementById('cancelButton').style.display = "none";
+       document.getElementsByClassName("profileField")[0].style.border = "none";
+document.getElementsByClassName("dropdownGender")[0].style.border="none";
+
    }
 }
 
 const [show3,setShow3] = useState(false);
-   function handleEditPName(e){
-      if (profileName.length >= 8)
-         return false;
-      else
+    function handleEditPName(e){
+      // if (profileName.length >= 10)
+      //    return false;
+      // else
          setProfileName(e.target.value)
    }
    function handleEditPEmail(e){
@@ -59,6 +67,7 @@ const [show3,setShow3] = useState(false);
    function handleEditPSex(e){
     setProfileSex(e.target.value);
    }
+   console.log(profileSex)
    function handleEditPBG(e){
     setProfileBg(e.target.value);
    }
@@ -92,7 +101,9 @@ const [show3,setShow3] = useState(false);
    function handleEditPMotherName(e){
       setProfileMotherName(e.target.value);
      }
-    
+    function handleProfileImage(){
+      setProfileImage();
+    }
    const [postData,setPostData] = useState(null);
    const accessToken = sessionStorage.getItem("access token");
    console.log(accessToken);
@@ -101,10 +112,25 @@ const [show3,setShow3] = useState(false);
          Authorization: `Bearer ${accessToken}`
       }
    }
+
+   /*VALIDATION*/
+
+   const rightName = /^[a-z ,.'-]+$/i;
+const [isCorrect , setIsCorrect] = useState(false);
+useEffect(() => {
+   if (rightName.test(profileName)) {
+     document.getElementById("wrongName").style.display = "none";
+     setIsCorrect(true);
+   } else if (profileName) {
+     document.getElementById("wrongName").style.display = "block";
+     setIsCorrect(false);
+   }
+ }, [profileName]);
    useEffect(()=>{
       setLoadBool(true)
       axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
          console.log(res);
+         console.log(res.data)
          setLoadBool(false)
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
@@ -119,7 +145,8 @@ const [show3,setShow3] = useState(false);
          setProfileMother(res.data.mother_phone);
          setProfileMotherName(res.data.mother_name);
          setProfileFatherName(res.data.father_name);
-         setProfileEmail(res.data.email)
+         setProfileEmail(res.data.email);
+         setProfileImage(res.data.picture)
          console.log(postData)
       }).catch(err=>{
          setLoadBool(false)
@@ -135,15 +162,22 @@ const [show3,setShow3] = useState(false);
          document.getElementById('saveButton').style.display = "none";
          document.getElementById('cancelButton').style.display = "none";
          document.getElementById('editButton').style.display = "block";
+         document.getElementsByClassName("profileField")[0].style.border="none";
+document.getElementsByClassName("dropdownGender")[0].style.border="none";
+
           }
          else {
              setShow2(false)
              document.getElementById('saveButton').style.display = "block";
              document.getElementById('cancelButton').style.display = "block";
              document.getElementById('editButton').style.display = "none";
+             document.getElementsByClassName("profileField")[0].style.border="solid";
+document.getElementsByClassName("dropdownGender")[0].style.border="solid";
+
          }
          axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",config).then((res)=>{
             console.log(res);
+            console.log(res.data)
             setProfileName(res.data.name);
             setProfileSex(res.data.sex);
             setProfileBg(res.data.blood_group);
@@ -158,12 +192,14 @@ const [show3,setShow3] = useState(false);
             setProfileMother(res.data.mother_phone);
             setProfileMotherName(res.data.mother_name);
             setProfileFatherName(res.data.father_name);
+            setProfileImage(res.data.picture)
             console.log(postData)
          }).catch(err=>{
             console.log(err);
          })
-
+         window.location.reload();
    }
+   
 
    function handleSaveProfile(){
       if (!show3) {
@@ -171,14 +207,21 @@ const [show3,setShow3] = useState(false);
          document.getElementById('saveButton').style.display = "none";
          document.getElementById('cancelButton').style.display = "none";
          document.getElementById('editButton').style.display = "block";
+         document.getElementsByClassName("profileField")[0].style.border="none";
+document.getElementsByClassName("dropdownGender")[0].style.border = "none";
+
           }
          else {
              setShow3(false)
              document.getElementById('saveButton').style.display = "block";
              document.getElementById('cancelButton').style.display = "block";
              document.getElementById('editButton').style.display = "none";
+             document.getElementsByClassName("profileField")[0].style.border="solid";
+document.getElementsByClassName("dropdownGender")[0].style.border = "solid";
+
          }
       setEditAble(false);
+      if(isCorrect){
       axios.put("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/",{
          name:profileName,
          sex:profileSex,
@@ -193,9 +236,12 @@ const [show3,setShow3] = useState(false);
          mother_name:profileMotherName,
          father_phone:profileFather,
          mother_phone:profileMother,
-         email:profileEmail
+         email:profileEmail,
+         picture:profileImage
       },config).then((res)=>{
          setPostData(res.data);
+         console.log(res);
+         setProfileImage(res.data.picture)
          console.log(res.data);
          setProfileName(res.data.name);
          setProfileEmail(res.data.email);
@@ -212,6 +258,8 @@ const [show3,setShow3] = useState(false);
          setProfileFatherName(res.data.father_name);
          setProfileMotherName(res.data.mother_name);
       })
+   }
+      // window.location.reload();
   }
   useEffect(()=>{
    if(loadBool)
@@ -219,13 +267,14 @@ const [show3,setShow3] = useState(false);
    else
    document.body.style.opacity="1"
  },[loadBool])
-    return ( 
+
+   return ( 
         <>
             <Navbar/>
             <h1 className="dash">Dashboard : My Profile</h1>
             <div id="background">
                 <div id="avatar">
-                    <img src={avatar} id="profileImage"/>
+                    <img src={profileImage} id="profileImage"/>
                     <span id='dis-name'>{profileName}</span><br />
                     <div className='avatarInfo'>
                     Mon 3 SEPT 2001 <br />
@@ -239,22 +288,27 @@ const [show3,setShow3] = useState(false);
                 {editAble?(<ProfileInputField value={profileName} class="profileField" type="text" onChange={handleEditPName} />): 
                    (<ProfileInputDisabled  value={profileName} class="profileField" type="text"/>)}
                 </div> 
+                <p id="wrongName">Please enter a valid Name</p>
                 <div id="sex">Sex</div>
                 <div className='space2'>
-                {/* {editAble?(<ProfileInputField value={profileSex} class="profileField" type="text" onChange={handleEditPSex} />): 
-                   (<ProfileInputDisabled  value={profileSex} class="profileField" type="text"/>)} */}
-                {editAble ? (<select name="" id=""><option value="Male">Male</option><option value="Female">Female</option></select>) :
-                   (<select name="" id="" vdisabled><option value="Male">Male</option><option value="Female">Female</option></select>)}
+                {editAble?( <select className="dropdownGender" value={profileSex} onChange={handleEditPSex}>
+               <option value="Male">Male</option>
+               <option value="Female">Female</option>
+            </select>): 
+                   ( <select className="dropdownGender" value={profileSex} disabled>
+               <option value="Male" disabled>Male</option>
+               <option value="Female" disabled>Female</option>
+            </select>)}
                 </div>
                 <div id="bl-gr">Blood Group</div>
                 <div className='space3'>
                 {editAble?(<ProfileInputField value={profileBG} class="profileField" type="text" onChange={handleEditPBG} />): 
                    (<ProfileInputDisabled  value={profileBG} class="profileField" type="text"/>)}
                 </div>
-                <div id="dob">Date of Birth</div>
+                <div id="dob">Date of Birth (MM/DD/YYYY)</div>
                 <div className='space4'>
-                {editAble?(<ProfileInputField value={profileDOB} class="profileField" type="text" onChange={handleEditPDOB} />): 
-                   (<ProfileInputDisabled  value={profileDOB} class="profileField" type="text"/>)}
+                {editAble?(<ProfileInputField value={profileDOB} class="profileField" type="date"  data-date-format="DD MMMM YYYY" onChange={handleEditPDOB} />): 
+                   (<ProfileInputDisabled  value={profileDOB} class="profileField" data-date-format="DD MMMM YYYY" type="date"/>)}
                 </div>
                 <div id="email">Email</div>
                 <div className='space5'>
@@ -313,6 +367,10 @@ const [show3,setShow3] = useState(false);
                 <button id="cancelButton" onClick={handleCancel}>Cancel</button> 
                 <div className='CONTACT'>
             </div>
+            <select className="dropdownGender" onChange={handleEditPSex}>
+               <option value="male">Male</option>
+               <option value="female">Female</option>
+            </select>
             </div>
             {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
         </>

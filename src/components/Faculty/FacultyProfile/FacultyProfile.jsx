@@ -23,6 +23,8 @@ const FacultyProfile = () => {
     const [profilePin,setProfilePin] = useState(null);
     const [profileEmail,setProfileEmail] = useState(null);
 
+    const[loadBool,setLoadBool]=useState(false);
+    
     const [editAble,setEditAble]=useState(false);
     const [show,setShow] = useState(false)
     function handleEditProfile(){
@@ -42,14 +44,17 @@ if (!show) {
 }
 
 const [show3,setShow3] = useState(false);
-   function handleEditPName(e) {
-      if(profileName.length<=8)
-         setProfileName(e.target.value)
+    function handleEditPName(e){
+      if (profileName.length >= 10)
+         return false;
       else
-         return false
+         setProfileName(e.target.value)
    }
-   function handleEditPSex(e){
-    setProfileSex(e.target.value);
+   function handleEditPEmail(e){
+    setProfileEmail(e.target.value);
+   }
+   function handleEditPName(e){
+    setProfileName(e.target.value)
    }
    function handleEditPBG(e){
     setProfileBg(e.target.value);
@@ -57,9 +62,7 @@ const [show3,setShow3] = useState(false);
    function handleEditPDOB(e){
     setProfileDOB(e.target.value);
    }
-   function handleEditPEmail(e){
-      setProfileEmail(e.target.value);
-     }
+  
    function handleEditPAddr(e){
     setProfileAddr(e.target.value);
    }
@@ -83,7 +86,7 @@ const [show3,setShow3] = useState(false);
          Authorization: `Bearer ${FacAccessToken}`
       }
    }
-   const [loadBool, setLoadBool] = useState(false)
+   // const [loadBool, setLoadBool] = useState(false)
    useEffect(()=>{
       setLoadBool(true)
       axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",config).then((res)=>{
@@ -92,7 +95,7 @@ const [show3,setShow3] = useState(false);
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
-         setProfileEmail(res.data.email);
+         // setProfileEmail(res.data.email);
          setProfileDOB(res.data.DOB);
          setProfileAddr(res.data.address);
          setProfileCity(res.data.city);
@@ -108,6 +111,7 @@ const [show3,setShow3] = useState(false);
    const [show2,setShow2] = useState(false);
    function handleCancel(){
       setEditAble(false);
+      setLoadBool(false)
       if (!show2) {
          setShow2(true);
          document.getElementById('saveButton').style.display = "none";
@@ -121,11 +125,12 @@ const [show3,setShow3] = useState(false);
              document.getElementById('editButton').style.display = "none";
          }
          axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",config).then((res)=>{
+            setLoadBool(true)
             console.log(res);
             setProfileName(res.data.name);
             setProfileSex(res.data.sex);
             setProfileBg(res.data.blood_group);
-            setProfileEmail(res.data.email);
+            // setProfile/Email(res.data.email);
             setProfileDOB(res.data.DOB);
             setProfileAddr(res.data.address);
             setProfileCity(res.data.city);
@@ -152,6 +157,7 @@ const [show3,setShow3] = useState(false);
              document.getElementById('editButton').style.display = "none";
          }
       setEditAble(false);
+      setLoadBool(true)
       axios.put("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",{
          name:profileName,
          sex:profileSex,
@@ -168,13 +174,14 @@ const [show3,setShow3] = useState(false);
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
-         setProfileEmail(res.data.email);
+         // setProfileEmail(res.data.email);
          setProfileDOB(res.data.DOB);
          setProfileAddr(res.data.address);
          setProfileCity(res.data.city);
          setProfileState(res.data.state);
          setProfileMobile(res.data.teacher_phone);
          setProfilePin(res.data.pincode);
+         setLoadBool(true)
       })
   }
   sessionStorage.setItem("FacultyName",profileName)
@@ -206,7 +213,7 @@ const [show3,setShow3] = useState(false);
                 </div> 
                 <div id="sex">Sex</div>
                 <div className='space2'>
-                {editAble?(<ProfileInputField value={profileSex} class="profileField" type="text" onChange={handleEditPSex} />): 
+                {editAble?(<ProfileInputField value={profileSex} class="profileField" type="text" />): 
                    (<ProfileInputDisabled  value={profileSex} class="profileField" type="text"/>)}
                 </div>
                 <div id="bl-gr">Blood Group</div>
@@ -221,8 +228,8 @@ const [show3,setShow3] = useState(false);
                 </div>
                 <div id="email">Email</div>
                 <div className='space5'>
-                {editAble?(<input value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} disabled/>): 
-                   (<input  value={profileEmail} class="profileField" type="text" disabled/>)}
+                {editAble?(<input value={profileEmail} class="profileField" type="date" onChange={handleEditPEmail} disabled/>): 
+                   (<input  value={profileEmail} class="profileField" type="date" disabled/>)}
                 </div>
                 <div id="heading2">Contact Details</div>
                 <div id="address">Address</div>

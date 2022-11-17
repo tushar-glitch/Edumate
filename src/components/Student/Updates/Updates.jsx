@@ -58,12 +58,12 @@ useEffect(()=>{
     <Navbar />
         <h1 className="update">Dashboard : Updates</h1>
         <div className="updateDivBlock">
+<img id="updateImage" src={updateImage} alt="update" />
             <h1 className="stUpdRowS" id="noUpdate">Updates</h1>
             <div className="SUpdateCardCall">
     {updateCdArr.map(CreateUpdateCard)}
 </div>
 
-<img id="updateImage" src={updateImage} alt="update" />
         </div>
         {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>

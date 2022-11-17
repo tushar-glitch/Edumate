@@ -78,7 +78,7 @@ useEffect(()=>{
   <h1 className="update">Dashboard : Updates</h1>
         <div className="updateAdminDiv" >
             <h1 className="updateAdminRow">Events</h1>
-            <button className="updateNew" onClick={createNewUpdate}>New</button>
+            <button className="updateNewButton" onClick={createNewUpdate}>New</button>
             <div className="AdUpdateCardCall">
     {updateACdArr.map(CreateUpdateCard)}
 </div>

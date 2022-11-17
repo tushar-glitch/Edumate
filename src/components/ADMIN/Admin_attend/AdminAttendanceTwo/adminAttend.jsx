@@ -5,6 +5,8 @@ import "./admAttend.css"
 import AdmBar from "../../admin_bar/AdmBar";
 import { useEffect , useState} from "react";
 import axios from "axios";
+import SubjectAttend from "../../../Student/Attendace2/Attendance";
+import { propTypes } from "react-bootstrap/esm/Image";
 function AdmAttend(){
     const adminAccessToken = sessionStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
@@ -17,39 +19,66 @@ const config = {
  function handleDepart(e){
  setDepartId(e.target.value);
  }
+
  console.log(departId)
  sessionStorage.setItem("Department_Id",departId)
-
+const [deptBool,setDeptBool] = useState(false)
     const [deptList,setDeptList] = useState([]);
     useEffect(()=>{
         axios.get("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+"ALL/",config)
         .then((res)=>{
             console.log(res.data);
             setDeptList(res.data);
+            setDeptBool(true)
         })
         .catch((err)=>{
             console.log(err);
+            setDeptBool(false)
         })
     },[])
+    console.log(departId)
+
+
     const [classList, setClassList] = useState([]);
 useEffect(()=>{
-    axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classes/"+departId+"/",config).
+    axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classesindepartment/"+departId+"/",config).
     then((res)=>{
         console.log(res.data);
         setClassList(res.data)
     }).catch((err)=>{
         console.log(err);
     })
-},[])
+},[deptBool])
+
+
+ const [classId, setClassId] = useState("");
+ const [subjectList,setSubjectList] = useState([]);
+ function handleClass(e){
+    setClassId(e.target.value);
+    axios.get("https://erp-edumate.herokuapp.com/api/user/admin/studentattendancelist/"+classId+"/",config)
+    .then((res)=>{
+        console.log(res);
+        console.log(res.data);
+        setSubjectList(res.data);
+    }).catch((err)=>{
+        console.log(err);
+    })
+ }
+ 
 function DropDownClassList (classList){
     return <>
-         <option  id="class-name" className="class_head_input" value={classList[4]}>{classList[3]}</option>
+         <option  id="class-name" className="class_head_input" value={classList[0]}>{classList[2]}</option>
     </>
 }
     function DropdownDeptList (deptList){
         return <>
             <option  id="dept-name" className="dept_head_input" value={deptList.id}>{deptList.name}</option>
         </>
+             }
+             function createSubject(subjectList){
+                return <>
+                    <AdmAttendCard name={subjectList.name} Number={subjectList.number} attend={subjectList.value} />
+                </>
              }
     return <>
     <AdmBar />
@@ -63,10 +92,13 @@ function DropDownClassList (classList){
         <option >Departments</option>
         {deptList.map(DropdownDeptList)}
         </select>
-        <select id="admClass">
+        <select id="admClass" onChange={handleClass} >
         <option >Classes</option>
-        {classList.map(DropDownClassList)}
+        {classList.map(DropDownClassList) }
         </select>
+        <div className="admAttendCall">
+            {subjectList.map(createSubject)}
+        </div>
        <AdmAttendCard />
     </div>
     </>

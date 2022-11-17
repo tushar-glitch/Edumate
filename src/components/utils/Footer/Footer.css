@@ -31,22 +31,38 @@
     .privacy{
         background:white; 
          margin-top:1.5vh;
-        font-family:' Montserrat';
-        font-style: normal;
         font-weight: 400;
         font-size: 0.7rem;
         line-height: 18px;
         color: #000000;
+        font-family: 'Montserrat';
+        font-style: normal;
 }
 .agreement{
     background:white; 
     margin-top:1.5vh;
-   font-family:' Montserrat';
-   font-style: normal;
    font-weight: 400;
    font-size: 0.7rem;
    line-height: 18px;
    color: #000000;
    margin-left:6.5vw;
    margin-top:-4vh;
+   font-family: 'Montserrat';
+   font-style: normal;
+}
+@media (min-width:200px) and (max-width:920px) {
+    .FooterDiv{
+        width:100vw;
+        height:20vh;
+        position:absolute;
+        left:0vw;
+        position:fixed;
+    }
+    .footerHead{
+        padding-top: 2vh;
+        padding-left: 3vw;
+    }
+    .footerPara{
+        padding-left: 3vw;
+    }
 }

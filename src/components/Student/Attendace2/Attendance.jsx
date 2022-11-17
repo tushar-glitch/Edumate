@@ -1,13 +1,14 @@
 import React from "react";
 import arrow from "./arrow.svg";
 import SAttendCard from "./AttendanceCard";
-import SCardArray from "./AttendCardArray";
+// import SCardArray from "./AttendCardArray";
 import "./Attendance2.css";
 import { useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
 import { useEffect } from "react";
 import Navbar from "../../utils/Navbar/Navbar";
 import axios from "axios";
+import { faBullseye } from "@fortawesome/free-solid-svg-icons";
 function SubjectAttend (){
     const code = sessionStorage.getItem("subject_code");
     const subjectA = sessionStorage.getItem("subject_name");
@@ -36,28 +37,46 @@ function SubjectAttend (){
             })
     }
     const [attendSubArray, setAttendSubArray] = useState([])
+    const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
+        setLoadBool(true)
         axios.get("https://erp-edumate.herokuapp.com/api/user/student/studentsubjectattendance/"+code+"/11/",config)
         .then((res)=>{
             console.log(res);
+            setLoadBool(false)
             setAttendSubArray(res.data)
         })
         .catch((err)=>{
             console.log(err)
+            setLoadBool(false)
         })
     },[])
+
+    function handleAPI(){
+    setLoadBool(true)
+            axios.get("https://erp-edumate.herokuapp.com/api/user/student/studentsubjectattendance/"+code+"/"+month+"/",config)
+            .then((res)=>{
+                setLoadBool(false)
+                console.log(res);
+                setAttendSubArray(res.data)
+            })
+            .catch((err)=>{
+                setLoadBool(false)
+                console.log(err)
+            })
+    }
 
     function CreateStuCard(attendSubArray){
         return (
             <SAttendCard day={attendSubArray.day} date={attendSubArray.date} is_present={attendSubArray.is_present} period={attendSubArray.period}/>
         )
     }
-    // useEffect(()=>{
-    //     if(loadBool)
-    //     document.body.style.opacity="0.5"
-    //     else
-    //     document.body.style.opacity="1"
-    //   },[loadBool])
+    useEffect(()=>{
+        if(loadBool)
+        document.body.style.opacity="0.5"
+        else
+        document.body.style.opacity="1"
+      },[loadBool])
    return <>
    <Navbar />
    <h1 className="dbAttend">Dashboard : Attendance </h1>
@@ -74,7 +93,7 @@ function SubjectAttend (){
     </tr>
     </table>
     <CreateStuCard />
-    <div className="SCardCall">
+    <div className="SCardCallNew">
     {attendSubArray.map(CreateStuCard)}
     </div>
     </div>
@@ -93,6 +112,7 @@ function SubjectAttend (){
                 <option value={"11"} className="visibleListItem3">November</option>
                 <option value={"12"} className="visibleListItem3">December</option>
             </select>
+            {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     {/* </div> */}
     {/* {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null} */}
    </>
