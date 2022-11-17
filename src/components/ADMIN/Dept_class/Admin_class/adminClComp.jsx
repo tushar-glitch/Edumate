@@ -17,7 +17,6 @@ function AdminClComponent (){
      }
         console.log(adminAccessToken);
      const [cardsCArray,setCardsCArray] = useState([]);
-     const [cardsCObj, setCardsCObj] = useState({});
      const [loadBool,setLoadBool]=useState(false)
 
      /*year, departmentname, dept id,section, class id*/

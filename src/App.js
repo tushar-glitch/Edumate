@@ -37,6 +37,11 @@ import FacFeedback from "./components/Faculty/Fac_feedback/Feedback/Feedback";
 import PrivateRouteOne from "./components/utils/ProctectedRoute1";
 import PrivateRouteTwo from "./components/utils/PrivateRoute2";
 import UpdateEmail from "./components/utils/UpdateEmailLog/UpdateEmail";
+import AdmAttend from "./components/ADMIN/Admin_attend/AdminAttendanceTwo/adminAttend";
+import Agreement from "./components/utils/Agreeement/agreement";
+import Privacy from "./components/utils/Privacy/privacy";
+import FAttendance1 from "./components/Faculty/FAttendance/FAttend1/FAttendance1";
+import FAttendance2 from "./components/Faculty/FAttendance/FAttend2/FAttendance2";
 import Assign_fac from "./components/ADMIN/Assign_fac/Assign_fac";
 function App() {
  
@@ -64,14 +69,15 @@ function App() {
         <Route element = {<PrivateRouteOne />}>
     
     
-      <Route path="/logout" exact element={<Logout />} />
-      
+          <Route path="/logout" exact element={<Logout />} />
+          <Route path="/f_atten1" exact element={<FAttendance1/>} />
+        <Route path="/f_atten2" exact element={<FAttendance2/>} />
       {/* <Route path="/stAttendance" exact element={<Attendance />} /> */}
       {/* <Route path="/stAttend" exact element={<SubjectAttend />} /> */}
      
       {/* <Route path="/loadingscreen" exact element={<LoadingScreen />} /> */}
     
-      
+      <Route path="/admAttendance" exact element={<AdmAttend />} />
       {loggedInUser==1?( <Route path="/facDashboard" exact element={<FacDashboard/>} />):(null) }
       {loggedInUser==1?(<Route path="/ftimetable" exact element={<FTimeTable />} />):(null) }
       {loggedInUser==1?( <Route path="/facFeed" exact element={<FacFeedback />} />):(null)}
@@ -80,7 +86,8 @@ function App() {
       {/* <Route path="/updates" exact element={<Updates />} />):(null) /> */}
         {/* <Route path="/profile" exact element={<Profile/>} />):(null) /> */}
         {/* <Route path="/admin_dashboard" exact element={<AdminDashboard/>} /> */}
-
+            <Route path="/agreement" exact element={<Agreement/>} />
+            <Route path="/privacy" exact element={<Privacy/>} />
 
       <Route path="/update_email" exact element={<UpdateEmail/>} />
       

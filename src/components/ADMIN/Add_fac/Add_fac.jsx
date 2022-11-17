@@ -10,6 +10,7 @@ const Add_fac = () => {
   const [DOB, setDob] = useState('')
   const [email, setEmail] = useState('')
   const [department, setDepartment] = useState('')
+  const rightemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   function handlename(e) {
     setName(e.target.value)
   }
@@ -18,6 +19,11 @@ const Add_fac = () => {
   }
   function handleemail(e) {
     setEmail(e.target.value)
+    if (rightemail.test(email)) {
+      document.getElementById('add_stu_input_email').style.outlineColor = 'green'
+    }
+    else
+      document.getElementById('add_stu_input_email').style.outlineColor = 'red'
   }
   function handleclass(e) {
     setDepartment(e.target.value)
@@ -56,7 +62,7 @@ const Add_fac = () => {
         <div id="add_stu_name">Name</div>
         <input type="text" id='add_stu_input_name' onChange={handlename}/>
         <div id="add_stu_dob">D.O.B</div>
-        <input type="text" id='add_stu_input_dob' onChange={handledob} />
+        <input type="date" id='add_stu_input_dob' onChange={handledob} />
         <div id="add_stu_email">Email</div>
         <input type="text" id='add_stu_input_email' onChange={handleemail} />
         <div id="add_stu_department">Department</div>

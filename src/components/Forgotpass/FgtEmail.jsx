@@ -38,10 +38,11 @@ function postemail() {
       sessionStorage.setItem("NavigateOtp",navigateOtp)
       setLoadBool(false);
       // {value2?<Navigate to="/otp" />:null}
+      navigate("/otp")
     })
     
     .catch((err) => {
-      navigate("/otp")
+      // navigate("/otp")
       console.log(err);
       setLoadBool(false);
       setEmValid("Please enter a valid email id");

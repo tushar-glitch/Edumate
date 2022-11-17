@@ -10,10 +10,10 @@ function SCard1(props){
 <span id="SCdTotal">{props.totalC}</span>
 <span id="SCdAttPer" >
 <div className="progress">
-        <div className="progressBar"></div>
+        <div className="progressBar" style={{width:{progressBarWidth}}}></div>
     </div>
     {/* <p style={{width:{props.attendPer}}} ></p> */}
-<p className="pBarWd" style={{width:{progressBarWidth}}}>{props.attendPer}</p>
+<p className="pBarWd" >{props.attendPer}</p>
 </span>
 </div>
 

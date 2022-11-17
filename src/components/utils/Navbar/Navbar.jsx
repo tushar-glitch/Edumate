@@ -17,12 +17,29 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import Footer from '../Footer/Footer';
+import axios from 'axios'
+import { useEffect } from 'react';
 // import SideBar from '../Student/SideBar/sidebar'
 const Navbar = () => {
     const [show,setShow] = useState(false)
     // // const facUserId = sessionStorage.getItem("Faculty_userId");
     // const stuUserId = sessionStorage.getItem("Student_userId");
     // const admUserId = sessionStorage.getItem("Admin_userId");
+    const accessToken = sessionStorage.getItem("access token");
+    const [sname, setSname] = useState('')
+    console.log(accessToken);
+    const config = {
+        headers: {
+            Authorization: `Bearer ${accessToken}`
+        }
+    }
+    useEffect(() => {
+        axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/", config)
+            .then((res) => {
+                console.log(res);
+                setSname(res.data.name)
+            })
+    }, [])
     const userIdLog = sessionStorage.getItem("LoggedInUserId")
     const USERID= sessionStorage.getItem("UserIdLogger");
     const StName = sessionStorage.getItem("StudentName")
@@ -43,14 +60,14 @@ const Navbar = () => {
          <div className="sideB">
             <h1 className="edum">Edumate</h1>
             <FontAwesomeIcon icon={faXmark} className="XMark" />
-            <ul className="sideList">
+            <ul className="sideList" >
            {userIdLog==1?(<Link to="/facDashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)}
            {userIdLog==2?(<Link to="/stu_dashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)}
            {/* {userIdLog==9?(<Link to="/admin_dashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>):(null)} */}
                 {userIdLog==1?(<Link to="/facProfile"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">My Profile</span></li></Link>):(null)}
                 {userIdLog==2?(<Link to="/profile"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">My Profile</span></li></Link>):(null)}
                 {/* {userIdLog==1?(<Link to=""><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">My Profile</span></li></Link>):(null)} */}
-                <li><img src={attendanceicon} className="sidebarIcon" /><span className="sideBarListValue">Attendance</span></li>
+               {userIdLog==2?(<Link to="/stAttendance"><li><img src={attendanceicon} className="sidebarIcon" /><span className="sideBarListValue">Attendance</span></li></Link>):(null)}
              {userIdLog==1?(<Link to="/facFeed"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Feedback</span></li></Link>):(null)}
              {userIdLog==2?(<Link to="/feedback"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Feedback</span></li></Link>):(null)}
                 {userIdLog==1?(<Link to="/ftimetable"><li><img src={timetableicon} className="sidebarIcon" /><span className="sideBarListValue">Time Table</span></li></Link>):(null)}
@@ -60,8 +77,8 @@ const Navbar = () => {
                 </ul>
         </div>
             <div id="section">
-                <div id="greetingNav">Welcome, Name</div>
-                {userIdLog==2?( <div id="greetingNav">Welcome, {StName}</div>):(null)}
+                {/* <div id="greetingNav">Welcome, Name</div> */}
+                {userIdLog==2?( <div id="greetingNav">Welcome, {sname}</div>):(null)}
                 {userIdLog==1?( <div id="greetingNav">Welcome, {FacName}</div>):(null)}
                 {userIdLog==9?( <div id="greetingNav">Welcome, Admin</div>):(null)}
                 <input type="checkbox" id="NavCheck" />

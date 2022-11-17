@@ -17,6 +17,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import Footer from "../../utils/Footer/Footer"
+import './admin_bar.css'
 // import SideBar from '../Student/SideBar/sidebar'
 const AdmBar = () => {
     const [show,setShow] = useState(false)
@@ -40,7 +41,7 @@ const AdmBar = () => {
          <div className="sideB">
             <h1 className="edum">Edumate</h1>
             <FontAwesomeIcon icon={faXmark} className="XMark" />
-            <ul className="sideList">
+            <ul className="sideList" id="ad_bar_list">
            <Link to="/admin_dashboard"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">DashBoard</span></li></Link>
                 <Link to="/add_stu"><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">Student</span></li></Link>
                 <Link to="/add_fac"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Faculty</span></li></Link>

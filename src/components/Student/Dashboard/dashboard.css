@@ -1,6 +1,6 @@
-#background-dash {
+#background-dash1 {
     position: absolute;
-    height: 150vh;
+    height: 170vh;
     width: 73vw;
     background-color: white;
     z-index: 34;
@@ -59,11 +59,55 @@
     background: #EEF1FF;
     border-radius: 8px;
 }
+.updateCardRowS{
+    margin-left:2vw;
+    width: 63vw;
+    height: fit-content;
+    border-radius: 8px;
+    z-index:20;
+    /* background-color: rgb(226, 132, 132); */
+    /* background-color: rgba(238, 241, 255, 0.5); */
+    background-color: white;
+    margin-bottom: 4vh;
+    padding: 5px;
+    padding-right:8px;
+    padding-left:8px;
+}
+.updateCdTitle{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 0.9rem;
+line-height: 20px;
+color: #000000;
+/* background:none; */
+    background-color: white;
+}
+.updateCdDesc{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: #000000;
+    /* background:none; */
+z-index: 999999;
+    background-color: white;
+}
 
-#card31 {
+/* #card38 {
     position: absolute;
     width: 36.5vw;
     height: 33vh;
+    left: 29vw;
+    top: 79vh;
+    background-color: white;
+    border-radius: 8px;
+} */
+#card38 {
+    position: absolute;
+    width: 36.5vw;
+    height: auto;
     left: 29vw;
     top: 79vh;
 
@@ -204,7 +248,7 @@
     position: absolute;
     width: 21.3vw;
     height: 9vh;
-    left: 1.3vw;
+    left: 1vw;
     background: #FFFFFF;
     border-radius: 8px;
 }
@@ -239,28 +283,28 @@
     left: 1vw;
 }
 
-.class_name {
+.class_name12 {
     position: absolute;
-    width: 9vw;
+    width: 19vw;
     height: 3.5vh;
     left: 3.8vw;
     top: 1.5vh;
-    background-color: white;
+    background: none;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.1rem;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 15px;
     /* identical to box height */
     color: #252525;
 }
 
-.class_time {
-    position: absolute;
+.class_time4 {
+    position: relative;
     width: 4vw;
     height: 2vh;
     left: 3.8vw;
-    top: 4.3vh;
+    top: 5.3vh;
     background-color: white;
     font-family: 'Montserrat';
     font-style: normal;
@@ -268,7 +312,7 @@
     font-size: 0.75rem;
     line-height: 15px;
     /* identical to box height */
-
+    background: none;
 
     color: #4B4B4B;
 }
@@ -326,9 +370,9 @@ line-height: 24px;
 
 color: #000000;
 }
-#updates1 {
+#updates8 {
     position: absolute;
-    width: 128px;
+    width: 28px;
     height: 37px;
     left: 29vw;
     top: 70vh;

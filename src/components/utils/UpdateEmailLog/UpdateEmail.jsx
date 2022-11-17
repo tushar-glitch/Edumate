@@ -1,12 +1,13 @@
 import axios from "axios";
 import React from "react";
 import { useState , useEffect} from "react";
-import Navbar from "../Navbar/Navbar";
-import SideBar from "../../SideBar/sidebar";
 import "./UpdateEmail.css";
 import updateEmailImg from "./updateEmailImg.svg";
 import * as ReactBootStrap from "react-bootstrap";
+import Navbar from "../Navbar/Navbar";
+import { Navigate, useNavigate } from "react-router-dom";
 function UpdateEmail() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("")
     const [otp, setOtp] = useState('')
     function handleotp(e) {
@@ -48,6 +49,9 @@ const [loadBool,setLoadBool] = useState(false)
         axios.put("https://erp-edumate.herokuapp.com/api/user/updateemail/", { email,otp }, config)
             .then((res) => {
                 console.log(res);
+                if (res.status == 200) {
+                    navigate('/')
+                }
             })
             .catch((err) => {
                 console.log(err);
@@ -60,8 +64,7 @@ const [loadBool,setLoadBool] = useState(false)
         document.body.style.opacity="1"
       },[loadBool])
     return <>
-        <Navbar />
-        <SideBar/>
+        <Navbar/>
         <div className="updateWhiteDiv" id="UpdateEmailDiv">
             <h1 className="updateGreyRow">Email Address</h1>
             <h1 className="updateEmail">Email Address</h1>

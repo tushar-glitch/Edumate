@@ -21,13 +21,15 @@ const Assign_fac = () => {
           </select>
         </div>
         <div id="add_fac"><button id="add_faculty">+Assign Faculty</button></div>
-        <div id="class-id">Class ID  <span id='class_id_dropdown'><select name=""><option value="">200001</option></select></span></div>
+        <div id="class-id">Class ID  <span id='class_id_dropdown'><select name=""><option value="">200001</option><option value="">200002</option><option value="">200003</option></select></span></div>
         <div id="assign_subject">Subject  <span id='subject_dropdown'><select name=""><option value="">CSE</option></select></span></div>
         <div id="assign_faculty">Faculty <span id='faculty_dropdown'><select name=""><option value="">Aman</option></select></span></div>
         <div id="assign_time_heading_box"><span id='assign_time_heading'>Assign Times</span></div>
         <div id="time">Time</div>
         <div id="day">Day</div>
-        <div id="assign_card1"></div>
+        <div id="assign_card">
+
+        </div>
       </div>
     </>
   )

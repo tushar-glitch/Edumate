@@ -45,11 +45,13 @@ if (!show) {
        document.getElementById('cancelButton').style.display = "none";
    }
 }
-sessionStorage.setItem("StudentName",profileName)
 
 const [show3,setShow3] = useState(false);
    function handleEditPName(e){
-    setProfileName(e.target.value)
+      if (profileName.length >= 8)
+         return false;
+      else
+         setProfileName(e.target.value)
    }
    function handleEditPEmail(e){
     setProfileEmail(e.target.value);
@@ -239,8 +241,10 @@ const [show3,setShow3] = useState(false);
                 </div> 
                 <div id="sex">Sex</div>
                 <div className='space2'>
-                {editAble?(<ProfileInputField value={profileSex} class="profileField" type="text" onChange={handleEditPSex} />): 
-                   (<ProfileInputDisabled  value={profileSex} class="profileField" type="text"/>)}
+                {/* {editAble?(<ProfileInputField value={profileSex} class="profileField" type="text" onChange={handleEditPSex} />): 
+                   (<ProfileInputDisabled  value={profileSex} class="profileField" type="text"/>)} */}
+                {editAble ? (<select name="" id=""><option value="Male">Male</option><option value="Female">Female</option></select>) :
+                   (<select name="" id="" vdisabled><option value="Male">Male</option><option value="Female">Female</option></select>)}
                 </div>
                 <div id="bl-gr">Blood Group</div>
                 <div className='space3'>
@@ -254,8 +258,8 @@ const [show3,setShow3] = useState(false);
                 </div>
                 <div id="email">Email</div>
                 <div className='space5'>
-                {editAble?(<ProfileInputField value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} />): 
-                   (<ProfileInputDisabled  value={profileEmail} class="profileField" type="text"/>)}
+                {editAble?(<input value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} disabled />): 
+                   (<input value={profileEmail} class="profileField" type="text" disabled/>)}
                 </div>
                 <div id="heading2">Contact Details</div>
                 <div id="address">Address</div>

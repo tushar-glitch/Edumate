@@ -42,8 +42,11 @@ if (!show) {
 }
 
 const [show3,setShow3] = useState(false);
-   function handleEditPName(e){
-    setProfileName(e.target.value)
+   function handleEditPName(e) {
+      if(profileName.length<=8)
+         setProfileName(e.target.value)
+      else
+         return false
    }
    function handleEditPSex(e){
     setProfileSex(e.target.value);

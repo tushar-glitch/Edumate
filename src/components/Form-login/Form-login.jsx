@@ -107,9 +107,11 @@ const userIdFirstDigit = String(userID)[0];
   setLoadBool(!loadBool);
     if (iscorrectid) {
       setPlayLoad(!playLoad)
+      setLoadBool(true)
     axios
         .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
-         .then((res) => {
+      .then((res) => {
+          //  window.location.reload()
           console.log(res);
           setLoadBool(false);
          console.log(loadBool)
@@ -121,7 +123,7 @@ const userIdFirstDigit = String(userID)[0];
             storeTokenData(accessToken, refreshToken);
 setRouteToLogin(true);
 console.log(routeToLogin)
-sessionStorage.setItem("Route_to_login",routeToLogin)
+sessionStorage.setItem("Route_to_login",routeToLogin);
             console.log(userIdFirstDigit)
             sessionStorage.setItem("LoggedInUserId" ,userIdFirstDigit)
             sessionStorage.setItem("UserIdLogger",userID);
@@ -157,7 +159,8 @@ sessionStorage.setItem("Route_to_login",routeToLogin)
           setCredentials("Invalid credentials.Please check your User Id or Password");
         });
     }
-      else {
+    else {
+      setLoadBool(false)
       document.getElementById("wrongid").style.display = "block";
       setCredentials("")
     }
