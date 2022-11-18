@@ -11,6 +11,7 @@ import Loginimg from "./loginImg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import * as ReactBootStrap from "react-bootstrap";
+import Instance from "../../utils/axiosInterceptors";
 // import instance from "../API";
 // import useRefreshToken from "../refreshToken";
 // import axiosInstance from "../utils/axiosInstance";
@@ -141,6 +142,8 @@ sessionStorage.setItem("Route_to_login",routeToLogin);
             console.log(userIdFirstDigit)
             sessionStorage.setItem("LoggedInUserId" ,userIdFirstDigit)
             sessionStorage.setItem("UserIdLogger",userID);
+            sessionStorage.setItem("User_name",res.data.Username)
+            console.log(res.data.Username)
           
             {if(userIdFirstDigit==1){
            
@@ -170,7 +173,7 @@ sessionStorage.setItem("Route_to_login",routeToLogin);
       }
         })
         .catch((err) => {
-          console.log(err.response.data.errors.non_field_errors)
+          // console.log(err.response.data.errors.non_field_errors)
           toast.error("UserID or Password is not Valid",{
             position: "top-center",
           })

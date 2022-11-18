@@ -3,7 +3,8 @@ import React from 'react'
 import { useState ,useEffect } from 'react'
 import AdmBar from '../admin_bar/AdmBar'
 import * as ReactBootStrap from "react-bootstrap";
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import './add_fac.css'
 const Add_fac = () => {
   const [name, setName] = useState('')
@@ -35,10 +36,17 @@ const Add_fac = () => {
     axios.post('https://erp-edumate.herokuapp.com/api/user/admin/addteacher/', data, config)
       .then((res) => {
         console.log(res);
+        toast.success(res.data.msg,{
+          position: "top-center",
+        })
         setLoadBool(false)
       })
       .catch((err) => {
         console.log(err);
+        toast.error(err.response.data.DOB[0],{
+          position: "top-center",
+        })
+      console.log(err.response.data.DOB[0])
         setLoadBool(false)
       })
   }
@@ -65,6 +73,7 @@ const Add_fac = () => {
         <button onClick={senddata} id='add_stu_btn'>Done</button>
       </div>
       {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
+      <ToastContainer />
     </>
   )
 }

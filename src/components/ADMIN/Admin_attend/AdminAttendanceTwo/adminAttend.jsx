@@ -40,7 +40,8 @@ const [deptBool,setDeptBool] = useState(false)
 
 
     const [classList, setClassList] = useState([]);
-useEffect(()=>{
+function handleClassInDept(){
+    if(deptBool){
     axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classesindepartment/"+departId+"/",config).
     then((res)=>{
         console.log(res.data);
@@ -48,8 +49,10 @@ useEffect(()=>{
     }).catch((err)=>{
         console.log(err);
     })
-},[deptBool])
+}
+}
 
+console.log(classList);
 
  const [classId, setClassId] = useState("");
  const [subjectList,setSubjectList] = useState([]);
@@ -88,7 +91,7 @@ function DropDownClassList (classList){
             <span id="admStn">Student Number</span>
             <span id="admAttend">Attendance</span>
         </h1>
-        <select id="admDeppt" onChange={handleDepart}>
+        <select id="admDeppt" onChange={handleDepart} onClick={handleClassInDept}>
         <option >Departments</option>
         {deptList.map(DropdownDeptList)}
         </select>

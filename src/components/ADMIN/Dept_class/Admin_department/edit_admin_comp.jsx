@@ -1,8 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import AdmBar from "../../admin_bar/AdmBar";
+import Instance from "../../../utils/axiosInterceptors";
  function EditDeptComp (){
     const editDeptIdNew = sessionStorage.getItem("editDeptId");
     const editDeptNameNew = sessionStorage.getItem("editDeptName");
@@ -28,7 +31,7 @@ const config = {
  }
  const navigate = useNavigate();
     function handlePostEditClassApi(){
-        console.log("ahsj,")
+        console.log("ahsj,");
         axios.put("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+deptId+"/",addDeptInfo,config).
         then((res)=>{
             console.log(res.data);
@@ -37,6 +40,9 @@ const config = {
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            toast.error(err.response.data.id[0],{
+                position: "top-center",
+              })
         })
     }
     function handleCancelEditClassApi(){
@@ -51,11 +57,14 @@ const config = {
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            toast.error(err.response.data.id[0],{
+                position: "top-center",
+              })
         })
     }
     return <>
     <AdmBar />
- <div className="updateOuterDiv" id="DEPART">
+ <div className="updateNewCardDiv">
     <div className="addInnerBlock">
         <div className="add-new-dept">Edit Department</div>
         <label for="dept-name" className="dept_head">Department Name</label><br />
@@ -66,6 +75,7 @@ const config = {
         <button className="done_add_dept" onClick={handleCancelEditClassApi}>Cancel</button>
     </div>
  </div>
+ <ToastContainer/>
     </>
  }
  export default EditDeptComp;

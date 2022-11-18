@@ -4,6 +4,8 @@ import { useState , useEffect } from 'react'
 import AdmBar from '../admin_bar/AdmBar'
 import * as ReactBootStrap from "react-bootstrap";
 import './add_stu.css'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const Add_stu = () => {
   const [name, setName] = useState('')
   const [DOB, setDob] = useState('')
@@ -34,10 +36,17 @@ const Add_stu = () => {
     axios.post('https://erp-edumate.herokuapp.com/api/user/admin/addstudent/', data, config)
       .then((res) => {
         console.log(res);
+        toast.success(res.data.msg,{
+          position: "top-center",
+        })
         setLoadBool(false)
       })
       .catch((err) => {
         console.log(err);
+        toast.error(err.response.data.DOB[0],{
+          position: "top-center",
+        })
+      console.log(err.response.data.DOB[0])
         setLoadBool(false)
       })
   }
@@ -66,6 +75,7 @@ const Add_stu = () => {
       </div>
       {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
       </div>
+      <ToastContainer />
     </>
   )
 }

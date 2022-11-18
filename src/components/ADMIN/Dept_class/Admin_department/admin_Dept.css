@@ -56,12 +56,20 @@ font-style: normal;
 font-weight: 400;
 font-size: 1rem;
 line-height: 20px;
-background: #FFFFFF;
+background:none;
 border: 1px solid #D9D9D9;
 border-radius: 4px;
 text-align: center;
 padding-top:0.8vh;
 
+}
+#plus{
+    font-size:1.8rem;
+    font-weight: 550;
+    background:none;
+    position:absolute;
+    right:12vw;
+    /* margin-right:9.5vw; */
 }
 .addDept{
     float:right;
@@ -76,11 +84,11 @@ padding-top:0.8vh;
     font-weight: 400;
     font-size: 1rem;
     line-height: 20px;
-    background: #FFFFFF;
+    background:none;
     border: 1px solid #D9D9D9;
     border-radius: 4px;
-padding-top:0.8vh;
-padding-right:2px;
+padding-top:1vh;
+padding-right:3.5px;
 text-align: end;
 }
 .deptList{
@@ -110,10 +118,11 @@ padding-top:0.8vh;
     position: absolute;
 width: 45vw;
 height: 57vh;
-left: 11.5vw;
+left: 10vw;
 top: 10vh;
 background: #FFFFFF;
 border-radius: 8px;
+box-shadow: 0 0 10px;
 }
 .editClassMain{
     width:11.5vw;
@@ -125,20 +134,25 @@ border-radius: 8px;
 }
 .editWhiteCompField{
     box-sizing: border-box;
-    width: 14vw;
-    height: 9vh;
+    width: 15vw;
+    height: fit-content;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 15px;
     background: #FFFFFF;
     border: 1px solid #D9D9D9;
     border-radius: 4px;
     /* text-align: center; */
-padding-top:1.3vh;
+padding-top:1.5vh;
 padding-left:1vw;
-
+padding-right: 1vw;
+}
+#departName{
+    width:10vw;
+    background:none;
+    line-height:15px;
 }
 .editted{
     background:none;
@@ -223,7 +237,6 @@ background:none;
 }
 .dept_head_input{
     box-sizing: border-box;
-
 position: absolute;
 width: 19vw;
 height: 5vh;
@@ -236,7 +249,6 @@ border-radius: 8px;
 }
 .dept_head_id_input{
     box-sizing: border-box;
-
 position: absolute;
 width: 19vw;
 height: 5vh;
@@ -298,7 +310,7 @@ border:0.5px solid black;
     font-weight:700;
     font-size: 1.35rem;
     position:relative;
-    left:9.5vw;
+    left:10.5vw;
     bottom:9vh;
     cursor: pointer;
 }
@@ -307,7 +319,7 @@ border:0.5px solid black;
     font-weight:700;
     font-size: 1.35rem;
     position:relative;
-    left:11.3vw;
+    left:12.4vw;
     bottom:14.1vh;
     cursor: pointer;
 }
@@ -329,4 +341,9 @@ border:0.5px solid black;
     background: #FFFFFF;
     border: 1px solid #D9D9D9;
     border-radius: 8px;
+}
+.updateNewCardDiv{
+    position:absolute;
+    top:15vh;
+    left:25vw;
 }

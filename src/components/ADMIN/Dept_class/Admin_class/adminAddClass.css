@@ -1,3 +1,8 @@
+.updateOuterClassDiv{
+    position:absolute;
+    top:10vh;
+    left:22vw;
+}
 .addInnerBlockClass{
     position: absolute;
 width: 53vw;
@@ -6,6 +11,7 @@ left: 9vw;
 top: 10vh;
 background: #FFFFFF;
 border-radius: 8px;
+box-shadow: 0 0 10px;
 }
 .year_head{
     font-family: 'Montserrat';
@@ -107,4 +113,73 @@ top:55.5vh;
    margin-top:-4vh;
    margin-left:0.5vw;
     background:none;
+}
+#classNameEdit{
+    background:none;
+   padding-bottom:0.5vh;
+}
+#editClMain{
+    height:fit-content;
+}
+.editWhiteCompField2{
+    box-sizing: border-box;
+    width: 15vw;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 15px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+padding-top:1.5vh;
+padding-left:1vw;
+padding-right: 1vw;
+height:fit-content;
+padding-bottom: 4vh;
+margin-right: 5vw;
+}
+#deptClass{
+    width:10vw;
+    background:none;
+    line-height:15px;
+    margin-top:-6vh;
+    margin-bottom: 10vh;
+    /* background-color: rgb(198, 136, 55); */
+}
+
+#plusCl{
+   font-size:1.2rem;
+   font-weight: 600;
+    background:none;
+    float:right;
+   position:relative;
+   left:7.4vw;
+    cursor: pointer;
+}
+#minusClass{
+    font-size:1.6rem;
+    font-weight: 600;
+     background:none;
+     float: right;
+     position:relative;
+     left:6.3vw;
+}
+#minusCl{
+    font-size:1.6rem;
+   font-weight: 600;
+    background:none;
+    position:relative;
+    left:12.5vw;
+    top:-15.5vh;
+    cursor: pointer;
+}
+
+.classListNew{
+    display:flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    background:none;
+    margin-top:5.5vh;
+    justify-content: space-between;
 }

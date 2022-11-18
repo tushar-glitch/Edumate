@@ -27,8 +27,9 @@ const Navbar = () => {
     // const admUserId = sessionStorage.getItem("Admin_userId");
     const userIdLog = sessionStorage.getItem("LoggedInUserId")
     const USERID= sessionStorage.getItem("UserIdLogger");
-    const StName = sessionStorage.getItem("StudentName")
-    const FacName = sessionStorage.getItem("FacultyName");
+    // const StName = sessionStorage.getItem("StudentName")
+    // const FacName = sessionStorage.getItem("FacultyName");
+   const User_Name = sessionStorage.getItem("User_name")
     function toggle_dropdown() {
         if (!show) {
             setShow(true);
@@ -64,10 +65,10 @@ const Navbar = () => {
                 </ul>
         </div>
             <div id="section">
-                <div id="greetingNav">Welcome, Name</div>
-                {userIdLog==2?( <div id="greetingNav">Welcome, {StName}</div>):(null)}
+                <div id="greetingNav">Welcome, {User_Name}</div>
+                {/* {userIdLog==2?( <div id="greetingNav">Welcome, {StName}</div>):(null)}
                 {userIdLog==1?( <div id="greetingNav">Welcome, {FacName}</div>):(null)}
-                {userIdLog==9?( <div id="greetingNav">Welcome, Admin</div>):(null)}
+                {userIdLog==9?( <div id="greetingNav">Welcome, Admin</div>):(null)} */}
                 <input type="checkbox" id="NavCheck" />
                 <label for="navSideBarIcon" className='navSBIcon'>
               <FontAwesomeIcon icon={faBars} id="navBarLogo" />

@@ -7,6 +7,9 @@ import AddComponentField from "./component_innerField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/fontawesome-free-solid"
 import * as ReactBootStrap from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  import Instance from "../../../utils/axiosInterceptors";
 // import {faPlus} from "@fortawesome/react-fontawesome"
  
 function AdminComponent (){
@@ -24,7 +27,7 @@ const navigate = useNavigate();
     useEffect(()=>{
         setLoadBool(true)
         const url = "https://erp-edumate.herokuapp.com/api/user/admin/departments/";
-        axios.get(url+"ALL/",{
+    axios.get(url+"ALL/",{
             headers:{
                 Authorization: `Bearer ${adminAccessToken}`
              }}).
@@ -38,6 +41,9 @@ const navigate = useNavigate();
       
         }).catch((err)=>{
             console.log(err)
+            toast.error(err.response.data.msg,{
+                position: "top-center",
+              })
             setLoadBool(false)
         })
     },[])
@@ -90,12 +96,13 @@ navigate("/adminAddNew");
     return <>
 <div className="AdminAddOutBlock">
     <div type="button" className="department">DEPARTMENT</div>
-    <div type="button" className="addDept" onClick={addDepartment}> + ADD DEPARTMENT</div>
+    <div type="button" className="addDept" onClick={addDepartment}><span id="plus">+</span>ADD DEPARTMENT</div>
     <div className="deptList">
   {cardsDArray.map(createAdminUpdate)}
     </div>
     {/* <FontAwesomeIcon icon={faPlus} id="addIcon" /> */}
 </div>
+<ToastContainer />
   {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>
 }

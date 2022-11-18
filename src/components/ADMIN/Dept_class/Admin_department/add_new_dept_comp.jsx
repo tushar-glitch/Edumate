@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import AdmBar from "../../admin_bar/AdmBar";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
  function AddNewDeptComp (){
     const [deptName,setDeptName] = useState("");
     const [deptId,setDeptId] = useState("");
@@ -31,16 +33,19 @@ const config = {
         axios.post("https://erp-edumate.herokuapp.com/api/user/admin/departments/0/",addDeptInfo,config).
         then((res)=>{
             console.log(res);
+            toast.success("New Department Added",{
+                position: "top-center",
+              })
             console.log(res.data);
+            navigate("/adminAdd")
             setAdminDeptArr(AdminDeptArr=>[...AdminDeptArr,addDeptInfo])
             console.log(AdminDeptArr)
-            navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
-            console.log(err.response.data.id)
-            if(err.response.status===400)
-            setNewDeptErrMsg(err.response.data.id)
-            console.log(newDeptErrMsg);
+            toast.error(err.response.data.id[0],{
+                position: "top-center",
+              })
+            console.log(err.response.data.id[0])
         })
     }
     function handleCancelDeptApi(){
@@ -54,11 +59,14 @@ const config = {
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            toast.error(err.response.data.id[0],{
+                position: "top-center",
+              })
         })
     }
     return <>
     <AdmBar />
- <div className="updateOuterDiv">
+ <div className="updateNewCardDiv">
     <div className="addInnerBlock">
         <div className="add-new-dept">Add New Department</div>
         <label for="dept-name" className="dept_head">Department Name</label><br />
@@ -69,7 +77,9 @@ const config = {
         <button className="cancel_add_dept" onClick={handlePostDeptApi}>Continue</button>
         <button className="done_add_dept" onClick={handleCancelDeptApi}>Cancel</button>
     </div>
+ 
  </div>
+ <ToastContainer />
     </>
  }
  export default AddNewDeptComp;

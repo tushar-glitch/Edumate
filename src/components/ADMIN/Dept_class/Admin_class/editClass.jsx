@@ -3,6 +3,9 @@ import { useState , useEffect } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import "./adminAddClass.css";
+import AdmBar from "../../admin_bar/AdmBar";
+import { ToastContainer ,toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
  function EditClassComp (){
     // const editDeptId =sessionStorage.getItem("EditDeptId");
 const editYear= sessionStorage.getItem("EditClassYear");
@@ -66,11 +69,15 @@ const config = {
         })
         .catch((err)=>{
             console.log(err);
+            toast.error(err.response.data.id[0],{
+                position: "top-center",
+              })
         })
     },[])
 
     function DropdownDeptList (deptList){
         return <>
+       
             <option  id="class-name" className="dept_head_input" value={deptList.id}>{deptList.name}</option>
         </>
              }
@@ -82,12 +89,16 @@ const config = {
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            toast.error(err.response.data.id[0],{
+                position: "top-center",
+              })
         })
     }
     return <>
-  <div className="updateOuterDiv">
+     <AdmBar />
+  <div className="updateOuterClassDiv">
     <div className="addInnerBlockClass">
-        <div className="add-new-dept">Add New Class</div>
+        <div className="add-new-dept">Edit Class Details</div>
         <label for="dept-name" className="dept_head" id="dept">Department</label><br />
         {/* <input type="text" id="class-name" className="dept_head_input" value={deptId} onChange={handleDeptId} /><br /> */}
         <label for="year-name" className="year_head">Year</label><br />
@@ -105,6 +116,7 @@ const config = {
         </select>
     </div>
  </div>
+ <ToastContainer />
     </>
  }
  export default EditClassComp;

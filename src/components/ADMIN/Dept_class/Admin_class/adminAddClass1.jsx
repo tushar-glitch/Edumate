@@ -6,6 +6,8 @@ import "./adminAddClass.css";
 import { useEffect } from "react";
 import { faGameConsoleHandheld } from "@fortawesome/sharp-solid-svg-icons";
 import AdmBar from "../../admin_bar/AdmBar";
+import { ToastContainer ,toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
  function AddNewClassComp (){
     const [classId,setClassId] = useState("");
     const [deptId,setDeptId] = useState("");
@@ -55,6 +57,9 @@ const config = {
         })
         .catch((err)=>{
             console.log(err);
+            toast.error(err.response.data.id[0],{
+                position: "top-center",
+              })
         })
     },[])
      function DropdownDeptList (deptList){
@@ -88,7 +93,7 @@ return <>
 
     return <>
     <AdmBar />
- <div className="updateOuterDiv">
+ <div className="updateOuterClassDiv">
     <div className="addInnerBlockClass">
         <div className="add-new-dept">Add New Class</div>
         <label for="dept-name" className="dept_head" id="dept">Department</label><br />
@@ -108,6 +113,7 @@ return <>
         </select>
     </div>
  </div>
+ <ToastContainer />
     </>
  }
  export default AddNewClassComp;

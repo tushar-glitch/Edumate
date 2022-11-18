@@ -5,7 +5,8 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AddClassField from "./classInputField";
 import * as ReactBootStrap from "react-bootstrap"
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 function AdminClComponent (){
 
     const adminAccessToken = sessionStorage.getItem("Admin_access_token");
@@ -44,6 +45,9 @@ function AdminClComponent (){
             // localStorage.setItem("Admin_class_object",JSON.stringify(cardsCObj))
         }).catch((err)=>{
             console.log(err)
+            // toast.error(err.response.data.DOB[0],{
+                // position: "top-center",
+            //   })
             setLoadBool(false)
         })
     },[])
@@ -75,8 +79,10 @@ navigate("/editClass");
                Authorization: `Bearer ${adminAccessToken}`
             }
          })
-        .then((res)=>
-        console.log(res))
+        .then((res)=>{
+        console.log(res)
+        window.location.reload()
+    })
         .catch((err)=>{
             console.log(err)
         })
@@ -98,10 +104,9 @@ navigate("/editClass");
     return <>
 <div className="AdminAddOutBlock">
     <div className="department" type="button">CLASSES</div>
-    <div className="addDept" type="button" onClick={addClass}>ADD CLASSES</div>
-    <div className="deptList">
+    <div className="addDept" type="button" onClick={addClass}><span id="plus">+</span>ADD CLASSES</div>
+    <div className="classListNew">
     {cardsCArray.map(createAdminUpdate)}
-   {/* {Object.keys(cardsCObj).map(createAdminUpdate)} */}
     </div>
 </div>
   {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
