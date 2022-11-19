@@ -5,6 +5,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import Navbar from "../utils/Navbar/Navbar";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  import "./st_updateEmail.css"
 import { truncate } from "fs";
 function StUpdateEmail() {
     const [email, setEmail] = useState("")
@@ -129,7 +130,7 @@ const [loadBool,setLoadBool] = useState(false)
     return <>
         <Navbar />
         <div className="CHNGEMAIL">
-            <h1 className="updateGreyRow">Email Address</h1>
+            <h1 className="updateEmailRow">Email Address</h1>
             <h1 className="updateEmail">Email Address</h1>
             <input type="text" className="emailInput" value={email} onChange={handleEmail}></input>
             <span id="wrongUpdEmail">Please enter a valid email id</span>

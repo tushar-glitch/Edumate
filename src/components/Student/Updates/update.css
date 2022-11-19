@@ -86,12 +86,13 @@ z-index:20;
     background: none;
     margin-top:5vh;
 }
-.updateCardRowS{
+.updateCardRowSt{
     margin-left:2vw;
     width: 63vw;
     height: fit-content;
     border-radius: 8px;
     z-index:20;
+    background:none;
     /* background-color: rgb(226, 132, 132); */
     background-color: rgba(238, 241, 255, 0.5);
     margin-bottom: 4vh;

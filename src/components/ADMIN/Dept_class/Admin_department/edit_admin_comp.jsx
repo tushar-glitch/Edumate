@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import AdmBar from "../../admin_bar/AdmBar";
+import * as ReactBootStrap from "react-bootstrap";
 import Instance from "../../../utils/axiosInterceptors";
  function EditDeptComp (){
     const editDeptIdNew = sessionStorage.getItem("editDeptId");
@@ -19,6 +20,7 @@ import Instance from "../../../utils/axiosInterceptors";
     }
     const [AdminDeptArr,setAdminDeptArr] = useState(sessionStorage.getItem("Admin_department_array"))
 const adminAccessToken = sessionStorage.getItem("Admin_access_token");
+const [loadBool,setLoadBool] = useState(false)
 console.log(adminAccessToken);
 const config = {
     headers:{
@@ -31,21 +33,25 @@ const config = {
  }
  const navigate = useNavigate();
     function handlePostEditClassApi(){
+        setLoadBool(true)
         console.log("ahsj,");
         axios.put("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+deptId+"/",addDeptInfo,config).
         then((res)=>{
             console.log(res.data);
+            setLoadBool(false)
             setAdminDeptArr(AdminDeptArr=>[...AdminDeptArr,addDeptInfo])
             console.log(AdminDeptArr)
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            setLoadBool(false)
             toast.error(err.response.data.id[0],{
                 position: "top-center",
               })
         })
     }
     function handleCancelEditClassApi(){
+        setLoadBool(true)
         const url = "https://erp-edumate.herokuapp.com/api/user/admin/departments/";
         axios.get(url+"ALL",{
             headers:{
@@ -53,10 +59,12 @@ const config = {
              }}).
         then((res)=>{
             console.log(res.data);
+            setLoadBool(false)
             setAdminDeptArr(AdminDeptArr);
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            setLoadBool(false)
             toast.error(err.response.data.id[0],{
                 position: "top-center",
               })
@@ -75,6 +83,7 @@ const config = {
         <button className="done_add_dept" onClick={handleCancelEditClassApi}>Cancel</button>
     </div>
  </div>
+ {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
  <ToastContainer/>
     </>
  }

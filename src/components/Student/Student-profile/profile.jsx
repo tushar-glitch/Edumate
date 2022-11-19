@@ -313,8 +313,8 @@ document.getElementsByClassName("dropdownGender")[0].style.border = "solid";
                 </div>
                 <div id="email">Email</div>
                 <div className='space5'>
-                {editAble?(<ProfileInputField value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} />): 
-                   (<ProfileInputDisabled  value={profileEmail} class="profileField" type="text"/>)}
+                {editAble?(<input value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} disabled />): 
+                   (<input value={profileEmail} class="profileField" type="text" disabled/>)}
                 </div>
                 <div id="heading2">Contact Details</div>
                 <div id="address">Address</div>

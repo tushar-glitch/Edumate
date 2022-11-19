@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import * as ReactBootStrap from "react-bootstrap";
 function NewUpdateCard (){
 
 const [updateListValue, setUpdateListValue] = useState(null);
@@ -25,7 +25,7 @@ useEffect(()=>{
         console.log(updateListValue)
     }
 },[updateListValue])
-
+const [loadBool,setLoadBool] = useState(false)
 const [AdminUpdate,setAdminUpdate] = useState(sessionStorage.getItem("Admin_updates_array"))
 const adminAccessToken = sessionStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
@@ -41,24 +41,30 @@ const config = {
  }
 function handleDoneNewCdApi(){
     console.log("ahsj,")
+    setLoadBool(true)
     axios.post("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",nCard1,config).
     then((res)=>{
         console.log(res.data);
+        setLoadBool(false)
         setAdminUpdate(AdminUpdate=>[...AdminUpdate,nCard1])
         navigate("/aUpdate")
     }).catch((err)=>{
         console.log(err);
+        setLoadBool(false)
     })
 }
 const navigate = useNavigate();
 function handleCancelNCdApi(){
+    setLoadBool(true)
     axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
     then((res)=>{
         console.log(res.data);
+        setLoadBool(false)
         setAdminUpdate(AdminUpdate);
         navigate("/aUpdate")
     }).catch((err)=>{
         console.log(err);
+        setLoadBool(false)
     })
 }
 
@@ -81,6 +87,7 @@ function handleCancelNCdApi(){
             <button className="handleNUpdCardDone" onClick={handleDoneNewCdApi}>Done</button>
         </div>
     </div>
+    {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>
 }
 export default NewUpdateCard;

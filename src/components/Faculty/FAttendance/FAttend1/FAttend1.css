@@ -2,7 +2,9 @@
     background-color: #ffffff;
     position:absolute;
     width: 67vw;
-height: 100vh;
+height: fit-content;
+/* margin-top:15vh; */
+/* margin-left: 25vw; */
 left: 27vw;
 top: 18vh;
 border-radius: 15px;
@@ -10,7 +12,7 @@ border-radius: 15px;
 .FAttendanceHead{
     position: absolute;
     left: 2vw;
-    top: 5vh;
+    top: 4vh;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 550;
@@ -22,7 +24,7 @@ border-radius: 15px;
     background: rgba(217, 217, 217, 0.4);
 border-radius: 8px;
 position:absolute;
-top:14vh;
+top:13vh;
 left:1vw;
     width:65vw;
     height:7vh;
@@ -49,6 +51,7 @@ padding-top:2vh;
 #Fsubject{
     background: none;
     margin-left:9vw;
+cursor: pointer;
 }
 .FCardContainer1 {
     margin-top: 25vh;
@@ -88,11 +91,13 @@ margin-top:2vh;
     background: none;
     font-size:  calc(0.8vw+1rem);
     margin-left:9vw;
+    cursor: pointer;
+    text-decoration: underline;
 }
 .FAttendCardCall{
     display: flex;
     flex-direction: column;
-    margin-top:24vh;
+    margin-top:32vh;
     background: none;
 }
 @media (max-width:1040px){

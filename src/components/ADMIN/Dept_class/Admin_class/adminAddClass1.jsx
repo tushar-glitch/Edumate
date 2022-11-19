@@ -8,6 +8,7 @@ import { faGameConsoleHandheld } from "@fortawesome/sharp-solid-svg-icons";
 import AdmBar from "../../admin_bar/AdmBar";
 import { ToastContainer ,toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import * as ReactBootStrap from "react-bootstrap";
  function AddNewClassComp (){
     const [classId,setClassId] = useState("");
     const [deptId,setDeptId] = useState("");
@@ -47,16 +48,20 @@ const config = {
     department:departId
  }
  const [deptList,setDeptList] = useState([]);
+ const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
+        setLoadBool(true)
         axios.get("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+"ALL/",config)
         .then((res)=>{
             console.log(res)
+            setLoadBool(false)
             console.log(res.data);
             setDeptList(res.data);
             console.log(res.data[1]);
         })
         .catch((err)=>{
             console.log(err);
+            setLoadBool(false)
             toast.error(err.response.data.id[0],{
                 position: "top-center",
               })
@@ -69,25 +74,31 @@ return <>
      }
  const navigate = useNavigate();
     function handlePostClassApi(){
+        setLoadBool(true)
         console.log("ahsj,")
         axios.post("https://erp-edumate.herokuapp.com/api/user/admin/classes/0/",addDeptInfo,config).
         then((res)=>{
             console.log(res);
+            setLoadBool(false)
             console.log(res.data);
             setAdminClAdd(AdminClAdd=>[...AdminClAdd,addDeptInfo])
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            setLoadBool(false)
         })
     }
     function handleCancelClassApi(){
+        setLoadBool(true)
         axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classes/"+"ALL",config).
         then((res)=>{
             console.log(res.data);
+            setLoadBool(false)
             setAdminClAdd(AdminClAdd);
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            setLoadBool(false)
         })
     }
 
@@ -113,6 +124,7 @@ return <>
         </select>
     </div>
  </div>
+ {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
  <ToastContainer />
     </>
  }

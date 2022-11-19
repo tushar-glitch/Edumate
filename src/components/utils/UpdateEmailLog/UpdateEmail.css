@@ -52,7 +52,7 @@
     color: #212427;
 }
 
-.updateEmailImg {
+.EmailImg {
     position: absolute;
     width: 16vw;
     height: 30vh;
@@ -86,7 +86,7 @@
 }
 
 #update_email_otp_input {
-    /* display: none; */
+    display: none;
     box-sizing: border-box;
     position: absolute;
     top: 44.6vh;
@@ -112,7 +112,7 @@ width: 25vw;
 height: 20px;
 left: 6.5vw;
 top: 38vh;
-/* display: none; */
+display: none;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
@@ -152,7 +152,7 @@ background: #6C63FF;
 border-radius: 8px;
 color: white;
 font-size: 1rem;
-/* display: none; */
+display: none;
 }
 
 @media(min-width:350px) and (max-width:920px) {

@@ -1,4 +1,4 @@
-import useRefreshToken from "./refreshToken";
+import useRefreshToken from "./src/components/refreshToken";
 const refresh_call = useRefreshToken()
 function getToken() {
     if (timeOut()) {

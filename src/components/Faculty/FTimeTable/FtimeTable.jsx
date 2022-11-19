@@ -19,6 +19,7 @@ const config = {
     const [array3,setArray3] = useState([]);
     const [array4,setArray4] = useState([]);
     const [array5,setArray5] = useState([]);
+    const [subject,setSubject] = useState([])
 const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
         setLoadBool(true)
@@ -26,6 +27,11 @@ const [loadBool,setLoadBool] = useState(false)
         then((res)=>{
             console.log(res)
             setLoadBool(false)
+            for(let i=0;i<30;i++){
+                setSubject([...new Set(res.data.map((subjectArray)=>subjectArray.subject))])
+              }  
+              console.log(subject);
+              localStorage.setItem("Subject-array", JSON.stringify(subject))
             console.log(res.data);
             for(let i=0;i<30;i++){
             if(res.data[i].period === "8:30 - 9:20"){

@@ -10,7 +10,6 @@ import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
   import Instance from "../../../utils/axiosInterceptors";
-// import {faPlus} from "@fortawesome/react-fontawesome"
  
 function AdminComponent (){
 const navigate = useNavigate();
@@ -66,6 +65,7 @@ navigate("/editDeptCom");
     }
     function handleDeleteDept(id){
         console.log(id);
+        setLoadBool(true)
         const url = `https://erp-edumate.herokuapp.com/api/user/admin/departments/`;
         axios.delete((url+id),{
             headers:{
@@ -74,11 +74,12 @@ navigate("/editDeptCom");
          })
         .then((res)=>
         console.log(res))
+        setLoadBool(false)
         .catch((err)=>{
             console.log(err)
+            setLoadBool(false)
         })
     }
-
         function createAdminUpdate (cardsDArray){
         return <AddComponentField editDept={()=>handleAdEditDept(cardsDArray.id, cardsDArray.name)} dltDept={()=>handleDeleteDept(cardsDArray.id)} value={cardsDArray.name} toggle={()=>toggle_dropdown()}/>
     }

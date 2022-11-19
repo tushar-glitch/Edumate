@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
+import * as ReactBootStrap from "react-bootstrap";
 import AdmBar from "../../admin_bar/AdmBar";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
@@ -16,6 +17,7 @@ import { ToastContainer, toast } from 'react-toastify';
     }
     const [AdminDeptArr,setAdminDeptArr] = useState(localStorage.getItem("Admin_department_array"))
 const adminAccessToken = sessionStorage.getItem("Admin_access_token");
+const [loadBool, setLoadBool] = useState(false)
 console.log(adminAccessToken);
 const config = {
     headers:{
@@ -29,6 +31,7 @@ const config = {
  const [newDeptErrMsg, setNewDeptErrMsg] = useState([]);
  const navigate = useNavigate();
     function handlePostDeptApi(){
+        setLoadBool(true)
         console.log("ahsj,")
         axios.post("https://erp-edumate.herokuapp.com/api/user/admin/departments/0/",addDeptInfo,config).
         then((res)=>{
@@ -37,11 +40,13 @@ const config = {
                 position: "top-center",
               })
             console.log(res.data);
+            setLoadBool(false)
             navigate("/adminAdd")
             setAdminDeptArr(AdminDeptArr=>[...AdminDeptArr,addDeptInfo])
             console.log(AdminDeptArr)
         }).catch((err)=>{
             console.log(err);
+            setLoadBool(false)
             toast.error(err.response.data.id[0],{
                 position: "top-center",
               })
@@ -49,16 +54,19 @@ const config = {
         })
     }
     function handleCancelDeptApi(){
+        setLoadBool(true)
         const url = "https://erp-edumate.herokuapp.com/api/user/admin/departments/"
         axios.get(url+"ALL",{headers:{
             Authorization: `Bearer ${adminAccessToken}`
          }}).
         then((res)=>{
             console.log(res.data);
+            setLoadBool(false)
             setAdminDeptArr(AdminDeptArr);
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            setLoadBool(false)
             toast.error(err.response.data.id[0],{
                 position: "top-center",
               })
@@ -79,6 +87,7 @@ const config = {
     </div>
  
  </div>
+ {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
  <ToastContainer />
     </>
  }

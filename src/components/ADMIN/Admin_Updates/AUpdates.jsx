@@ -36,6 +36,7 @@ useEffect(()=>{
 },[])
 function handleDeleteUpdates(id,title,description){
     console.log(id);
+    setLoadBool(true)
     const url = `https://erp-edumate.herokuapp.com/api/user/updatesection/`;
     axios.delete((url+id),{
         headers:{
@@ -44,8 +45,10 @@ function handleDeleteUpdates(id,title,description){
      })
     .then((res)=>
     console.log(res))
+    setLoadBool(false)
     .catch((err)=>{
         console.log(err)
+        setLoadBool(false)
     })
 }
 // delete={()=>handleDeleteUpdates(updateACdArr.id,updateACdArr.title,updateACdArr.description)}
@@ -59,7 +62,6 @@ function handleEditUpdates(editCardId,editCardTitle,editCardDescription){
 
 function CreateUpdateCard(updateACdArr){
     return (
-      
     <AUpdateCard delete={()=>handleDeleteUpdates(updateACdArr.id,updateACdArr.title,updateACdArr.description)} edit={()=>handleEditUpdates(updateACdArr.id,updateACdArr.title,updateACdArr.description)} title={updateACdArr.title} desc={updateACdArr.description} />
     )
 }

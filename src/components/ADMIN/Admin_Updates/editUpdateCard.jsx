@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import * as ReactBootStrap from "react-bootstrap";
 function EditUpdateCard (props){
 
     const EditCardTitle = sessionStorage.getItem("EditUpdatesTitle");
@@ -22,15 +22,11 @@ function handleCardDesc(e){
 function handleUpdatesListValues(e){
     setUpdateListValue(e.target.value)
     console.log(updateListValue)
-    // setBool(true)
 }
-// useEffect(()=>{
-//     if(updateListValue)
-//     setBool(false);
-// },[updateListValue,bool])
+
 const [AdminUpdate,setAdminUpdate] = useState(sessionStorage.getItem("Admin_updates_array"))
 const adminAccessToken = sessionStorage.getItem("Admin_access_token");
-
+const [loadBool,setLoadBool] = useState(false)
 console.log(EditCardDescription)
 console.log(EditCardTitle)
 console.log(adminAccessToken);
@@ -47,24 +43,30 @@ const config = {
  }
 function handleDoneNCdApi(){
     console.log("ahsj,")
+    setLoadBool(true)
     axios.put("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",nCard,config).
     then((res)=>{
         console.log(res.data);
+        setLoadBool(false)
         setAdminUpdate(AdminUpdate=>[...AdminUpdate,nCard])
         navigate("/aUpdate")
     }).catch((err)=>{
         console.log(err);
+        setLoadBool(false)
     })
 }
 const navigate = useNavigate();
 function handleCancelNCdApi(){
+    setLoadBool(true)
     axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
     then((res)=>{
         console.log(res.data);
+        setLoadBool(false)
         setAdminUpdate(AdminUpdate);
         navigate("/aUpdate")
     }).catch((err)=>{
         console.log(err);
+        setLoadBool(false)
     })
 }
 console.log(updateListValue)
@@ -87,6 +89,7 @@ console.log(updateListValue)
             <button className="handleNUpdCardDone" onClick={handleDoneNCdApi}>Done</button>
         </div>
     </div>
+    {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>
 }
 export default EditUpdateCard;

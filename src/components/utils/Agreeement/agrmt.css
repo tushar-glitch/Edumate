@@ -1,0 +1,40 @@
+.admWhiteDivAgree{
+    width:63vw;
+    margin-top:15vh;
+    height:fit-content;
+    background:none;
+    background-color:white;
+    z-index:'10';
+    position:absolute;
+    top:4vh;
+    left:25vw;
+    padding:2vh 2vw 5vh 2vw;
+    border-radius: 8px;
+}
+.agmtRow{
+    width:62vw;
+    color:white;
+    position:absolute;
+    left:0.5vw;
+    background-color: #6C63FF;
+    text-align: center;
+    height:7vh;
+    padding-top:1.6vh;
+    border-radius:8px 8px 8px 8px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 22px;
+        letter-spacing: 0.05em;
+}
+.agmtText{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1rem;
+line-height: 22px;
+letter-spacing: 0.05em;
+background:none;
+margin-top:12vh;
+}

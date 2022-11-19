@@ -63,7 +63,7 @@
 #card31 {
     position: absolute;
     width: 36.5vw;
-    height: 33vh;
+    height: auto;
     left: 29vw;
     top: 31vh;
 
@@ -134,7 +134,7 @@
     line-height: 37px;
     top: 7vh;
     left: 3vw;
-    width: 15vw;
+    width: 25vw;
     background-color: white;
 }
 
@@ -367,6 +367,51 @@ color: #000000;
     top: 33vh;
     left: 4vw;
 }
+.updateCardRowS{
+    margin-top: 2vh;
+    margin-left:2vw;
+    width: 33vw;
+    height: fit-content;
+    border-radius: 8px;
+    z-index:20;
+    /* background-color: rgb(226, 132, 132); */
+    /* background-color: rgba(238, 241, 255, 0.5); */
+    background-color: white;
+    margin-bottom: 4vh;
+    padding: 5px;
+    padding-right:8px;
+    padding-left:8px;
+}
+#read-more{
+    /* mark-position: absolute; */
+    font-size: 1rem;
+    margin-left: 30vw;
+    cursor: pointer;
+    color: rgb(62, 80, 216);
+    margin-bottom: 5vh;
+}
+.updateCdTitle{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 0.9rem;
+line-height: 20px;
+color: #000000;
+/* background:none; */
+    background-color: white;
+}
+.updateCdDesc{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: #000000;
+    /* background:none; */
+z-index: 999999;
+    background-color: white;
+}
+
 @media (max-width:800px){
     #background-dash{
     height: 250vh;

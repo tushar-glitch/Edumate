@@ -6,7 +6,8 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import AdmBar from '../admin_bar/AdmBar'
 import * as ReactBootStrap from "react-bootstrap";
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const Ad_feed = () => {
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
@@ -29,33 +30,40 @@ const Ad_feed = () => {
     //             console.log(err);
     //         })
     // }, [])
+    const [loadBool,setLoadBool] = useState(false)
     useEffect(() => {
+        setLoadBool(true)
         axios.post('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', config, {
             feed
         })
             .then((res) => {
                 console.log(res);
+                setLoadBool(false)
             })
             .catch((err) => {
                 console.log(err);
+                setLoadBool(false)
             })
     }, [])
     useEffect(() => {
+        setLoadBool(true)
         axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/', { id }, config)
             .then((res) => {
                 console.log(res);
+                setLoadBool(false)
                 SetDetails(res.data.classdetails.department)
             })
             .catch((err) => {
                 console.log(err);
+                setLoadBool(false)
             })
     }, [])
-    // useEffect(()=>{
-    //     if(loadBool)
-    //     document.body.style.opacity="0.5"
-    //     else
-    //     document.body.style.opacity="1"
-    //   },[loadBool])
+    useEffect(()=>{
+        if(loadBool)
+        document.body.style.opacity="0.5"
+        else
+        document.body.style.opacity="1"
+      },[loadBool])
     return (
         <>
         <AdmBar />
@@ -199,7 +207,7 @@ const Ad_feed = () => {
                     })}
                 </div>
             </div>
-
+            {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
         </>
     )
 }

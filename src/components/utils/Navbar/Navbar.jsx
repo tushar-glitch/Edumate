@@ -19,17 +19,35 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import Footer from '../Footer/Footer';
+import axios from 'axios'
+import { useEffect } from 'react';
 // import SideBar from '../Student/SideBar/sidebar'
 const Navbar = () => {
     const [show,setShow] = useState(false)
     // // const facUserId = sessionStorage.getItem("Faculty_userId");
     // const stuUserId = sessionStorage.getItem("Student_userId");
     // const admUserId = sessionStorage.getItem("Admin_userId");
+    const accessToken = sessionStorage.getItem("access token");
+    const [sname, setSname] = useState('')
+    console.log(accessToken);
+    const config = {
+        headers: {
+            Authorization: `Bearer ${accessToken}`
+        }
+    }
+    useEffect(() => {
+        axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/", config)
+            .then((res) => {
+                console.log(res);
+                setSname(res.data.name)
+            })
+    }, [])
     const userIdLog = sessionStorage.getItem("LoggedInUserId")
     const USERID= sessionStorage.getItem("UserIdLogger");
     // const StName = sessionStorage.getItem("StudentName")
     // const FacName = sessionStorage.getItem("FacultyName");
    const User_Name = sessionStorage.getItem("User_name")
+   console.log(User_Name)
     function toggle_dropdown() {
         if (!show) {
             setShow(true);
@@ -56,7 +74,7 @@ const Navbar = () => {
                 {userIdLog==2?(<Link to="/profile" ><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">My Profile</span></li></Link>):(null)}
                 {/* {userIdLog==1?(<Link to=""><li><img src={ph_student} className="sidebarIcon"/><span className="sideBarListValue">My Profile</span></li></Link>):(null)} */}
                 {userIdLog==2?(<Link to="/stAttendance"><li><img src={attendanceicon} className="sidebarIcon" /><span className="sideBarListValue">Attendance</span></li></Link>):(null)}
-             {userIdLog==1?(<Link to="/facFeed"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Feedback</span></li></Link>):(null)}
+                {userIdLog==1?(<Link to="/f_atten1"><li><img src={attendanceicon} className="sidebarIcon" /><span className="sideBarListValue">Attendance</span></li></Link>):(null)}             {userIdLog==1?(<Link to="/facFeed"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Feedback</span></li></Link>):(null)}
              {userIdLog==2?(<Link to="/feedback"><li><img src={feedbackicon} className="sidebarIcon" /><span className="sideBarListValue">Feedback</span></li></Link>):(null)}
                 {userIdLog==1?(<Link to="/ftimetable"><li><img src={timetableicon} className="sidebarIcon" /><span className="sideBarListValue">Time Table</span></li></Link>):(null)}
                 {userIdLog==2?(<Link to="/stTimetable"><li><img src={timetableicon} className="sidebarIcon" /><span className="sideBarListValue">Time Table</span></li></Link>):(null)}

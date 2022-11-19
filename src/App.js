@@ -34,12 +34,16 @@ import FacDashboard from "./components/Faculty/faculty-dashboard/FacDashboard";
 import FacFeedback from "./components/Faculty/Fac_feedback/Feedback/Feedback";
 import UpdateEmail from "./components/utils/UpdateEmailLog/UpdateEmail";
 import AdmAttend from "./components/ADMIN/Admin_attend/AdminAttendanceTwo/adminAttend";
+import Agreement from "./components/utils/Agreeement/agreement";
+import Privacy from "./components/utils/Privacy/privacy";
+import FAttendance1 from "./components/Faculty/FAttendance/FAttend1/FAttendance1";
+import FAttendance2 from "./components/Faculty/FAttendance/FAttend2/FAttendance2";
+import Assign_fac from "./components/ADMIN/Assign_fac/Assign_fac";
 import StUpdateEmail from "./components/Student/St_UpdateEmail";
 import FacUpdateEmail from "./components/Faculty/FacUpdateEmail";
 import AdmUpdateEmail from "./components/ADMIN/AdmUpdateEmail";
-import FAttendance1 from "./components/Faculty/FAttendance/FAttend1/FAttendance1";
-import Privacy from "./components/utils/Ptivacy.jsx/privacy"
-import Agreement from "./components/utils/agreement/agreement"
+
+
 import FacChangepass from "./components/Faculty/Fac_Change_pass/Changepass";
 import AdmChangepass from "./components/ADMIN/admin_Change_pass/Changepass";
 
@@ -63,12 +67,23 @@ function App() {
   return <>
     <BrowserRouter>
       <Routes>
-     
+     <Route path="/assignFac" exact element={<Assign_fac />} />
       {(!Route_to_login || logOut || pwdToLogin)?(<Route path="/" exact element={<LogIn />} />):(null) }
       <Route path="/fgtEmail" exact element={<FgtEmail />} />
      {navigateOtp?(<Route path="/otp" element={<OTP />} />):(null) }
+    
+        {/* <Route element = {<PrivateRouteOne />}> */}
+    
+    
+          <Route path="/logout" exact element={<Logout />} />
+          <Route path="/f_atten1" exact element={<FAttendance1/>} />
+        <Route path="/f_atten2" exact element={<FAttendance2/>} />
+      {/* <Route path="/stAttendance" exact element={<Attendance />} /> */}
+      {/* <Route path="/stAttend" exact element={<SubjectAttend />} /> */}
+     
+      {/* <Route path="/loadingscreen" exact element={<LoadingScreen />} /> */}
+    
     {otpToPwd?(<Route path="/rstPwd" exact element={<ResetPwd /> }/>) :(null)}
-      <Route path="/logout" exact element={<Logout />} />
       <Route path="/admAttendance" exact element={<AdmAttend />} />
       {/* <Route path="/chngPwd" exact element={<Changepass />} /> */}
         <Route path="/updateEmail" exact element={<UpdateEmail />} />
@@ -83,6 +98,22 @@ function App() {
       {loggedInUser==1?( <Route path="/Fupdate" exact element={<FUpdate />} />):(null)}
       {loggedInUser==1?(<Route path="/facUpdateEmail" exact element={<FacUpdateEmail />} />):(null)}
       {loggedInUser==1?( <Route path="/facProfile" exact element={<FacultyProfile/>} />):(null)}
+      {/* {loggedInUser==1?( <Route path="/facAttend1" exact element={<FAttendance1/>} />):(null)} */}
+      {/* {loggedInUser==1?( <Route path="/facAttend2" exact element={<FAttendance2/>} />):(null)} */}
+      {/* <Route path="/updates" exact element={<Updates />} />):(null) /> */}
+        {/* <Route path="/profile" exact element={<Profile/>} />):(null) /> */}
+        {/* <Route path="/admin_dashboard" exact element={<AdminDashboard/>} /> */}
+
+      <Route path="/update_email" exact element={<UpdateEmail/>} />
+      
+        {/* <Route path="/chngPwd" exact element={<Changepass />} /> */}
+       
+        {/* <Route path="/stu_dashboard" exact element={<Dashboard />}/> */}
+        {/* <Route path="/profile" exact element={<Profile />} /> */}
+       
+     {/* </Route> */}
+     {/* <Route element={<PrivateRouteTwo />} > */}
+    { /*STUDENT ROUTES*/}
       {loggedInUser==1?( <Route path="/facChngPwd" exact element={<FacChangepass/>} />):(null)}
 
         {/* STUDENT */}

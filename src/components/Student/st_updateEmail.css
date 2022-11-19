@@ -1,0 +1,19 @@
+.updateEmailRow{
+   
+    position: absolute;
+    width: 58vw;
+    height: 10vh;
+    left: 2vw;
+    top: 3.5vh;
+    background: #6C63FF;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 37px;
+    color: #FFFFFF;
+    padding-top:2vh;
+    z-index:20;
+}

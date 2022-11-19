@@ -6,7 +6,7 @@ function FCard1(props){
 <span id="FCdTime">{props.time}</span>
 <span id="FCdClass">{props.class}</span>
 {/* <div id="FCdSubject1"> */}
-<span id="FCdSubject">{props.subject}</span>
+<span id="FCdSubject" onClick={props.navigator}>{props.subject}</span>
 {/* </div> */}
 </div>
 

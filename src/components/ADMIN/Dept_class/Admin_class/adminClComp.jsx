@@ -35,20 +35,20 @@ function AdminClComponent (){
         then((res)=>{
             console.log(res);
             console.log(res.data);
+            setLoadBool(false)
             // console.log(res.data[0]);
             setCardsCArray(res.data)
             console.log(cardsCArray);
-            setLoadBool(false)
             // console.log(cardsCObj)
             // console.log(Object.keys(res.data))
             // console.log(res.data[Object.keys(res.data)[0]])
             // localStorage.setItem("Admin_class_object",JSON.stringify(cardsCObj))
         }).catch((err)=>{
             console.log(err)
+            setLoadBool(false)
             // toast.error(err.response.data.DOB[0],{
                 // position: "top-center",
             //   })
-            setLoadBool(false)
         })
     },[])
     const [show,setShow] = useState(false)
@@ -65,7 +65,6 @@ function AdminClComponent (){
     }
     const navigate = useNavigate();
     function handleEditClass(class_id,section,year){
-// sessionStorage.setItem("EditDeptId",dept_id);
 sessionStorage.setItem("EditClassId",class_id);
 sessionStorage.setItem("EditClassSection",section);
 sessionStorage.setItem("EditClassYear",year);
@@ -81,10 +80,12 @@ navigate("/editClass");
          })
         .then((res)=>{
         console.log(res)
+        setLoadBool(false)
         window.location.reload()
     })
         .catch((err)=>{
             console.log(err)
+            setLoadBool(false)
         })
     }
     function createAdminUpdate (cardsCArray){

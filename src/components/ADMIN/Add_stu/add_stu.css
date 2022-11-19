@@ -166,7 +166,7 @@ padding-left: 10px;
     font-size: 1.2rem;
     line-height: 20px;
     /* identical to box height */
-    outline-color: #6C63FF;
+    outline-color: green;
     background-color: white;
     color: #000000;
     border-radius: 10px;
@@ -205,4 +205,9 @@ border-radius: 8px;
 border: none;
 font-size: 1.1rem;
 font-family: 'Montserrat';
+}
+#add_stu_select{
+    position: absolute;
+    top: 35.5vh;
+    left: 6.5vw;
 }

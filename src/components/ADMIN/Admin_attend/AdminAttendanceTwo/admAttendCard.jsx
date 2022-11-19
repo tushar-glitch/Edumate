@@ -3,7 +3,7 @@ import React from "react";
 function AdmAttendCard (props){
     var progressBarWidth = props.attend;
     return <>
- <div id="admRow">
+ <div id="admRow2">
             <span id="admSname">{props.name}</span>
             <span id="admSno">{props.Number}</span>
             <span id="admSPer">

@@ -26,6 +26,16 @@ function SubjectAttend (){
           Authorization: `Bearer ${accessToken}`
        }
     }
+    function handleAPI(){
+            axios.get("https://erp-edumate.herokuapp.com/api/user/student/studentsubjectattendance/"+code+month+"/",config)
+            .then((res)=>{
+                console.log(res);
+                setAttendSubArray(res.data)
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+    }
     const [attendSubArray, setAttendSubArray] = useState([])
     const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{

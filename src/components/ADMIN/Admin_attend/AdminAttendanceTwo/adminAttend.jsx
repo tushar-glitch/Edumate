@@ -58,6 +58,8 @@ console.log(classList);
  const [subjectList,setSubjectList] = useState([]);
  function handleClass(e){
     setClassId(e.target.value);
+ }
+ function handleSubjectInClass(){
     axios.get("https://erp-edumate.herokuapp.com/api/user/admin/studentattendancelist/"+classId+"/",config)
     .then((res)=>{
         console.log(res);
@@ -70,7 +72,7 @@ console.log(classList);
  
 function DropDownClassList (classList){
     return <>
-         <option  id="class-name" className="class_head_input" value={classList[0]}>{classList[2]}</option>
+         <option  id="class-name" className="class_head_input" value={classList[0]}>{classList[0]}</option>
     </>
 }
     function DropdownDeptList (deptList){
@@ -80,7 +82,7 @@ function DropDownClassList (classList){
              }
              function createSubject(subjectList){
                 return <>
-                    <AdmAttendCard name={subjectList.name} Number={subjectList.number} attend={subjectList.value} />
+                    <AdmAttendCard name={subjectList.student_name} Number={subjectList.userID} attend={subjectList.attendance_percent} />
                 </>
              }
     return <>
@@ -95,14 +97,13 @@ function DropDownClassList (classList){
         <option >Departments</option>
         {deptList.map(DropdownDeptList)}
         </select>
-        <select id="admClass" onChange={handleClass} >
+        <select id="admClass" onChange={handleClass} onClick={handleSubjectInClass}>
         <option >Classes</option>
         {classList.map(DropDownClassList) }
         </select>
-        <div className="admAttendCall">
+        <div className="admAttendCall2">
             {subjectList.map(createSubject)}
-        </div>
-       <AdmAttendCard />
+        </div> 
     </div>
     </>
 }

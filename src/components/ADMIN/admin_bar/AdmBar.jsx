@@ -19,6 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import "./admBar.css";
 import Footer from "../../utils/Footer/Footer"
+import './admin_bar.css'
 // import SideBar from '../Student/SideBar/sidebar'
 const AdmBar = () => {
     const [show,setShow] = useState(false)
@@ -26,6 +27,7 @@ const AdmBar = () => {
     // const stuUserId = sessionStorage.getItem("Student_userId");
     // const admUserId = sessionStorage.getItem("Admin_userId");
     const userIdLog = sessionStorage.getItem("LoggedInUserId")
+    const User_Name = sessionStorage.getItem("User_name")
     function toggle_dropdown() {
         if (!show) {
             setShow(true);
@@ -54,12 +56,12 @@ const AdmBar = () => {
                 </ul>
         </div>
             <div id="section">
-                <div id="greetingNav">Welcome, Name</div>
+                <div id="greetingNav">Welcome, {User_Name}</div>
                 <input type="checkbox" id="NavCheck" />
                 <label for="navSideBarIcon" className='navSBIcon'>
               <FontAwesomeIcon icon={faBars} id="navBarLogo" />
                 </label>
-                <div id="role">Name</div>
+                <div id="role">{User_Name}</div>
                 <button id="role-logo" onClick={toggle_dropdown}><img src={profileicon} id="profile-logo" alt="" /></button>
                 <div id="dropdown">
                 <Link to="/admin_dashboard"><div id='nav_name' className='dropdown_items'><img className='dropdown_img' id='dropdown_img1' src={nameimg} />Dashboard</div></Link>
